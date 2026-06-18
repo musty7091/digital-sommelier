@@ -26,12 +26,11 @@ export default function Dashboard({ setActiveTab }) {
         querySnapshot.forEach((doc) => {
           const data = doc.data();
           total++;
-          
-          // Veritabanındaki alan adlarına göre sayım yapıyoruz
-          // Eğer seed.js dosyanızda alan isimleri farklıysa (örneğin 'aktif' yerine 'isActive') burası otomatik uyum sağlar.
-          if (data.isActive === true || data.aktif === true || data.Aktif === 'Evet') active++;
-          if (data.stock === 0 || data.stok === 0 || data.Stok === 0) outOfStock++;
-          if (data.isSommelierPick === true || data.somelyeTavsiyesi === true) sommelier++;
+
+          // Kanonik şema alanları (product.schema.js / seed ile uyumlu)
+          if (data.active === true) active++;
+          if (Number(data.stock) === 0) outOfStock++;
+          if (data.sommelierPick === true) sommelier++;
         });
 
         setStats({
