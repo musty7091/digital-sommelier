@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Premium sarap mahzeni paleti (dokuman 7.1) */
+  --wine-900: #3e0f19;
+  --wine-800: #5c1a27;
+  --wine-700: #7a2434;
+  --wine-600: #93303f;
+  --ink-950: #0b0b0d;
+  --ink-900: #131316;
+  --charcoal-800: #1c1c20;
+  --charcoal-700: #26262c;
+  --gold-500: #c8a951;
+  --gold-400: #d8be72;
+  --cream-100: #f4eee0;
+  --cream-200: #e7dec9;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: radial-gradient(circle at 50% -10%, var(--charcoal-800) 0%, var(--ink-950) 70%);
+    color: var(--cream-100);
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    /* Kiosk dokunmatik davranisi: metin secimi ve dokunma vurgusu kapali */
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

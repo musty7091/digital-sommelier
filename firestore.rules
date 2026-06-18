@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// Ertan Digital Sommelier — Firestore güvenlik kuralları (Sprint 1 / S1-07)
+// NOT: Bu kuralları seed işleminden SONRA uygulayın. Seed sırasında test mode açık kalmalı,
+// çünkü bu kurallar yazma için giriş + rol ister.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    // Kullanıcının rolünü users/{uid} dokümanından okur (get() kurallardan bağımsızdır).
+    function userRole() {
+      return isSignedIn()
+        ? get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
+        : null;
+    }
+    function hasRole(roles) {
+      return isSignedIn() && (userRole() in roles);
+    }
+
+    // ÜRÜNLER — kiosk (anonim) yalnızca AKTİF ürünleri okur; yazma yetkili rollerde.
+    match /products/{barcode} {
+      allow read: if resource.data.active == true
+                  || hasRole(['admin', 'sommelier', 'accounting', 'viewer', 'tech']);
+      allow create, update: if hasRole(['admin', 'sommelier', 'accounting', 'tech']);
+      allow delete: if hasRole(['admin', 'tech']); // kalıcı silme yalnızca admin/teknik
+    }
+
+    // KIOSK AYARLARI — herkes okuyabilir (kiosk public), sadece admin yazar.
+    match /kioskSettings/{docId} {
+      allow read: if true;
+      allow write: if hasRole(['admin', 'tech']);
+    }
+
+    // Filtre/seçenek listeleri — public okuma, admin yazma.
+    match /usagePurposes/{id} { allow read: if true; allow write: if hasRole(['admin', 'tech']); }
+    match /priceRanges/{id}   { allow read: if true; allow write: if hasRole(['admin', 'tech']); }
+    match /countries/{id}     { allow read: if true; allow write: if hasRole(['admin', 'tech']); }
+    match /foodPairings/{id}   { allow read: if true; allow write: if hasRole(['admin', 'sommelier', 'tech']); }
+    match /mediaAssets/{id}    { allow read: if true; allow write: if hasRole(['admin', 'sommelier', 'tech']); }
+
+    // İSTATİSTİK — kiosk anonim olarak yalnızca olay EKLEYEBİLİR, okuyamaz.
+    match /analyticsEvents/{id} {
+      allow create: if true;
+      allow read, update, delete: if hasRole(['admin', 'tech']);
+    }
+
+    // SADECE ADMIN/YETKİLİ — public erişim yok.
+    match /users/{uid}     { allow read, write: if hasRole(['admin', 'tech']); }
+    match /roles/{id}      { allow read, write: if hasRole(['admin', 'tech']); }
+    match /importLogs/{id} { allow read, write: if hasRole(['admin', 'accounting', 'tech']); }
+    match /auditLogs/{id}  { allow read: if hasRole(['admin', 'tech']); allow write: if isSignedIn(); }
+    match /backups/{id}    { allow read, write: if hasRole(['admin', 'tech']); }
+
+    // Tanımlanmayan her şey kapalı.
+    match /{document=**} { allow read, write: if false; }
+  }
+}
