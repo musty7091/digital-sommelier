@@ -16,7 +16,7 @@ Aşağıdaki yığın, dokümandaki "React + Firebase", premium dokunmatik UI, o
 | Katman | Öneri | Neden |
 | --- | --- | --- |
 | Build / Dev | **Vite** | Hızlı, SPA + PWA için ideal, Firebase Hosting'e kolay deploy |
-| UI Kütüphanesi | **React 18 + TypeScript** | TS, ürün veri modeli ve rol yetkilerinde hata önler |
+| UI Kütüphanesi | **React 18 + JavaScript** | Hızlı ve sade; tip duvarı yok, güvenlik kritik sınırlarda zod ile sağlanır |
 | Stil | **Tailwind CSS** | Koyu premium tema, hızlı ve tutarlı dokunmatik tasarım |
 | Yönlendirme | **React Router** | `/kiosk` ve `/admin` ayrımı |
 | State | **Zustand** | Kiosk seçim akışı için hafif ve sade |
@@ -24,9 +24,9 @@ Aşağıdaki yığın, dokümandaki "React + Firebase", premium dokunmatik UI, o
 | Çok dil | **i18next + react-i18next** | TR/EN, ileride RU genişlemesi kolay |
 | Excel | **SheetJS (xlsx)** | Import/export için standart çözüm |
 | Offline | **vite-plugin-pwa (Workbox)** | Service worker, cache, offline fallback |
-| Form / doğrulama | **react-hook-form + zod** | Admin ürün formları ve Excel satır doğrulama |
+| Form / doğrulama | **react-hook-form + zod** | Admin formları ve Excel satır doğrulama; bozuk verinin girişini çalışma zamanında net hata mesajıyla engeller |
 
-> Değiştirmek istediğiniz bir şey varsa (örn. TypeScript yerine JavaScript, Tailwind yerine başka bir şey, Next.js tercihi) söyleyin; listeyi ona göre güncellerim.
+> **Karar:** Sade JavaScript kullanılacak (TypeScript değil). Tip güvenliği yerine, bozuk verinin girebileceği kritik sınırlarda (Excel import, admin formları) **zod** ile çalışma zamanı doğrulaması yapılacak. Başka bir değişiklik istenirse (örn. Tailwind yerine başka bir şey) liste güncellenir.
 
 ---
 
@@ -35,7 +35,7 @@ Aşağıdaki yığın, dokümandaki "React + Firebase", premium dokunmatik UI, o
 Hedef: Boş ama çalışan, deploy edilebilir bir iskelet.
 
 - [ ] **S0-01** GitHub repo oluştur: `digital-sommelier` (private), README + .gitignore + lisans
-- [ ] **S0-02** Vite + React + TypeScript projesi başlat
+- [ ] **S0-02** Vite + React (JavaScript) projesi başlat
 - [ ] **S0-03** Tailwind CSS kurulumu ve premium tema renk değişkenleri (bordo, siyah, antrasit, altın, krem)
 - [ ] **S0-04** Klasör yapısı: `src/kiosk`, `src/admin`, `src/shared`, `src/firebase`, `src/i18n`, `src/types`
 - [ ] **S0-05** ESLint + Prettier + editor/format ayarları
@@ -54,7 +54,7 @@ Hedef: Veri yapısı, güvenlik ve örnek veri hazır.
 
 - [ ] **S1-01** Firebase Authentication aç (e-posta/şifre), test admin kullanıcısı oluştur
 - [ ] **S1-02** Firestore koleksiyon taslağını oluştur: `products`, `productTranslations`, `kioskSettings`, `users`, `roles`, `importLogs`, `auditLogs`, `analyticsEvents`, `mediaAssets`, `usagePurposes`, `priceRanges`, `countries`, `foodPairings`, `backups`
-- [ ] **S1-03** TypeScript tipleri: `Product`, `KioskSettings`, `UserRole`, `ImportLog` vb. (dokümandaki 8.2 alanlarına göre)
+- [ ] **S1-03** Veri modeli şablonları (JS sabitleri) ve zod şemaları: `Product`, `KioskSettings`, `UserRole`, `ImportLog` vb. (dokümandaki 8.2 alanlarına göre)
 - [ ] **S1-04** Fiyat/stok verisini içerik verisinden mantıksal olarak ayır (Vega'ya hazırlık) — alan ayrımını tipte netleştir
 - [ ] **S1-05** Firebase Storage klasörleri: `product-images/`, `product-thumbnails/`, `kiosk-media/`, `import-files/`, `backups/`
 - [ ] **S1-06** 20–30 örnek ürünlük seed verisi (sahte ama gerçekçi: barkod, renk, ülke, fiyat, stok, raf, tat profili)
