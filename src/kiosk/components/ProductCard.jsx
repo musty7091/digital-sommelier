@@ -17,6 +17,9 @@ const CARD_LABELS = {
     region: 'Bölge',
     tasteNotes: 'Tadım',
     foodPairing: 'Eşleşme',
+    serveTitle: 'Servis önerisi',
+    serveTemp: 'Servis sıcaklığı',
+    serveGlass: 'Kadeh',
   },
   en: {
     featured: 'Featured recommendation',
@@ -31,6 +34,9 @@ const CARD_LABELS = {
     region: 'Region',
     tasteNotes: 'Tasting',
     foodPairing: 'Pairing',
+    serveTitle: 'Serving suggestion',
+    serveTemp: 'Serve at',
+    serveGlass: 'Glass',
   },
 }
 
@@ -44,6 +50,60 @@ function levelText(value, lang) {
   return LEVEL_LABELS[value] ? LEVEL_LABELS[value][lang] : value
 }
 
+// Şarap rengine göre servis önerisi
+const SERVE = {
+  red: { temp: '16–18°C', glassTr: 'Büyük balon kadeh', glassEn: 'Large bowl glass' },
+  white: { temp: '8–10°C', glassTr: 'Beyaz şarap kadehi', glassEn: 'White wine glass' },
+  rose: { temp: '8–10°C', glassTr: 'Roze kadehi', glassEn: 'Rosé glass' },
+  sparkling: { temp: '6–8°C', glassTr: 'Flüt kadeh', glassEn: 'Flute glass' },
+}
+
+function IconThermo() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M10 13.6V5a2 2 0 1 1 4 0v8.6a4 4 0 1 1-4 0z" />
+      <path d="M12 9v5.8" />
+    </svg>
+  )
+}
+function IconGlass() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M7.5 3h9l-1 7.2a3.5 3.5 0 0 1-7 0L7.5 3z" />
+      <path d="M12 14v6" />
+      <path d="M8.5 21h7" />
+    </svg>
+  )
+}
+function IconFork() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 3v6a2 2 0 0 0 2 2v10" />
+      <path d="M8 3v6" />
+      <path d="M16 3c-1.4 0-2.4 1.6-2.4 4.2S15 11 16 11v10" />
+    </svg>
+  )
+}
+function PinIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 21s-6-5.2-6-10a6 6 0 1 1 12 0c0 4.8-6 10-6 10z" />
+      <circle cx="12" cy="11" r="2" />
+    </svg>
+  )
+}
+function ServeItem({ icon, label, value }) {
+  return (
+    <div className="flex items-start gap-2 rounded-xl border border-charcoal-700/70 bg-ink-950/30 px-3 py-2">
+      <span className="mt-0.5 text-gold-500">{icon}</span>
+      <div>
+        <p className="text-[10px] uppercase tracking-wide text-cream-200/45">{label}</p>
+        <p className="mt-0.5 text-sm font-medium text-cream-100">{value}</p>
+      </div>
+    </div>
+  )
+}
+
 export default function ProductCard({ product, onClick }) {
   const { t, lang } = useLanguage()
   const labels = CARD_LABELS[lang] || CARD_LABELS.tr
@@ -55,7 +115,8 @@ export default function ProductCard({ product, onClick }) {
   const description = localizedText(product.shortDescription, lang)
   const tasteNotes = localizedText(product.tasteNotes, lang)
   const foodPairing = localizedText(product.foodPairing, lang)
-  const why = localizedText(product._why, lang)
+  const serve = SERVE[product.color] || SERVE.red
+  const serveGlass = lang === 'en' ? serve.glassEn : serve.glassTr
 
   const profileItems = [
     { label: labels.body, value: levelText(product.body, lang) },
@@ -123,10 +184,9 @@ export default function ProductCard({ product, onClick }) {
               <StockBadge stock={product.stock} />
             </div>
 
-            <p className="mt-3 text-xs text-cream-200/80 sm:text-sm">
-              {lang === 'en'
-                ? `You can find this at ${shelfShort}.`
-                : `Bu ürünü ${shelfShort}ta bulabilirsiniz.`}
+            <p className="mt-3 flex items-center gap-2 text-base font-semibold text-emerald-400 sm:text-lg">
+              <PinIcon />
+              {shelfShort}
             </p>
           </div>
 
@@ -163,6 +223,17 @@ export default function ProductCard({ product, onClick }) {
             </div>
           )}
 
+          <div className="mt-4">
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cream-200/45">
+              {labels.serveTitle}
+            </p>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+              <ServeItem icon={<IconThermo />} label={labels.serveTemp} value={serve.temp} />
+              <ServeItem icon={<IconGlass />} label={labels.serveGlass} value={serveGlass} />
+              {foodPairing && <ServeItem icon={<IconFork />} label={labels.foodPairing} value={foodPairing} />}
+            </div>
+          </div>
+
           {purposeChips.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
               {purposeChips.map((chip) => (
@@ -170,13 +241,6 @@ export default function ProductCard({ product, onClick }) {
                   {chip}
                 </span>
               ))}
-            </div>
-          )}
-
-          {why && (
-            <div className="mt-4 rounded-xl border border-charcoal-700 bg-ink-900/50 p-3 sm:p-4">
-              <p className="text-[10px] uppercase tracking-wide text-gold-500">{t('why')}</p>
-              <p className="mt-1 text-xs text-cream-200 sm:text-sm">{why}</p>
             </div>
           )}
 
@@ -216,7 +280,7 @@ export default function ProductCard({ product, onClick }) {
 
       <div className="mt-2 w-full flex flex-col items-center gap-1">
         <StockBadge stock={product.stock} />
-        <p className="text-[10px] sm:text-xs text-cream-200/60 truncate w-full px-1" title={shelfShort}>
+        <p className="text-[10px] sm:text-xs font-medium text-emerald-400/80 truncate w-full px-1" title={shelfShort}>
           {shelfShort}
         </p>
       </div>

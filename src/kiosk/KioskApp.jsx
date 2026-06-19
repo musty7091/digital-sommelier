@@ -4,6 +4,7 @@ import WelcomeScreen from './screens/WelcomeScreen'
 import SelectionStep from './screens/SelectionStep'
 import ResultScreen from './screens/ResultScreen'
 import DetailScreen from './screens/DetailScreen'
+import IdleScreen from './screens/IdleScreen'
 
 function Centered({ children }) {
   return (
@@ -18,6 +19,7 @@ function KioskScreens() {
   const { t } = useLanguage()
   if (error) return <Centered>{t('errorLoad')}</Centered>
   if (phase === 'welcome') return <WelcomeScreen />
+  if (phase === 'idle') return <IdleScreen />
   if (loading) return <Centered>{t('loading')}</Centered>
   if (phase === 'flow') return <SelectionStep />
   if (phase === 'results') return <ResultScreen />

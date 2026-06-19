@@ -52,9 +52,9 @@ export default function DetailScreen() {
           {/* Sol: Şişe Görseli (Ekrana Göre Küçülür) */}
           <div className="flex w-full md:w-2/5 shrink-0 items-center justify-center h-48 md:h-full">
             {p.image ? (
-              <img src={p.image} alt={p.name} className="h-full w-auto max-h-48 md:max-h-full object-contain drop-shadow-2xl" />
+              <img src={p.image} alt={p.name} className="h-full w-auto max-h-48 md:max-h-[52vh] object-contain drop-shadow-2xl" />
             ) : (
-              <WineBottle color={p.color} className="h-full w-auto max-h-48 md:max-h-full drop-shadow-2xl" />
+              <WineBottle color={p.color} className="h-full w-auto max-h-48 md:max-h-[52vh] drop-shadow-2xl" />
             )}
           </div>
 
@@ -83,10 +83,12 @@ export default function DetailScreen() {
               )}
             </div>
 
-            <p className="mt-3 md:mt-4 text-xs md:text-sm text-cream-200/80">
-              {lang === 'en' ? 'You can find this item at ' : 'Bu ürünü '}
-              <span className="font-semibold text-cream-100">{shelfShort}</span>
-              {lang === 'en' ? '.' : ' bulabilirsiniz.'}
+            <p className="mt-3 md:mt-4 flex items-center gap-2 text-sm md:text-lg font-semibold text-emerald-400">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <path d="M12 21s-6-5.2-6-10a6 6 0 1 1 12 0c0 4.8-6 10-6 10z" />
+                <circle cx="12" cy="11" r="2" />
+              </svg>
+              {shelfShort}
             </p>
 
             {p.shortDescription && p.shortDescription[lang] && (

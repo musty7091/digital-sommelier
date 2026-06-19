@@ -73,3 +73,29 @@
   .ds-fade-up { animation-duration: 0.01ms; opacity: 1; }
   .ds-shimmer { animation: none; }
 }
+
+/* Flu sinematik şarap dokusu (sonuç ekranı bokeh) */
+@keyframes ds-bokeh {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: var(--bokeh-o, 0.25); }
+  50%      { transform: translate(var(--bokeh-x, 20px), var(--bokeh-y, -16px)) scale(1.12); opacity: calc(var(--bokeh-o, 0.25) * 1.45); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-bokeh] { animation: none !important; }
+}
+
+/* İnce, altın tonlu kaydırma çubuğu */
+.custom-scrollbar { scrollbar-width: thin; scrollbar-color: rgba(200,169,81,0.35) transparent; }
+.custom-scrollbar::-webkit-scrollbar { width: 8px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(200,169,81,0.30); border-radius: 9999px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(200,169,81,0.55); }
+
+/* Yavaş zoom (bekleme ekranı görsel geçişi) */
+@keyframes ds-kenburns {
+  from { transform: scale(1.02) translateY(1%); }
+  to   { transform: scale(1.1) translateY(-1.5%); }
+}
+.ds-kenburns { animation: ds-kenburns 7s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .ds-kenburns { animation: none; }
+}
