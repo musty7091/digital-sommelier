@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect } from 'react'
 import { fetchActiveProducts, fetchKioskSettings } from '../../firebase/products'
 import { getSteps } from '../stepsConfig'
 import { recommend } from '../recommendation'
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 
 const FlowContext = createContext(null)
 const emptySelections = { color: null, priceRange: null, purpose: null, taste: null, country: null }
@@ -12,11 +14,24 @@ export function FlowProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const [phase, setPhase] = useState('welcome') // welcome | idle | flow | results | detail
+  const [phase, setPhase] = useState('welcome') // welcome | flow | results | detail
   const [stepIndex, setStepIndex] = useState(0)
   const [selections, setSelections] = useState(emptySelections)
   const [results, setResults] = useState([])
   const [detailProduct, setDetailProduct] = useState(null)
+
+  // Arka planda Firebase'e analitik verisi gönderen görünmez haberci
+  const logEvent = (type, payload = {}) => {
+    try {
+      addDoc(collection(db, 'analyticsEvents'), {
+        type,
+        ...payload,
+        timestamp: new Date().toISOString()
+      }).catch(err => console.error("Analitik kaydedilemedi:", err));
+    } catch (err) {
+      console.error("Analitik hatası:", err);
+    }
+  }
 
   useEffect(() => {
     let alive = true
@@ -40,7 +55,7 @@ export function FlowProvider({ children }) {
 
   // Otomatik sıfırlama: hareketsizlik sonrası başa dön (doküman 6.13)
   useEffect(() => {
-    if (phase === 'welcome' || phase === 'idle') return
+    if (phase === 'welcome') return
     const ms = (settings?.resetTimeoutSeconds || 120) * 1000
     let timer
     const doReset = () => {
@@ -63,24 +78,6 @@ export function FlowProvider({ children }) {
     }
   }, [phase, settings])
 
-  // Bekleme (attract) modu: açılışta hareketsiz kalınınca "Öne Çıkan Şaraplar"
-  useEffect(() => {
-    if (phase !== 'welcome') return
-    const ms = (settings?.idleTimeoutSeconds || 45) * 1000
-    let timer
-    const arm = () => {
-      clearTimeout(timer)
-      timer = setTimeout(() => setPhase('idle'), ms)
-    }
-    arm()
-    const events = ['pointerdown', 'keydown', 'touchstart']
-    events.forEach((e) => window.addEventListener(e, arm))
-    return () => {
-      clearTimeout(timer)
-      events.forEach((e) => window.removeEventListener(e, arm))
-    }
-  }, [phase, settings])
-
   const steps = getSteps(settings)
 
   const reset = () => {
@@ -91,11 +88,14 @@ export function FlowProvider({ children }) {
     setPhase('welcome')
   }
   const startFlow = () => {
+    logEvent('flow_start'); // Müşteri akışa başladı
     setSelections(emptySelections)
     setStepIndex(0)
     setPhase('flow')
   }
   const chooseOption = (key, value) => {
+    // Müşterinin ekrandaki seçimi kaydedilir
+    logEvent('filter_selected', { filterKey: key, filterValue: value });
     const next = { ...selections, [key]: value }
     setSelections(next)
     if (stepIndex < steps.length - 1) {
@@ -115,10 +115,17 @@ export function FlowProvider({ children }) {
   }
   const quickRecommend = () => {
     if (!products.length) return
+    logEvent('session_start', { method: 'quickRecommend' }); // Hızlı öneri butonuna basıldı
     setResults(recommend(products, emptySelections, { quick: true }))
     setPhase('results')
   }
   const openDetail = (p) => {
+    // Müşterinin hangi şarabı incelediği kaydedilir
+    logEvent('product_viewed', { 
+      productId: p.id || '', 
+      productName: p.name || '', 
+      barcode: p.barcode || '' 
+    });
     setDetailProduct(p)
     setPhase('detail')
   }
@@ -126,7 +133,6 @@ export function FlowProvider({ children }) {
     setDetailProduct(null)
     setPhase('results')
   }
-  const wakeFromIdle = () => setPhase('welcome')
 
   const value = {
     products,
@@ -147,7 +153,6 @@ export function FlowProvider({ children }) {
     quickRecommend,
     openDetail,
     closeDetail,
-    wakeFromIdle,
   }
   return <FlowContext.Provider value={value}>{children}</FlowContext.Provider>
 }

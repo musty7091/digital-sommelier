@@ -124,6 +124,64 @@ export default function CountryFlag({ code, compact = false }) {
           <Star x="38" y="25" size="4" fill="#CC142B" />
         </FlagFrame>
       )
+    case 'DE':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="48" height="10.67" y="0" fill="#000000" />
+          <rect width="48" height="10.67" y="10.67" fill="#DD0000" />
+          <rect width="48" height="10.66" y="21.34" fill="#FFCC00" />
+        </FlagFrame>
+      )
+    case 'AT':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="48" height="10.67" y="0" fill="#ED2939" />
+          <rect width="48" height="10.67" y="10.67" fill="#FFFFFF" />
+          <rect width="48" height="10.66" y="21.34" fill="#ED2939" />
+        </FlagFrame>
+      )
+    case 'US':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="48" height="32" fill="#FFFFFF" />
+          <rect width="48" height="2.46" y="0" fill="#B22234" />
+          <rect width="48" height="2.46" y="4.92" fill="#B22234" />
+          <rect width="48" height="2.46" y="9.84" fill="#B22234" />
+          <rect width="48" height="2.46" y="14.76" fill="#B22234" />
+          <rect width="48" height="2.46" y="19.68" fill="#B22234" />
+          <rect width="48" height="2.46" y="24.6" fill="#B22234" />
+          <rect width="48" height="2.46" y="29.52" fill="#B22234" />
+          <rect width="21" height="17.2" fill="#3C3B6E" />
+          <Star x="4" y="4" size="3" />
+          <Star x="10" y="4" size="3" />
+          <Star x="16" y="4" size="3" />
+          <Star x="7" y="8" size="3" />
+          <Star x="13" y="8" size="3" />
+          <Star x="4" y="13" size="3" />
+          <Star x="10" y="13" size="3" />
+          <Star x="16" y="13" size="3" />
+        </FlagFrame>
+      )
+    case 'PT':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="18" height="32" x="0" fill="#006600" />
+          <rect width="30" height="32" x="18" fill="#FF0000" />
+          <circle cx="18" cy="16" r="6" fill="#FFD100" />
+          <rect width="8" height="10" x="14" y="11" rx="1" fill="#FFFFFF" stroke="#003399" strokeWidth="1" />
+        </FlagFrame>
+      )
+    case 'ZA':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="48" height="32" fill="#E03C31" />
+          <rect width="48" height="16" y="16" fill="#001489" />
+          <path d="M0 0 L24 16 L48 16 L48 16 L24 16 L0 32" fill="none" stroke="#FFFFFF" strokeWidth="9" />
+          <path d="M0 0 L24 16 L48 16 L48 16 L24 16 L0 32" fill="none" stroke="#007749" strokeWidth="5" />
+          <polygon points="0,0 16,16 0,32" fill="#FFB81C" />
+          <polygon points="0,3 12,16 0,29" fill="#000000" />
+        </FlagFrame>
+      )
     case 'OTHER':
       return (
         <FlagFrame className={sizeClass}>

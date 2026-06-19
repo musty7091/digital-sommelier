@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import Products from './components/Products';
-import ExcelUpload from './components/ExcelUpload'; // ExcelUpload'ı dahil ettik
-import KioskSettings from './components/KioskSettings';
+import ExcelUpload from './components/ExcelUpload';
+import Reports from './components/Reports'; // RAPORLAR SAYFASI BURAYA DAHİL EDİLDİ
 
 export default function AdminApp() {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
     {
@@ -36,6 +37,15 @@ export default function AdminApp() {
       )
     },
     {
+      id: 'reports',
+      label: 'Raporlar',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      )
+    },
+    {
       id: 'users',
       label: 'Kullanıcı Yönetimi',
       icon: (
@@ -51,15 +61,6 @@ export default function AdminApp() {
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      )
-    },
-    {
-      id: 'reports',
-      label: 'Raporlar',
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       )
     },
@@ -93,13 +94,32 @@ export default function AdminApp() {
   ];
 
   return (
-    <div className="flex h-screen bg-ink-950 text-cream-100 font-sans">
+    <div className="flex h-screen bg-ink-950 text-cream-100 font-sans overflow-hidden">
       
+      {/* Mobil Menü Arkaplan Karartması (Overlay) */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 z-40 md:hidden" 
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Sol Menü (Sidebar) */}
-      <div className="w-72 bg-charcoal-800 border-r border-charcoal-700 flex flex-col shadow-2xl z-10">
-        <div className="p-6 border-b border-charcoal-700">
-          <h1 className="text-2xl font-serif font-bold text-gold-500 tracking-wide">Ertan Dijital Sömelye</h1>
-          <p className="text-sm text-cream-200 mt-2 opacity-80">Yönetim Paneli</p>
+      <div className={`fixed inset-y-0 left-0 z-50 w-72 bg-charcoal-800 border-r border-charcoal-700 flex flex-col shadow-2xl transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="p-6 border-b border-charcoal-700 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-serif font-bold text-gold-500 tracking-wide">Ertan Dijital Sömelye</h1>
+            <p className="text-sm text-cream-200 mt-2 opacity-80">Yönetim Paneli</p>
+          </div>
+          {/* Mobil için menü kapatma butonu */}
+          <button 
+            className="md:hidden text-cream-200 hover:text-gold-500"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
         
         <nav className="flex-1 p-4 space-y-1.5 overflow-y-auto">
@@ -110,7 +130,10 @@ export default function AdminApp() {
           {menuItems.map((item) => (
             <button 
               key={item.id}
-              onClick={() => setActiveTab(item.id)}
+              onClick={() => {
+                setActiveTab(item.id);
+                setIsMobileMenuOpen(false); 
+              }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-200 ${
                 activeTab === item.id 
                   ? 'bg-wine-700 text-cream-100 shadow-md border-l-4 border-gold-500' 
@@ -136,39 +159,51 @@ export default function AdminApp() {
       </div>
 
       {/* Ana İçerik Alanı */}
-      <div className="flex-1 flex flex-col overflow-hidden relative">
+      <div className="flex-1 flex flex-col overflow-hidden relative w-full">
         
         {/* Üst Bilgi Çubuğu (Topbar) */}
-        <header className="h-20 bg-charcoal-800/80 backdrop-blur-sm border-b border-charcoal-700 flex items-center justify-between px-10 z-0">
-          <h2 className="text-2xl font-serif text-cream-100 tracking-wide">
-            {menuItems.find(m => m.id === activeTab)?.label}
-          </h2>
-          <div className="flex items-center gap-4">
-            <div className="text-right">
+        <header className="h-16 md:h-20 bg-charcoal-800/80 backdrop-blur-sm border-b border-charcoal-700 flex items-center justify-between px-4 md:px-10 z-0">
+          <div className="flex items-center gap-3">
+            <button 
+              className="md:hidden text-cream-100 hover:text-gold-500 p-1"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <h2 className="text-xl md:text-2xl font-serif text-cream-100 tracking-wide truncate">
+              {menuItems.find(m => m.id === activeTab)?.label}
+            </h2>
+          </div>
+          <div className="flex items-center gap-3 md:gap-4 shrink-0">
+            <div className="text-right hidden sm:block">
               <p className="text-sm font-medium text-cream-100">Hoş Geldiniz, Yönetici</p>
               <p className="text-xs text-gold-500">Tam Yetki</p>
             </div>
-            <div className="h-10 w-10 rounded-full bg-wine-800 border-2 border-gold-500 flex items-center justify-center text-cream-100 font-serif font-bold">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-wine-800 border-2 border-gold-500 flex items-center justify-center text-cream-100 font-serif font-bold shrink-0 text-sm md:text-base">
               Y
             </div>
           </div>
         </header>
 
         {/* Sayfa İçeriği */}
-        <main className="flex-1 overflow-y-auto p-10 bg-ink-950">
+        <main className="flex-1 overflow-y-auto p-4 md:p-10 bg-ink-950">
           
+          {/* EKRANDA GÖSTERİLECEK SAYFALAR */}
           {activeTab === 'dashboard' && <Dashboard setActiveTab={setActiveTab} />}
           {activeTab === 'products' && <Products />}
           {activeTab === 'import' && <ExcelUpload />}
-          {activeTab === 'settings' && <KioskSettings />}
+          {activeTab === 'reports' && <Reports />}
           
-          {activeTab !== 'dashboard' && activeTab !== 'products' && activeTab !== 'import' && activeTab !== 'settings' && (
-            <div className="flex flex-col items-center justify-center h-96 border-2 border-dashed border-charcoal-700 rounded-xl text-cream-200 bg-charcoal-800/30">
-              <svg className="w-16 h-16 mb-4 text-wine-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          {/* YAPIM AŞAMASINDAKİ DİĞER SAYFALAR İÇİN UYARI */}
+          {activeTab !== 'dashboard' && activeTab !== 'products' && activeTab !== 'import' && activeTab !== 'reports' && (
+            <div className="flex flex-col items-center justify-center h-64 md:h-96 border-2 border-dashed border-charcoal-700 rounded-xl text-cream-200 bg-charcoal-800/30 text-center p-4">
+              <svg className="w-12 h-12 md:w-16 md:h-16 mb-4 text-wine-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
-              <p className="text-lg font-serif">Bu modül yapım aşamasındadır.</p>
-              <p className="text-sm opacity-60 mt-1">Sıradaki adımlarda bu ekranı kodlayacağız.</p>
+              <p className="text-base md:text-lg font-serif">Bu modül yapım aşamasındadır.</p>
+              <p className="text-xs md:text-sm opacity-60 mt-1">Sıradaki adımlarda bu ekranı kodlayacağız.</p>
             </div>
           )}
 
