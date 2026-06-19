@@ -1,58 +1,81 @@
 import { useFlow } from '../state/FlowContext'
 import { useLanguage } from '../../i18n/LanguageContext'
+import AtmosphereBackground from '../components/AtmosphereBackground'
 
 export default function WelcomeScreen() {
   const { startFlow, quickRecommend } = useFlow()
   const { lang, setLang, t } = useLanguage()
+
+  const toggleBtn = (code, label) => (
+    <button
+      type="button"
+      onClick={() => setLang(code)}
+      aria-pressed={lang === code}
+      className={`rounded-full px-6 py-2 text-sm font-medium tracking-wide transition ${
+        lang === code ? 'bg-wine-800 text-cream-100' : 'text-cream-200/60 hover:text-cream-100'
+      }`}
+    >
+      {label}
+    </button>
+  )
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center px-8 text-center">
-      {/* Dil seçimi — karşılama ekranında her zaman görünür */}
-      <div className="mb-12 inline-flex rounded-full border border-charcoal-700 p-1">
-        <button
-          type="button"
-          onClick={() => setLang('tr')}
-          aria-pressed={lang === 'tr'}
-          className={`rounded-full px-6 py-2 text-sm font-medium tracking-wide transition ${
-            lang === 'tr' ? 'bg-wine-800 text-cream-100' : 'text-cream-200/60 hover:text-cream-100'
-          }`}
-        >
-          Türkçe
-        </button>
-        <button
-          type="button"
-          onClick={() => setLang('en')}
-          aria-pressed={lang === 'en'}
-          className={`rounded-full px-6 py-2 text-sm font-medium tracking-wide transition ${
-            lang === 'en' ? 'bg-wine-800 text-cream-100' : 'text-cream-200/60 hover:text-cream-100'
-          }`}
-        >
-          English
-        </button>
-      </div>
+    <main className="relative flex h-screen flex-col items-center justify-center overflow-hidden px-8 text-center">
+      <AtmosphereBackground />
 
-      <p className="mb-6 text-sm uppercase tracking-[0.3em] text-gold-500">{t('brand')}</p>
-
-      <h1 className="font-serif text-6xl font-semibold leading-none text-cream-100 md:text-7xl">
-        {t('title')}
-      </h1>
-
-      <p className="mt-6 max-w-xl text-lg text-cream-200">{t('tagline')}</p>
-
-      <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-        <button
-          type="button"
-          onClick={startFlow}
-          className="rounded-full border border-gold-500/60 bg-wine-800 px-10 py-4 text-lg font-medium text-cream-100 transition hover:bg-wine-700"
+      <div className="relative z-10 flex flex-col items-center">
+        <div
+          className="ds-fade-up mb-12 inline-flex rounded-full border border-charcoal-700/80 bg-ink-950/40 p-1 backdrop-blur"
+          style={{ animationDelay: '0.1s' }}
         >
-          {t('start')}
-        </button>
-        <button
-          type="button"
-          onClick={quickRecommend}
-          className="rounded-full border border-gold-500/40 px-10 py-4 text-lg font-medium text-gold-400 transition hover:border-gold-500"
+          {toggleBtn('tr', 'Türkçe')}
+          {toggleBtn('en', 'English')}
+        </div>
+
+        <p
+          className="ds-fade-up mb-6 text-sm uppercase tracking-[0.45em] text-gold-500"
+          style={{ animationDelay: '0.25s' }}
         >
-          {t('quick')}
-        </button>
+          {t('brand')}
+        </p>
+
+        <div className="ds-fade-up" style={{ animationDelay: '0.35s' }}>
+          <h1 className="ds-shimmer bg-gradient-to-r from-gold-500 via-cream-100 to-gold-500 bg-clip-text font-serif text-7xl font-semibold leading-none text-transparent md:text-8xl">
+            {t('title')}
+          </h1>
+        </div>
+
+        <div
+          className="ds-fade-up mt-8 h-px w-44 bg-gradient-to-r from-transparent via-gold-500/70 to-transparent"
+          style={{ animationDelay: '0.5s' }}
+        />
+
+        <p
+          className="ds-fade-up mt-8 max-w-xl text-lg text-cream-200/90"
+          style={{ animationDelay: '0.6s' }}
+        >
+          {t('tagline')}
+        </p>
+
+        <div
+          className="ds-fade-up mt-12 flex flex-wrap items-center justify-center gap-4"
+          style={{ animationDelay: '0.75s' }}
+        >
+          <button
+            type="button"
+            onClick={startFlow}
+            className="rounded-full border border-gold-500/60 bg-wine-800 px-12 py-4 text-lg font-medium text-cream-100 shadow-[0_0_30px_rgba(122,36,52,0.5)] transition hover:bg-wine-700 hover:shadow-[0_0_45px_rgba(200,169,81,0.35)]"
+          >
+            {t('start')}
+          </button>
+          <button
+            type="button"
+            onClick={quickRecommend}
+            className="rounded-full border border-gold-500/40 px-12 py-4 text-lg font-medium text-gold-400 transition hover:border-gold-500"
+          >
+            {t('quick')}
+          </button>
+        </div>
       </div>
     </main>
   )

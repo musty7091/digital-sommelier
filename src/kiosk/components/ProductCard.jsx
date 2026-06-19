@@ -3,7 +3,7 @@ import { COUNTRY_LABELS } from '../../types/product.schema'
 import StockBadge from './StockBadge'
 import WineBottle from './WineBottle'
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, onClick }) {
   const { t, lang } = useLanguage()
   const shelfShort =
     lang === 'en'
@@ -13,7 +13,12 @@ export default function ProductCard({ product }) {
 
   if (product._big) {
     return (
-      <div className="relative flex h-full flex-col gap-5 rounded-3xl border border-gold-500/30 bg-charcoal-800/60 p-6 md:flex-row md:p-8">
+      <div
+        onClick={onClick}
+        role="button"
+        tabIndex={0}
+        className="relative flex cursor-pointer flex-col gap-5 rounded-3xl border border-gold-500/30 bg-charcoal-800/60 p-6 shadow-[0_22px_60px_rgba(0,0,0,0.28)] transition hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-[0_28px_80px_rgba(0,0,0,0.42)] md:flex-row md:p-8"
+      >
         {product._pick && (
           <span className="absolute -top-3 left-6 rounded-full bg-gold-500 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-ink-950">
             {t('pickLabel')}
@@ -21,9 +26,9 @@ export default function ProductCard({ product }) {
         )}
         <div className="flex shrink-0 items-center justify-center">
           {product.image ? (
-            <img src={product.image} alt={product.name} className="h-52 w-auto object-contain" />
+            <img src={product.image} alt={product.name} className="h-64 w-auto max-w-full object-contain xl:h-80" />
           ) : (
-            <WineBottle color={product.color} className="h-52 w-auto" />
+            <WineBottle color={product.color} className="h-64 w-auto xl:h-80" />
           )}
         </div>
         <div className="flex flex-col">
@@ -54,7 +59,12 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <div className="flex flex-col items-center rounded-2xl border border-charcoal-700 bg-charcoal-800/40 p-4 text-center">
+    <div
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      className="flex cursor-pointer flex-col items-center rounded-2xl border border-charcoal-700 bg-charcoal-800/40 p-4 text-center shadow-[0_14px_40px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-gold-500/50 hover:shadow-[0_20px_55px_rgba(0,0,0,0.38)]"
+    >
       {product.image ? (
         <img src={product.image} alt={product.name} className="h-28 w-auto object-contain" />
       ) : (

@@ -12,10 +12,11 @@ export function FlowProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const [phase, setPhase] = useState('welcome') // welcome | flow | results
+  const [phase, setPhase] = useState('welcome') // welcome | flow | results | detail
   const [stepIndex, setStepIndex] = useState(0)
   const [selections, setSelections] = useState(emptySelections)
   const [results, setResults] = useState([])
+  const [detailProduct, setDetailProduct] = useState(null)
 
   useEffect(() => {
     let alive = true
@@ -37,12 +38,38 @@ export function FlowProvider({ children }) {
     }
   }, [])
 
+  // Otomatik sıfırlama: hareketsizlik sonrası başa dön (doküman 6.13)
+  useEffect(() => {
+    if (phase === 'welcome') return
+    const ms = (settings?.resetTimeoutSeconds || 120) * 1000
+    let timer
+    const doReset = () => {
+      setSelections(emptySelections)
+      setResults([])
+      setStepIndex(0)
+      setDetailProduct(null)
+      setPhase('welcome')
+    }
+    const arm = () => {
+      clearTimeout(timer)
+      timer = setTimeout(doReset, ms)
+    }
+    arm()
+    const events = ['pointerdown', 'keydown', 'touchstart']
+    events.forEach((e) => window.addEventListener(e, arm))
+    return () => {
+      clearTimeout(timer)
+      events.forEach((e) => window.removeEventListener(e, arm))
+    }
+  }, [phase, settings])
+
   const steps = getSteps(settings)
 
   const reset = () => {
     setSelections(emptySelections)
     setResults([])
     setStepIndex(0)
+    setDetailProduct(null)
     setPhase('welcome')
   }
   const startFlow = () => {
@@ -60,7 +87,6 @@ export function FlowProvider({ children }) {
       setPhase('results')
     }
   }
-  // Herhangi bir adımda erken bitirme
   const finishNow = () => {
     setResults(recommend(products, selections))
     setPhase('results')
@@ -74,6 +100,14 @@ export function FlowProvider({ children }) {
     setResults(recommend(products, emptySelections, { quick: true }))
     setPhase('results')
   }
+  const openDetail = (p) => {
+    setDetailProduct(p)
+    setPhase('detail')
+  }
+  const closeDetail = () => {
+    setDetailProduct(null)
+    setPhase('results')
+  }
 
   const value = {
     products,
@@ -85,12 +119,15 @@ export function FlowProvider({ children }) {
     steps,
     selections,
     results,
+    detailProduct,
     reset,
     startFlow,
     chooseOption,
     finishNow,
     goBackStep,
     quickRecommend,
+    openDetail,
+    closeDetail,
   }
   return <FlowContext.Provider value={value}>{children}</FlowContext.Provider>
 }

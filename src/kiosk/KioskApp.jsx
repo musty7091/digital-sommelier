@@ -3,6 +3,7 @@ import { FlowProvider, useFlow } from './state/FlowContext'
 import WelcomeScreen from './screens/WelcomeScreen'
 import SelectionStep from './screens/SelectionStep'
 import ResultScreen from './screens/ResultScreen'
+import DetailScreen from './screens/DetailScreen'
 
 function Centered({ children }) {
   return (
@@ -20,6 +21,7 @@ function KioskScreens() {
   if (loading) return <Centered>{t('loading')}</Centered>
   if (phase === 'flow') return <SelectionStep />
   if (phase === 'results') return <ResultScreen />
+  if (phase === 'detail') return <DetailScreen />
   return <WelcomeScreen />
 }
 

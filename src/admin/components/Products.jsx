@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs, doc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import { compressImageToDataUrl, dataUrlBytes } from '../../shared/imageCompress';
 import {
   COLORS,
   COLOR_LABELS,
@@ -49,6 +50,7 @@ const emptyForm = {
   tannin: 'medium',
   active: true,
   sommelierPick: false,
+  image: '',
 };
 
 export default function Products() {
@@ -63,6 +65,7 @@ export default function Products() {
   const [editingProduct, setEditingProduct] = useState(null); // EN açıklamaları korumak için
 
   const [formData, setFormData] = useState(emptyForm);
+  const [processingImage, setProcessingImage] = useState(false);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -111,6 +114,34 @@ export default function Products() {
     });
   };
 
+  const handleImageUpload = async (e) => {
+    const file = e.target.files?.[0];
+    e.target.value = ''; // aynı dosyayı tekrar seçebilmek için
+    if (!file) return;
+    if (!file.type.startsWith('image/')) {
+      alert('Lütfen bir resim dosyası seçin.');
+      return;
+    }
+    if (file.size > 15 * 1024 * 1024) {
+      alert('Resim 15MB’dan küçük olmalıdır.');
+      return;
+    }
+    try {
+      setProcessingImage(true);
+      const dataUrl = await compressImageToDataUrl(file);
+      setFormData((prev) => ({ ...prev, image: dataUrl }));
+    } catch (error) {
+      console.error('Resim işlenirken hata oluştu:', error);
+      alert('Resim işlenemedi. Lütfen tekrar deneyin.');
+    } finally {
+      setProcessingImage(false);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setFormData((prev) => ({ ...prev, image: '' }));
+  };
+
   const handleAddNew = () => {
     setEditingId(null);
     setEditingProduct(null);
@@ -143,6 +174,7 @@ export default function Products() {
       tannin: product.tannin || 'medium',
       active: product.active !== false,
       sommelierPick: product.sommelierPick === true,
+      image: product.image || '',
     });
     setIsModalOpen(true);
   };
@@ -181,6 +213,7 @@ export default function Products() {
         active: formData.active,
         sommelierPick: formData.sommelierPick,
         usagePurposes: formData.usagePurposes,
+        image: formData.image || '',
         body: formData.body,
         sweetness: formData.sweetness,
         acidity: formData.acidity,
@@ -208,7 +241,7 @@ export default function Products() {
         // Yeni ürün: barkod = doküman kimliği (seed/kiosk ile aynı omurga)
         await setDoc(
           doc(db, 'products', payload.barcode),
-          { ...payload, priorityScore: 0, featured: false, image: '', createdAt: new Date().toISOString() },
+          { ...payload, priorityScore: 0, featured: false, createdAt: new Date().toISOString() },
           { merge: true },
         );
       }
@@ -383,6 +416,49 @@ export default function Products() {
                 {/* BÖLÜM 1: Temel Bilgiler */}
                 <div>
                   <h4 className="text-lg font-serif text-cream-100 border-b border-charcoal-700 pb-2 mb-4">Temel Bilgiler</h4>
+
+                  {/* Ürün görseli */}
+                  <div className="mb-6 flex items-center gap-5">
+                    <div className="h-28 w-28 flex-none overflow-hidden rounded-lg border border-charcoal-600 bg-ink-950 flex items-center justify-center">
+                      {formData.image ? (
+                        <img src={formData.image} alt="Ürün görseli" className="h-full w-full object-contain" />
+                      ) : (
+                        <svg className="w-10 h-10 text-charcoal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      )}
+                    </div>
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-cream-200">Ürün Görseli</label>
+                      <div className="flex items-center gap-3">
+                        <label className={`inline-flex cursor-pointer items-center gap-2 rounded-md border border-gold-500/50 bg-wine-800/40 px-4 py-2 text-sm font-medium text-cream-100 transition hover:bg-wine-800/70 ${processingImage ? 'pointer-events-none opacity-60' : ''}`}>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5-5 5 5M12 5v12" />
+                          </svg>
+                          {formData.image ? 'Değiştir' : 'Resim Seç'}
+                          <input type="file" accept="image/*" onChange={handleImageUpload} disabled={processingImage} className="hidden" />
+                        </label>
+                        {formData.image && !processingImage && (
+                          <button type="button" onClick={handleRemoveImage} className="text-sm text-cream-200/60 transition hover:text-red-400">
+                            Kaldır
+                          </button>
+                        )}
+                      </div>
+                      {processingImage ? (
+                        <p className="flex items-center gap-2 text-xs text-cream-200/60">
+                          <span className="inline-block w-3 h-3 border-2 border-charcoal-600 border-t-gold-500 rounded-full animate-spin"></span>
+                          Resim işleniyor…
+                        </p>
+                      ) : formData.image ? (
+                        <p className="text-xs text-cream-200/50">
+                          Gömülü görsel · ~{Math.round(dataUrlBytes(formData.image) / 1024)} KB
+                        </p>
+                      ) : (
+                        <p className="text-xs text-cream-200/50">PNG, JPG veya WEBP · otomatik küçültülür</p>
+                      )}
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-cream-200">Barkod *</label>
