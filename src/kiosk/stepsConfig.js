@@ -8,7 +8,8 @@ export function getSteps(settings) {
   return [
     {
       key: 'color',
-      options: [...settings.colors.map((c) => ({ value: c.key, label: c.label })), ANY],
+      // Birinci adım (Renk seçimi) için "Farketmez" (ANY) seçeneği kaldırıldı. Sadece 4 ana renk gelecek.
+      options: [...settings.colors.map((c) => ({ value: c.key, label: c.label }))],
     },
     {
       key: 'priceRange',

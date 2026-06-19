@@ -11,71 +11,67 @@ export default function WelcomeScreen() {
       type="button"
       onClick={() => setLang(code)}
       aria-pressed={lang === code}
-      className={`rounded-full px-6 py-2 text-sm font-medium tracking-wide transition ${
-        lang === code ? 'bg-wine-800 text-cream-100' : 'text-cream-200/60 hover:text-cream-100'
+      className={`rounded-full px-6 py-3 text-sm md:text-base font-medium tracking-wide transition-all ${
+        lang === code ? 'bg-wine-800 text-cream-100 shadow-lg' : 'text-cream-200/60 hover:text-cream-100 hover:bg-white/5'
       }`}
     >
       {label}
     </button>
   )
 
+  // Dil dosyasından gelen başlıkları kontrol edip en mantıklı olanı devasa puntolarla yazdırıyoruz
+  const mainText = t('title') && t('title').trim() !== '' ? t('title') : t('tagline');
+  const subText = t('title') && t('title').trim() !== '' ? t('tagline') : '';
+
   return (
-    <main className="relative flex h-screen flex-col items-center justify-center overflow-hidden px-8 text-center">
+    <main className="relative flex h-[100dvh] w-full flex-col items-center justify-center overflow-hidden px-6 md:px-12 py-10 text-center">
       <AtmosphereBackground />
 
-      <div className="relative z-10 flex flex-col items-center">
-        <div
-          className="ds-fade-up mb-12 inline-flex rounded-full border border-charcoal-700/80 bg-ink-950/40 p-1 backdrop-blur"
-          style={{ animationDelay: '0.1s' }}
-        >
-          {toggleBtn('tr', 'Türkçe')}
-          {toggleBtn('en', 'English')}
-        </div>
+      {/* Dil Seçimi - Ekranın En Üstünde Sabit */}
+      <div className="absolute top-8 md:top-12 z-20 flex gap-2 rounded-full border border-charcoal-700/80 bg-ink-950/60 p-1.5 backdrop-blur-md ds-fade-up">
+        {toggleBtn('tr', 'Türkçe')}
+        {toggleBtn('en', 'English')}
+      </div>
 
-        <p
-          className="ds-fade-up mb-6 text-sm uppercase tracking-[0.45em] text-gold-500"
-          style={{ animationDelay: '0.25s' }}
-        >
-          {t('brand')}
-        </p>
+      {/* Ana İçerik */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-6xl mx-auto h-full gap-10 md:gap-16">
+        
+        <div className="flex flex-col items-center justify-center w-full mt-10 md:mt-0">
+          <p className="ds-fade-up mb-6 md:mb-10 text-sm md:text-xl uppercase tracking-[0.4em] md:tracking-[0.6em] text-gold-500 font-medium" style={{ animationDelay: '0.2s' }}>
+            {t('brand')}
+          </p>
 
-        <div className="ds-fade-up" style={{ animationDelay: '0.35s' }}>
-          <h1 className="ds-shimmer bg-gradient-to-r from-gold-500 via-cream-100 to-gold-500 bg-clip-text font-serif text-7xl font-semibold leading-none text-transparent md:text-8xl">
-            {t('title')}
+          <h1 className="ds-fade-up font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight text-cream-100 drop-shadow-2xl px-4" style={{ animationDelay: '0.3s' }}>
+            {mainText}
           </h1>
+
+          {subText && (
+             <p className="ds-fade-up mt-8 max-w-4xl text-xl md:text-3xl text-cream-200/90 px-4 font-light leading-relaxed" style={{ animationDelay: '0.4s' }}>
+              {subText}
+            </p>
+          )}
+          
+          <div className="ds-fade-up mt-10 md:mt-14 h-1 w-32 md:w-64 rounded-full bg-gradient-to-r from-transparent via-gold-500/70 to-transparent" style={{ animationDelay: '0.5s' }} />
         </div>
 
-        <div
-          className="ds-fade-up mt-8 h-px w-44 bg-gradient-to-r from-transparent via-gold-500/70 to-transparent"
-          style={{ animationDelay: '0.5s' }}
-        />
-
-        <p
-          className="ds-fade-up mt-8 max-w-xl text-lg text-cream-200/90"
-          style={{ animationDelay: '0.6s' }}
-        >
-          {t('tagline')}
-        </p>
-
-        <div
-          className="ds-fade-up mt-12 flex flex-wrap items-center justify-center gap-4"
-          style={{ animationDelay: '0.75s' }}
-        >
+        {/* Butonlar - Alt Kısımda Büyük ve Belirgin */}
+        <div className="ds-fade-up mt-4 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-6" style={{ animationDelay: '0.6s' }}>
           <button
             type="button"
             onClick={startFlow}
-            className="rounded-full border border-gold-500/60 bg-wine-800 px-12 py-4 text-lg font-medium text-cream-100 shadow-[0_0_30px_rgba(122,36,52,0.5)] transition hover:bg-wine-700 hover:shadow-[0_0_45px_rgba(200,169,81,0.35)]"
+            className="w-full sm:w-auto rounded-full border border-gold-500/60 bg-wine-800 px-10 md:px-16 py-5 md:py-6 text-xl md:text-2xl lg:text-3xl font-medium text-cream-100 shadow-[0_0_40px_rgba(122,36,52,0.6)] transition-all hover:bg-wine-700 hover:shadow-[0_0_60px_rgba(200,169,81,0.5)] hover:-translate-y-2"
           >
             {t('start')}
           </button>
           <button
             type="button"
             onClick={quickRecommend}
-            className="rounded-full border border-gold-500/40 px-12 py-4 text-lg font-medium text-gold-400 transition hover:border-gold-500"
+            className="w-full sm:w-auto rounded-full border-2 border-gold-500/40 px-10 md:px-16 py-5 md:py-6 text-xl md:text-2xl lg:text-3xl font-medium text-gold-400 transition-all hover:border-gold-500 hover:bg-gold-500/15 hover:-translate-y-2"
           >
             {t('quick')}
           </button>
         </div>
+        
       </div>
     </main>
   )

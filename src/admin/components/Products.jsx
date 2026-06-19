@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { collection, getDocs, doc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import { compressImageToDataUrl, dataUrlBytes } from '../../shared/imageCompress';
+import * as XLSX from 'xlsx';
 import {
   COLORS,
   COLOR_LABELS,
@@ -258,6 +259,51 @@ export default function Products() {
     }
   };
 
+  // Yeni Eklenen "Excel'e Aktar" Fonksiyonu
+  const handleExportExcel = () => {
+    if (products.length === 0) {
+      alert("Dışa aktarılacak ürün bulunamadı.");
+      return;
+    }
+
+    const dataToExport = products.map((p) => {
+      // Veritabanındaki dil objelerini ve ayarları Türkçe Excel formatına güvenle çeviren yapı
+      const getTr = (val) => typeof val === 'object' ? (val?.tr || '') : (val || '');
+      const getLevelTr = (val) => LEVELS.includes(val) ? LEVEL_LABELS[val]?.tr : 'Orta';
+
+      return {
+        Barkod: p.barcode || '',
+        UrunAdi: p.name || '',
+        Marka: p.brand || '',
+        Fiyat: p.price || 0,
+        Stok: p.stock || 0,
+        Renk: colorLabelTr(p.color),
+        Blok: p.block || '',
+        Raf: p.shelf || '',
+        Ulke: COUNTRY_LABELS[p.country] ? COUNTRY_LABELS[p.country].tr : (p.country || ''),
+        Bolge: p.region || '',
+        UzumTuru: p.grape || '',
+        KisaAciklama: getTr(p.shortDescription),
+        TadimNotlari: getTr(p.tasteNotes),
+        YemekUyumu: getTr(p.foodPairing),
+        KullanimAmaci: Array.isArray(p.usagePurposes) 
+          ? p.usagePurposes.map(k => USAGE_PURPOSE_LABELS[k]?.tr || k).join(', ') 
+          : '',
+        Govde: getLevelTr(p.body),
+        Tatlilik: getLevelTr(p.sweetness),
+        Asidite: getLevelTr(p.acidity),
+        Tanen: getLevelTr(p.tannin),
+        Aktif: checkIsActive(p) ? 'Evet' : 'Hayır',
+        SomelyeTavsiyesi: checkIsSommelier(p) ? 'Evet' : 'Hayır'
+      };
+    });
+
+    const worksheet = XLSX.utils.json_to_sheet(dataToExport);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Saraplar");
+    XLSX.writeFile(workbook, "Ertan_Mahzen_Guncel.xlsx");
+  };
+
   if (loading && products.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-full space-y-4">
@@ -270,8 +316,8 @@ export default function Products() {
   return (
     <div className="space-y-6 max-w-7xl mx-auto relative">
 
-      {/* Üst Kısım: Arama Çubuğu ve Yeni Ürün Ekle Butonu */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      {/* Üst Kısım: Arama Çubuğu ve Butonlar (Excel + Yeni Ekle) */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex items-center gap-3 bg-charcoal-800 p-2 rounded-lg border border-charcoal-700 w-full sm:w-96 shadow-inner">
           <svg className="w-5 h-5 text-cream-200 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -285,15 +331,28 @@ export default function Products() {
           />
         </div>
 
-        <button
-          onClick={handleAddNew}
-          className="px-6 py-3 bg-wine-700 hover:bg-wine-600 text-cream-100 font-medium rounded-md transition-colors shadow-md flex items-center gap-2 whitespace-nowrap"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-          </svg>
-          Yeni Ürün Ekle
-        </button>
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          {/* Yeni Eklenen "Excel'e Aktar" Butonu */}
+          <button
+            onClick={handleExportExcel}
+            className="px-6 py-3 bg-charcoal-700 hover:bg-gold-500 hover:text-ink-950 text-cream-100 font-medium rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Excel'e Aktar
+          </button>
+
+          <button
+            onClick={handleAddNew}
+            className="px-6 py-3 bg-wine-700 hover:bg-wine-600 text-cream-100 font-medium rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+            Yeni Ürün Ekle
+          </button>
+        </div>
       </div>
 
       {/* Şarap Listesi Tablosu */}
@@ -633,29 +692,15 @@ export default function Products() {
 
               </form>
             </div>
-
             <div className="p-6 border-t border-charcoal-700 bg-charcoal-800/50 flex justify-end gap-4 shrink-0">
-              <button
-                type="button"
-                onClick={() => setIsModalOpen(false)}
-                className="px-6 py-2.5 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-medium rounded-md transition-colors"
-              >
-                İptal Et
-              </button>
-              <button
-                form="addProductForm"
-                type="submit"
-                disabled={isSubmitting}
-                className="px-8 py-2.5 bg-gold-500 hover:bg-gold-400 text-ink-950 font-bold rounded-md transition-colors shadow-md flex items-center gap-2 disabled:opacity-50"
-              >
-                {isSubmitting ? 'Kaydediliyor...' : (editingId ? 'Güncellemeleri Kaydet' : 'Tüm Detaylarıyla Kaydet')}
-              </button>
+                <button type="button" onClick={() => setIsModalOpen(false)} className="px-6 py-2.5 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-medium rounded-md transition-colors">İptal Et</button>
+                <button type="submit" form="addProductForm" disabled={isSubmitting} className="px-8 py-2.5 bg-gold-500 hover:bg-gold-400 text-ink-950 font-bold rounded-md transition-colors shadow-md disabled:opacity-50">
+                  {isSubmitting ? 'Kaydediliyor...' : 'Kaydet'}
+                </button>
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 }

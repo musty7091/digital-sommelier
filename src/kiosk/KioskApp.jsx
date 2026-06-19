@@ -7,7 +7,7 @@ import DetailScreen from './screens/DetailScreen'
 
 function Centered({ children }) {
   return (
-    <main className="flex min-h-screen items-center justify-center px-8 text-center text-lg text-cream-200">
+    <main className="flex min-h-screen items-center justify-center px-4 md:px-8 text-center text-base md:text-lg text-cream-200">
       {children}
     </main>
   )

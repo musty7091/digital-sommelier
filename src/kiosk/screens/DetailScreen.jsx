@@ -1,118 +1,136 @@
 import { useFlow } from '../state/FlowContext'
 import { useLanguage } from '../../i18n/LanguageContext'
-import { COLOR_LABELS, COUNTRY_LABELS, LEVEL_LABELS } from '../../types/product.schema'
-import StockBadge from '../components/StockBadge'
+import { COUNTRY_LABELS, LEVEL_LABELS } from '../../types/product.schema'
 import WineBottle from '../components/WineBottle'
 import BackButton from '../components/BackButton'
 
-function ProfileChip({ label, value }) {
-  return (
-    <div className="rounded-xl border border-charcoal-700 bg-charcoal-800/50 px-4 py-3 text-center">
-      <p className="text-xs uppercase tracking-wide text-cream-200/50">{label}</p>
-      <p className="mt-1 text-sm font-medium text-cream-100">{value}</p>
-    </div>
-  )
-}
-
 export default function DetailScreen() {
-  const { detailProduct: p, closeDetail } = useFlow()
-  const { t, tl, lang } = useLanguage()
-  if (!p) return null
+  const { detailProduct, closeDetail } = useFlow()
+  const { t, lang } = useLanguage()
 
+  if (!detailProduct) return null
+
+  const p = detailProduct
   const country = COUNTRY_LABELS[p.country] ? COUNTRY_LABELS[p.country][lang] : ''
-  const color = COLOR_LABELS[p.color] ? COLOR_LABELS[p.color][lang] : ''
-  const lvl = (v) => (v && LEVEL_LABELS[v] ? LEVEL_LABELS[v][lang] : '—')
-  const shelfSentence =
-    lang === 'en'
-      ? `You can find this at Block ${p.block}, Shelf ${p.shelf}.`
-      : `Bu ürünü ${p.block} Blok ${p.shelf}. rafta bulabilirsiniz.`
-  const labels =
-    lang === 'en'
-      ? { body: 'Body', sweetness: 'Sweetness', acidity: 'Acidity', tannin: 'Tannin', notes: 'Notes', pairs: 'Pairs with', grape: 'Grape', colour: 'Colour' }
-      : { body: 'Gövde', sweetness: 'Tatlılık', acidity: 'Asidite', tannin: 'Tanen', notes: 'Tat notları', pairs: 'Yemek uyumu', grape: 'Üzüm', colour: 'Renk' }
+  const shelfShort = lang === 'en'
+    ? `Block ${p.block}, Shelf ${p.shelf}`
+    : `${p.block} Blok ${p.shelf}. raf`
+
+  const renderLevel = (labelKey, value) => {
+    if (!value) return null;
+    return (
+      <div className="flex flex-col items-center rounded-lg border border-charcoal-700/50 bg-charcoal-800/30 py-2 md:py-3">
+        <span className="text-[10px] uppercase tracking-widest text-cream-200/60">{t(labelKey)}</span>
+        <span className="mt-1 text-xs md:text-sm font-medium text-cream-100">
+          {LEVEL_LABELS[value] ? LEVEL_LABELS[value][lang] : value}
+        </span>
+      </div>
+    )
+  }
 
   return (
-    <main className="flex h-screen flex-col overflow-hidden px-8 py-5">
-      <div className="flex flex-none items-center justify-between">
+    <main className="flex h-[100dvh] w-full flex-col overflow-hidden px-4 md:px-8 py-4 md:py-6">
+      {/* Üst Kısım (Sabit) */}
+      <div className="flex flex-none flex-wrap items-center justify-between gap-3 mb-4 md:mb-6">
         <button
           type="button"
           onClick={closeDetail}
-          className="rounded-full px-4 py-2 text-base font-medium text-cream-200/70 transition hover:bg-cream-100/5 hover:text-cream-100"
+          className="flex items-center gap-2 rounded-full border border-charcoal-600 bg-charcoal-800 px-4 md:px-6 py-2 md:py-3 text-xs md:text-base font-medium text-cream-100 shadow-md transition-all hover:border-gold-500 hover:text-gold-400 hover:bg-charcoal-700"
         >
-          ← {t('prev')}
+          <svg className="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          {t('back')}
         </button>
         <BackButton />
       </div>
 
-      <div className="flex min-h-0 flex-1 items-center justify-center py-4">
-        <div className="grid max-h-full w-full max-w-6xl gap-8 overflow-y-auto rounded-[28px] border border-gold-500/25 bg-charcoal-800/50 p-8 shadow-[0_22px_60px_rgba(0,0,0,0.3)] md:grid-cols-[380px_1fr]">
-          <div className="flex items-center justify-center">
+      {/* İçerik (Ekrana Sığar) */}
+      <div className="flex-1 min-h-0 flex items-center justify-center overflow-hidden pb-2">
+        <div className="relative flex w-full h-full max-h-[85vh] max-w-6xl flex-col md:flex-row items-center gap-6 md:gap-10 rounded-3xl border border-gold-500/20 bg-charcoal-800/40 p-4 md:p-8 shadow-2xl overflow-y-auto custom-scrollbar md:overflow-hidden">
+          
+          {/* Sol: Şişe Görseli (Ekrana Göre Küçülür) */}
+          <div className="flex w-full md:w-2/5 shrink-0 items-center justify-center h-48 md:h-full">
             {p.image ? (
-              <img src={p.image} alt={p.name} className="h-96 w-auto max-w-full object-contain xl:h-[30rem]" />
+              <img src={p.image} alt={p.name} className="h-full w-auto max-h-48 md:max-h-full object-contain drop-shadow-2xl" />
             ) : (
-              <WineBottle color={p.color} className="h-96 w-auto xl:h-[30rem]" />
+              <WineBottle color={p.color} className="h-full w-auto max-h-48 md:max-h-full drop-shadow-2xl" />
             )}
           </div>
 
-          <div className="flex flex-col">
-            {p._pick && (
-              <span className="mb-3 w-fit rounded-full bg-gold-500 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-ink-950">
-                {t('pickLabel')}
-              </span>
-            )}
-            <h1 className="font-serif text-4xl font-semibold text-cream-100">{p.name}</h1>
-            <p className="mt-1 text-sm text-cream-200/60">
-              {[p.brand, [country, p.region].filter(Boolean).join(', ')].filter(Boolean).join(' · ')}
+          {/* Sağ: Detaylar (İçeriden Kaydırılabilir) */}
+          <div className="flex flex-col justify-center text-left w-full md:w-3/5 md:h-full md:overflow-y-auto custom-scrollbar pr-2 md:pr-4">
+            <h1 className="font-serif text-2xl md:text-4xl font-semibold text-cream-100 leading-tight">
+              {p.name}
+            </h1>
+            
+            <p className="mt-1 md:mt-2 text-xs md:text-sm text-cream-200/60">
+              {[p.brand, country, p.region].filter(Boolean).join(' · ')}
             </p>
-
-            <div className="mt-4 flex items-center gap-4">
-              <span className="text-3xl font-semibold text-gold-400">
+            
+            <div className="mt-4 md:mt-6 flex items-center gap-3 md:gap-4">
+              <span className="text-xl md:text-3xl font-bold text-gold-400">
                 {p.price} {t('priceUnit')}
               </span>
-              <StockBadge stock={p.stock} />
+              {p.stock > 0 ? (
+                <span className="rounded-full border border-gold-500/50 bg-gold-900/20 px-2 py-1 text-[10px] md:text-xs font-medium text-gold-400">
+                  {lang === 'en' ? 'In Stock' : 'Stokta Var'}
+                </span>
+              ) : (
+                <span className="rounded-full border border-red-500/50 bg-red-900/20 px-2 py-1 text-[10px] md:text-xs font-medium text-red-400">
+                  {lang === 'en' ? 'Out of Stock' : 'Tükendi'}
+                </span>
+              )}
             </div>
-            <p className="mt-3 text-sm text-cream-200/80">{shelfSentence}</p>
 
-            {tl(p.shortDescription) && (
-              <p className="mt-5 text-base leading-relaxed text-cream-100/90">{tl(p.shortDescription)}</p>
+            <p className="mt-3 md:mt-4 text-xs md:text-sm text-cream-200/80">
+              {lang === 'en' ? 'You can find this item at ' : 'Bu ürünü '}
+              <span className="font-semibold text-cream-100">{shelfShort}</span>
+              {lang === 'en' ? '.' : ' bulabilirsiniz.'}
+            </p>
+
+            {p.shortDescription && p.shortDescription[lang] && (
+              <p className="mt-4 md:mt-6 font-serif text-base md:text-lg italic text-cream-100/90 leading-snug">
+                {p.shortDescription[lang]}
+              </p>
             )}
 
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <ProfileChip label={labels.body} value={lvl(p.body)} />
-              <ProfileChip label={labels.sweetness} value={lvl(p.sweetness)} />
-              <ProfileChip label={labels.acidity} value={lvl(p.acidity)} />
-              <ProfileChip label={labels.tannin} value={lvl(p.tannin)} />
+            <div className="mt-5 md:mt-8 grid grid-cols-4 gap-2 md:gap-3">
+              {renderLevel('body', p.body)}
+              {renderLevel('sweetness', p.sweetness)}
+              {renderLevel('acidity', p.acidity)}
+              {renderLevel('tannin', p.tannin)}
             </div>
 
-            <div className="mt-6 space-y-2 text-sm">
-              {tl(p.tasteNotes) && (
-                <p className="text-cream-200">
-                  <span className="text-gold-500">{labels.notes}: </span>
-                  {tl(p.tasteNotes)}
-                </p>
+            <div className="mt-5 md:mt-8 space-y-2 text-xs md:text-sm">
+              {p.tasteNotes && p.tasteNotes[lang] && (
+                <div className="flex">
+                  <span className="w-24 md:w-28 shrink-0 font-medium text-gold-500">{t('tasteNotes')}:</span>
+                  <span className="text-cream-200">{p.tasteNotes[lang]}</span>
+                </div>
               )}
-              {tl(p.foodPairing) && (
-                <p className="text-cream-200">
-                  <span className="text-gold-500">{labels.pairs}: </span>
-                  {tl(p.foodPairing)}
-                </p>
+              {p.foodPairing && p.foodPairing[lang] && (
+                <div className="flex">
+                  <span className="w-24 md:w-28 shrink-0 font-medium text-gold-500">{t('foodPairing')}:</span>
+                  <span className="text-cream-200">{p.foodPairing[lang]}</span>
+                </div>
               )}
               {p.grape && (
-                <p className="text-cream-200">
-                  <span className="text-gold-500">{labels.grape}: </span>
-                  {p.grape}
-                </p>
+                <div className="flex">
+                  <span className="w-24 md:w-28 shrink-0 font-medium text-gold-500">{t('grape')}:</span>
+                  <span className="text-cream-200">{p.grape}</span>
+                </div>
               )}
-              <p className="text-cream-200">
-                <span className="text-gold-500">{labels.colour}: </span>
-                {color}
-              </p>
             </div>
 
-            {p._why && (
-              <div className="mt-6 rounded-xl border border-charcoal-700 bg-ink-900/50 p-4">
-                <p className="text-xs uppercase tracking-wide text-gold-500">{t('why')}</p>
-                <p className="mt-1 text-sm text-cream-200">{p._why[lang]}</p>
+            {p._why && p._why[lang] && (
+              <div className="mt-6 mb-2 rounded-xl border border-charcoal-700 bg-ink-950/50 p-3 md:p-4">
+                <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gold-500">
+                  {t('why')}
+                </p>
+                <p className="mt-1 md:mt-2 text-xs md:text-sm text-cream-200 leading-relaxed">
+                  {p._why[lang]}
+                </p>
               </div>
             )}
           </div>
