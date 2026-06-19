@@ -1,6 +1,7 @@
 import WineBottle from './WineBottle'
+import CountryFlag from './CountryFlag'
 
-export default function SelectionCard({ label, count, color, disabled, compact = false, onClick }) {
+export default function SelectionCard({ label, count, color, countryCode, disabled, compact = false, onClick }) {
   return (
     <button
       type="button"
@@ -34,6 +35,8 @@ export default function SelectionCard({ label, count, color, disabled, compact =
           className={`w-auto ${compact ? 'h-16' : 'h-24 xl:h-28'}`}
         />
       )}
+
+      {countryCode && <CountryFlag code={countryCode} compact={compact} />}
 
       <span
         className={`font-semibold text-cream-100 ${

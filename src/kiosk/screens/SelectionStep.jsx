@@ -66,6 +66,7 @@ export default function SelectionStep() {
                   label={tl(opt.label)}
                   count={count}
                   color={step.key === 'color' ? opt.value : undefined}
+                  countryCode={step.key === 'country' ? opt.value : undefined}
                   disabled={!isAny && count === 0}
                   compact={isDenseStep}
                   onClick={() => chooseOption(step.key, opt.value)}
