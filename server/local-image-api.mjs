@@ -5,8 +5,11 @@ import { fileURLToPath } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
 const projectRoot = path.resolve(__dirname, '..')
 const imagesDir = path.join(projectRoot, 'public', 'product-images')
+const dataDir = path.join(projectRoot, 'data')
+const adminSettingsPath = path.join(dataDir, 'admin-settings.json')
 
 const PORT = Number(process.env.LOCAL_IMAGE_API_PORT || 8787)
 
@@ -27,6 +30,37 @@ function normalizeBarcode(value) {
   return String(value || '')
     .trim()
     .replace(/[^0-9A-Za-z_-]/g, '')
+}
+
+function safeText(value) {
+  return String(value || '').trim()
+}
+
+async function ensureAdminSettings() {
+  await fs.mkdir(dataDir, { recursive: true })
+
+  try {
+    const raw = await fs.readFile(adminSettingsPath, 'utf8')
+    const parsed = JSON.parse(raw)
+
+    if (!parsed.adminPassword) {
+      throw new Error('Admin şifresi boş.')
+    }
+
+    return parsed
+  } catch {
+    const defaultSettings = {
+      adminPassword: '1234',
+    }
+
+    await fs.writeFile(
+      adminSettingsPath,
+      JSON.stringify(defaultSettings, null, 2),
+      'utf8',
+    )
+
+    return defaultSettings
+  }
 }
 
 async function readJsonBody(req) {
@@ -52,6 +86,40 @@ async function readJsonBody(req) {
 
     req.on('error', reject)
   })
+}
+
+async function handleAdminLogin(req, res) {
+  try {
+    const payload = await readJsonBody(req)
+    const password = safeText(payload.password)
+
+    if (!password) {
+      return sendJson(res, 400, {
+        ok: false,
+        message: 'Şifre zorunludur.',
+      })
+    }
+
+    const settings = await ensureAdminSettings()
+    const expectedPassword = safeText(settings.adminPassword)
+
+    if (password !== expectedPassword) {
+      return sendJson(res, 401, {
+        ok: false,
+        message: 'Şifre hatalı.',
+      })
+    }
+
+    return sendJson(res, 200, {
+      ok: true,
+      message: 'Admin girişi başarılı.',
+    })
+  } catch (error) {
+    return sendJson(res, 500, {
+      ok: false,
+      message: error.message || 'Admin girişi kontrol edilemedi.',
+    })
+  }
 }
 
 async function saveProductImage(req, res) {
@@ -135,7 +203,13 @@ const server = http.createServer(async (req, res) => {
       ok: true,
       service: 'local-image-api',
       imagesDir,
+      adminSettingsPath,
+      adminAuth: 'local-single-admin',
     })
+  }
+
+  if (req.method === 'POST' && req.url === '/api/admin/login') {
+    return handleAdminLogin(req, res)
   }
 
   if (req.method === 'POST' && req.url === '/api/product-image') {
@@ -151,4 +225,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`Local image API çalışıyor: http://localhost:${PORT}`)
   console.log(`Görsel klasörü: ${imagesDir}`)
+  console.log(`Admin ayar dosyası: ${adminSettingsPath}`)
 })
