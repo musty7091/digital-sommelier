@@ -1,54 +1,68 @@
 import { useFlow } from '../state/FlowContext'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { filterProducts } from '../recommendation'
+import { getPreferenceCount } from '../preference'
 import WineBottle from './WineBottle'
 
+const CAP = 30 // marquee'de gösterilecek azami ürün (performans için)
+
 export default function LivePreview({ compact = false }) {
-  const { products, selections } = useFlow()
+  const { products, selections, openDetail } = useFlow()
   const { t } = useLanguage()
 
   if (!products.length) return null
 
+  // Seçimlere uyan ürünler — "en çok tercih edilenler" önce (veri yoksa kararlı sıra)
   const matches = filterProducts(products, selections)
-  const previewItems = compact ? matches.slice(0, 5) : matches.slice(0, 7)
+    .slice()
+    .sort((a, b) => getPreferenceCount(b) - getPreferenceCount(a))
+
+  const sample = matches.slice(0, CAP)
+
+  // Şeridi ekranı dolduracak kadar tekrarla, sonra kesintisiz döngü için ikiye katla
+  let unit = sample
+  if (sample.length > 0) {
+    const reps = Math.ceil(16 / sample.length)
+    unit = Array.from({ length: reps }, () => sample).flat()
+  }
+  const loop = [...unit, ...unit]
+  const duration = Math.max(16, unit.length * 2.6) // saniye — sabit hız hissi
 
   return (
-    <div className={`w-full max-w-6xl ${compact ? 'mt-5' : 'mt-9'}`}>
+    <div className={`w-full ${compact ? 'mt-2' : 'mt-4'}`}>
       <p
         className={`text-center font-medium text-cream-200/55 ${
-          compact ? 'mb-2 text-sm' : 'mb-5 text-lg'
+          compact ? 'mb-1.5 text-sm' : 'mb-3 text-base'
         }`}
       >
         {matches.length} {t('matchCount')}
       </p>
 
-      <div
-        className={`flex flex-wrap justify-center ${
-          compact ? 'gap-x-5 gap-y-2' : 'gap-x-8 gap-y-5'
-        }`}
-      >
-        {previewItems.map((p) => (
-          <div
-            key={p.barcode}
-            className={`flex flex-col items-center rounded-2xl border border-transparent transition hover:border-charcoal-700/80 hover:bg-charcoal-900/30 ${
-              compact ? 'w-24 px-2 py-1' : 'w-32 px-3 py-2'
-            }`}
-          >
-            <WineBottle
-              color={p.color}
-              className={`w-auto ${compact ? 'h-14' : 'h-24'}`}
-            />
-
-            <span
-              className={`mt-1 line-clamp-2 text-center font-medium leading-tight text-cream-200/75 ${
-                compact ? 'text-[11px]' : 'text-sm'
-              }`}
-            >
-              {p.name}
-            </span>
+      {sample.length > 0 && (
+        <div className="ds-marquee-mask relative w-full overflow-hidden">
+          <div className="ds-marquee flex w-max gap-3" style={{ animationDuration: `${duration}s` }}>
+            {loop.map((p, i) => (
+              <button
+                key={`${p.barcode}-${i}`}
+                type="button"
+                onClick={() => openDetail(p, 'flow')}
+                className={`flex flex-none flex-col items-center rounded-2xl px-3 py-1.5 transition hover:bg-charcoal-900/40 active:scale-95 ${
+                  compact ? 'w-20' : 'w-28'
+                }`}
+              >
+                <WineBottle color={p.color} className={`w-auto ${compact ? 'h-12' : 'h-20'}`} />
+                <span
+                  className={`mt-1 line-clamp-1 w-full text-center font-medium leading-tight text-cream-200/70 ${
+                    compact ? 'text-[10px]' : 'text-xs'
+                  }`}
+                >
+                  {p.name}
+                </span>
+              </button>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
   )
 }

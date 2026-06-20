@@ -85,15 +85,17 @@ export default function SelectionStep() {
             </h3>
             <LivePreview compact={isDenseStep} />
           </div>
-          <button
-            type="button"
-            onClick={finishNow}
-            className={`rounded-full border border-gold-500/70 bg-wine-800 font-semibold text-cream-100 shadow-[0_15px_35px_rgba(0,0,0,0.3)] transition hover:bg-wine-700 w-full sm:w-auto ${
-              isDenseStep ? 'px-6 md:px-9 py-2.5 md:py-3 text-sm md:text-lg' : 'px-8 md:px-12 py-3 md:py-4 text-base md:text-xl'
-            }`}
-          >
-            {t('showResults')} ({currentCount})
-          </button>
+          {stepIndex >= 1 && (
+            <button
+              type="button"
+              onClick={finishNow}
+              className={`rounded-full border border-gold-500/70 bg-wine-800 font-semibold text-cream-100 shadow-[0_15px_35px_rgba(0,0,0,0.3)] transition hover:bg-wine-700 w-full sm:w-auto ${
+                isDenseStep ? 'px-6 md:px-9 py-2.5 md:py-3 text-sm md:text-lg' : 'px-8 md:px-12 py-3 md:py-4 text-base md:text-xl'
+              }`}
+            >
+              {t('showResults')} ({currentCount})
+            </button>
+          )}
         </div>
       </div>
     </main>

@@ -159,7 +159,7 @@ export function FlowProvider({ children }) {
   }
   const closeDetail = () => {
     setDetailProduct(null)
-    setPhase(detailOrigin === 'scan' ? 'scan' : 'results')
+    setPhase(detailOrigin || 'results')
   }
   const startScan = () => {
     logEvent('scan_started');
