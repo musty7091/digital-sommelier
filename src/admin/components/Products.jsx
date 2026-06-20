@@ -3,6 +3,7 @@ import { collection, getDocs, doc, setDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../../firebase/config';
 import { compressImageToDataUrl, dataUrlBytes } from '../../shared/imageCompress';
 import * as XLSX from 'xlsx';
+import { logAdminAction } from '../utils/logger'; 
 import {
   COLORS,
   COLOR_LABELS,
@@ -14,14 +15,11 @@ import {
   USAGE_PURPOSE_LABELS,
 } from '../../types/product.schema';
 
-// Aktiflik / tavsiye kontrolü — kanonik şema alanlarına göre
 const checkIsActive = (p) => p.active !== false;
 const checkIsSommelier = (p) => p.sommelierPick === true;
 
-// Listede renk etiketini Türkçe gösterir (veri 'red' tutar, ekranda 'Kırmızı')
 const colorLabelTr = (c) => (c && COLOR_LABELS[c] ? COLOR_LABELS[c].tr : 'Kırmızı');
 
-// Fiyatı şık formatta göster
 const formatPrice = (price) => {
   const num = Number(price);
   return isNaN(num)
@@ -42,8 +40,11 @@ const emptyForm = {
   region: '',
   grape: '',
   shortDescription: '',
+  shortDescriptionEn: '',
   tasteNotes: '',
+  tasteNotesEn: '',
   foodPairing: '',
+  foodPairingEn: '',
   usagePurposes: [],
   body: 'medium',
   sweetness: 'medium',
@@ -63,7 +64,7 @@ export default function Products() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [editingId, setEditingId] = useState(null);
-  const [editingProduct, setEditingProduct] = useState(null); // EN açıklamaları korumak için
+  const [editingProduct, setEditingProduct] = useState(null);
 
   const [formData, setFormData] = useState(emptyForm);
   const [processingImage, setProcessingImage] = useState(false);
@@ -117,7 +118,7 @@ export default function Products() {
 
   const handleImageUpload = async (e) => {
     const file = e.target.files?.[0];
-    e.target.value = ''; // aynı dosyayı tekrar seçebilmek için
+    e.target.value = ''; 
     if (!file) return;
     if (!file.type.startsWith('image/')) {
       alert('Lütfen bir resim dosyası seçin.');
@@ -166,8 +167,11 @@ export default function Products() {
       region: product.region || '',
       grape: product.grape || '',
       shortDescription: product.shortDescription?.tr || '',
+      shortDescriptionEn: product.shortDescription?.en || '',
       tasteNotes: product.tasteNotes?.tr || '',
+      tasteNotesEn: product.tasteNotes?.en || '',
       foodPairing: product.foodPairing?.tr || '',
+      foodPairingEn: product.foodPairing?.en || '',
       usagePurposes: Array.isArray(product.usagePurposes) ? product.usagePurposes : [],
       body: product.body || 'medium',
       sweetness: product.sweetness || 'medium',
@@ -186,6 +190,9 @@ export default function Products() {
         active: !currentStatus,
         updatedAt: new Date().toISOString(),
       });
+
+      await logAdminAction('Ürün Yönetimi', 'GÜNCELLEME', `Bir şarabın durumu ${!currentStatus ? 'Aktif' : 'Pasif'} yapıldı.`);
+
       fetchProducts();
     } catch (error) {
       console.error('Ürün durumu güncellenirken hata oluştu:', error);
@@ -198,7 +205,6 @@ export default function Products() {
     setIsSubmitting(true);
 
     try {
-      // Kanonik şemaya uygun kayıt (kiosk ile birebir uyumlu)
       const payload = {
         barcode: formData.barcode.trim(),
         name: formData.name.trim(),
@@ -219,18 +225,18 @@ export default function Products() {
         sweetness: formData.sweetness,
         acidity: formData.acidity,
         tannin: formData.tannin,
-        // İçerik iki dilli; form TR girer, mevcut EN korunur
+        // Artık formu hem TR hem EN olarak dinliyor ve kaydediyoruz
         shortDescription: {
           tr: formData.shortDescription || '',
-          en: editingProduct?.shortDescription?.en || '',
+          en: formData.shortDescriptionEn || '',
         },
         tasteNotes: {
           tr: formData.tasteNotes || '',
-          en: editingProduct?.tasteNotes?.en || '',
+          en: formData.tasteNotesEn || '',
         },
         foodPairing: {
           tr: formData.foodPairing || '',
-          en: editingProduct?.foodPairing?.en || '',
+          en: formData.foodPairingEn || '',
         },
         updatedAt: new Date().toISOString(),
         updatedBy: 'admin',
@@ -238,13 +244,26 @@ export default function Products() {
 
       if (editingId) {
         await setDoc(doc(db, 'products', editingId), payload, { merge: true });
+        
+        let logDesc = `"${payload.name}" ürünü güncellendi.`;
+        if (editingProduct) {
+          if (Number(editingProduct.price) !== payload.price) {
+            logDesc += ` Fiyat (${editingProduct.price || 0}₺ -> ${payload.price}₺) oldu.`;
+          }
+          if (Number(editingProduct.stock) !== payload.stock) {
+            logDesc += ` Stok (${editingProduct.stock || 0} -> ${payload.stock}) oldu.`;
+          }
+        }
+        await logAdminAction('Ürün Yönetimi', 'GÜNCELLEME', logDesc);
+
       } else {
-        // Yeni ürün: barkod = doküman kimliği (seed/kiosk ile aynı omurga)
         await setDoc(
           doc(db, 'products', payload.barcode),
           { ...payload, priorityScore: 0, featured: false, createdAt: new Date().toISOString() },
           { merge: true },
         );
+
+        await logAdminAction('Ürün Yönetimi', 'EKLEME', `Sisteme yeni ürün eklendi: "${payload.name}"`);
       }
 
       setIsModalOpen(false);
@@ -259,7 +278,6 @@ export default function Products() {
     }
   };
 
-  // Yeni Eklenen "Excel'e Aktar" Fonksiyonu
   const handleExportExcel = () => {
     if (products.length === 0) {
       alert("Dışa aktarılacak ürün bulunamadı.");
@@ -267,8 +285,8 @@ export default function Products() {
     }
 
     const dataToExport = products.map((p) => {
-      // Veritabanındaki dil objelerini ve ayarları Türkçe Excel formatına güvenle çeviren yapı
       const getTr = (val) => typeof val === 'object' ? (val?.tr || '') : (val || '');
+      const getEn = (val) => typeof val === 'object' ? (val?.en || '') : '';
       const getLevelTr = (val) => LEVELS.includes(val) ? LEVEL_LABELS[val]?.tr : 'Orta';
 
       return {
@@ -283,9 +301,12 @@ export default function Products() {
         Ulke: COUNTRY_LABELS[p.country] ? COUNTRY_LABELS[p.country].tr : (p.country || ''),
         Bolge: p.region || '',
         UzumTuru: p.grape || '',
-        KisaAciklama: getTr(p.shortDescription),
-        TadimNotlari: getTr(p.tasteNotes),
-        YemekUyumu: getTr(p.foodPairing),
+        KisaAciklama_TR: getTr(p.shortDescription),
+        KisaAciklama_EN: getEn(p.shortDescription),
+        TadimNotlari_TR: getTr(p.tasteNotes),
+        TadimNotlari_EN: getEn(p.tasteNotes),
+        YemekUyumu_TR: getTr(p.foodPairing),
+        YemekUyumu_EN: getEn(p.foodPairing),
         KullanimAmaci: Array.isArray(p.usagePurposes) 
           ? p.usagePurposes.map(k => USAGE_PURPOSE_LABELS[k]?.tr || k).join(', ') 
           : '',
@@ -302,6 +323,8 @@ export default function Products() {
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Saraplar");
     XLSX.writeFile(workbook, "Ertan_Mahzen_Guncel.xlsx");
+
+    logAdminAction('Ürün Yönetimi', 'SİSTEM', `Tüm envanter (${products.length} ürün) Excel'e dışa aktarıldı.`);
   };
 
   if (loading && products.length === 0) {
@@ -332,7 +355,6 @@ export default function Products() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-          {/* Yeni Eklenen "Excel'e Aktar" Butonu */}
           <button
             onClick={handleExportExcel}
             className="px-6 py-3 bg-charcoal-700 hover:bg-gold-500 hover:text-ink-950 text-cream-100 font-medium rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap"
@@ -453,7 +475,7 @@ export default function Products() {
       {/* DETAYLI ÜRÜN EKLEME / DÜZENLEME PENCERESİ (MODAL) */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink-950/80 backdrop-blur-sm">
-          <div className="bg-charcoal-800 rounded-xl border border-charcoal-700 shadow-2xl w-full max-w-4xl overflow-hidden flex flex-col max-h-[90vh]">
+          <div className="bg-charcoal-800 rounded-xl border border-charcoal-700 shadow-2xl w-full max-w-5xl overflow-hidden flex flex-col max-h-[90vh]">
 
             <div className="p-6 border-b border-charcoal-700 flex justify-between items-center bg-charcoal-800/50 shrink-0">
               <h3 className="text-2xl font-serif text-gold-500">
@@ -604,25 +626,44 @@ export default function Products() {
                   </div>
                 </div>
 
-                {/* BÖLÜM 4: Tadım Notları ve Kullanım */}
+                {/* BÖLÜM 4: Tadım Notları ve Kullanım (Çift Dilli Olarak Güncellendi) */}
                 <div>
                   <h4 className="text-lg font-serif text-cream-100 border-b border-charcoal-700 pb-2 mb-4">Tadım Notları ve Kullanım</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2 md:col-span-2">
-                      <label className="text-sm font-medium text-cream-200">Kısa Açıklama (Müşteriye Gösterilecek)</label>
-                      <textarea name="shortDescription" value={formData.shortDescription} onChange={handleInputChange} rows="2" className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="Örn: Kırmızı orman meyveleri aromalı, yumuşak içimli..."></textarea>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                    
+                    {/* Kısa Açıklama */}
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-cream-200">Kısa Açıklama (TR)</label>
+                      <textarea name="shortDescription" value={formData.shortDescription} onChange={handleInputChange} rows="2" className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="Türkçe metin..."></textarea>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-cream-200">Tat Notları (Aromalar)</label>
-                      <input type="text" name="tasteNotes" value={formData.tasteNotes} onChange={handleInputChange} className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="Örn: Kiraz, Vanilya, Meşe" />
+                      <label className="text-sm font-medium text-cream-200">Kısa Açıklama (EN)</label>
+                      <textarea name="shortDescriptionEn" value={formData.shortDescriptionEn} onChange={handleInputChange} rows="2" className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="English text..."></textarea>
+                    </div>
+
+                    {/* Tat Notları */}
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-cream-200">Tat Notları (TR)</label>
+                      <input type="text" name="tasteNotes" value={formData.tasteNotes} onChange={handleInputChange} className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="Örn: Kiraz, Vanilya" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-cream-200">Yemek Uyumu</label>
-                      <input type="text" name="foodPairing" value={formData.foodPairing} onChange={handleInputChange} className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="Örn: Izgara etler, Sert peynirler" />
+                      <label className="text-sm font-medium text-cream-200">Tat Notları (EN)</label>
+                      <input type="text" name="tasteNotesEn" value={formData.tasteNotesEn} onChange={handleInputChange} className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="e.g. Cherry, Vanilla" />
                     </div>
-                    <div className="space-y-2 md:col-span-2">
+
+                    {/* Yemek Uyumu */}
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-cream-200">Yemek Uyumu (TR)</label>
+                      <input type="text" name="foodPairing" value={formData.foodPairing} onChange={handleInputChange} className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="Örn: Izgara etler" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-cream-200">Yemek Uyumu (EN)</label>
+                      <input type="text" name="foodPairingEn" value={formData.foodPairingEn} onChange={handleInputChange} className="w-full bg-ink-950 border border-charcoal-600 rounded-md p-3 text-cream-100 focus:outline-none focus:border-gold-500 transition-colors" placeholder="e.g. Grilled meats" />
+                    </div>
+
+                    <div className="space-y-2 md:col-span-2 mt-2">
                       <label className="text-sm font-medium text-cream-200">Kullanım Amaçları (birden fazla seçebilirsiniz)</label>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                         {USAGE_PURPOSES.map((key) => {
                           const selected = formData.usagePurposes.includes(key);
                           return (

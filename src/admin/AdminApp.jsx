@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import Products from './components/Products';
 import ExcelUpload from './components/ExcelUpload';
-import Reports from './components/Reports'; // RAPORLAR SAYFASI BURAYA DAHİL EDİLDİ
+import Reports from './components/Reports';
 import KioskSettings from './components/KioskSettings';
+import History from './components/History';
+import AiExplanation from './components/AiExplanation';
 
 export default function AdminApp() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -191,15 +193,42 @@ export default function AdminApp() {
         {/* Sayfa İçeriği */}
         <main className="flex-1 overflow-y-auto p-4 md:p-10 bg-ink-950">
           
-          {/* EKRANDA GÖSTERİLECEK SAYFALAR */}
-          {activeTab === 'dashboard' && <Dashboard setActiveTab={setActiveTab} />}
-          {activeTab === 'products' && <Products />}
-          {activeTab === 'import' && <ExcelUpload />}
-          {activeTab === 'reports' && <Reports />}
-          {activeTab === 'settings' && <KioskSettings />}
+          {/* 
+            ÖNBELLEK (CACHE) SİSTEMİ 
+            Artık sayfalar "&&" ile tamamen silinmiyor. Hepsi arka planda gizlice duruyor, 
+            sadece kullanıcının seçtiği sayfa "block" (görünür) oluyor.
+          */}
+          
+          <div className={activeTab === 'dashboard' ? 'block' : 'hidden'}>
+            <Dashboard setActiveTab={setActiveTab} />
+          </div>
+
+          <div className={activeTab === 'products' ? 'block' : 'hidden'}>
+            <Products />
+          </div>
+
+          <div className={activeTab === 'import' ? 'block' : 'hidden'}>
+            <ExcelUpload />
+          </div>
+
+          <div className={activeTab === 'reports' ? 'block' : 'hidden'}>
+            <Reports />
+          </div>
+
+          <div className={activeTab === 'settings' ? 'block' : 'hidden'}>
+            <KioskSettings />
+          </div>
+
+          <div className={activeTab === 'history' ? 'block h-full' : 'hidden'}>
+            <History />
+          </div>
+          
+          <div className={activeTab === 'ai' ? 'block h-full' : 'hidden'}>
+            <AiExplanation />
+          </div>
           
           {/* YAPIM AŞAMASINDAKİ DİĞER SAYFALAR İÇİN UYARI */}
-          {activeTab !== 'dashboard' && activeTab !== 'products' && activeTab !== 'import' && activeTab !== 'reports' && activeTab !== 'settings' && (
+          {activeTab !== 'dashboard' && activeTab !== 'products' && activeTab !== 'import' && activeTab !== 'reports' && activeTab !== 'settings' && activeTab !== 'history' && (
             <div className="flex flex-col items-center justify-center h-64 md:h-96 border-2 border-dashed border-charcoal-700 rounded-xl text-cream-200 bg-charcoal-800/30 text-center p-4">
               <svg className="w-12 h-12 md:w-16 md:h-16 mb-4 text-wine-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
