@@ -126,10 +126,10 @@ export function emptyProduct() {
 }
 
 // Stok durumu (doküman 10.5): 0 -> yok, 1-10 -> az, 11+ -> var
-export function stockStatus(stock) {
+export function stockStatus(stock, lowThreshold = 10) {
   const n = Number(stock) || 0
   if (n <= 0) return 'out'
-  if (n <= 10) return 'low'
+  if (n <= lowThreshold) return 'low'
   return 'in'
 }
 export const STOCK_LABELS = {

@@ -23,6 +23,7 @@ export function FlowProvider({ children }) {
 
   // Arka planda Firebase'e analitik verisi gönderen görünmez haberci
   const logEvent = (type, payload = {}) => {
+    if (settings?.analyticsEnabled === false) return
     try {
       addDoc(collection(db, 'analyticsEvents'), {
         type,
@@ -100,6 +101,12 @@ export function FlowProvider({ children }) {
 
   const steps = getSteps(settings)
 
+  const recOpts = (extra = {}) => ({
+    resultCount: settings?.resultCount || 5,
+    hideOutOfStock: settings?.hideOutOfStock !== false,
+    ...extra,
+  })
+
   const reset = () => {
     setSelections(emptySelections)
     setResults([])
@@ -121,12 +128,12 @@ export function FlowProvider({ children }) {
     if (stepIndex < steps.length - 1) {
       setStepIndex(stepIndex + 1)
     } else {
-      setResults(recommend(products, next))
+      setResults(recommend(products, next, recOpts()))
       setPhase('results')
     }
   }
   const finishNow = () => {
-    setResults(recommend(products, selections))
+    setResults(recommend(products, selections, recOpts()))
     setPhase('results')
   }
   const goBackStep = () => {
@@ -136,7 +143,7 @@ export function FlowProvider({ children }) {
   const quickRecommend = () => {
     if (!products.length) return
     logEvent('session_start', { method: 'quickRecommend' }); // Hızlı öneri butonuna basıldı
-    setResults(recommend(products, emptySelections, { quick: true }))
+    setResults(recommend(products, emptySelections, recOpts({ quick: true })))
     setPhase('results')
   }
   const openDetail = (p, origin = 'results') => {
@@ -181,6 +188,8 @@ export function FlowProvider({ children }) {
     closeDetail,
     wakeFromIdle,
     startScan,
+    currency: settings?.currency || 'TL',
+    maintenance: settings?.maintenanceMode === true,
   }
   return <FlowContext.Provider value={value}>{children}</FlowContext.Provider>
 }

@@ -7,13 +7,12 @@ import WineBottle from '../components/WineBottle'
 import CountryFlag from '../components/CountryFlag'
 import { COUNTRY_LABELS } from '../../types/product.schema'
 
-const ROTATE_MS = 6500
-
 // Bekleme (attract) ekranı: featured şaraplar sinematik atmosferde tek tek döner.
 // Ekrana dokununca açılışa döner.
 export default function IdleScreen() {
-  const { products, wakeFromIdle } = useFlow()
+  const { products, wakeFromIdle, settings, currency } = useFlow()
   const { t, tl, lang } = useLanguage()
+  const rotateMs = (settings?.featuredRotationSeconds || 7) * 1000
 
   const featured = useMemo(() => {
     const active = products.filter((p) => p.active !== false && p.stock > 0)
@@ -31,9 +30,9 @@ export default function IdleScreen() {
   }, [featured.length])
   useEffect(() => {
     if (featured.length <= 1) return
-    const id = setInterval(() => setIdx((i) => (i + 1) % featured.length), ROTATE_MS)
+    const id = setInterval(() => setIdx((i) => (i + 1) % featured.length), rotateMs)
     return () => clearInterval(id)
-  }, [featured])
+  }, [featured, rotateMs])
 
   const wine = featured[idx]
   const country = wine && COUNTRY_LABELS[wine.country] ? COUNTRY_LABELS[wine.country][lang] : ''
@@ -78,7 +77,7 @@ export default function IdleScreen() {
             </div>
             {note && <p className="mt-5 text-lg leading-relaxed text-cream-200/85">{note}</p>}
             <span className="mt-6 text-3xl font-semibold text-gold-400">
-              {wine.price} {t('priceUnit')}
+              {wine.price} {currency}
             </span>
           </div>
         </div>

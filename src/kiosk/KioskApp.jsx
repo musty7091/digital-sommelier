@@ -6,6 +6,7 @@ import ResultScreen from './screens/ResultScreen'
 import DetailScreen from './screens/DetailScreen'
 import IdleScreen from './screens/IdleScreen'
 import ScanScreen from './screens/ScanScreen'
+import MaintenanceScreen from './screens/MaintenanceScreen'
 
 function Centered({ children }) {
   return (
@@ -16,8 +17,9 @@ function Centered({ children }) {
 }
 
 function KioskScreens() {
-  const { phase, loading, error } = useFlow()
+  const { phase, loading, error, maintenance } = useFlow()
   const { t } = useLanguage()
+  if (maintenance) return <MaintenanceScreen />
   if (error) return <Centered>{t('errorLoad')}</Centered>
   if (loading) return <Centered>{t('loading')}</Centered>
   if (phase === 'welcome') return <WelcomeScreen />
@@ -31,10 +33,10 @@ function KioskScreens() {
 
 export default function KioskApp() {
   return (
-    <LanguageProvider>
-      <FlowProvider>
+    <FlowProvider>
+      <LanguageProvider>
         <KioskScreens />
-      </FlowProvider>
-    </LanguageProvider>
+      </LanguageProvider>
+    </FlowProvider>
   )
 }

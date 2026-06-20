@@ -8,9 +8,11 @@ import {
 } from '../types/product.schema'
 
 // Aktif + stokta olan ürünler içinde, seçili tüm filtreleri uygular.
-export function filterProducts(products, sel = {}) {
+export function filterProducts(products, sel = {}, opts = {}) {
+  const hideOutOfStock = opts.hideOutOfStock !== false
   return (products || []).filter((p) => {
-    if (!p.active || Number(p.stock) <= 0) return false
+    if (!p.active) return false
+    if (hideOutOfStock && Number(p.stock) <= 0) return false
     if (sel.color && p.color !== sel.color) return false
     if (sel.priceRange) {
       const { min, max } = sel.priceRange
@@ -59,11 +61,14 @@ function buildWhy(p, sel, opts) {
 }
 
 export function recommend(products, selections = {}, opts = {}) {
+  const hideOutOfStock = opts.hideOutOfStock !== false
   let pool
   if (opts.quick) {
-    pool = (products || []).filter((p) => p.active && Number(p.stock) > 0 && p.sommelierPick)
+    pool = (products || []).filter(
+      (p) => p.active && (!hideOutOfStock || Number(p.stock) > 0) && p.sommelierPick,
+    )
   } else {
-    pool = filterProducts(products, selections)
+    pool = filterProducts(products, selections, { hideOutOfStock })
   }
 
   const scored = pool.map((p) => ({
@@ -76,7 +81,8 @@ export function recommend(products, selections = {}, opts = {}) {
   const pick = list.find((p) => p.sommelierPick)
   if (pick) list = [pick, ...list.filter((x) => x !== pick)]
 
-  return list.slice(0, 5).map((p, i) => ({
+  const count = opts.resultCount || 5
+  return list.slice(0, count).map((p, i) => ({
     ...p,
     _big: i === 0,
     _pick: i === 0 && !!p.sommelierPick,

@@ -5,7 +5,7 @@ import WineBottle from '../components/WineBottle'
 import BackButton from '../components/BackButton'
 
 export default function DetailScreen() {
-  const { detailProduct, closeDetail } = useFlow()
+  const { detailProduct, closeDetail, currency } = useFlow()
   const { t, lang } = useLanguage()
 
   if (!detailProduct) return null
@@ -70,7 +70,7 @@ export default function DetailScreen() {
             
             <div className="mt-4 md:mt-6 flex items-center gap-3 md:gap-4">
               <span className="text-xl md:text-3xl font-bold text-gold-400">
-                {p.price} {t('priceUnit')}
+                {p.price} {currency}
               </span>
               {p.stock > 0 ? (
                 <span className="rounded-full border border-gold-500/50 bg-gold-900/20 px-2 py-1 text-[10px] md:text-xs font-medium text-gold-400">

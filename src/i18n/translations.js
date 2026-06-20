@@ -39,6 +39,8 @@ export const translations = {
     scanSearching: 'Aranıyor…',
     scanNotFound: 'Ürün bulunamadı, lütfen tekrar deneyin.',
     backHome: 'Başa Dön',
+    maintenanceTitle: 'Geçici Olarak Hizmet Dışı',
+    maintenanceText: 'Dijital sommelier şu anda bakımda. Lütfen kısa süre sonra tekrar deneyin.',
   },
   en: {
     brand: 'Ertan Market',
@@ -79,5 +81,7 @@ export const translations = {
     scanSearching: 'Searching…',
     scanNotFound: 'Product not found, please try again.',
     backHome: 'Home',
+    maintenanceTitle: 'Temporarily Unavailable',
+    maintenanceText: 'The digital sommelier is currently under maintenance. Please check back shortly.',
   },
 }

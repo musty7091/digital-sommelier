@@ -1,4 +1,5 @@
 import { useLanguage } from '../../i18n/LanguageContext'
+import { useFlow } from '../state/FlowContext'
 import { COUNTRY_LABELS, LEVEL_LABELS, USAGE_PURPOSE_LABELS } from '../../types/product.schema'
 import StockBadge from './StockBadge'
 import WineBottle from './WineBottle'
@@ -106,6 +107,7 @@ function ServeItem({ icon, label, value }) {
 
 export default function ProductCard({ product, onClick }) {
   const { t, lang } = useLanguage()
+  const { currency } = useFlow()
   const labels = CARD_LABELS[lang] || CARD_LABELS.tr
   const shelfShort =
     lang === 'en'
@@ -179,7 +181,7 @@ export default function ProductCard({ product, onClick }) {
 
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <span className="text-2xl font-semibold text-gold-400 sm:text-3xl">
-                {product.price} {t('priceUnit')}
+                {product.price} {currency}
               </span>
               <StockBadge stock={product.stock} />
             </div>
@@ -274,7 +276,7 @@ export default function ProductCard({ product, onClick }) {
           {product.name}
         </h3>
         <span className="mt-1 text-base sm:text-lg font-semibold text-gold-400">
-          {product.price} {t('priceUnit')}
+          {product.price} {currency}
         </span>
       </div>
 

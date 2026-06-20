@@ -3,11 +3,13 @@ import { useLanguage } from '../../i18n/LanguageContext'
 import AtmosphereBackground from '../components/AtmosphereBackground'
 
 export default function WelcomeScreen() {
-  const { startFlow, startScan } = useFlow()
-  const { lang, setLang, t } = useLanguage()
+  const { startFlow, startScan, settings } = useFlow()
+  const { lang, setLang, t, enabledLangs } = useLanguage()
+  const langLabels = { tr: 'Türkçe', en: 'English', ru: 'Русский' }
 
   const toggleBtn = (code, label) => (
     <button
+      key={code}
       type="button"
       onClick={() => setLang(code)}
       aria-pressed={lang === code}
@@ -29,8 +31,7 @@ export default function WelcomeScreen() {
 
       {/* Dil Seçimi - Ekranın En Üstünde Sabit */}
       <div className="absolute top-8 md:top-12 z-20 flex gap-2 rounded-full border border-charcoal-700/80 bg-ink-950/60 p-1.5 backdrop-blur-md ds-fade-up">
-        {toggleBtn('tr', 'Türkçe')}
-        {toggleBtn('en', 'English')}
+        {enabledLangs.map((code) => toggleBtn(code, langLabels[code] || code.toUpperCase()))}
       </div>
 
       {/* Ana İçerik */}
@@ -63,16 +64,18 @@ export default function WelcomeScreen() {
           >
             {t('start')}
           </button>
-          <button
-            type="button"
-            onClick={startScan}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full border-2 border-gold-500/40 px-10 md:px-16 py-5 md:py-6 text-xl md:text-2xl lg:text-3xl font-medium text-gold-400 transition-all hover:border-gold-500 hover:bg-gold-500/15 hover:-translate-y-2"
-          >
-            <svg className="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 5v14M7 5v14M11 5v14M14 5v14M18 5v14M21 5v14" />
-            </svg>
-            {t('scanButton')}
-          </button>
+          {settings?.scanEnabled !== false && (
+            <button
+              type="button"
+              onClick={startScan}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full border-2 border-gold-500/40 px-10 md:px-16 py-5 md:py-6 text-xl md:text-2xl lg:text-3xl font-medium text-gold-400 transition-all hover:border-gold-500 hover:bg-gold-500/15 hover:-translate-y-2"
+            >
+              <svg className="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 5v14M7 5v14M11 5v14M14 5v14M18 5v14M21 5v14" />
+              </svg>
+              {t('scanButton')}
+            </button>
+          )}
         </div>
         
       </div>

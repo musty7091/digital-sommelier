@@ -58,7 +58,18 @@ const products = [
 const kioskSettings = {
   languages: ['tr', 'en'],
   defaultLanguage: 'tr',
+  currency: 'TL',
   resetTimeoutSeconds: 120,
+  idleTimeoutSeconds: 45,
+  idleScreenEnabled: true,
+  featuredRotationSeconds: 7,
+  resultCount: 5,
+  lowStockThreshold: 10,
+  hideOutOfStock: true,
+  scanEnabled: true,
+  analyticsEnabled: true,
+  maintenanceMode: false,
+  maintenanceMessage: { tr: '', en: '' },
   colors: [
     { key: 'red', label: { tr: 'Kırmızı', en: 'Red' } },
     { key: 'white', label: { tr: 'Beyaz', en: 'White' } },
