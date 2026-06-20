@@ -14,7 +14,7 @@ export function FlowProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const [phase, setPhase] = useState('welcome') // welcome | flow | results | detail
+  const [phase, setPhase] = useState('welcome') // welcome | idle | flow | results | detail
   const [stepIndex, setStepIndex] = useState(0)
   const [selections, setSelections] = useState(emptySelections)
   const [results, setResults] = useState([])
@@ -55,7 +55,7 @@ export function FlowProvider({ children }) {
 
   // Otomatik sıfırlama: hareketsizlik sonrası başa dön (doküman 6.13)
   useEffect(() => {
-    if (phase === 'welcome') return
+    if (phase === 'welcome' || phase === 'idle') return
     const ms = (settings?.resetTimeoutSeconds || 120) * 1000
     let timer
     const doReset = () => {
@@ -68,6 +68,25 @@ export function FlowProvider({ children }) {
     const arm = () => {
       clearTimeout(timer)
       timer = setTimeout(doReset, ms)
+    }
+    arm()
+    const events = ['pointerdown', 'keydown', 'touchstart']
+    events.forEach((e) => window.addEventListener(e, arm))
+    return () => {
+      clearTimeout(timer)
+      events.forEach((e) => window.removeEventListener(e, arm))
+    }
+  }, [phase, settings])
+
+  // Bekleme (attract) modu: açılışta hareketsiz kalınınca "Öne Çıkan Şaraplar"
+  useEffect(() => {
+    if (phase !== 'welcome') return
+    if (settings?.idleScreenEnabled === false) return
+    const ms = (settings?.idleTimeoutSeconds || 45) * 1000
+    let timer
+    const arm = () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => setPhase('idle'), ms)
     }
     arm()
     const events = ['pointerdown', 'keydown', 'touchstart']
@@ -133,6 +152,7 @@ export function FlowProvider({ children }) {
     setDetailProduct(null)
     setPhase('results')
   }
+  const wakeFromIdle = () => setPhase('welcome')
 
   const value = {
     products,
@@ -153,6 +173,7 @@ export function FlowProvider({ children }) {
     quickRecommend,
     openDetail,
     closeDetail,
+    wakeFromIdle,
   }
   return <FlowContext.Provider value={value}>{children}</FlowContext.Provider>
 }
