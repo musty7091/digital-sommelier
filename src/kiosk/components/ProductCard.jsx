@@ -154,16 +154,16 @@ export default function ProductCard({ product, onClick }) {
           </span>
         )}
 
-        <div className="relative flex min-h-[220px] items-center justify-center rounded-2xl border border-charcoal-700/60 bg-ink-950/20 p-4 md:min-h-[420px]">
+        <div className="relative flex min-h-[220px] items-center justify-center rounded-2xl border border-charcoal-700/60 bg-ink-950/20 p-4 md:min-h-[420px] [@media(max-height:900px)]:md:!min-h-[170px]">
           <div className="pointer-events-none absolute inset-6 rounded-full bg-gold-500/5 blur-2xl" />
           {product.image ? (
             <img
               src={product.image}
               alt={product.name}
-              className="relative h-56 w-auto max-w-full object-contain drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px]"
+              className="relative h-56 w-auto max-w-full object-contain drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px] [@media(max-height:900px)]:md:!h-[150px] [@media(max-height:900px)]:xl:!h-[150px]"
             />
           ) : (
-            <WineBottle color={product.color} className="relative h-56 w-auto drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px]" />
+            <WineBottle color={product.color} className="relative h-56 w-auto drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px] [@media(max-height:900px)]:md:!h-[150px] [@media(max-height:900px)]:xl:!h-[150px]" />
           )}
         </div>
 
@@ -215,7 +215,7 @@ export default function ProductCard({ product, onClick }) {
           )}
 
           {infoItems.length > 0 && (
-            <div className="mt-4 grid gap-2 text-xs sm:text-sm">
+            <div className="mt-4 grid gap-2 text-xs sm:text-sm [@media(max-height:900px)]:hidden">
               {infoItems.slice(0, 3).map((item) => (
                 <div key={item.label} className="flex gap-3 rounded-xl border border-charcoal-700/60 bg-ink-950/20 px-3 py-2">
                   <span className="w-20 shrink-0 font-medium text-gold-500">{item.label}</span>
@@ -225,7 +225,7 @@ export default function ProductCard({ product, onClick }) {
             </div>
           )}
 
-          <div className="mt-4">
+          <div className="mt-4 [@media(max-height:900px)]:hidden">
             <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cream-200/45">
               {labels.serveTitle}
             </p>
@@ -237,7 +237,7 @@ export default function ProductCard({ product, onClick }) {
           </div>
 
           {purposeChips.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2 [@media(max-height:900px)]:hidden">
               {purposeChips.map((chip) => (
                 <span key={chip} className="rounded-full border border-gold-500/20 bg-gold-500/10 px-3 py-1 text-[11px] font-medium text-gold-300">
                   {chip}

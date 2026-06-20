@@ -38,7 +38,7 @@ export default function WelcomeScreen() {
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-6xl mx-auto h-full gap-10 md:gap-16">
         
         <div className="flex flex-col items-center justify-center w-full mt-10 md:mt-0">
-          <p className="ds-fade-up mb-6 md:mb-10 text-sm md:text-xl uppercase tracking-[0.4em] md:tracking-[0.6em] text-gold-500 font-medium" style={{ animationDelay: '0.2s' }}>
+          <p className="ds-fade-up mb-6 md:mb-10 text-base sm:text-lg md:text-2xl uppercase tracking-[0.4em] md:tracking-[0.6em] text-gold-500 font-medium" style={{ animationDelay: '0.2s' }}>
             {t('brand')}
           </p>
 

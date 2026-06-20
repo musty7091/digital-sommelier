@@ -199,3 +199,8 @@ export function useFlow() {
   if (!ctx) throw new Error('useFlow, FlowProvider içinde kullanılmalı')
   return ctx
 }
+
+// Sağlayıcı yoksa hata fırlatmaz, null döner (LanguageProvider gibi sıra-bağımsız kullanım için)
+export function useFlowSafe() {
+  return useContext(FlowContext)
+}

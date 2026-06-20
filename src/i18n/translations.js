@@ -2,7 +2,7 @@
 export const translations = {
   tr: {
     brand: 'Ertan Market',
-    title: 'Ertan Digital Sommelier',
+    title: 'Şarap Uzmanı',
     tagline: 'Sizin için en uygun şarabı bulalım.',
     start: 'Başla',
     quick: "Uzman'ın Seçimi",
@@ -46,7 +46,7 @@ export const translations = {
   },
   en: {
     brand: 'Ertan Market',
-    title: 'Ertan Digital Sommelier',
+    title: 'Wine Expert',
     tagline: "Let's find the perfect wine for you.",
     start: 'Start',
     quick: "Sommelier's Choice",

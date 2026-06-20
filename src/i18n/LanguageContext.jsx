@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect, useRef } from 'react'
 import { translations } from './translations'
-import { useFlow } from '../kiosk/state/FlowContext'
+import { useFlowSafe } from '../kiosk/state/FlowContext'
 
 const LanguageContext = createContext(null)
 
 export function LanguageProvider({ children }) {
-  const { settings } = useFlow()
+  const flow = useFlowSafe()
+  const settings = flow?.settings || null
   const enabledLangs = settings?.languages?.length ? settings.languages : ['tr', 'en']
   const [lang, setLangState] = useState('tr')
   const userChanged = useRef(false)
