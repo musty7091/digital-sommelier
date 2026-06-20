@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import { DEFAULT_KIOSK_SETTINGS, normalizeKioskSettings } from '../../firebase/products';
 
 const inputClass =
   'w-full rounded-md border border-charcoal-600 bg-ink-950 px-3 py-2 text-sm text-cream-100 placeholder-cream-200/30 focus:border-gold-500 focus:outline-none transition';
@@ -14,6 +15,7 @@ export default function KioskSettings() {
   const [idleTimeout, setIdleTimeout] = useState(45);
   const [resetTimeout, setResetTimeout] = useState(120);
   const [priceRanges, setPriceRanges] = useState([]);
+  const [existingSettings, setExistingSettings] = useState(DEFAULT_KIOSK_SETTINGS);
 
   useEffect(() => {
     let alive = true;
@@ -21,7 +23,8 @@ export default function KioskSettings() {
       try {
         const snap = await getDoc(doc(db, 'kioskSettings', 'default'));
         if (!alive) return;
-        const s = snap.exists() ? snap.data() : {};
+        const s = normalizeKioskSettings(snap.exists() ? snap.data() : {});
+        setExistingSettings(s);
         setIdleTimeout(s.idleTimeoutSeconds ?? 45);
         setResetTimeout(s.resetTimeoutSeconds ?? 120);
         setPriceRanges(Array.isArray(s.priceRanges) ? s.priceRanges : []);
@@ -71,6 +74,8 @@ export default function KioskSettings() {
       await setDoc(
         doc(db, 'kioskSettings', 'default'),
         {
+          ...DEFAULT_KIOSK_SETTINGS,
+          ...existingSettings,
           idleTimeoutSeconds: Math.max(5, Number(idleTimeout) || 45),
           resetTimeoutSeconds: Math.max(10, Number(resetTimeout) || 120),
           priceRanges: cleanRanges,

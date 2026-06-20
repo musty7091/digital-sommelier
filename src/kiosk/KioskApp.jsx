@@ -19,10 +19,10 @@ function KioskScreens() {
   const { phase, loading, error } = useFlow()
   const { t } = useLanguage()
   if (error) return <Centered>{t('errorLoad')}</Centered>
+  if (loading) return <Centered>{t('loading')}</Centered>
   if (phase === 'welcome') return <WelcomeScreen />
   if (phase === 'idle') return <IdleScreen />
   if (phase === 'scan') return <ScanScreen />
-  if (loading) return <Centered>{t('loading')}</Centered>
   if (phase === 'flow') return <SelectionStep />
   if (phase === 'results') return <ResultScreen />
   if (phase === 'detail') return <DetailScreen />
