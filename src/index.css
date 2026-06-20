@@ -99,3 +99,12 @@
 @media (prefers-reduced-motion: reduce) {
   .ds-kenburns { animation: none; }
 }
+
+/* Barkod tarama çizgisi (Ürün Okut ekranı) */
+@keyframes ds-scanline {
+  0%, 100% { transform: translateY(-120%); opacity: 0; }
+  12%, 88% { opacity: 1; }
+  50%      { transform: translateY(120%); }
+}
+.ds-scanline { animation: ds-scanline 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .ds-scanline { animation: none; opacity: 0.6; } }

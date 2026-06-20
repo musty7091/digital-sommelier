@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import * as XLSX from 'xlsx';
+import { createPortal } from 'react-dom';
 
 // Fiyat formatlayıcı
 const formatPrice = (price) => {
@@ -28,6 +29,77 @@ const translateTerm = (term) => {
 
   return dict[term] || term;
 };
+
+// ============================================================
+// A4 PREMIUM ANALİZ RAPORU (yalnız yazdırmada görünür)
+// ============================================================
+function PrintBar({ label, count, max }) {
+  const pct = max > 0 ? Math.round((count / max) * 100) : 0;
+  return (
+    <div className="pr-row">
+      <div className="pr-row-top">
+        <span className="pr-label">{translateTerm(label)}</span>
+        <span className="pr-count">{count} işlem</span>
+      </div>
+      <div className="pr-track"><div className="pr-fill" style={{ width: `${pct}%` }} /></div>
+    </div>
+  );
+}
+
+function PrintSection({ title, items }) {
+  const max = items && items.length ? Math.max(...items.map((i) => i.count)) : 0;
+  return (
+    <section className="pr-section">
+      <h3 className="pr-h3">{title}</h3>
+      {!items || items.length === 0 ? (
+        <p className="pr-empty">Bu dönem için veri toplanmadı.</p>
+      ) : (
+        items.slice(0, 5).map((it, i) => (
+          <PrintBar key={i} label={it.label} count={it.count} max={max} />
+        ))
+      )}
+    </section>
+  );
+}
+
+function PrintableReport({ analytics }) {
+  const now = new Date();
+  return (
+    <div className="pr-page">
+      <header className="pr-header">
+        <div className="pr-brand">ERTAN MARKET</div>
+        <div className="pr-sub">Kiosk Performans Analizi Raporu</div>
+        <div className="pr-meta">
+          {now.toLocaleDateString('tr-TR')} · {now.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })}
+        </div>
+        <div className="pr-rule" />
+      </header>
+
+      <div className="pr-summary">
+        <div className="pr-summary-num">{analytics.totalUsages}</div>
+        <div className="pr-summary-text">
+          <strong>Toplam Oturum</strong>
+          <span>
+            Müşterilerin uygulamayı baştan başlatma sayısı · toplam {analytics.totalClicks} etkileşim
+          </span>
+        </div>
+      </div>
+
+      <div className="pr-grid">
+        <PrintSection title="En Yoğun Kullanım Saatleri" items={analytics.peakHours} />
+        <PrintSection title="En Çok İncelenen Şaraplar" items={analytics.topProducts} />
+        <PrintSection title="Müşterilerin Kullanım Amaçları" items={analytics.purposes} />
+        <PrintSection title="En Çok Aranan Renkler" items={analytics.colors} />
+        <PrintSection title="Tat Profili Eğilimi" items={analytics.tastes} />
+        <PrintSection title="Popüler Şarap Ülkeleri" items={analytics.countries} />
+      </div>
+
+      <footer className="pr-footer">
+        Ertan Market · Kiosk Analiz Raporu · {now.toLocaleDateString('tr-TR')}
+      </footer>
+    </div>
+  );
+}
 
 export default function Reports() {
   const [loading, setLoading] = useState(true);
@@ -256,42 +328,85 @@ export default function Reports() {
   return (
     <div className="space-y-8 max-w-7xl mx-auto print:m-0 print:p-0">
 
+      {/* A4 premium analiz raporu — body'ye portal ile basılır, yalnız yazdırmada görünür */}
+      {createPortal(
+        <div id="ertan-print-root">
+          <PrintableReport analytics={analytics} />
+        </div>,
+        document.body,
+      )}
+
+
       {/* =======================================================
           KESİN ÇÖZÜM: YAZDIRMA (PDF) STİLLERİ
           Menüleri tamamen yok eder, siyah temayı zorla basar.
           ======================================================= */}
       <style>{`
+        /* === A4 PREMIUM ANALİZ RAPORU (yazdırma) === */
+        #ertan-print-root { display: none; }
+
+        #ertan-print-root .pr-page {
+          color: #2b2320; background: #ffffff;
+          font-family: 'Hanken Grotesk', Arial, sans-serif;
+          font-size: 11px; line-height: 1.5;
+        }
+        #ertan-print-root .pr-header { text-align: center; margin-bottom: 12px; }
+        #ertan-print-root .pr-brand {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 30px; font-weight: 700; letter-spacing: 0.18em; color: #6e1f2d;
+        }
+        #ertan-print-root .pr-sub {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 15px; color: #2b2320; margin-top: 3px;
+        }
+        #ertan-print-root .pr-meta { font-size: 10px; color: #8a7f76; margin-top: 4px; letter-spacing: .05em; }
+        #ertan-print-root .pr-rule {
+          height: 2px; margin: 12px auto 0; width: 100%;
+          background: linear-gradient(90deg, transparent, #b8923f, transparent);
+          -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        }
+        #ertan-print-root .pr-summary {
+          display: flex; align-items: center; gap: 16px;
+          border: 1px solid #e6ddd2; border-radius: 10px;
+          padding: 14px 18px; margin: 16px 0 18px; background: #faf7f2;
+          -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        }
+        #ertan-print-root .pr-summary-num {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 44px; font-weight: 700; color: #6e1f2d; line-height: 1;
+        }
+        #ertan-print-root .pr-summary-text strong { display:block; font-size: 13px; color:#2b2320; }
+        #ertan-print-root .pr-summary-text span { font-size: 10px; color:#8a7f76; }
+        #ertan-print-root .pr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+        #ertan-print-root .pr-section { break-inside: avoid; }
+        #ertan-print-root .pr-h3 {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 15px; font-weight: 700; color: #6e1f2d;
+          border-bottom: 1px solid #e6ddd2; padding-bottom: 4px; margin-bottom: 8px;
+        }
+        #ertan-print-root .pr-row { margin-bottom: 7px; }
+        #ertan-print-root .pr-row-top { display:flex; justify-content:space-between; font-size:10.5px; margin-bottom:3px; }
+        #ertan-print-root .pr-label { color:#2b2320; font-weight:500; }
+        #ertan-print-root .pr-count { color:#8a7f76; font-variant-numeric: tabular-nums; white-space:nowrap; padding-left:8px; }
+        #ertan-print-root .pr-track {
+          height:5px; background:#ece5db; border-radius:9999px; overflow:hidden;
+          -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        }
+        #ertan-print-root .pr-fill {
+          height:100%; background:#b8923f; border-radius:9999px;
+          -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        }
+        #ertan-print-root .pr-empty { font-size:10px; color:#a08; font-style:italic; }
+        #ertan-print-root .pr-footer {
+          margin-top: 18px; padding-top: 8px; border-top:1px solid #e6ddd2;
+          text-align:center; font-size:9px; color:#8a7f76; letter-spacing:.08em;
+        }
+
         @media print {
-          @page { size: landscape; margin: 10mm; }
-          
-          /* Menüleri, üst çubuğu ve yazdırmak istemediğimiz her şeyi kökten gizle */
-          header, nav, aside, .fixed.inset-y-0, .print-hidden { 
-            display: none !important; 
-            visibility: hidden !important; 
-            height: 0 !important; 
-          }
-          
-          /* Arka planı zorla siyah yap, yazıları renkli tut */
-          body, html, main, #root { 
-            background-color: #0d1117 !important; 
-            color: #fce7cf !important;
-            -webkit-print-color-adjust: exact !important; 
-            print-color-adjust: exact !important; 
-            margin: 0 !important;
-            padding: 0 !important;
-          }
-          
-          /* Tailwind'in karanlık tema sınıflarını yazıcıya zorla uygulat */
-          .bg-charcoal-800 { background-color: #1f232b !important; border-color: #2b303b !important; }
-          .bg-charcoal-900 { background-color: #14171d !important; }
-          .bg-gold-500 { background-color: #c8a951 !important; }
-          .text-gold-500 { color: #c8a951 !important; }
-          .text-cream-100 { color: #fce7cf !important; }
-          .text-cream-200 { color: #e6cdac !important; }
-          .text-gold-400 { color: #d6b56d !important; }
-          
-          .max-w-7xl { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
-          .break-inside-avoid { page-break-inside: avoid; }
+          @page { size: A4 portrait; margin: 15mm 14mm; }
+          html, body { background:#ffffff !important; }
+          #root { display: none !important; }
+          #ertan-print-root { display: block !important; }
         }
       `}</style>
       
@@ -313,7 +428,7 @@ export default function Reports() {
         <div className="flex gap-2">
           <button onClick={handlePrint} className="flex items-center gap-2 text-ink-950 hover:bg-gold-400 transition-colors bg-gold-500 px-4 py-2 rounded-lg shadow-sm font-bold">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
-            Sadece Kiosk Analizini Yazdır
+            Analiz Raporunu Yazdır (A4)
           </button>
           <button onClick={fetchData} className="flex items-center gap-2 text-cream-200 hover:text-gold-400 transition-colors bg-charcoal-800 px-4 py-2 rounded-lg border border-charcoal-700 shadow-sm">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>

@@ -14,11 +14,12 @@ export function FlowProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const [phase, setPhase] = useState('welcome') // welcome | idle | flow | results | detail
+  const [phase, setPhase] = useState('welcome') // welcome | idle | scan | flow | results | detail
   const [stepIndex, setStepIndex] = useState(0)
   const [selections, setSelections] = useState(emptySelections)
   const [results, setResults] = useState([])
   const [detailProduct, setDetailProduct] = useState(null)
+  const [detailOrigin, setDetailOrigin] = useState('results')
 
   // Arka planda Firebase'e analitik verisi gönderen görünmez haberci
   const logEvent = (type, payload = {}) => {
@@ -138,19 +139,24 @@ export function FlowProvider({ children }) {
     setResults(recommend(products, emptySelections, { quick: true }))
     setPhase('results')
   }
-  const openDetail = (p) => {
+  const openDetail = (p, origin = 'results') => {
     // Müşterinin hangi şarabı incelediği kaydedilir
     logEvent('product_viewed', { 
       productId: p.id || '', 
       productName: p.name || '', 
       barcode: p.barcode || '' 
     });
+    setDetailOrigin(origin)
     setDetailProduct(p)
     setPhase('detail')
   }
   const closeDetail = () => {
     setDetailProduct(null)
-    setPhase('results')
+    setPhase(detailOrigin === 'scan' ? 'scan' : 'results')
+  }
+  const startScan = () => {
+    logEvent('scan_started');
+    setPhase('scan')
   }
   const wakeFromIdle = () => setPhase('welcome')
 
@@ -174,6 +180,7 @@ export function FlowProvider({ children }) {
     openDetail,
     closeDetail,
     wakeFromIdle,
+    startScan,
   }
   return <FlowContext.Provider value={value}>{children}</FlowContext.Provider>
 }

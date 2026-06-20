@@ -3,7 +3,7 @@ import { useLanguage } from '../../i18n/LanguageContext'
 import AtmosphereBackground from '../components/AtmosphereBackground'
 
 export default function WelcomeScreen() {
-  const { startFlow, quickRecommend } = useFlow()
+  const { startFlow, startScan } = useFlow()
   const { lang, setLang, t } = useLanguage()
 
   const toggleBtn = (code, label) => (
@@ -65,10 +65,13 @@ export default function WelcomeScreen() {
           </button>
           <button
             type="button"
-            onClick={quickRecommend}
-            className="w-full sm:w-auto rounded-full border-2 border-gold-500/40 px-10 md:px-16 py-5 md:py-6 text-xl md:text-2xl lg:text-3xl font-medium text-gold-400 transition-all hover:border-gold-500 hover:bg-gold-500/15 hover:-translate-y-2"
+            onClick={startScan}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full border-2 border-gold-500/40 px-10 md:px-16 py-5 md:py-6 text-xl md:text-2xl lg:text-3xl font-medium text-gold-400 transition-all hover:border-gold-500 hover:bg-gold-500/15 hover:-translate-y-2"
           >
-            {t('quick')}
+            <svg className="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 5v14M7 5v14M11 5v14M14 5v14M18 5v14M21 5v14" />
+            </svg>
+            {t('scanButton')}
           </button>
         </div>
         
