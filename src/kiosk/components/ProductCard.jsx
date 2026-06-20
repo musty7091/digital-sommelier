@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useLanguage } from '../../i18n/LanguageContext'
+import { getLocalProductImagePath, getProductImageAlt } from '../../shared/productImage'
 import { useFlow } from '../state/FlowContext'
 import { COUNTRY_LABELS, LEVEL_LABELS, USAGE_PURPOSE_LABELS } from '../../types/product.schema'
 import StockBadge from './StockBadge'
@@ -105,6 +107,29 @@ function ServeItem({ icon, label, value }) {
   )
 }
 
+function ProductImage({ product, imageClassName, fallbackClassName }) {
+  const [hasImageError, setHasImageError] = useState(false)
+  const imageSrc = getLocalProductImagePath(product)
+
+  if (!imageSrc || hasImageError) {
+    return (
+      <WineBottle
+        color={product?.color}
+        className={fallbackClassName || imageClassName}
+      />
+    )
+  }
+
+  return (
+    <img
+      src={imageSrc}
+      alt={getProductImageAlt(product)}
+      className={imageClassName}
+      onError={() => setHasImageError(true)}
+    />
+  )
+}
+
 export default function ProductCard({ product, onClick }) {
   const { t, lang } = useLanguage()
   const { currency } = useFlow()
@@ -156,15 +181,11 @@ export default function ProductCard({ product, onClick }) {
 
         <div className="relative flex min-h-[220px] items-center justify-center rounded-2xl border border-charcoal-700/60 bg-ink-950/20 p-4 md:min-h-[420px] [@media(max-height:900px)]:md:!min-h-[170px]">
           <div className="pointer-events-none absolute inset-6 rounded-full bg-gold-500/5 blur-2xl" />
-          {product.image ? (
-            <img
-              src={product.image}
-              alt={product.name}
-              className="relative h-56 w-auto max-w-full object-contain drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px] [@media(max-height:900px)]:md:!h-[150px] [@media(max-height:900px)]:xl:!h-[150px]"
-            />
-          ) : (
-            <WineBottle color={product.color} className="relative h-56 w-auto drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px] [@media(max-height:900px)]:md:!h-[150px] [@media(max-height:900px)]:xl:!h-[150px]" />
-          )}
+          <ProductImage
+            product={product}
+            imageClassName="relative h-56 w-auto max-w-full object-contain drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px]"
+            fallbackClassName="relative h-56 w-auto drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px]"
+          />
         </div>
 
         <div className="flex min-h-0 flex-col">
@@ -265,11 +286,11 @@ export default function ProductCard({ product, onClick }) {
       tabIndex={0}
       className="flex h-full cursor-pointer flex-col items-center justify-between rounded-xl sm:rounded-2xl border border-charcoal-700 bg-charcoal-800/40 p-3 sm:p-4 text-center shadow-[0_8px_20px_rgba(0,0,0,0.15)] transition hover:-translate-y-1 hover:border-gold-500/50 hover:shadow-[0_15px_40px_rgba(0,0,0,0.25)]"
     >
-      {product.image ? (
-        <img src={product.image} alt={product.name} className="h-20 sm:h-24 md:h-28 w-auto object-contain" />
-      ) : (
-        <WineBottle color={product.color} className="h-20 sm:h-24 md:h-28 w-auto" />
-      )}
+      <ProductImage
+        product={product}
+        imageClassName="h-20 sm:h-24 md:h-28 w-auto object-contain"
+        fallbackClassName="h-20 sm:h-24 md:h-28 w-auto"
+      />
 
       <div className="mt-3 flex flex-col items-center flex-1 w-full">
         <h3 className="text-sm sm:text-base font-medium text-cream-100 line-clamp-2 leading-tight" title={product.name}>
