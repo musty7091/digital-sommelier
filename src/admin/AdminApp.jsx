@@ -6,6 +6,7 @@ import Reports from './components/Reports';
 import KioskSettings from './components/KioskSettings';
 import History from './components/History';
 import AiExplanation from './components/AiExplanation';
+import ChangePassword from './components/ChangePassword';
 import { clearAdminSession } from './AdminLogin';
 
 export default function AdminApp() {
@@ -65,6 +66,16 @@ export default function AdminApp() {
       ),
     },
     {
+      id: 'password',
+      label: 'Admin Şifresi',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.657 0 3-1.343 3-3V6a3 3 0 10-6 0v2c0 1.657 1.343 3 3 3z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 11h14a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2z" />
+        </svg>
+      ),
+    },
+    {
       id: 'history',
       label: 'Değişiklik Geçmişi',
       icon: (
@@ -97,6 +108,7 @@ export default function AdminApp() {
 
   return (
     <div className="flex h-screen bg-ink-950 text-cream-100 font-sans overflow-hidden">
+      {/* Mobil Menü Arkaplan Karartması */}
       {isMobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/60 z-40 md:hidden"
@@ -104,6 +116,7 @@ export default function AdminApp() {
         />
       )}
 
+      {/* Sol Menü */}
       <div
         className={`fixed inset-y-0 left-0 z-50 w-72 bg-charcoal-800 border-r border-charcoal-700 flex flex-col shadow-2xl transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
@@ -114,7 +127,9 @@ export default function AdminApp() {
             <h1 className="text-2xl font-serif font-bold text-gold-500 tracking-wide">
               Ertan Dijital Sömelye
             </h1>
-            <p className="text-sm text-cream-200 mt-2 opacity-80">Yönetim Paneli</p>
+            <p className="text-sm text-cream-200 mt-2 opacity-80">
+              Yönetim Paneli
+            </p>
           </div>
 
           <button
@@ -167,7 +182,9 @@ export default function AdminApp() {
         </div>
       </div>
 
+      {/* Ana İçerik Alanı */}
       <div className="flex-1 flex flex-col overflow-hidden relative w-full">
+        {/* Üst Bilgi Çubuğu */}
         <header className="h-16 md:h-20 bg-charcoal-800/80 backdrop-blur-sm border-b border-charcoal-700 flex items-center justify-between px-4 md:px-10 z-0">
           <div className="flex items-center gap-3">
             <button
@@ -186,8 +203,12 @@ export default function AdminApp() {
 
           <div className="flex items-center gap-3 md:gap-4 shrink-0">
             <div className="text-right hidden sm:block">
-              <p className="text-sm font-medium text-cream-100">Hoş Geldiniz, Yönetici</p>
-              <p className="text-xs text-gold-500">Tek Admin</p>
+              <p className="text-sm font-medium text-cream-100">
+                Hoş Geldiniz, Yönetici
+              </p>
+              <p className="text-xs text-gold-500">
+                Tek Admin
+              </p>
             </div>
 
             <div className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-wine-800 border-2 border-gold-500 flex items-center justify-center text-cream-100 font-serif font-bold shrink-0 text-sm md:text-base">
@@ -196,6 +217,7 @@ export default function AdminApp() {
           </div>
         </header>
 
+        {/* Sayfa İçeriği */}
         <main className="flex-1 overflow-y-auto p-4 md:p-10 bg-ink-950">
           <div className={activeTab === 'dashboard' ? 'block' : 'hidden'}>
             <Dashboard setActiveTab={setActiveTab} />
@@ -217,6 +239,10 @@ export default function AdminApp() {
             <KioskSettings />
           </div>
 
+          <div className={activeTab === 'password' ? 'block' : 'hidden'}>
+            <ChangePassword />
+          </div>
+
           <div className={activeTab === 'history' ? 'block h-full' : 'hidden'}>
             <History />
           </div>
@@ -230,13 +256,16 @@ export default function AdminApp() {
             activeTab !== 'import' &&
             activeTab !== 'reports' &&
             activeTab !== 'settings' &&
+            activeTab !== 'password' &&
             activeTab !== 'history' &&
             activeTab !== 'ai' && (
               <div className="flex flex-col items-center justify-center h-64 md:h-96 border-2 border-dashed border-charcoal-700 rounded-xl text-cream-200 bg-charcoal-800/30 text-center p-4">
                 <svg className="w-12 h-12 md:w-16 md:h-16 mb-4 text-wine-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
-                <p className="text-base md:text-lg font-serif">Bu modül yapım aşamasındadır.</p>
+                <p className="text-base md:text-lg font-serif">
+                  Bu modül yapım aşamasındadır.
+                </p>
                 <p className="text-xs md:text-sm opacity-60 mt-1">
                   Sıradaki adımlarda bu ekranı kodlayacağız.
                 </p>

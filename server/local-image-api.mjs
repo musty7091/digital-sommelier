@@ -63,6 +63,16 @@ async function ensureAdminSettings() {
   }
 }
 
+async function writeAdminSettings(settings) {
+  await fs.mkdir(dataDir, { recursive: true })
+
+  await fs.writeFile(
+    adminSettingsPath,
+    JSON.stringify(settings, null, 2),
+    'utf8',
+  )
+}
+
 async function readJsonBody(req) {
   return new Promise((resolve, reject) => {
     let body = ''
@@ -118,6 +128,70 @@ async function handleAdminLogin(req, res) {
     return sendJson(res, 500, {
       ok: false,
       message: error.message || 'Admin girişi kontrol edilemedi.',
+    })
+  }
+}
+
+async function handleAdminChangePassword(req, res) {
+  try {
+    const payload = await readJsonBody(req)
+
+    const currentPassword = safeText(payload.currentPassword)
+    const newPassword = safeText(payload.newPassword)
+    const newPasswordAgain = safeText(payload.newPasswordAgain)
+
+    if (!currentPassword) {
+      return sendJson(res, 400, {
+        ok: false,
+        message: 'Mevcut şifre zorunludur.',
+      })
+    }
+
+    if (!newPassword) {
+      return sendJson(res, 400, {
+        ok: false,
+        message: 'Yeni şifre zorunludur.',
+      })
+    }
+
+    if (newPassword.length < 4) {
+      return sendJson(res, 400, {
+        ok: false,
+        message: 'Yeni şifre en az 4 karakter olmalıdır.',
+      })
+    }
+
+    if (newPassword !== newPasswordAgain) {
+      return sendJson(res, 400, {
+        ok: false,
+        message: 'Yeni şifreler birbiriyle uyuşmuyor.',
+      })
+    }
+
+    const settings = await ensureAdminSettings()
+    const expectedPassword = safeText(settings.adminPassword)
+
+    if (currentPassword !== expectedPassword) {
+      return sendJson(res, 401, {
+        ok: false,
+        message: 'Mevcut şifre hatalı.',
+      })
+    }
+
+    await writeAdminSettings({
+      ...settings,
+      adminPassword: newPassword,
+      updatedAt: new Date().toISOString(),
+    })
+
+    return sendJson(res, 200, {
+      ok: true,
+      message: 'Admin şifresi güncellendi.',
+    })
+  } catch (error) {
+    return sendJson(res, 500, {
+      ok: false,
+      message: error.message || 'Admin şifresi güncellenemedi.',
     })
   }
 }
@@ -210,6 +284,10 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method === 'POST' && req.url === '/api/admin/login') {
     return handleAdminLogin(req, res)
+  }
+
+  if (req.method === 'POST' && req.url === '/api/admin/change-password') {
+    return handleAdminChangePassword(req, res)
   }
 
   if (req.method === 'POST' && req.url === '/api/product-image') {
