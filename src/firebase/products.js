@@ -1,6 +1,6 @@
 // Kiosk veri okuma yardımcıları.
 // Kiosk anonimdir; güvenlik kuralları yalnızca aktif ürünlerin okunmasına izin verir.
-import { collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore'
+import { collection, getDocs, query, where, doc, getDoc, updateDoc } from 'firebase/firestore'
 import { db } from './config'
 import {
   COLORS,
@@ -77,4 +77,19 @@ export async function fetchProduct(barcode) {
 export async function fetchKioskSettings() {
   const snap = await getDoc(doc(db, 'kioskSettings', 'default'))
   return normalizeKioskSettings(snap.exists() ? snap.data() : {})
+}
+
+// Tüm ürünlerin barkod + ad + (görsel var mı) özeti — toplu görsel eşleştirme için.
+export async function fetchAllProductsBrief() {
+  const snap = await getDocs(collection(db, 'products'))
+  return snap.docs.map((d) => ({
+    id: d.id,
+    name: d.data().name || '',
+    hasImage: !!d.data().image,
+  }))
+}
+
+// Bir ürünün görselini (base64 data URL) barkoduna göre günceller.
+export async function updateProductImage(barcode, image) {
+  await updateDoc(doc(db, 'products', String(barcode)), { image })
 }
