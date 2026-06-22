@@ -119,9 +119,9 @@
   },
   "1048": {
     "barcode": "1048",
-    "imageUpdatedAt": "2026-06-22T15:01:27.060Z",
+    "imageUpdatedAt": "2026-06-22T17:07:07.905Z",
     "imagePath": "/product-images/1048.webp",
-    "updatedAt": "2026-06-22T15:01:27.083Z"
+    "updatedAt": "2026-06-22T17:07:07.943Z"
   },
   "1059": {
     "barcode": "1059",
@@ -3721,7 +3721,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.448Z"
+    "updatedAt": "2026-06-22T17:07:50.231Z",
+    "imageUpdatedAt": "2026-06-22T17:07:50.201Z",
+    "imagePath": "/product-images/3334582021991.webp"
   },
   "3378281212007": {
     "barcode": "3378281212007",
@@ -6015,7 +6017,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.449Z"
+    "updatedAt": "2026-06-22T17:08:29.919Z",
+    "imageUpdatedAt": "2026-06-22T17:08:29.887Z",
+    "imagePath": "/product-images/3612170000833.webp"
   },
   "3612170000857": {
     "barcode": "3612170000857",
@@ -6053,7 +6057,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.449Z"
+    "updatedAt": "2026-06-22T17:09:09.476Z",
+    "imageUpdatedAt": "2026-06-22T17:09:09.450Z",
+    "imagePath": "/product-images/3612170000857.webp"
   },
   "3612170017572": {
     "barcode": "3612170017572",

@@ -1,5 +1,73 @@
 [
   {
+    "id": "1782148149589-487357cdb8b11",
+    "createdAt": "2026-06-22T17:09:09.589Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612170000857",
+    "message": "3612170000857 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612170000857",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782148110059-a4d34e3264ca",
+    "createdAt": "2026-06-22T17:08:30.059Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612170000833",
+    "message": "3612170000833 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612170000833",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782148070356-0a7c160ddd081",
+    "createdAt": "2026-06-22T17:07:50.356Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3334582021991",
+    "message": "3334582021991 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3334582021991",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782148028041-b79d63cd91deb",
+    "createdAt": "2026-06-22T17:07:08.041Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "1048",
+    "message": "1048 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "1048",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
     "id": "1782147667647-bb0ff7ac928c8",
     "createdAt": "2026-06-22T17:01:07.647Z",
     "actor": "local-admin",
