@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, useRef } from 'react'
 import { useFlow } from '../state/FlowContext'
 import { useLanguage } from '../../i18n/LanguageContext'
 import AtmosphereBackground from '../components/AtmosphereBackground'
@@ -13,32 +13,89 @@ const SERVE = {
 }
 const levelN = (v) => (v === 'intense' ? 3 : v === 'medium' ? 2 : v === 'light' ? 1 : 0)
 
-// Bekleme (attract) ekranı: arkada bulanık şarap videosu; üstünde öne çıkan şarap.
-// Karta dokununca o şarabın detayı açılır (ürün kaybolmaz); boşluğa dokununca açılışa gider.
+// Videoların doğru anda başlayıp durması için özel oynatıcı
+function AdVideo({ src, isActive, onEnded }) {
+  const videoRef = useRef(null)
+  
+  useEffect(() => {
+    if (isActive && videoRef.current) {
+      videoRef.current.currentTime = 0
+      videoRef.current.play().catch(e => console.log('Video oynatılamadı:', e))
+    } else if (!isActive && videoRef.current) {
+      videoRef.current.pause()
+    }
+  }, [isActive])
+
+  return (
+    <video 
+      ref={videoRef} 
+      src={src} 
+      muted={true} 
+      playsInline 
+      onEnded={onEnded} 
+      className="w-full h-full object-cover" 
+    />
+  )
+}
+
 export default function IdleScreen() {
   const { products, wakeFromIdle, openDetail, settings, currency } = useFlow()
   const { t, tl, lang } = useLanguage()
   const rotateMs = (settings?.featuredRotationSeconds || 7) * 1000
 
+  // 1. ADIM: Admin panelden gelen Aktif Reklamları kontrol et
+  const activeAds = useMemo(() => {
+    return (settings?.ads || []).filter(ad => ad.isActive);
+  }, [settings?.ads]);
+
+  const isAdMode = activeAds.length > 0;
+  const [adIdx, setAdIdx] = useState(0);
+
+  // Reklam Modu Döngüsü (Sadece resimler için süre işler, videolar kendi bitince geçer)
+  useEffect(() => {
+    if (!isAdMode || activeAds.length === 0) return;
+
+    const currentAd = activeAds[adIdx];
+    let timer;
+
+    if (currentAd && currentAd.type === 'image') {
+      timer = setTimeout(() => {
+        setAdIdx((prev) => (prev + 1) % activeAds.length);
+      }, 8000); // Resimler 8 saniye ekranda kalır
+    }
+
+    return () => clearTimeout(timer);
+  }, [isAdMode, activeAds, adIdx]);
+
+  const handleVideoEnd = () => {
+    setAdIdx((prev) => (prev + 1) % activeAds.length);
+  };
+
+
+  // 2. ADIM: Eğer reklam YOKSA çalışacak olan eski Öne Çıkan Şaraplar sistemi
   const featured = useMemo(() => {
+    if (isAdMode) return []; // Reklam varsa hesaplama yapma
     const active = products.filter((p) => p.active !== false && p.stock > 0)
     let list = active.filter((p) => p.featured)
     if (!list.length) list = active.filter((p) => p.sommelierPick)
     if (!list.length) list = active
     return [...list].sort((a, b) => (b.priorityScore || 0) - (a.priorityScore || 0)).slice(0, 8)
-  }, [products])
+  }, [products, isAdMode])
 
-  const [idx, setIdx] = useState(0)
+  const [wineIdx, setWineIdx] = useState(0)
+  
   useEffect(() => {
-    setIdx(0)
+    setWineIdx(0)
   }, [featured.length])
+  
   useEffect(() => {
-    if (featured.length <= 1) return
-    const id = setInterval(() => setIdx((i) => (i + 1) % featured.length), rotateMs)
+    if (isAdMode || featured.length <= 1) return
+    const id = setInterval(() => setWineIdx((i) => (i + 1) % featured.length), rotateMs)
     return () => clearInterval(id)
-  }, [featured, rotateMs])
+  }, [featured, rotateMs, isAdMode])
 
-  const wine = featured[idx]
+  const wine = featured[wineIdx]
+
   const country = wine && COUNTRY_LABELS[wine.country] ? COUNTRY_LABELS[wine.country][lang] : ''
   const note = wine ? tl(wine.shortDescription) || tl(wine.tasteNotes) : ''
   const pairing = wine ? tl(wine.foodPairing) : ''
@@ -56,6 +113,36 @@ export default function IdleScreen() {
     if (wine.color === 'red' || wine.color === 'rose') add('tannin', wine.tannin)
   }
 
+  // --- REKLAM MODU GÖRÜNÜMÜ ---
+  if (isAdMode) {
+    return (
+      <main onClick={wakeFromIdle} className="relative flex h-[100dvh] w-full cursor-pointer overflow-hidden bg-black">
+        {activeAds.map((ad, index) => {
+          const isActive = index === adIdx;
+          return (
+            <div 
+              key={ad.id} 
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            >
+              {ad.type === 'video' ? (
+                <AdVideo src={ad.url} isActive={isActive} onEnded={handleVideoEnd} />
+              ) : (
+                <img 
+                  src={ad.url} 
+                  alt="Sponsor" 
+                  className={`w-full h-full object-cover origin-center ${isActive ? 'animate-kenburns' : ''}`} 
+                />
+              )}
+            </div>
+          )
+        })}
+        {/* Görünmez Tıklama Katmanı */}
+        <div className="absolute inset-0 z-50" />
+      </main>
+    )
+  }
+
+  // --- ÖNE ÇIKAN ŞARAPLAR GÖRÜNÜMÜ (ESKİ SİSTEM) ---
   return (
     <main
       onClick={wakeFromIdle}
@@ -173,7 +260,7 @@ export default function IdleScreen() {
             {featured.map((_, i) => (
               <span
                 key={i}
-                className={`h-1.5 rounded-full transition-all duration-500 ${i === idx ? 'w-6 bg-gold-500' : 'w-1.5 bg-cream-100/25'}`}
+                className={`h-1.5 rounded-full transition-all duration-500 ${i === wineIdx ? 'w-6 bg-gold-500' : 'w-1.5 bg-cream-100/25'}`}
               />
             ))}
           </div>

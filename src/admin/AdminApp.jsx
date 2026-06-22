@@ -8,6 +8,7 @@ import KioskSettings from './components/KioskSettings';
 import History from './components/History';
 import AiExplanation from './components/AiExplanation';
 import ChangePassword from './components/ChangePassword';
+import AdsManager from './components/AdsManager';
 import { clearAdminSession } from './AdminLogin';
 
 export default function AdminApp() {
@@ -35,6 +36,15 @@ export default function AdminApp() {
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+        </svg>
+      ),
+    },
+    {
+      id: 'ads',
+      label: 'Reklam Yönetimi',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
       ),
     },
@@ -249,6 +259,10 @@ export default function AdminApp() {
             <Products />
           </div>
 
+          <div className={activeTab === 'ads' ? 'block' : 'hidden'}>
+            <AdsManager />
+          </div>
+
           <div className={activeTab === 'import' ? 'block' : 'hidden'}>
             <ExcelUpload />
           </div>
@@ -279,6 +293,7 @@ export default function AdminApp() {
 
           {activeTab !== 'dashboard' &&
             activeTab !== 'products' &&
+            activeTab !== 'ads' &&
             activeTab !== 'import' &&
             activeTab !== 'images' &&
             activeTab !== 'reports' &&

@@ -140,3 +140,19 @@
   .ds-glassfill { animation: none; transform: translateY(18px); }
   .ds-glasswobble, .ds-bubble, .ds-amb { animation: none; }
 }
+
+/* Kiosk Reklam Animasyonu Eklentisi */
+@layer utilities {
+  .animate-kenburns {
+    animation: kenburns 10s ease-out forwards;
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
