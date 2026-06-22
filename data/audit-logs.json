@@ -1,5 +1,39 @@
 [
   {
+    "id": "1782148565842-31a237a9ae05f",
+    "createdAt": "2026-06-22T17:16:05.842Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8420870300024",
+    "message": "8420870300024 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8420870300024",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782148294408-f0d28fa8016d",
+    "createdAt": "2026-06-22T17:11:34.408Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179706484",
+    "message": "3612179706484 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179706484",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
     "id": "1782148149589-487357cdb8b11",
     "createdAt": "2026-06-22T17:09:09.589Z",
     "actor": "local-admin",

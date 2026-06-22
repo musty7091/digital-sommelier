@@ -7049,7 +7049,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.450Z"
+    "updatedAt": "2026-06-22T17:11:34.148Z",
+    "imageUpdatedAt": "2026-06-22T17:11:34.110Z",
+    "imagePath": "/product-images/3612179706484.webp"
   },
   "3612179706552": {
     "barcode": "3612179706552",
@@ -29744,7 +29746,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.568Z"
+    "updatedAt": "2026-06-22T17:16:05.715Z",
+    "imageUpdatedAt": "2026-06-22T17:16:05.683Z",
+    "imagePath": "/product-images/8420870300024.webp"
   },
   "8420870300086": {
     "barcode": "8420870300086",
