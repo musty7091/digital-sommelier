@@ -4,7 +4,7 @@
     "name": "ARMAND BRUT GOLD 75CL",
     "brand": "ARMAND",
     "color": "sparkling",
-    "country": "",
+    "country": "FR",
     "region": "",
     "grape": "",
     "body": "medium",
@@ -14,7 +14,9 @@
     "tannin": "",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "celebration"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -35,24 +37,26 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/931.webp",
-    "updatedAt": "2026-06-22T12:25:08.728Z"
+    "updatedAt": "2026-06-22T15:05:07.988Z"
   },
   "932": {
     "barcode": "932",
     "name": "ARMAND BRUT ROSE 75CL",
     "brand": "ARMAND",
-    "color": "sparkling",
-    "country": "",
+    "color": "rose",
+    "country": "FR",
     "region": "",
     "grape": "",
-    "body": "medium",
+    "body": "light",
     "sweetness": "medium",
-    "taste": "medium",
+    "taste": "light",
     "acidity": "",
     "tannin": "",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "celebration"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -73,7 +77,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/932.webp",
-    "updatedAt": "2026-06-22T12:25:15.129Z"
+    "updatedAt": "2026-06-22T15:05:19.656Z"
   },
   "1030": {
     "barcode": "1030",
@@ -112,6 +116,18 @@
     "imageUpdatedAt": null,
     "imagePath": "/product-images/1030.webp",
     "updatedAt": "2026-06-22T12:27:11.464Z"
+  },
+  "1048": {
+    "barcode": "1048",
+    "imageUpdatedAt": "2026-06-22T15:01:27.060Z",
+    "imagePath": "/product-images/1048.webp",
+    "updatedAt": "2026-06-22T15:01:27.083Z"
+  },
+  "1059": {
+    "barcode": "1059",
+    "imageUpdatedAt": "2026-06-22T14:46:00.579Z",
+    "imagePath": "/product-images/1059.webp",
+    "updatedAt": "2026-06-22T14:46:00.600Z"
   },
   "1106": {
     "barcode": "1106",
@@ -2889,10 +2905,10 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T12:55:58.698Z",
+    "updatedAt": "2026-06-22T14:18:51.675Z",
     "name": "JP CHENET SAUVIGNONO 75CL",
     "brand": "JP",
-    "imageUpdatedAt": "2026-06-22T12:55:58.669Z",
+    "imageUpdatedAt": "2026-06-22T14:18:51.647Z",
     "imagePath": "/product-images/3263286301316.webp"
   },
   "3263286301323": {
@@ -2931,10 +2947,10 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T12:56:16.490Z",
+    "updatedAt": "2026-06-22T14:19:09.501Z",
     "name": "JP CHENET CABERNET SYRAH 75CL",
     "brand": "JP",
-    "imageUpdatedAt": "2026-06-22T12:56:16.460Z",
+    "imageUpdatedAt": "2026-06-22T14:19:09.475Z",
     "imagePath": "/product-images/3263286301323.webp"
   },
   "3263286301385": {
@@ -2973,8 +2989,8 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T12:56:34.097Z",
-    "imageUpdatedAt": "2026-06-22T12:56:34.071Z",
+    "updatedAt": "2026-06-22T14:19:28.586Z",
+    "imageUpdatedAt": "2026-06-22T14:19:28.561Z",
     "imagePath": "/product-images/3263286301385.webp"
   },
   "3263286321284": {
@@ -3013,8 +3029,8 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T12:56:51.416Z",
-    "imageUpdatedAt": "2026-06-22T12:56:51.386Z",
+    "updatedAt": "2026-06-22T14:19:47.581Z",
+    "imageUpdatedAt": "2026-06-22T14:19:47.553Z",
     "imagePath": "/product-images/3263286321284.webp"
   },
   "3263286328993": {
@@ -3053,7 +3069,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.448Z"
+    "updatedAt": "2026-06-22T14:20:08.711Z",
+    "imageUpdatedAt": "2026-06-22T14:20:08.682Z",
+    "imagePath": "/product-images/3263286328993.webp"
   },
   "3263286329006": {
     "barcode": "3263286329006",
@@ -3088,10 +3106,12 @@
     "description": "Kurutulmuş üzümlerden muazzam yoğunluk.",
     "descriptionTr": "Kurutulmuş üzümlerden muazzam yoğunluk.",
     "descriptionEn": "Kurutulmuş üzümlerden muazzam yoğunluk.",
-    "sommelierPick": true,
+    "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T12:24:15.250Z"
+    "updatedAt": "2026-06-22T15:26:08.088Z",
+    "imageUpdatedAt": "2026-06-22T14:20:34.520Z",
+    "imagePath": "/product-images/3263286329006.webp"
   },
   "3263286346683": {
     "barcode": "3263286346683",
@@ -4311,7 +4331,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.448Z"
+    "updatedAt": "2026-06-22T14:20:53.787Z",
+    "imageUpdatedAt": "2026-06-22T14:20:53.761Z",
+    "imagePath": "/product-images/3500610014789.webp"
   },
   "3500610031427": {
     "barcode": "3500610031427",
@@ -4426,7 +4448,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.448Z"
+    "updatedAt": "2026-06-22T14:21:12.258Z",
+    "imageUpdatedAt": "2026-06-22T14:21:12.236Z",
+    "imagePath": "/product-images/3500610033346.webp"
   },
   "3500610034442": {
     "barcode": "3500610034442",
@@ -9459,7 +9483,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.451Z"
+    "updatedAt": "2026-06-22T14:37:03.277Z",
+    "imageUpdatedAt": "2026-06-22T14:37:03.252Z",
+    "imagePath": "/product-images/3760204540180.webp"
   },
   "3760204540197": {
     "barcode": "3760204540197",
@@ -9574,7 +9600,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.451Z"
+    "updatedAt": "2026-06-22T14:37:20.853Z",
+    "imageUpdatedAt": "2026-06-22T14:37:20.816Z",
+    "imagePath": "/product-images/3760204540210.webp"
   },
   "3760204540227": {
     "barcode": "3760204540227",
@@ -9725,7 +9753,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.486Z"
+    "updatedAt": "2026-06-22T14:37:38.982Z",
+    "imageUpdatedAt": "2026-06-22T14:37:38.961Z",
+    "imagePath": "/product-images/3760204540258.webp"
   },
   "3760204540265": {
     "barcode": "3760204540265",
@@ -9954,7 +9984,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.486Z"
+    "updatedAt": "2026-06-22T14:46:18.216Z",
+    "imageUpdatedAt": "2026-06-22T14:46:18.188Z",
+    "imagePath": "/product-images/3760204540388.webp"
   },
   "3760204540418": {
     "barcode": "3760204540418",
@@ -10106,7 +10138,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.486Z"
+    "updatedAt": "2026-06-22T14:37:57.640Z",
+    "imageUpdatedAt": "2026-06-22T14:37:57.618Z",
+    "imagePath": "/product-images/3760204540494.webp"
   },
   "3760204540616": {
     "barcode": "3760204540616",
@@ -12392,7 +12426,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.487Z"
+    "updatedAt": "2026-06-22T14:21:32.217Z",
+    "imageUpdatedAt": "2026-06-22T14:21:32.195Z",
+    "imagePath": "/product-images/4840013000248.webp"
   },
   "4840013006714": {
     "barcode": "4840013006714",
@@ -16658,7 +16694,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.488Z"
+    "updatedAt": "2026-06-22T14:46:35.657Z",
+    "imageUpdatedAt": "2026-06-22T14:46:35.630Z",
+    "imagePath": "/product-images/6009818270173.webp"
   },
   "6412700715001": {
     "barcode": "6412700715001",
@@ -17611,7 +17649,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.488Z"
+    "updatedAt": "2026-06-22T14:46:53.050Z",
+    "imageUpdatedAt": "2026-06-22T14:46:53.019Z",
+    "imagePath": "/product-images/7798051950032.webp"
   },
   "7798096630210": {
     "barcode": "7798096630210",
@@ -17649,7 +17689,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.488Z"
+    "updatedAt": "2026-06-22T15:01:45.571Z",
+    "imageUpdatedAt": "2026-06-22T15:01:45.545Z",
+    "imagePath": "/product-images/7798096630210.webp"
   },
   "7798096630258": {
     "barcode": "7798096630258",
@@ -17687,7 +17729,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.488Z"
+    "updatedAt": "2026-06-22T15:02:07.354Z",
+    "imageUpdatedAt": "2026-06-22T15:02:07.312Z",
+    "imagePath": "/product-images/7798096630258.webp"
   },
   "7798096630807": {
     "barcode": "7798096630807",
@@ -17725,7 +17769,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.488Z"
+    "updatedAt": "2026-06-22T15:02:28.905Z",
+    "imageUpdatedAt": "2026-06-22T15:02:28.867Z",
+    "imagePath": "/product-images/7798096630807.webp"
   },
   "7798281510082": {
     "barcode": "7798281510082",
@@ -21303,7 +21349,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.526Z"
+    "updatedAt": "2026-06-22T15:02:54.951Z",
+    "imageUpdatedAt": "2026-06-22T15:02:54.923Z",
+    "imagePath": "/product-images/8005011446078.webp"
   },
   "8005011561078": {
     "barcode": "8005011561078",
@@ -22674,7 +22722,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.526Z"
+    "updatedAt": "2026-06-22T14:47:10.462Z",
+    "imageUpdatedAt": "2026-06-22T14:47:10.434Z",
+    "imagePath": "/product-images/8005890802019.webp"
   },
   "8005890802033": {
     "barcode": "8005890802033",
@@ -22750,7 +22800,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.526Z"
+    "updatedAt": "2026-06-22T15:03:25.306Z",
+    "imageUpdatedAt": "2026-06-22T15:03:25.277Z",
+    "imagePath": "/product-images/8005890802156.webp"
   },
   "8005890802439": {
     "barcode": "8005890802439",
@@ -22939,7 +22991,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.527Z"
+    "updatedAt": "2026-06-22T14:47:27.921Z",
+    "imageUpdatedAt": "2026-06-22T14:47:27.892Z",
+    "imagePath": "/product-images/8005890803924.webp"
   },
   "8005890804761": {
     "barcode": "8005890804761",
@@ -25335,7 +25389,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.527Z"
+    "updatedAt": "2026-06-22T14:21:51.358Z",
+    "imageUpdatedAt": "2026-06-22T14:21:51.336Z",
+    "imagePath": "/product-images/8008900004212.webp"
   },
   "8008900005431": {
     "barcode": "8008900005431",
@@ -26745,7 +26801,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.527Z"
+    "updatedAt": "2026-06-22T14:47:45.333Z",
+    "imageUpdatedAt": "2026-06-22T14:47:45.302Z",
+    "imagePath": "/product-images/8026290021633.webp"
   },
   "8026290021640": {
     "barcode": "8026290021640",
@@ -27470,7 +27528,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.528Z"
+    "updatedAt": "2026-06-22T14:48:02.683Z",
+    "imageUpdatedAt": "2026-06-22T14:48:02.656Z",
+    "imagePath": "/product-images/8052405570079.webp"
   },
   "8052439717297": {
     "barcode": "8052439717297",
@@ -32229,7 +32289,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.569Z"
+    "updatedAt": "2026-06-22T14:22:10.810Z",
+    "imageUpdatedAt": "2026-06-22T14:22:10.787Z",
+    "imagePath": "/product-images/8690584114402.webp"
   },
   "8690584117403": {
     "barcode": "8690584117403",
@@ -32305,7 +32367,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.569Z"
+    "updatedAt": "2026-06-22T14:22:30.994Z",
+    "imageUpdatedAt": "2026-06-22T14:22:30.967Z",
+    "imagePath": "/product-images/8690584120403.webp"
   },
   "8690584120502": {
     "barcode": "8690584120502",
@@ -37343,7 +37407,7 @@
     "name": "ETEL GILLHAM WHITE 75CL",
     "brand": "ETEL",
     "color": "white",
-    "country": "",
+    "country": "CY",
     "region": "",
     "grape": "",
     "body": "intense",
@@ -37353,7 +37417,10 @@
     "tannin": "",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -37374,14 +37441,14 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/0764460438000.webp",
-    "updatedAt": "2026-06-22T12:25:21.964Z"
+    "updatedAt": "2026-06-22T15:23:39.445Z"
   },
   "0764460438079": {
     "barcode": "0764460438079",
     "name": "ETEL NOVUS 2018 DRY RED WINE 75CL",
     "brand": "ETEL",
     "color": "red",
-    "country": "",
+    "country": "CY",
     "region": "",
     "grape": "",
     "body": "intense",
@@ -37389,9 +37456,13 @@
     "taste": "intense",
     "acidity": "",
     "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
+    "block": "B",
+    "shelf": "8",
+    "usagePurposes": [
+      "romantic",
+      "daily",
+      "food"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -37412,6 +37483,6 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/0764460438079.webp",
-    "updatedAt": "2026-06-22T12:27:01.766Z"
+    "updatedAt": "2026-06-22T15:24:28.426Z"
   }
 }

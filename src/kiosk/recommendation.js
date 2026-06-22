@@ -27,12 +27,17 @@ function toNumber(value, fallback = 0) {
     return Number.isFinite(value) ? value : fallback
   }
 
-  const normalized = String(value)
-    .replace(/\./g, '')
-    .replace(',', '.')
-    .trim()
+  let strVal = String(value).trim()
 
-  const parsed = Number(normalized)
+  // Eğer değer içinde virgül varsa, bu formatın 1.500,50 veya 150,50 gibi yazıldığını varsayıyoruz
+  if (strVal.includes(',')) {
+    // Önce binlik ayracı olarak kullanılmış olabilecek noktaları tamamen kaldır (1.500,50 -> 1500,50)
+    strVal = strVal.replace(/\./g, '')
+    // Sonra küsurat ayracı olan virgülü standart noktaya çevir (1500,50 -> 1500.50)
+    strVal = strVal.replace(',', '.')
+  }
+
+  const parsed = Number(strVal)
 
   return Number.isFinite(parsed) ? parsed : fallback
 }
@@ -334,8 +339,9 @@ function buildWhy(product, selections = {}, opts = {}) {
   }
 
   if (selections.country && matchesCountry(product, selections.country)) {
-    const country = cleanText(product.country)
-    const label = getSafeLabel(COUNTRY_LABELS, country, country)
+    const rawCountry = cleanText(product.country)
+    const countryKey = normalizeCountry(product.country) // Çeviri dosyasındaki karşılığını (Örn: IT, FR) bulmak için
+    const label = getSafeLabel(COUNTRY_LABELS, countryKey, rawCountry)
 
     tr.push(label.tr)
     en.push(label.en)

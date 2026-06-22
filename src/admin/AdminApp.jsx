@@ -212,6 +212,18 @@ export default function AdminApp() {
           </div>
 
           <div className="flex items-center gap-3 md:gap-4 shrink-0">
+            {/* Kiosk Geçiş Butonu Eklendi */}
+            <button
+              onClick={() => window.open('/kiosk', '_blank')}
+              className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-charcoal-700 hover:bg-wine-800 text-cream-100 rounded-lg transition-all duration-200 border border-charcoal-600 hover:border-gold-500 text-xs md:text-sm font-medium shadow-sm mr-1 md:mr-2"
+              title="Kiosk Ekranını Yeni Sekmede Aç"
+            >
+              <svg className="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span className="hidden sm:inline">Kiosk Ekranı</span>
+            </button>
+
             <div className="text-right hidden sm:block">
               <p className="text-sm font-medium text-cream-100">
                 Hoş Geldiniz, Yönetici
