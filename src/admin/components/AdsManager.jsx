@@ -260,7 +260,7 @@ export default function AdsManager() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-in fade-in duration-200">
           <div className="w-full max-w-4xl bg-ink-950 rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-charcoal-700">
             {/* Modal Üst Başlık */}
-            <div className="p-5 border-b border-charcoal-700 flex justify-between items-center bg-charcoal-900">
+            <div className="p-5 border-b border-charcoal-700 flex justify-between items-center bg-charcoal-800">
               <div>
                 <h3 className="text-xl font-serif text-gold-500 tracking-wide">Resmi Kırp ve Düzenle</h3>
                 <p className="text-xs text-cream-200/60 mt-1">Kiosk ekranına kusursuz oturması için 1024x768 oranında sabitlenmiştir.</p>
@@ -288,7 +288,7 @@ export default function AdsManager() {
             </div>
             
             {/* Modal Alt Kontroller */}
-            <div className="p-6 bg-charcoal-900 border-t border-charcoal-700 flex flex-col sm:flex-row items-center gap-6">
+            <div className="p-6 bg-charcoal-800 border-t border-charcoal-700 flex flex-col sm:flex-row items-center gap-6">
               <div className="flex-1 w-full flex items-center gap-4">
                 <svg className="w-5 h-5 text-cream-200/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
                 <input
@@ -432,7 +432,7 @@ export default function AdsManager() {
               </div>
               
               {/* Önizleme */}
-              <div className="w-32 h-20 bg-ink-950 rounded-lg overflow-hidden shrink-0 border border-charcoal-900 relative shadow-inner ml-2">
+              <div className="w-32 h-20 bg-ink-950 rounded-lg overflow-hidden shrink-0 border border-charcoal-700 relative shadow-inner ml-2">
                 {ad.type === 'video' ? (
                   <>
                     <video src={ad.url} className="w-full h-full object-cover" />
