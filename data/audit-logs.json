@@ -1,0 +1,4474 @@
+[
+  {
+    "id": "1782128199246-e93bc5fa95309",
+    "createdAt": "2026-06-22T11:36:39.246Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:36:39.236Z"
+    }
+  },
+  {
+    "id": "1782128197915-1b8443516d125",
+    "createdAt": "2026-06-22T11:36:37.915Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:36:37.902Z"
+    }
+  },
+  {
+    "id": "1782128091191-0ff514df78ea3",
+    "createdAt": "2026-06-22T11:34:51.191Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi ve doğrulandı.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi ve doğrulandı.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782128091113-bcc7873ef700d",
+    "createdAt": "2026-06-22T11:34:51.113Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782127657241-855485fbc1dc",
+    "createdAt": "2026-06-22T11:27:37.241Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi ve doğrulandı.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi ve doğrulandı.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782127657143-c6bfcea5703e6",
+    "createdAt": "2026-06-22T11:27:37.143Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782127373532-4a38e325dc95c",
+    "createdAt": "2026-06-22T11:22:53.532Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:22:53.520Z"
+    }
+  },
+  {
+    "id": "1782127370653-4612318207ff7",
+    "createdAt": "2026-06-22T11:22:50.653Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:22:50.647Z"
+    }
+  },
+  {
+    "id": "1782127367736-9ec4f43c2a84a",
+    "createdAt": "2026-06-22T11:22:47.736Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:22:47.723Z"
+    }
+  },
+  {
+    "id": "1782127312681-19d579ad8dd9a",
+    "createdAt": "2026-06-22T11:21:52.681Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782127312670-99048faddbb41",
+    "createdAt": "2026-06-22T11:21:52.670Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782127206254-56177d7a23726",
+    "createdAt": "2026-06-22T11:20:06.254Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782127206240-19fe0f3a4b498",
+    "createdAt": "2026-06-22T11:20:06.240Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782127126095-f2f8bef57a9d3",
+    "createdAt": "2026-06-22T11:18:46.095Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:18:46.091Z"
+    }
+  },
+  {
+    "id": "1782127123253-7623575c40872",
+    "createdAt": "2026-06-22T11:18:43.253Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:18:43.239Z"
+    }
+  },
+  {
+    "id": "1782127089491-fe66e3080afa5",
+    "createdAt": "2026-06-22T11:18:09.491Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "8690584114402",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "8690584114402",
+      "productName": "CANKAYA 75CL",
+      "barcode": "8690584114402",
+      "phase": "results",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "dinner",
+        "taste": "medium",
+        "country": "FR"
+      },
+      "timestamp": "2026-06-22T11:18:09.482Z"
+    }
+  },
+  {
+    "id": "1782127071221-26659bfcde20d",
+    "createdAt": "2026-06-22T11:17:51.221Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "FR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "dinner",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:17:51.218Z"
+    }
+  },
+  {
+    "id": "1782127069906-5c0638e16a2e8",
+    "createdAt": "2026-06-22T11:17:49.906Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "dinner",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:17:49.901Z"
+    }
+  },
+  {
+    "id": "1782127068382-840cdf645fcbd",
+    "createdAt": "2026-06-22T11:17:48.383Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "dinner",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:17:48.377Z"
+    }
+  },
+  {
+    "id": "1782127066932-a8bfe6bce3029",
+    "createdAt": "2026-06-22T11:17:46.932Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "budget",
+        "min": 0,
+        "max": 500
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:17:46.928Z"
+    }
+  },
+  {
+    "id": "1782127064652-9e9cc709a6f79",
+    "createdAt": "2026-06-22T11:17:44.652Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:17:44.648Z"
+    }
+  },
+  {
+    "id": "1782127062489-6852dbb8bbbc",
+    "createdAt": "2026-06-22T11:17:42.490Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:17:42.468Z"
+    }
+  },
+  {
+    "id": "1782127005806-721d6a415b1f6",
+    "createdAt": "2026-06-22T11:16:45.806Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "FR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": "intense",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:16:45.800Z"
+    }
+  },
+  {
+    "id": "1782127002320-c61235e157247",
+    "createdAt": "2026-06-22T11:16:42.320Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "intense",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:16:42.315Z"
+    }
+  },
+  {
+    "id": "1782126999867-94a2f97a4e4f1",
+    "createdAt": "2026-06-22T11:16:39.867Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:16:39.860Z"
+    }
+  },
+  {
+    "id": "1782126997353-a21b45d8a038b",
+    "createdAt": "2026-06-22T11:16:37.353Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "mid",
+        "min": 500,
+        "max": 1000
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:16:37.348Z"
+    }
+  },
+  {
+    "id": "1782126995059-8b9e8fc69cdcf",
+    "createdAt": "2026-06-22T11:16:35.059Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:16:35.054Z"
+    }
+  },
+  {
+    "id": "1782126993610-c5d5f1472e04c",
+    "createdAt": "2026-06-22T11:16:33.610Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:16:33.597Z"
+    }
+  },
+  {
+    "id": "1782126955820-3572b619030d2",
+    "createdAt": "2026-06-22T11:15:55.820Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "8005890804761",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "8005890804761",
+      "productName": "BERTELETTI PINOT GRIGIO 75CL",
+      "barcode": "8005890804761",
+      "phase": "results",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "gift",
+        "taste": "intense",
+        "country": "FR"
+      },
+      "timestamp": "2026-06-22T11:15:55.788Z"
+    }
+  },
+  {
+    "id": "1782126856112-3049d10e76733",
+    "createdAt": "2026-06-22T11:14:16.112Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "FR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "gift",
+        "taste": "intense",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:14:16.108Z"
+    }
+  },
+  {
+    "id": "1782126853696-09bafd77984c6",
+    "createdAt": "2026-06-22T11:14:13.696Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "intense",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "gift",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:14:13.685Z"
+    }
+  },
+  {
+    "id": "1782126848674-bec84e5820ca5",
+    "createdAt": "2026-06-22T11:14:08.674Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "gift",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:14:08.661Z"
+    }
+  },
+  {
+    "id": "1782126848567-0cbecc0c19b5d",
+    "createdAt": "2026-06-22T11:14:08.567Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "gift",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:14:08.562Z"
+    }
+  },
+  {
+    "id": "1782126847710-9e66ae10c6757",
+    "createdAt": "2026-06-22T11:14:07.710Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "budget",
+        "min": 0,
+        "max": 500
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:14:07.705Z"
+    }
+  },
+  {
+    "id": "1782126846972-94d4bd8c419a2",
+    "createdAt": "2026-06-22T11:14:06.972Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:14:06.967Z"
+    }
+  },
+  {
+    "id": "1782126846117-02d162064096c",
+    "createdAt": "2026-06-22T11:14:06.117Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:14:06.103Z"
+    }
+  },
+  {
+    "id": "1782126783042-05bef3fcc7f2f",
+    "createdAt": "2026-06-22T11:13:03.042Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:13:03.034Z"
+    }
+  },
+  {
+    "id": "1782126780558-9fa34e2628163",
+    "createdAt": "2026-06-22T11:13:00.558Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:13:00.546Z"
+    }
+  },
+  {
+    "id": "1782126686344-647e396d9c762",
+    "createdAt": "2026-06-22T11:11:26.344Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "AR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": "dinner",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:11:26.335Z"
+    }
+  },
+  {
+    "id": "1782126683959-e8c93a1577736",
+    "createdAt": "2026-06-22T11:11:23.959Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": "dinner",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:11:23.956Z"
+    }
+  },
+  {
+    "id": "1782126683029-3a79510a01f56",
+    "createdAt": "2026-06-22T11:11:23.029Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "dinner",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:11:23.026Z"
+    }
+  },
+  {
+    "id": "1782126682087-d80ba39c3882b",
+    "createdAt": "2026-06-22T11:11:22.087Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "mid",
+        "min": 500,
+        "max": 1000
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:11:22.082Z"
+    }
+  },
+  {
+    "id": "1782126681339-677257ab7541f",
+    "createdAt": "2026-06-22T11:11:21.339Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:11:21.335Z"
+    }
+  },
+  {
+    "id": "1782126680404-7165be7e96354",
+    "createdAt": "2026-06-22T11:11:20.404Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:11:20.386Z"
+    }
+  },
+  {
+    "id": "1782126540259-c3ad105496b23",
+    "createdAt": "2026-06-22T11:09:00.259Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "FR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "daily",
+        "taste": "light",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:09:00.252Z"
+    }
+  },
+  {
+    "id": "1782126537565-8d8393a9d6ae1",
+    "createdAt": "2026-06-22T11:08:57.565Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "light",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "daily",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:57.559Z"
+    }
+  },
+  {
+    "id": "1782126536546-6465ae377edfb",
+    "createdAt": "2026-06-22T11:08:56.546Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "daily",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:56.540Z"
+    }
+  },
+  {
+    "id": "1782126535992-3d0d4639194ba",
+    "createdAt": "2026-06-22T11:08:55.992Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "budget",
+        "min": 0,
+        "max": 500
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:55.987Z"
+    }
+  },
+  {
+    "id": "1782126535328-42d7b832c2b16",
+    "createdAt": "2026-06-22T11:08:55.328Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:55.324Z"
+    }
+  },
+  {
+    "id": "1782126534573-63564b0e17628",
+    "createdAt": "2026-06-22T11:08:54.573Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:54.562Z"
+    }
+  },
+  {
+    "id": "1782126525822-38e0864d4a815",
+    "createdAt": "2026-06-22T11:08:45.822Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": "daily",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:45.814Z"
+    }
+  },
+  {
+    "id": "1782126517785-dcbd0e2600678",
+    "createdAt": "2026-06-22T11:08:37.785Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": "daily",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:37.781Z"
+    }
+  },
+  {
+    "id": "1782126517047-c2f8c7d6ea57c",
+    "createdAt": "2026-06-22T11:08:37.047Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "daily",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:37.040Z"
+    }
+  },
+  {
+    "id": "1782126515572-0d459dd96f716",
+    "createdAt": "2026-06-22T11:08:35.572Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "mid",
+        "min": 500,
+        "max": 1000
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:35.566Z"
+    }
+  },
+  {
+    "id": "1782126514986-24c86528ab5be",
+    "createdAt": "2026-06-22T11:08:34.986Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:34.982Z"
+    }
+  },
+  {
+    "id": "1782126513918-c53a30b76c843",
+    "createdAt": "2026-06-22T11:08:33.918Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:08:33.902Z"
+    }
+  },
+  {
+    "id": "1782126336188-f9c3bd66f53e9",
+    "createdAt": "2026-06-22T11:05:36.188Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "intense",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "gift",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:05:36.175Z"
+    }
+  },
+  {
+    "id": "1782126298382-42d1fcda8b953",
+    "createdAt": "2026-06-22T11:04:58.382Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "gift",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:04:58.376Z"
+    }
+  },
+  {
+    "id": "1782126251551-0868fbbea3c09",
+    "createdAt": "2026-06-22T11:04:11.551Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "budget",
+        "min": 0,
+        "max": 500
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:04:11.543Z"
+    }
+  },
+  {
+    "id": "1782126237060-27fcda35ebcae",
+    "createdAt": "2026-06-22T11:03:57.060Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:03:57.056Z"
+    }
+  },
+  {
+    "id": "1782126234615-f0c5aa511ec43",
+    "createdAt": "2026-06-22T11:03:54.615Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:03:54.606Z"
+    }
+  },
+  {
+    "id": "1782126218607-cdcc8baf2c47",
+    "createdAt": "2026-06-22T11:03:38.607Z",
+    "actor": "local-admin",
+    "action": "kiosk_settings_saved",
+    "entityType": "kiosk-settings",
+    "entityId": "kiosk",
+    "message": "Kiosk ayarları lokal dosyaya kaydedildi.",
+    "details": {
+      "fields": [
+        "language",
+        "currency",
+        "timers",
+        "recommendation",
+        "features",
+        "maintenance",
+        "priceRanges"
+      ]
+    }
+  },
+  {
+    "id": "1782126218589-15862ff33b04d",
+    "createdAt": "2026-06-22T11:03:38.589Z",
+    "actor": "local-admin",
+    "action": "kiosk_settings_updated",
+    "entityType": "kiosk-settings",
+    "entityId": "kiosk",
+    "message": "Kiosk ayarları güncellendi.",
+    "details": {
+      "fields": [
+        "idleTimeoutSeconds",
+        "autoResetSeconds",
+        "showPopularProducts",
+        "showStock",
+        "showPrice",
+        "maxResults",
+        "maxLivePreviewProducts",
+        "language",
+        "isKioskEnabled",
+        "colors",
+        "priceRanges",
+        "usagePurposes",
+        "countries",
+        "defaultLanguage",
+        "languages",
+        "currency",
+        "resetTimeoutSeconds",
+        "idleScreenEnabled",
+        "featuredRotationSeconds",
+        "resultCount",
+        "lowStockThreshold",
+        "hideOutOfStock",
+        "scanEnabled",
+        "analyticsEnabled",
+        "maintenanceMode",
+        "maintenanceMessage"
+      ]
+    }
+  },
+  {
+    "id": "1782126177887-0fdc8af17add1",
+    "createdAt": "2026-06-22T11:02:57.887Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:02:57.874Z"
+    }
+  },
+  {
+    "id": "1782126067269-e3c75167d2373",
+    "createdAt": "2026-06-22T11:01:07.269Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "8437007157338",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "8437007157338",
+      "productName": "EL PACTO RIOJA ORGANIC 75 CL",
+      "barcode": "8437007157338",
+      "phase": "results",
+      "stepIndex": 4,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "premium",
+          "min": 1000,
+          "max": 2000
+        },
+        "purpose": "dinner",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:01:07.262Z"
+    }
+  },
+  {
+    "id": "1782126064811-94a68e93378",
+    "createdAt": "2026-06-22T11:01:04.811Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "premium",
+          "min": 1000,
+          "max": 2000
+        },
+        "purpose": "dinner",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:01:04.807Z"
+    }
+  },
+  {
+    "id": "1782126063367-c488ec5ca9ea5",
+    "createdAt": "2026-06-22T11:01:03.367Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "premium",
+          "min": 1000,
+          "max": 2000
+        },
+        "purpose": "dinner",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:01:03.361Z"
+    }
+  },
+  {
+    "id": "1782126062408-19b5cc62aa198",
+    "createdAt": "2026-06-22T11:01:02.408Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "dinner",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "premium",
+          "min": 1000,
+          "max": 2000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:01:02.403Z"
+    }
+  },
+  {
+    "id": "1782126059841-f369a07858b98",
+    "createdAt": "2026-06-22T11:00:59.841Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "premium",
+        "min": 1000,
+        "max": 2000
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "rose",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:59.837Z"
+    }
+  },
+  {
+    "id": "1782126058603-db897490f61a1",
+    "createdAt": "2026-06-22T11:00:58.603Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "rose",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:58.597Z"
+    }
+  },
+  {
+    "id": "1782126057471-14ccefbcb9229",
+    "createdAt": "2026-06-22T11:00:57.471Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:57.456Z"
+    }
+  },
+  {
+    "id": "1782126045061-873edfdcd8cd5",
+    "createdAt": "2026-06-22T11:00:45.061Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "rose",
+        "priceRange": null,
+        "purpose": "special",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:45.051Z"
+    }
+  },
+  {
+    "id": "1782126043577-4daec443d2234",
+    "createdAt": "2026-06-22T11:00:43.577Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "rose",
+        "priceRange": null,
+        "purpose": "special",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:43.569Z"
+    }
+  },
+  {
+    "id": "1782126042125-24fc498ff764",
+    "createdAt": "2026-06-22T11:00:42.125Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "special",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "rose",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:42.119Z"
+    }
+  },
+  {
+    "id": "1782126040933-48bbaa436aa6",
+    "createdAt": "2026-06-22T11:00:40.933Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "rose",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:40.929Z"
+    }
+  },
+  {
+    "id": "1782126039941-abbc205ef76eb",
+    "createdAt": "2026-06-22T11:00:39.941Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "rose",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:39.936Z"
+    }
+  },
+  {
+    "id": "1782126039060-c2b2edb5dbe3f",
+    "createdAt": "2026-06-22T11:00:39.060Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:39.046Z"
+    }
+  },
+  {
+    "id": "1782126029873-467538e5f3b78",
+    "createdAt": "2026-06-22T11:00:29.873Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": "light",
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:29.869Z"
+    }
+  },
+  {
+    "id": "1782126027784-5e2a289241be9",
+    "createdAt": "2026-06-22T11:00:27.784Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "light",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:27.775Z"
+    }
+  },
+  {
+    "id": "1782126024736-6aa6d1e2eb139",
+    "createdAt": "2026-06-22T11:00:24.736Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:24.728Z"
+    }
+  },
+  {
+    "id": "1782126020259-7dac2da346f64",
+    "createdAt": "2026-06-22T11:00:20.259Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "mid",
+        "min": 500,
+        "max": 1000
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "rose",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:20.251Z"
+    }
+  },
+  {
+    "id": "1782126016165-e67f3879d3789",
+    "createdAt": "2026-06-22T11:00:16.165Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "rose",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:16.160Z"
+    }
+  },
+  {
+    "id": "1782126014915-4a7038c59401f",
+    "createdAt": "2026-06-22T11:00:14.915Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T11:00:14.901Z"
+    }
+  },
+  {
+    "id": "1782125992062-90e6d1aad9ec1",
+    "createdAt": "2026-06-22T10:59:52.063Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:59:52.052Z"
+    }
+  },
+  {
+    "id": "1782125989283-b85cfdebda459",
+    "createdAt": "2026-06-22T10:59:49.283Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:59:49.275Z"
+    }
+  },
+  {
+    "id": "1782125967038-fdd6f8a4b944c",
+    "createdAt": "2026-06-22T10:59:27.038Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "rose",
+          "country": "FR",
+          "region": "Lambesc",
+          "grape": "Grenache, Syrah, Cinsault",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "A bold and intense Malbec rosé from Mendoza, offering a sophisticated explosion of fruit with a crisp, refreshing finish.",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:59:26.761Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782125967004-b06701672e2d7",
+    "createdAt": "2026-06-22T10:59:27.004Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782125950793-1fed0c4f4ac94",
+    "createdAt": "2026-06-22T10:59:10.793Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "rose",
+          "country": "FR",
+          "region": "Lambesc",
+          "grape": "Grenache, Syrah, Cinsault",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "A bold and intense Malbec rosé from Mendoza, offering a sophisticated explosion of fruit with a crisp, refreshing finish.",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:59:10.662Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782125950779-1c1d1a6a6c4a4",
+    "createdAt": "2026-06-22T10:59:10.780Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782125933790-24556ea6f0324",
+    "createdAt": "2026-06-22T10:58:53.790Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "rose",
+          "country": "FR",
+          "region": "Lambesc",
+          "grape": "Malbec",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "A bold and intense Malbec rosé from Mendoza, offering a sophisticated explosion of fruit with a crisp, refreshing finish.",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:58:53.712Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782125933774-0d7e457169062",
+    "createdAt": "2026-06-22T10:58:53.774Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782125928920-7a53096578e5c",
+    "createdAt": "2026-06-22T10:58:48.920Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "rose",
+          "country": "FR",
+          "region": "Lambesc",
+          "grape": "Malbec",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "A bold and intense Malbec rosé from Mendoza, offering a sophisticated explosion of fruit with a crisp, refreshing finish.",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:58:48.755Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782125928909-cf9995f9b0922",
+    "createdAt": "2026-06-22T10:58:48.909Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782125874240-07768a3a81512",
+    "createdAt": "2026-06-22T10:57:54.240Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "rose",
+          "country": "FR",
+          "region": "Mendoza",
+          "grape": "Malbec",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "A bold and intense Malbec rosé from Mendoza, offering a sophisticated explosion of fruit with a crisp, refreshing finish.",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:57:54.121Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782125874229-34374f750896d",
+    "createdAt": "2026-06-22T10:57:54.229Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782125865893-2e0160c922413",
+    "createdAt": "2026-06-22T10:57:45.893Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "white",
+          "country": "AR",
+          "region": "Mendoza",
+          "grape": "Malbec",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily",
+            "sommelier",
+            "light",
+            "romantic",
+            "celebration"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "A bold and intense Malbec rosé from Mendoza, offering a sophisticated explosion of fruit with a crisp, refreshing finish.",
+          "sommelierPick": true,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:57:45.698Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782125865869-a0b2238041826",
+    "createdAt": "2026-06-22T10:57:45.869Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782125797387-ea2246b48461d",
+    "createdAt": "2026-06-22T10:56:37.387Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:56:37.379Z"
+    }
+  },
+  {
+    "id": "1782125794430-8ab09475ffab5",
+    "createdAt": "2026-06-22T10:56:34.431Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:56:34.420Z"
+    }
+  },
+  {
+    "id": "1782125077174-ad55be516c75e",
+    "createdAt": "2026-06-22T10:44:37.174Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:44:37.170Z"
+    }
+  },
+  {
+    "id": "1782125074455-1725f07f23ae6",
+    "createdAt": "2026-06-22T10:44:34.455Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:44:34.445Z"
+    }
+  },
+  {
+    "id": "1782125057791-92c6362b60f7b",
+    "createdAt": "2026-06-22T10:44:17.791Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"OPALE PROVENCE ROSE 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782125057777-ba72051afcf3c",
+    "createdAt": "2026-06-22T10:44:17.778Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782124976809-3d040b78e6fee",
+    "createdAt": "2026-06-22T10:42:56.809Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "rose",
+          "country": "FR",
+          "region": "Lambesc",
+          "grape": "Grenache, Syrah, Cinsault",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:42:56.690Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782124976794-0a086c0d5ff19",
+    "createdAt": "2026-06-22T10:42:56.794Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782124899338-8b7f58bd3910d",
+    "createdAt": "2026-06-22T10:41:39.338Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:41:39.330Z"
+    }
+  },
+  {
+    "id": "1782124893338-87d8ca0871d54",
+    "createdAt": "2026-06-22T10:41:33.338Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:41:33.326Z"
+    }
+  },
+  {
+    "id": "1782124880601-523b700bf81ed",
+    "createdAt": "2026-06-22T10:41:20.601Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3445720021121",
+    "message": "\"OPALE PROVENCE ROSE 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3445720021121",
+        "barcode": "3445720021121",
+        "product": {
+          "id": "3445720021121",
+          "barcode": "3445720021121",
+          "name": "OPALE PROVENCE ROSE 75CL",
+          "brand": "OPALE",
+          "category": "SARAP",
+          "price": 799,
+          "stock": 23,
+          "active": true,
+          "isActive": true,
+          "color": "white",
+          "country": "AR",
+          "region": "Mendoza",
+          "grape": "Malbec",
+          "body": "intense",
+          "sweetness": "light",
+          "taste": "light",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "B",
+          "shelf": "5",
+          "usagePurposes": [
+            "dinner",
+            "fiyat / performans",
+            "daily"
+          ],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3445720021121.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T10:41:20.408Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782124880578-d1db1140404",
+    "createdAt": "2026-06-22T10:41:20.578Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782124676362-7f493a00041bc",
+    "createdAt": "2026-06-22T10:37:56.362Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"JP CHENET CABERNET SYRAH 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"JP CHENET CABERNET SYRAH 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782124676352-c8944ea500629",
+    "createdAt": "2026-06-22T10:37:56.352Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301323",
+    "message": "3263286301323 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301323",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782124586378-2dcb74196cdfd",
+    "createdAt": "2026-06-22T10:36:26.378Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"JP CHENET SAUVIGNONO 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"JP CHENET SAUVIGNONO 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782124586366-f04e50fb178ef",
+    "createdAt": "2026-06-22T10:36:26.366Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301316",
+    "message": "3263286301316 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301316",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782123762346-f965019bebf13",
+    "createdAt": "2026-06-22T10:22:42.346Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "white",
+        "priceRange": {
+          "id": "luxury",
+          "min": 2000,
+          "max": null
+        },
+        "purpose": "daily",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:22:42.342Z"
+    }
+  },
+  {
+    "id": "1782123759647-ed476cf42f94b",
+    "createdAt": "2026-06-22T10:22:39.647Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "white",
+        "priceRange": {
+          "id": "luxury",
+          "min": 2000,
+          "max": null
+        },
+        "purpose": "daily",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:22:39.644Z"
+    }
+  },
+  {
+    "id": "1782123758911-d9d78f825b3c1",
+    "createdAt": "2026-06-22T10:22:38.911Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "daily",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "white",
+        "priceRange": {
+          "id": "luxury",
+          "min": 2000,
+          "max": null
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:22:38.909Z"
+    }
+  },
+  {
+    "id": "1782123757995-4e8762b0599d5",
+    "createdAt": "2026-06-22T10:22:37.995Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "luxury",
+        "min": 2000,
+        "max": null
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:22:37.992Z"
+    }
+  },
+  {
+    "id": "1782123756234-567d7f52ebbfe",
+    "createdAt": "2026-06-22T10:22:36.234Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "white",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:22:36.231Z"
+    }
+  },
+  {
+    "id": "1782123754701-40d6d80dfef2c",
+    "createdAt": "2026-06-22T10:22:34.701Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:22:34.691Z"
+    }
+  },
+  {
+    "id": "1782123738977-bfde073af12a9",
+    "createdAt": "2026-06-22T10:22:18.977Z",
+    "actor": "local-admin",
+    "action": "product_metadata_bulk_updated",
+    "entityType": "admin-products",
+    "entityId": "excel-upload",
+    "message": "976 ürün için Excel üzerinden sommelier metadata aktarıldı.",
+    "details": {
+      "fileName": "Ertan_Mahzen_Sablon.xlsx",
+      "totalRows": 976,
+      "imported": 976,
+      "skipped": 0,
+      "failed": 0,
+      "skippedRows": []
+    }
+  },
+  {
+    "id": "1782123738908-f9f7856ff6ee8",
+    "createdAt": "2026-06-22T10:22:18.908Z",
+    "actor": "local-admin",
+    "action": "product_metadata_bulk_updated",
+    "entityType": "product",
+    "entityId": "",
+    "message": "Toplu ürün metadata güncellemesi yapıldı.",
+    "details": {
+      "total": 226,
+      "success": 226,
+      "failed": 0
+    }
+  },
+  {
+    "id": "1782123738544-db5106715c9c8",
+    "createdAt": "2026-06-22T10:22:18.544Z",
+    "actor": "local-admin",
+    "action": "product_metadata_bulk_updated",
+    "entityType": "product",
+    "entityId": "",
+    "message": "Toplu ürün metadata güncellemesi yapıldı.",
+    "details": {
+      "total": 250,
+      "success": 250,
+      "failed": 0
+    }
+  },
+  {
+    "id": "1782123738502-955dd36bd4268",
+    "createdAt": "2026-06-22T10:22:18.502Z",
+    "actor": "local-admin",
+    "action": "product_metadata_bulk_updated",
+    "entityType": "product",
+    "entityId": "",
+    "message": "Toplu ürün metadata güncellemesi yapıldı.",
+    "details": {
+      "total": 250,
+      "success": 250,
+      "failed": 0
+    }
+  },
+  {
+    "id": "1782123738463-76a2ea869355",
+    "createdAt": "2026-06-22T10:22:18.463Z",
+    "actor": "local-admin",
+    "action": "product_metadata_bulk_updated",
+    "entityType": "product",
+    "entityId": "",
+    "message": "Toplu ürün metadata güncellemesi yapıldı.",
+    "details": {
+      "total": 250,
+      "success": 250,
+      "failed": 0
+    }
+  },
+  {
+    "id": "1782123428308-628cec6200182",
+    "createdAt": "2026-06-22T10:17:08.308Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:17:08.299Z"
+    }
+  },
+  {
+    "id": "1782123345085-c7696b65c9969",
+    "createdAt": "2026-06-22T10:15:45.085Z",
+    "actor": "local-admin",
+    "action": "finish_now",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: finish_now",
+    "details": {
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "timestamp": "2026-06-22T10:15:45.080Z"
+    }
+  },
+  {
+    "id": "1782123342580-94e5a2e1096dd",
+    "createdAt": "2026-06-22T10:15:42.580Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "white",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:15:42.576Z"
+    }
+  },
+  {
+    "id": "1782123341279-e168382ddb846",
+    "createdAt": "2026-06-22T10:15:41.279Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:15:41.273Z"
+    }
+  },
+  {
+    "id": "1782122600161-908de862516d7",
+    "createdAt": "2026-06-22T10:03:20.161Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:03:20.157Z"
+    }
+  },
+  {
+    "id": "1782122599552-0f904264367bf",
+    "createdAt": "2026-06-22T10:03:19.552Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:03:19.543Z"
+    }
+  },
+  {
+    "id": "1782122599023-ae354c6a0569a",
+    "createdAt": "2026-06-22T10:03:19.023Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:03:19.020Z"
+    }
+  },
+  {
+    "id": "1782122598559-93be2d1ff40ca",
+    "createdAt": "2026-06-22T10:03:18.559Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:03:18.556Z"
+    }
+  },
+  {
+    "id": "1782122597537-0889981aa3b36",
+    "createdAt": "2026-06-22T10:03:17.537Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "white",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:03:17.533Z"
+    }
+  },
+  {
+    "id": "1782122596355-14cdbd776aff3",
+    "createdAt": "2026-06-22T10:03:16.355Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T10:03:16.343Z"
+    }
+  },
+  {
+    "id": "1782121717722-63601b3df0293",
+    "createdAt": "2026-06-22T09:48:37.722Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3760204540166",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3760204540166",
+      "productName": "TUSSOCK JUMPER CHARDONNAY FRANSA 75 CL",
+      "barcode": "3760204540166",
+      "phase": "results",
+      "stepIndex": 4,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": "light",
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:48:37.701Z"
+    }
+  },
+  {
+    "id": "1782121710687-b839f01ea7676",
+    "createdAt": "2026-06-22T09:48:30.687Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": "light",
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:48:30.682Z"
+    }
+  },
+  {
+    "id": "1782121709713-45a1815a6c613",
+    "createdAt": "2026-06-22T09:48:29.713Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "light",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:48:29.707Z"
+    }
+  },
+  {
+    "id": "1782121708790-f2cb99558333d",
+    "createdAt": "2026-06-22T09:48:28.790Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:48:28.786Z"
+    }
+  },
+  {
+    "id": "1782121708057-1a5c5ce5c8d72",
+    "createdAt": "2026-06-22T09:48:28.057Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:48:28.053Z"
+    }
+  },
+  {
+    "id": "1782121706315-4256705964ac5",
+    "createdAt": "2026-06-22T09:48:26.315Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "white",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:48:26.311Z"
+    }
+  },
+  {
+    "id": "1782121705638-2aee73651fdf1",
+    "createdAt": "2026-06-22T09:48:25.638Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:48:25.631Z"
+    }
+  },
+  {
+    "id": "1782121515962-5b9848cf40f3f",
+    "createdAt": "2026-06-22T09:45:15.962Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:45:15.951Z"
+    }
+  },
+  {
+    "id": "1782121514429-a7b1f4f62611e",
+    "createdAt": "2026-06-22T09:45:14.429Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "white",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:45:14.425Z"
+    }
+  },
+  {
+    "id": "1782121513320-9b89dbf46e04f",
+    "createdAt": "2026-06-22T09:45:13.320Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:45:13.307Z"
+    }
+  },
+  {
+    "id": "1782121500786-472b49842f6",
+    "createdAt": "2026-06-22T09:45:00.786Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3760204540166",
+    "message": "\"TUSSOCK JUMPER CHARDONNAY FRANSA 75 CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3760204540166",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3760204540166",
+        "barcode": "3760204540166",
+        "product": {
+          "id": "3760204540166",
+          "barcode": "3760204540166",
+          "name": "TUSSOCK JUMPER CHARDONNAY FRANSA 75 CL",
+          "brand": "TUSSOCK",
+          "category": "SARAP",
+          "price": 299,
+          "stock": 336,
+          "active": true,
+          "isActive": true,
+          "color": "white",
+          "country": "FR",
+          "region": "Bordeaux",
+          "grape": "Cabernet Sauvignon",
+          "body": "light",
+          "sweetness": "medium",
+          "taste": "medium",
+          "acidity": "light",
+          "tannin": "light",
+          "block": "",
+          "shelf": "",
+          "usagePurposes": [],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3760204540166.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T09:45:00.705Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782121500775-2695a0c61870d",
+    "createdAt": "2026-06-22T09:45:00.775Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3760204540166",
+    "message": "3760204540166 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3760204540166",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782121443033-a3a91bd5233a9",
+    "createdAt": "2026-06-22T09:44:03.033Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:44:03.028Z"
+    }
+  },
+  {
+    "id": "1782121436203-e630a19beb59c",
+    "createdAt": "2026-06-22T09:43:56.203Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:43:56.192Z"
+    }
+  },
+  {
+    "id": "1782121425470-af0803a747878",
+    "createdAt": "2026-06-22T09:43:45.470Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3760204540166",
+    "message": "\"TUSSOCK JUMPER CHARDONNAY FRANSA 75 CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3760204540166",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3760204540166",
+        "barcode": "3760204540166",
+        "product": {
+          "id": "3760204540166",
+          "barcode": "3760204540166",
+          "name": "TUSSOCK JUMPER CHARDONNAY FRANSA 75 CL",
+          "brand": "TUSSOCK",
+          "category": "SARAP",
+          "price": 299,
+          "stock": 336,
+          "active": true,
+          "isActive": true,
+          "color": "white",
+          "country": "FR",
+          "region": "",
+          "grape": "",
+          "body": "",
+          "sweetness": "",
+          "taste": "",
+          "acidity": "",
+          "tannin": "",
+          "block": "",
+          "shelf": "",
+          "usagePurposes": [],
+          "shortDescription": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "[object Object]",
+            "en": ""
+          },
+          "description": "[object Object]",
+          "descriptionTr": "[object Object]",
+          "descriptionEn": "",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3760204540166.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-22T09:43:44.943Z",
+          "missingFields": [
+            "body",
+            "sweetness"
+          ],
+          "metadataStatus": "missing",
+          "kioskReady": false,
+          "needsReview": true
+        }
+      }
+    }
+  },
+  {
+    "id": "1782121425028-84cd1b1466e39",
+    "createdAt": "2026-06-22T09:43:45.028Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3760204540166",
+    "message": "3760204540166 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3760204540166",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782121370469-f866e501af925",
+    "createdAt": "2026-06-22T09:42:50.469Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T09:42:50.455Z"
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "8690000000001": {
+    "color": "red",
+    "country": "TR",
+    "region": "Denizli",
+    "grape": "Öküzgözü",
+    "body": "medium",
+    "sweetness": "light",
+    "acidity": "medium",
+    "tannin": "medium",
+    "usagePurposes": ["dinner", "gift"],
+    "shortDescription": { "tr": "Yumuşak, dengeli bir kırmızı.", "en": "Soft, balanced red." },
+    "tasteNotes": { "tr": "Kırmızı meyve, baharat.", "en": "Red fruit, spice." },
+    "foodPairing": { "tr": "Kırmızı et, peynir.", "en": "Red meat, cheese." },
+    "sommelierPick": true,
+    "featured": false,
+    "priorityScore": 10
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "idleTimeoutSeconds": 120,
+  "autoResetSeconds": 120,
+  "showPopularProducts": true,
+  "showStock": true,
+  "showPrice": true,
+  "maxResults": 12,
+  "maxLivePreviewProducts": 30,
+  "language": "tr",
+  "isKioskEnabled": true,
+  "colors": [
+    {
+      "value": "red",
+      "label": {
+        "tr": "Kırmızı",
+        "en": "Red"
+      }
+    },
+    {
+      "value": "white",
+      "label": {
+        "tr": "Beyaz",
+        "en": "White"
+      }
+    },
+    {
+      "value": "rose",
+      "label": {
+        "tr": "Roze",
+        "en": "Rosé"
+      }
+    },
+    {
+      "value": "sparkling",
+      "label": {
+        "tr": "Köpüklü",
+        "en": "Sparkling"
+      }
+    }
+  ],
+  "priceRanges": [
+    {
+      "id": "budget",
+      "value": "budget",
+      "min": 0,
+      "max": 500,
+      "label": {
+        "tr": "0 - 500 TL",
+        "en": "Budget"
+      }
+    },
+    {
+      "id": "mid",
+      "value": "mid",
+      "min": 500,
+      "max": 1000,
+      "label": {
+        "tr": "Orta Seviye",
+        "en": "Mid range"
+      }
+    },
+    {
+      "id": "premium",
+      "value": "premium",
+      "min": 1000,
+      "max": 2000,
+      "label": {
+        "tr": "Premium",
+        "en": "Premium"
+      }
+    },
+    {
+      "id": "luxury",
+      "value": "luxury",
+      "min": 2000,
+      "max": null,
+      "label": {
+        "tr": "Üst Segment",
+        "en": "Luxury"
+      }
+    }
+  ],
+  "usagePurposes": [
+    {
+      "value": "daily",
+      "label": {
+        "tr": "Günlük tüketim",
+        "en": "Everyday"
+      }
+    },
+    {
+      "value": "gift",
+      "label": {
+        "tr": "Hediye",
+        "en": "Gift"
+      }
+    },
+    {
+      "value": "dinner",
+      "label": {
+        "tr": "Yemek eşliği",
+        "en": "Dinner pairing"
+      }
+    },
+    {
+      "value": "special",
+      "label": {
+        "tr": "Özel gün",
+        "en": "Special occasion"
+      }
+    }
+  ],
+  "countries": [],
+  "defaultLanguage": "tr",
+  "languages": [
+    "tr",
+    "en"
+  ],
+  "currency": "TL",
+  "resetTimeoutSeconds": 120,
+  "idleScreenEnabled": true,
+  "featuredRotationSeconds": 7,
+  "resultCount": 12,
+  "lowStockThreshold": 10,
+  "hideOutOfStock": true,
+  "scanEnabled": true,
+  "analyticsEnabled": true,
+  "maintenanceMode": false,
+  "maintenanceMessage": {
+    "tr": "",
+    "en": ""
+  },
+  "updatedAt": "2026-06-22T11:03:38.584Z"
+}

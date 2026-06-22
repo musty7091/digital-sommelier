@@ -1,5 +1,8 @@
-// Öneri motoru (S2-07). filterProducts: tüm seçili boyutları SERT filtreler.
-// Böylece her adımda eşleşme sayısı anlamlı daralır ve kullanıcı erken bitirebilir.
+// Lokal öneri motoru.
+// Firebase yoktur.
+// Ürünler SQL + local product-overrides.json birleşiminden gelir.
+// Filtreler mümkün olduğunca net çalışır ama değer formatı farklarını normalize eder.
+
 import {
   COLOR_LABELS,
   COUNTRY_LABELS,
@@ -7,85 +10,372 @@ import {
   USAGE_PURPOSE_LABELS,
 } from '../types/product.schema'
 
-// Aktif + stokta olan ürünler içinde, seçili tüm filtreleri uygular.
-export function filterProducts(products, sel = {}, opts = {}) {
-  const hideOutOfStock = opts.hideOutOfStock !== false
-  return (products || []).filter((p) => {
-    if (!p.active) return false
-    if (hideOutOfStock && Number(p.stock) <= 0) return false
-    if (sel.color && p.color !== sel.color) return false
-    if (sel.priceRange) {
-      const { min, max } = sel.priceRange
-      if (p.price < (min ?? 0)) return false
-      if (max != null && p.price > max) return false
+function cleanText(value) {
+  return String(value ?? '').trim()
+}
+
+function normalizeText(value) {
+  return cleanText(value).toLowerCase()
+}
+
+function toNumber(value, fallback = 0) {
+  if (value === null || value === undefined || value === '') {
+    return fallback
+  }
+
+  if (typeof value === 'number') {
+    return Number.isFinite(value) ? value : fallback
+  }
+
+  const normalized = String(value)
+    .replace(/\./g, '')
+    .replace(',', '.')
+    .trim()
+
+  const parsed = Number(normalized)
+
+  return Number.isFinite(parsed) ? parsed : fallback
+}
+
+function isProductActive(product) {
+  const active = product?.active ?? product?.isActive ?? true
+  return active !== false
+}
+
+function isInStock(product) {
+  return toNumber(product?.stock, 0) > 0
+}
+
+function normalizeColor(value) {
+  const text = normalizeText(value)
+
+  if (!text) return ''
+
+  if (['kırmızı', 'kirmizi', 'red', 'rouge', 'rosso', 'tinto'].includes(text)) {
+    return 'red'
+  }
+
+  if (['beyaz', 'white', 'blanc', 'bianco', 'blanco'].includes(text)) {
+    return 'white'
+  }
+
+  if (['rose', 'rosé', 'roze', 'pembe', 'pink'].includes(text)) {
+    return 'rose'
+  }
+
+  if (
+    [
+      'köpüklü',
+      'kopuklu',
+      'sparkling',
+      'champagne',
+      'şampanya',
+      'sampanya',
+      'prosecco',
+      'cava',
+    ].includes(text)
+  ) {
+    return 'sparkling'
+  }
+
+  return text
+}
+
+function normalizeLevel(value) {
+  const text = normalizeText(value)
+
+  if (!text) return ''
+
+  if (['hafif', 'light', 'low', 'az', 'düşük', 'dusuk'].includes(text)) {
+    return 'light'
+  }
+
+  if (['orta', 'medium', 'dengeli'].includes(text)) {
+    return 'medium'
+  }
+
+  if (
+    [
+      'yoğun',
+      'yogun',
+      'intense',
+      'full',
+      'full_bodied',
+      'heavy',
+      'high',
+      'strong',
+      'yüksek',
+      'yuksek',
+      'güçlü',
+      'guclu',
+      'kuvvetli',
+    ].includes(text)
+  ) {
+    return 'intense'
+  }
+
+  return text
+}
+
+function normalizeCountry(value) {
+  return normalizeText(value)
+}
+
+function normalizePurpose(value) {
+  return normalizeText(value)
+}
+
+function normalizePriceRange(priceRange) {
+  if (!priceRange) {
+    return null
+  }
+
+  if (typeof priceRange === 'object') {
+    return {
+      id: cleanText(priceRange.id || priceRange.value || ''),
+      min: priceRange.min === null || priceRange.min === undefined || priceRange.min === ''
+        ? 0
+        : toNumber(priceRange.min, 0),
+      max: priceRange.max === null || priceRange.max === undefined || priceRange.max === ''
+        ? null
+        : toNumber(priceRange.max, null),
     }
-    if (sel.purpose && !(p.usagePurposes || []).includes(sel.purpose)) return false
-    if (sel.taste && p.body !== sel.taste) return false
-    if (sel.country && p.country !== sel.country) return false
+  }
+
+  return null
+}
+
+function normalizePurposeList(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizePurpose(item)).filter(Boolean)
+  }
+
+  if (typeof value === 'string') {
+    return value
+      .split(',')
+      .map((item) => normalizePurpose(item))
+      .filter(Boolean)
+  }
+
+  return []
+}
+
+function getProductBodyLevel(product) {
+  return normalizeLevel(product?.body || product?.taste || product?.sweetness)
+}
+
+function getSafeLabel(labels, value, fallback) {
+  const key = cleanText(value)
+
+  if (labels?.[key]?.tr || labels?.[key]?.en) {
+    return {
+      tr: labels[key].tr || fallback || key,
+      en: labels[key].en || fallback || key,
+    }
+  }
+
+  return {
+    tr: fallback || key || '',
+    en: fallback || key || '',
+  }
+}
+
+function matchesColor(product, selectedColor) {
+  if (!selectedColor) return true
+
+  return normalizeColor(product?.color) === normalizeColor(selectedColor)
+}
+
+function matchesPrice(product, selectedPriceRange) {
+  const priceRange = normalizePriceRange(selectedPriceRange)
+
+  if (!priceRange) return true
+
+  const price = toNumber(product?.price, 0)
+
+  if (price < (priceRange.min ?? 0)) {
+    return false
+  }
+
+  if (priceRange.max !== null && priceRange.max !== undefined && price > priceRange.max) {
+    return false
+  }
+
+  return true
+}
+
+function matchesPurpose(product, selectedPurpose) {
+  if (!selectedPurpose) return true
+
+  const selected = normalizePurpose(selectedPurpose)
+  const purposes = normalizePurposeList(product?.usagePurposes)
+
+  return purposes.includes(selected)
+}
+
+function matchesTaste(product, selectedTaste) {
+  if (!selectedTaste) return true
+
+  return getProductBodyLevel(product) === normalizeLevel(selectedTaste)
+}
+
+function matchesCountry(product, selectedCountry) {
+  if (!selectedCountry) return true
+
+  return normalizeCountry(product?.country) === normalizeCountry(selectedCountry)
+}
+
+function isKioskCandidate(product, opts = {}) {
+  const hideOutOfStock = opts.hideOutOfStock !== false
+
+  if (!product) return false
+  if (!isProductActive(product)) return false
+  if (hideOutOfStock && !isInStock(product)) return false
+
+  return true
+}
+
+// Aktif + stokta olan ürünler içinde, seçili tüm filtreleri uygular.
+export function filterProducts(products, selections = {}, opts = {}) {
+  return (products || []).filter((product) => {
+    if (!isKioskCandidate(product, opts)) return false
+
+    if (!matchesColor(product, selections.color)) return false
+    if (!matchesPrice(product, selections.priceRange)) return false
+    if (!matchesPurpose(product, selections.purpose)) return false
+    if (!matchesTaste(product, selections.taste)) return false
+    if (!matchesCountry(product, selections.country)) return false
+
     return true
   })
 }
 
-function buildWhy(p, sel, opts) {
+function buildWhy(product, selections = {}, opts = {}) {
   if (opts.quick) {
-    return { tr: 'Uzman tavsiyesi olduğu için öne çıkardık.', en: 'Featured as a sommelier pick.' }
+    if (product?.sommelierPick) {
+      return {
+        tr: 'Sommelier tavsiyesi olduğu için öne çıkardık.',
+        en: 'Featured as a sommelier pick.',
+      }
+    }
+
+    if (product?.featured) {
+      return {
+        tr: 'Öne çıkan ürün olduğu için önerildi.',
+        en: 'Recommended as a featured product.',
+      }
+    }
+
+    return {
+      tr: 'Stokta olan uygun seçeneklerden biri olduğu için önerildi.',
+      en: 'Recommended as an available matching option.',
+    }
   }
+
   const tr = []
   const en = []
-  if (sel.color && p.color === sel.color) {
-    tr.push(`${COLOR_LABELS[p.color].tr.toLowerCase()} şarap`)
-    en.push(`${COLOR_LABELS[p.color].en.toLowerCase()} wine`)
+
+  if (selections.color && matchesColor(product, selections.color)) {
+    const color = normalizeColor(product.color)
+    const label = getSafeLabel(COLOR_LABELS, color, color)
+
+    tr.push(`${label.tr.toLowerCase()} şarap`)
+    en.push(`${label.en.toLowerCase()} wine`)
   }
-  if (sel.purpose && p.usagePurposes?.includes(sel.purpose)) {
-    tr.push(`"${USAGE_PURPOSE_LABELS[sel.purpose].tr.toLowerCase()}"`)
-    en.push(`"${USAGE_PURPOSE_LABELS[sel.purpose].en.toLowerCase()}"`)
+
+  if (selections.purpose && matchesPurpose(product, selections.purpose)) {
+    const purpose = normalizePurpose(selections.purpose)
+    const label = getSafeLabel(USAGE_PURPOSE_LABELS, purpose, purpose)
+
+    tr.push(`"${label.tr.toLowerCase()}"`)
+    en.push(`"${label.en.toLowerCase()}"`)
   }
-  if (sel.taste && p.body === sel.taste) {
-    tr.push(`${LEVEL_LABELS[sel.taste].tr.toLowerCase()} gövde`)
-    en.push(`${LEVEL_LABELS[sel.taste].en.toLowerCase()} body`)
+
+  if (selections.taste && matchesTaste(product, selections.taste)) {
+    const level = normalizeLevel(selections.taste)
+    const label = getSafeLabel(LEVEL_LABELS, level, level)
+
+    tr.push(`${label.tr.toLowerCase()} gövde`)
+    en.push(`${label.en.toLowerCase()} body`)
   }
-  if (sel.country && p.country === sel.country) {
-    tr.push(COUNTRY_LABELS[p.country].tr)
-    en.push(COUNTRY_LABELS[p.country].en)
+
+  if (selections.country && matchesCountry(product, selections.country)) {
+    const country = cleanText(product.country)
+    const label = getSafeLabel(COUNTRY_LABELS, country, country)
+
+    tr.push(label.tr)
+    en.push(label.en)
   }
+
   if (tr.length === 0) {
     return {
       tr: 'Seçimlerinize uygun, kaliteli bir seçenek olduğu için önerildi.',
       en: 'Recommended as a quality match for your choices.',
     }
   }
+
   return {
     tr: `${tr.join(', ')} tercihinize uygun olduğu için önerildi.`,
     en: `Recommended because it matches your preference for ${en.join(', ')}.`,
   }
 }
 
+function scoreProduct(product) {
+  return (
+    toNumber(product?.priorityScore, 0) +
+    (product?.sommelierPick ? 20 : 0) +
+    (product?.featured ? 10 : 0) +
+    (product?.metadataStatus === 'complete' ? 5 : 0)
+  )
+}
+
+function sortProducts(products = []) {
+  return [...products].sort((a, b) => {
+    const scoreDiff = scoreProduct(b) - scoreProduct(a)
+
+    if (scoreDiff !== 0) {
+      return scoreDiff
+    }
+
+    const stockDiff = toNumber(b.stock, 0) - toNumber(a.stock, 0)
+
+    if (stockDiff !== 0) {
+      return stockDiff
+    }
+
+    return cleanText(a.name).localeCompare(cleanText(b.name), 'tr')
+  })
+}
+
 export function recommend(products, selections = {}, opts = {}) {
   const hideOutOfStock = opts.hideOutOfStock !== false
+
   let pool
+
   if (opts.quick) {
-    pool = (products || []).filter(
-      (p) => p.active && (!hideOutOfStock || Number(p.stock) > 0) && p.sommelierPick,
-    )
+    pool = (products || []).filter((product) => {
+      return (
+        isKioskCandidate(product, { hideOutOfStock }) &&
+        (product.sommelierPick || product.featured)
+      )
+    })
+
+    if (!pool.length) {
+      pool = (products || []).filter((product) => {
+        return isKioskCandidate(product, { hideOutOfStock })
+      })
+    }
   } else {
     pool = filterProducts(products, selections, { hideOutOfStock })
   }
 
-  const scored = pool.map((p) => ({
-    p,
-    score: (p.priorityScore || 0) + (p.sommelierPick ? 20 : 0),
-  }))
-  scored.sort((a, b) => b.score - a.score)
-  let list = scored.map((s) => s.p)
+  const list = sortProducts(pool)
+  const count = Number(opts.resultCount || 5)
 
-  const pick = list.find((p) => p.sommelierPick)
-  if (pick) list = [pick, ...list.filter((x) => x !== pick)]
-
-  const count = opts.resultCount || 5
-  return list.slice(0, count).map((p, i) => ({
-    ...p,
-    _big: i === 0,
-    _pick: i === 0 && !!p.sommelierPick,
-    _why: buildWhy(p, selections, opts),
+  return list.slice(0, count).map((product, index) => ({
+    ...product,
+    _big: index === 0,
+    _pick: index === 0 && Boolean(product.sommelierPick),
+    _why: buildWhy(product, selections, opts),
   }))
 }

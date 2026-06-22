@@ -9,6 +9,10 @@ const commands = [
     command: 'node ./server/local-image-api.mjs',
   },
   {
+    name: 'DB-API',
+    command: 'node ./server/database-api.mjs',
+  },
+  {
     name: 'VITE',
     command: isWindows ? 'npm.cmd run dev' : 'npm run dev',
   },

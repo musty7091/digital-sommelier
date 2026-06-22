@@ -1,12 +1,21 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { fetchActiveProducts, fetchKioskSettings } from '../../firebase/products'
+import {
+  fetchActiveProducts,
+  fetchKioskSettings,
+  logAuditAction,
+} from '../../firebase/products'
 import { getSteps } from '../stepsConfig'
 import { recommend } from '../recommendation'
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../../firebase/config'
 
 const FlowContext = createContext(null)
-const emptySelections = { color: null, priceRange: null, purpose: null, taste: null, country: null }
+
+const emptySelections = {
+  color: null,
+  priceRange: null,
+  purpose: null,
+  taste: null,
+  country: null,
+}
 
 export function FlowProvider({ children }) {
   const [products, setProducts] = useState([])
@@ -21,88 +30,127 @@ export function FlowProvider({ children }) {
   const [detailProduct, setDetailProduct] = useState(null)
   const [detailOrigin, setDetailOrigin] = useState('results')
 
-  // Arka planda Firebase'e analitik verisi gönderen görünmez haberci
   const logEvent = (type, payload = {}) => {
     if (settings?.analyticsEnabled === false) return
+
     try {
-      addDoc(collection(db, 'analyticsEvents'), {
-        type,
-        ...payload,
-        timestamp: new Date().toISOString()
-      }).catch(err => console.error("Analitik kaydedilemedi:", err));
+      logAuditAction({
+        action: type,
+        entityType: 'kiosk-session',
+        entityId: payload.productId || payload.barcode || '',
+        message: `Kiosk event: ${type}`,
+        details: {
+          ...payload,
+          phase,
+          stepIndex,
+          selections,
+          timestamp: new Date().toISOString(),
+        },
+      }).catch((err) => {
+        console.error('Lokal analitik kaydedilemedi:', err)
+      })
     } catch (err) {
-      console.error("Analitik hatası:", err);
+      console.error('Lokal analitik hatası:', err)
     }
   }
 
   useEffect(() => {
     let alive = true
+
+    setLoading(true)
+    setError(null)
+
     Promise.all([fetchActiveProducts(), fetchKioskSettings()])
       .then(([prods, sett]) => {
         if (!alive) return
-        setProducts(prods)
-        setSettings(sett)
+
+        setProducts(Array.isArray(prods) ? prods : [])
+        setSettings(sett || null)
         setLoading(false)
       })
-      .catch((e) => {
-        if (alive) {
-          setError(e)
-          setLoading(false)
-        }
+      .catch((err) => {
+        if (!alive) return
+
+        console.error('Kiosk verileri yüklenemedi:', err)
+        setError(err)
+        setProducts([])
+        setLoading(false)
       })
+
     return () => {
       alive = false
     }
   }, [])
 
-  // Otomatik sıfırlama: hareketsizlik sonrası başa dön (doküman 6.13)
   useEffect(() => {
     if (phase === 'welcome' || phase === 'idle') return
-    const ms = (settings?.resetTimeoutSeconds || 120) * 1000
+
+    const timeoutSeconds =
+      settings?.resetTimeoutSeconds ??
+      settings?.autoResetSeconds ??
+      settings?.idleResetSeconds ??
+      120
+
+    const ms = Number(timeoutSeconds || 120) * 1000
+
     let timer
+
     const doReset = () => {
       setSelections(emptySelections)
       setResults([])
       setStepIndex(0)
       setDetailProduct(null)
+      setDetailOrigin('results')
       setPhase('welcome')
     }
+
     const arm = () => {
       clearTimeout(timer)
       timer = setTimeout(doReset, ms)
     }
+
     arm()
+
     const events = ['pointerdown', 'keydown', 'touchstart']
-    events.forEach((e) => window.addEventListener(e, arm))
+
+    events.forEach((eventName) => window.addEventListener(eventName, arm))
+
     return () => {
       clearTimeout(timer)
-      events.forEach((e) => window.removeEventListener(e, arm))
+      events.forEach((eventName) => window.removeEventListener(eventName, arm))
     }
   }, [phase, settings])
 
-  // Bekleme (attract) modu: açılışta hareketsiz kalınınca "Öne Çıkan Şaraplar"
   useEffect(() => {
     if (phase !== 'welcome') return
     if (settings?.idleScreenEnabled === false) return
-    const ms = (settings?.idleTimeoutSeconds || 45) * 1000
+
+    const timeoutSeconds = settings?.idleTimeoutSeconds ?? 45
+    const ms = Number(timeoutSeconds || 45) * 1000
+
     let timer
+
     const arm = () => {
       clearTimeout(timer)
       timer = setTimeout(() => setPhase('idle'), ms)
     }
+
     arm()
+
     const events = ['pointerdown', 'keydown', 'touchstart']
-    events.forEach((e) => window.addEventListener(e, arm))
+
+    events.forEach((eventName) => window.addEventListener(eventName, arm))
+
     return () => {
       clearTimeout(timer)
-      events.forEach((e) => window.removeEventListener(e, arm))
+      events.forEach((eventName) => window.removeEventListener(eventName, arm))
     }
   }, [phase, settings])
 
   const steps = getSteps(settings)
 
   const recOpts = (extra = {}) => ({
-    resultCount: settings?.resultCount || 5,
+    resultCount: settings?.resultCount || settings?.maxResults || 5,
     hideOutOfStock: settings?.hideOutOfStock !== false,
     ...extra,
   })
@@ -112,72 +160,116 @@ export function FlowProvider({ children }) {
     setResults([])
     setStepIndex(0)
     setDetailProduct(null)
+    setDetailOrigin('results')
     setPhase('welcome')
   }
+
   const startFlow = () => {
-    logEvent('flow_start'); // Müşteri akışa başladı
+    logEvent('flow_start')
+
     setSelections(emptySelections)
+    setResults([])
     setStepIndex(0)
+    setDetailProduct(null)
+    setDetailOrigin('results')
     setPhase('flow')
   }
+
   const chooseOption = (key, value) => {
-    // Müşterinin ekrandaki seçimi kaydedilir
-    logEvent('filter_selected', { filterKey: key, filterValue: value });
-    const next = { ...selections, [key]: value }
+    logEvent('filter_selected', {
+      filterKey: key,
+      filterValue: value,
+    })
+
+    const next = {
+      ...selections,
+      [key]: value,
+    }
+
     setSelections(next)
+
     if (stepIndex < steps.length - 1) {
       setStepIndex(stepIndex + 1)
-    } else {
-      setResults(recommend(products, next, recOpts()))
-      setPhase('results')
+      return
     }
+
+    setResults(recommend(products, next, recOpts()))
+    setPhase('results')
   }
+
   const finishNow = () => {
+    logEvent('finish_now', {
+      selections,
+    })
+
     setResults(recommend(products, selections, recOpts()))
     setPhase('results')
   }
+
   const goBackStep = () => {
-    if (stepIndex > 0) setStepIndex(stepIndex - 1)
-    else setPhase('welcome')
+    if (stepIndex > 0) {
+      setStepIndex(stepIndex - 1)
+      return
+    }
+
+    setPhase('welcome')
   }
+
   const quickRecommend = () => {
     if (!products.length) return
-    logEvent('session_start', { method: 'quickRecommend' }); // Hızlı öneri butonuna basıldı
+
+    logEvent('session_start', {
+      method: 'quickRecommend',
+    })
+
+    setSelections(emptySelections)
     setResults(recommend(products, emptySelections, recOpts({ quick: true })))
+    setDetailProduct(null)
+    setDetailOrigin('results')
     setPhase('results')
   }
-  const openDetail = (p, origin = 'results') => {
-    // Müşterinin hangi şarabı incelediği kaydedilir
-    logEvent('product_viewed', { 
-      productId: p.id || '', 
-      productName: p.name || '', 
-      barcode: p.barcode || '' 
-    });
+
+  const openDetail = (product, origin = 'results') => {
+    if (!product) return
+
+    logEvent('product_viewed', {
+      productId: product.id || '',
+      productName: product.name || '',
+      barcode: product.barcode || '',
+    })
+
     setDetailOrigin(origin)
-    setDetailProduct(p)
+    setDetailProduct(product)
     setPhase('detail')
   }
+
   const closeDetail = () => {
     setDetailProduct(null)
     setPhase(detailOrigin || 'results')
   }
+
   const startScan = () => {
-    logEvent('scan_started');
+    logEvent('scan_started')
     setPhase('scan')
   }
-  const wakeFromIdle = () => setPhase('welcome')
+
+  const wakeFromIdle = () => {
+    setPhase('welcome')
+  }
 
   const value = {
     products,
     settings,
     loading,
     error,
+
     phase,
     stepIndex,
     steps,
     selections,
     results,
     detailProduct,
+
     reset,
     startFlow,
     chooseOption,
@@ -188,19 +280,24 @@ export function FlowProvider({ children }) {
     closeDetail,
     wakeFromIdle,
     startScan,
+
     currency: settings?.currency || 'TL',
     maintenance: settings?.maintenanceMode === true,
   }
+
   return <FlowContext.Provider value={value}>{children}</FlowContext.Provider>
 }
 
 export function useFlow() {
   const ctx = useContext(FlowContext)
-  if (!ctx) throw new Error('useFlow, FlowProvider içinde kullanılmalı')
+
+  if (!ctx) {
+    throw new Error('useFlow, FlowProvider içinde kullanılmalı')
+  }
+
   return ctx
 }
 
-// Sağlayıcı yoksa hata fırlatmaz, null döner (LanguageProvider gibi sıra-bağımsız kullanım için)
 export function useFlowSafe() {
   return useContext(FlowContext)
 }
