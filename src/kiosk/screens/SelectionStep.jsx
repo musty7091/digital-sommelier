@@ -21,13 +21,10 @@ export default function SelectionStep() {
   const isMid = n >= 5 && n <= 8
   const compact = isDense || isMid
 
-  const gridClass = isFour
-    ? 'max-w-3xl grid-cols-2 gap-4 md:gap-6'
-    : isDense
-    ? 'max-w-7xl grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3'
-    : isMid
-    ? 'max-w-5xl grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4'
-    : 'max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5'
+  // Sabit sütun → satır sayısı kesin → grid şablonu AÇIKÇA verilir (binme imkânsız)
+  const cols = isFour ? 2 : isDense ? 4 : isMid ? 3 : Math.min(Math.max(n, 1), 3)
+  const rows = Math.ceil(n / cols)
+  const maxW = isFour ? 'max-w-3xl' : isMid ? 'max-w-5xl' : isDense ? 'max-w-7xl' : 'max-w-6xl'
 
   return (
     <main className="flex h-[100dvh] w-full flex-col overflow-hidden px-4 md:px-8 py-3 md:py-4">
@@ -51,33 +48,39 @@ export default function SelectionStep() {
         <BackButton />
       </div>
 
-      {/* İçerik: başlık + ızgara (flex-1) + (2. adımdan sonra) şerit & buton */}
+      {/* İçerik */}
       <div className="flex flex-1 min-h-0 w-full flex-col items-center mt-2 md:mt-3">
         <h2 className="flex-none text-center font-serif font-semibold text-cream-100 text-lg sm:text-2xl md:text-3xl">
           {t(`step_${step.key}`)}
         </h2>
 
-        {/* Izgara: satır eşitliği inline stille garanti (sınıfa bağlı değil) */}
-        <div
-          className={`grid w-full flex-1 min-h-0 mx-auto overflow-hidden my-2 md:my-3 ${gridClass}`}
-          style={{ gridAutoRows: 'minmax(0, 1fr)' }}
-        >
-          {step.options.map((opt, i) => {
-            const count = filterProducts(products, { ...selections, [step.key]: opt.value }).length
-            const isAny = opt.value === null
-            return (
-              <SelectionCard
-                key={i}
-                label={tl(opt.label)}
-                count={count}
-                color={step.key === 'color' ? opt.value : undefined}
-                countryCode={step.key === 'country' ? opt.value : undefined}
-                disabled={!isAny && count === 0}
-                compact={compact}
-                onClick={() => chooseOption(step.key, opt.value)}
-              />
-            )
-          })}
+        {/* Blok sarmalayıcı (kesin yükseklik) → içinde h-full grid + AÇIK şablon satır/sütun */}
+        <div className="w-full flex-1 min-h-0 overflow-hidden my-2 md:my-3">
+          <div
+            className={`grid h-full w-full mx-auto ${maxW}`}
+            style={{
+              gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+              gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+              gap: compact ? '0.6rem' : '1rem',
+            }}
+          >
+            {step.options.map((opt, i) => {
+              const count = filterProducts(products, { ...selections, [step.key]: opt.value }).length
+              const isAny = opt.value === null
+              return (
+                <SelectionCard
+                  key={i}
+                  label={tl(opt.label)}
+                  count={count}
+                  color={step.key === 'color' ? opt.value : undefined}
+                  countryCode={step.key === 'country' ? opt.value : undefined}
+                  disabled={!isAny && count === 0}
+                  compact={compact}
+                  onClick={() => chooseOption(step.key, opt.value)}
+                />
+              )
+            })}
+          </div>
         </div>
 
         {showExtras && (

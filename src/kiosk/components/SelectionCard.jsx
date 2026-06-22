@@ -7,10 +7,10 @@ export default function SelectionCard({ label, count, color, countryCode, disabl
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`group relative flex flex-col items-center justify-center text-center shadow-[0_22px_60px_rgba(0,0,0,0.28)] transition ${
+      className={`group relative flex h-full w-full min-h-0 flex-col items-center justify-center overflow-hidden text-center shadow-[0_22px_60px_rgba(0,0,0,0.28)] transition ${
         compact
-          ? 'min-h-[140px] gap-3 rounded-[22px] px-5 py-5'
-          : 'min-h-[220px] gap-5 rounded-[28px] px-8 py-8 xl:min-h-[240px]'
+          ? 'gap-2 rounded-[22px] px-4 py-3'
+          : 'gap-3 rounded-[28px] px-6 py-5'
       } ${
         disabled
           ? 'cursor-not-allowed border border-charcoal-700 bg-charcoal-800/20 opacity-40'
@@ -21,8 +21,8 @@ export default function SelectionCard({ label, count, color, countryCode, disabl
         <span
           className={`absolute rounded-full border border-charcoal-600 bg-ink-950/75 font-semibold text-cream-200/75 transition group-hover:border-gold-500/60 group-hover:text-gold-400 ${
             compact
-              ? 'right-4 top-4 px-2.5 py-0.5 text-xs'
-              : 'right-5 top-5 px-3.5 py-1 text-sm'
+              ? 'right-3 top-3 px-2.5 py-0.5 text-xs'
+              : 'right-4 top-4 px-3.5 py-1 text-sm'
           }`}
         >
           {count}
@@ -32,15 +32,15 @@ export default function SelectionCard({ label, count, color, countryCode, disabl
       {color && (
         <WineBottle
           color={color}
-          className={`w-auto ${compact ? 'h-16' : 'h-24 xl:h-28'}`}
+          className={`w-auto min-h-0 shrink ${compact ? 'h-12' : 'h-16 sm:h-20 xl:h-24'}`}
         />
       )}
 
       {countryCode && <CountryFlag code={countryCode} compact={compact} />}
 
       <span
-        className={`font-semibold text-cream-100 ${
-          compact ? 'text-xl xl:text-2xl' : 'text-2xl xl:text-3xl'
+        className={`font-semibold leading-tight text-cream-100 ${
+          compact ? 'text-lg xl:text-xl' : 'text-xl sm:text-2xl xl:text-3xl'
         }`}
       >
         {label}
