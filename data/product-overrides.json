@@ -1,4 +1,114 @@
 {
+  "931": {
+    "barcode": "931",
+    "name": "ARMAND BRUT GOLD 75CL",
+    "brand": "ARMAND",
+    "color": "sparkling",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "medium",
+    "sweetness": "intense",
+    "taste": "medium",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/931.webp",
+    "updatedAt": "2026-06-22T12:25:08.728Z"
+  },
+  "932": {
+    "barcode": "932",
+    "name": "ARMAND BRUT ROSE 75CL",
+    "brand": "ARMAND",
+    "color": "sparkling",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "medium",
+    "sweetness": "medium",
+    "taste": "medium",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/932.webp",
+    "updatedAt": "2026-06-22T12:25:15.129Z"
+  },
+  "1106": {
+    "barcode": "1106",
+    "color": "red",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "updatedAt": "2026-06-22T12:14:47.766Z"
+  },
   "3760204540166": {
     "barcode": "3760204540166",
     "color": "red",
@@ -2905,9 +3015,9 @@
   },
   "3263286329006": {
     "barcode": "3263286329006",
-    "color": "red",
-    "country": "İtalya",
-    "region": "Veneto",
+    "color": "white",
+    "country": "FR",
+    "region": "",
     "grape": "Corvina Blend",
     "body": "intense",
     "sweetness": "medium",
@@ -2923,23 +3033,23 @@
     ],
     "shortDescription": {
       "tr": "Kurutulmuş üzümlerden muazzam yoğunluk.",
-      "en": ""
+      "en": "Kurutulmuş üzümlerden muazzam yoğunluk."
     },
     "tasteNotes": {
       "tr": "Kuru incir, bitter çikolata, kiraz reçeli.",
-      "en": ""
+      "en": "Kuru incir, bitter çikolata, kiraz reçeli."
     },
     "foodPairing": {
       "tr": "Yaban domuzu, mavi küflü peynirler.",
-      "en": ""
+      "en": "Yaban domuzu, mavi küflü peynirler."
     },
     "description": "Kurutulmuş üzümlerden muazzam yoğunluk.",
     "descriptionTr": "Kurutulmuş üzümlerden muazzam yoğunluk.",
-    "descriptionEn": "",
+    "descriptionEn": "Kurutulmuş üzümlerden muazzam yoğunluk.",
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.448Z"
+    "updatedAt": "2026-06-22T12:24:15.250Z"
   },
   "3263286346683": {
     "barcode": "3263286346683",
@@ -37185,5 +37295,43 @@
     "featured": false,
     "priorityScore": 0,
     "updatedAt": "2026-06-22T10:22:18.569Z"
+  },
+  "0764460438000": {
+    "barcode": "0764460438000",
+    "name": "ETEL GILLHAM WHITE 75CL",
+    "brand": "ETEL",
+    "color": "white",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "intense",
+    "sweetness": "medium",
+    "taste": "intense",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/0764460438000.webp",
+    "updatedAt": "2026-06-22T12:25:21.964Z"
   }
 }

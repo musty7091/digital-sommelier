@@ -6,6 +6,7 @@ import {
   logAuditAction,
 } from '../../firebase/products'
 import { getLocalProductImagePath, getProductImageAlt } from '../../shared/productImage'
+import QuickFill from './QuickFill'
 import {
   prepareProductImage,
   uploadProductImageToLocalApi,
@@ -372,6 +373,7 @@ export default function Products() {
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
+  const [quickFillOpen, setQuickFillOpen] = useState(false)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -388,7 +390,9 @@ export default function Products() {
 
     try {
       const productsList = await fetchAllProducts()
-      setProducts(Array.isArray(productsList) ? productsList : [])
+      // DB'de pasif (IsActive=PASIF) olan ürünler admin listesine hiç girmesin.
+      const activeList = (Array.isArray(productsList) ? productsList : []).filter(checkIsActive)
+      setProducts(activeList)
     } catch (error) {
       console.error('Ürünler lokal API üzerinden çekilirken hata oluştu:', error)
       alert(error.message || 'Ürün listesi alınamadı.')
@@ -835,6 +839,13 @@ export default function Products() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <button
+            onClick={() => setQuickFillOpen(true)}
+            className="px-6 py-3 bg-wine-800 hover:bg-wine-700 text-cream-100 font-semibold rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap"
+          >
+            ⚡ Hızlı Doldur
+          </button>
+
           <button
             onClick={loadProducts}
             className="px-6 py-3 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-medium rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap"
@@ -1496,6 +1507,14 @@ export default function Products() {
             </div>
           </div>
         </div>
+      )}
+
+      {quickFillOpen && (
+        <QuickFill
+          products={products}
+          onClose={() => setQuickFillOpen(false)}
+          onSaved={loadProducts}
+        />
       )}
     </div>
   )
