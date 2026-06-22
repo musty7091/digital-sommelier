@@ -105,6 +105,39 @@ function hasValue(value) {
   return Boolean(cleanText(value))
 }
 
+const COUNTRY_CODE_MAP = {
+  tr: 'TR', turkiye: 'TR', turkey: 'TR',
+  cy: 'CY', kibris: 'CY', cyprus: 'CY',
+  fr: 'FR', fransa: 'FR', france: 'FR',
+  it: 'IT', italya: 'IT', italy: 'IT', italia: 'IT',
+  es: 'ES', ispanya: 'ES', spain: 'ES', espana: 'ES',
+  cl: 'CL', sili: 'CL', chile: 'CL',
+  ar: 'AR', arjantin: 'AR', argentina: 'AR',
+  au: 'AU', avustralya: 'AU', australia: 'AU',
+  nz: 'NZ', yenizelanda: 'NZ', newzealand: 'NZ',
+  us: 'US', usa: 'US', abd: 'US', america: 'US',
+  za: 'ZA', guneyafrika: 'ZA', southafrica: 'ZA',
+  pt: 'PT', portekiz: 'PT', portugal: 'PT',
+  de: 'DE', almanya: 'DE', germany: 'DE',
+  gr: 'GR', yunanistan: 'GR', greece: 'GR',
+}
+
+function normalizeCountryCode(value) {
+  const folded = String(value ?? '')
+    .replace(/İ/g, 'i').replace(/I/g, 'i').replace(/ı/g, 'i')
+    .replace(/Ş/g, 's').replace(/ş/g, 's')
+    .replace(/Ğ/g, 'g').replace(/ğ/g, 'g')
+    .replace(/Ü/g, 'u').replace(/ü/g, 'u')
+    .replace(/Ö/g, 'o').replace(/ö/g, 'o')
+    .replace(/Ç/g, 'c').replace(/ç/g, 'c')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z]/g, '')
+  if (!folded) return ''
+  return COUNTRY_CODE_MAP[folded] || folded.toUpperCase()
+}
+
 function normalizeColor(value) {
   const text = cleanText(value).toLowerCase()
 
@@ -250,19 +283,36 @@ function toArray(value) {
   return []
 }
 
+// Bir değer {tr,en} nesnesi ya da düz string olabilir; ikisini de doğru çözer.
+function asLocalizedValue(value) {
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    return {
+      tr: cleanText(value.tr ?? value.TR ?? value.tr_TR ?? ''),
+      en: cleanText(value.en ?? value.EN ?? value.en_US ?? ''),
+    }
+  }
+  return { tr: cleanText(value), en: '' }
+}
+
 function localizedText(source, trKeys, enKeys) {
+  const tr = firstValue(source, trKeys, '')
+  const en = firstValue(source, enKeys, '')
+  // Düz anahtar bir nesne tutuyorsa (ör. shortDescription: {tr,en}) doğru çöz
+  const trVal = asLocalizedValue(tr)
   return {
-    tr: cleanText(firstValue(source, trKeys, '')),
-    en: cleanText(firstValue(source, enKeys, '')),
+    tr: trVal.tr,
+    en: cleanText(en) || trVal.en,
   }
 }
 
 function localizedTextWithFallback(source, trKeys, enKeys, fallbackKeys = []) {
-  const fallback = cleanText(firstValue(source, fallbackKeys, ''))
+  const fb = asLocalizedValue(firstValue(source, fallbackKeys, ''))
+  const trDirect = asLocalizedValue(firstValue(source, trKeys, ''))
+  const enDirect = cleanText(firstValue(source, enKeys, ''))
 
   return {
-    tr: cleanText(firstValue(source, trKeys, fallback)),
-    en: cleanText(firstValue(source, enKeys, '')),
+    tr: trDirect.tr || fb.tr,
+    en: enDirect || trDirect.en || fb.en,
   }
 }
 
@@ -341,7 +391,7 @@ function normalizeOverride(rawOverride = {}) {
     brand: cleanText(firstValue(override, ['brand', 'Brand', 'Marka'])),
 
     color,
-    country: cleanText(firstValue(override, ['country', 'Country', 'Ulke', 'Ülke'])),
+    country: normalizeCountryCode(firstValue(override, ['country', 'Country', 'Ulke', 'Ülke'])),
     region: cleanText(firstValue(override, ['region', 'Region', 'Bolge', 'Bölge'])),
     grape: cleanText(
       firstValue(override, [

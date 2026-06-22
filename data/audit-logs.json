@@ -1,5 +1,231 @@
 [
   {
+    "id": "1782130085743-cd22ff921f0de",
+    "createdAt": "2026-06-22T12:08:05.743Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "CL",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": "gift",
+        "taste": "intense",
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:08:05.735Z"
+    }
+  },
+  {
+    "id": "1782130078290-303e385f31958",
+    "createdAt": "2026-06-22T12:07:58.290Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "intense",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": "gift",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:58.287Z"
+    }
+  },
+  {
+    "id": "1782130077291-341343266da78",
+    "createdAt": "2026-06-22T12:07:57.291Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "gift",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:57.288Z"
+    }
+  },
+  {
+    "id": "1782130076814-2bb5be6049aee",
+    "createdAt": "2026-06-22T12:07:56.814Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "white",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:56.809Z"
+    }
+  },
+  {
+    "id": "1782130076195-8c907d18bc169",
+    "createdAt": "2026-06-22T12:07:56.195Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "white",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:56.191Z"
+    }
+  },
+  {
+    "id": "1782130075278-970119e018aea",
+    "createdAt": "2026-06-22T12:07:55.278Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:55.266Z"
+    }
+  },
+  {
+    "id": "1782130061506-97cf6ff7bfd4e",
+    "createdAt": "2026-06-22T12:07:41.506Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:41.501Z"
+    }
+  },
+  {
+    "id": "1782130058287-f0c212e47279f",
+    "createdAt": "2026-06-22T12:07:38.287Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:38.277Z"
+    }
+  },
+  {
+    "id": "1782130039417-9cd2a151d8e94",
+    "createdAt": "2026-06-22T12:07:19.417Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:19.406Z"
+    }
+  },
+  {
+    "id": "1782130037722-1e29ce1153b5f",
+    "createdAt": "2026-06-22T12:07:17.722Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-22T12:07:17.702Z"
+    }
+  },
+  {
     "id": "1782128199246-e93bc5fa95309",
     "createdAt": "2026-06-22T11:36:39.246Z",
     "actor": "local-admin",

@@ -117,8 +117,42 @@ function normalizeLevel(value) {
   return text
 }
 
+const COUNTRY_CODE_MAP = {
+  tr: 'TR', turkiye: 'TR', turkey: 'TR',
+  cy: 'CY', kibris: 'CY', cyprus: 'CY',
+  fr: 'FR', fransa: 'FR', france: 'FR',
+  it: 'IT', italya: 'IT', italy: 'IT', italia: 'IT',
+  es: 'ES', ispanya: 'ES', spain: 'ES', espana: 'ES',
+  cl: 'CL', sili: 'CL', chile: 'CL',
+  ar: 'AR', arjantin: 'AR', argentina: 'AR',
+  au: 'AU', avustralya: 'AU', australia: 'AU',
+  nz: 'NZ', yenizelanda: 'NZ', newzealand: 'NZ',
+  us: 'US', usa: 'US', abd: 'US', america: 'US',
+  za: 'ZA', guneyafrika: 'ZA', southafrica: 'ZA',
+  pt: 'PT', portekiz: 'PT', portugal: 'PT',
+  de: 'DE', almanya: 'DE', germany: 'DE',
+  gr: 'GR', yunanistan: 'GR', greece: 'GR',
+}
+
+function foldCountry(value) {
+  return String(value ?? '')
+    .replace(/İ/g, 'i').replace(/I/g, 'i').replace(/ı/g, 'i')
+    .replace(/Ş/g, 's').replace(/ş/g, 's')
+    .replace(/Ğ/g, 'g').replace(/ğ/g, 'g')
+    .replace(/Ü/g, 'u').replace(/ü/g, 'u')
+    .replace(/Ö/g, 'o').replace(/ö/g, 'o')
+    .replace(/Ç/g, 'c').replace(/ç/g, 'c')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z]/g, '')
+}
+
+// Ülkeyi ISO koduna indirger: "İtalya" / "italy" / "IT" hepsi -> "IT".
 function normalizeCountry(value) {
-  return normalizeText(value)
+  const folded = foldCountry(value)
+  if (!folded) return ''
+  return COUNTRY_CODE_MAP[folded] || folded.toUpperCase()
 }
 
 function normalizePurpose(value) {
