@@ -1,6 +1,6 @@
 {
-  "idleTimeoutSeconds": 120,
-  "autoResetSeconds": 120,
+  "idleTimeoutSeconds": 30,
+  "autoResetSeconds": 60,
   "showPopularProducts": true,
   "showStock": true,
   "showPrice": true,
@@ -55,7 +55,7 @@
       "min": 500,
       "max": 1000,
       "label": {
-        "tr": "Orta Seviye",
+        "tr": "500 TL - 1000 TL",
         "en": "Mid range"
       }
     },
@@ -65,7 +65,7 @@
       "min": 1000,
       "max": 2000,
       "label": {
-        "tr": "Premium",
+        "tr": "1000 TL - 2000 TL",
         "en": "Premium"
       }
     },
@@ -75,7 +75,7 @@
       "min": 2000,
       "max": null,
       "label": {
-        "tr": "Üst Segment",
+        "tr": "2000 TL - ...",
         "en": "Luxury"
       }
     }
@@ -117,12 +117,12 @@
     "en"
   ],
   "currency": "TL",
-  "resetTimeoutSeconds": 120,
+  "resetTimeoutSeconds": 60,
   "idleScreenEnabled": true,
   "featuredRotationSeconds": 7,
   "resultCount": 12,
   "lowStockThreshold": 10,
-  "hideOutOfStock": true,
+  "hideOutOfStock": false,
   "scanEnabled": true,
   "analyticsEnabled": true,
   "maintenanceMode": false,
@@ -130,5 +130,5 @@
     "tr": "",
     "en": ""
   },
-  "updatedAt": "2026-06-22T11:03:38.584Z"
+  "updatedAt": "2026-06-22T13:07:09.597Z"
 }

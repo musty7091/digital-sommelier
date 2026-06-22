@@ -75,6 +75,44 @@
     "imagePath": "/product-images/932.webp",
     "updatedAt": "2026-06-22T12:25:15.129Z"
   },
+  "1030": {
+    "barcode": "1030",
+    "name": "PAVILLON ROUGE DU MARGAUX 2018 75CL",
+    "brand": "PAVILLON",
+    "color": "red",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "intense",
+    "sweetness": "light",
+    "taste": "intense",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/1030.webp",
+    "updatedAt": "2026-06-22T12:27:11.464Z"
+  },
   "1106": {
     "barcode": "1106",
     "color": "red",
@@ -2851,10 +2889,10 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:36:26.289Z",
+    "updatedAt": "2026-06-22T12:55:58.698Z",
     "name": "JP CHENET SAUVIGNONO 75CL",
     "brand": "JP",
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-22T12:55:58.669Z",
     "imagePath": "/product-images/3263286301316.webp"
   },
   "3263286301323": {
@@ -2893,10 +2931,10 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:37:56.268Z",
+    "updatedAt": "2026-06-22T12:56:16.490Z",
     "name": "JP CHENET CABERNET SYRAH 75CL",
     "brand": "JP",
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-22T12:56:16.460Z",
     "imagePath": "/product-images/3263286301323.webp"
   },
   "3263286301385": {
@@ -2935,7 +2973,9 @@
     "sommelierPick": true,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.448Z"
+    "updatedAt": "2026-06-22T12:56:34.097Z",
+    "imageUpdatedAt": "2026-06-22T12:56:34.071Z",
+    "imagePath": "/product-images/3263286301385.webp"
   },
   "3263286321284": {
     "barcode": "3263286321284",
@@ -2973,7 +3013,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-22T10:22:18.448Z"
+    "updatedAt": "2026-06-22T12:56:51.416Z",
+    "imageUpdatedAt": "2026-06-22T12:56:51.386Z",
+    "imagePath": "/product-images/3263286321284.webp"
   },
   "3263286328993": {
     "barcode": "3263286328993",
@@ -37333,5 +37375,43 @@
     "imageUpdatedAt": null,
     "imagePath": "/product-images/0764460438000.webp",
     "updatedAt": "2026-06-22T12:25:21.964Z"
+  },
+  "0764460438079": {
+    "barcode": "0764460438079",
+    "name": "ETEL NOVUS 2018 DRY RED WINE 75CL",
+    "brand": "ETEL",
+    "color": "red",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "intense",
+    "sweetness": "light",
+    "taste": "intense",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/0764460438079.webp",
+    "updatedAt": "2026-06-22T12:27:01.766Z"
   }
 }
