@@ -1,10 +1,4 @@
 {
-  "1048": {
-    "barcode": "1048",
-    "imageUpdatedAt": "2026-06-23T07:44:16.708Z",
-    "imagePath": "/product-images/1048.webp",
-    "updatedAt": "2026-06-23T07:44:16.716Z"
-  },
   "3445720021121": {
     "barcode": "3445720021121",
     "color": "rose",
@@ -87,9 +81,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": "2026-06-23T07:44:34.270Z",
+    "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301316.webp",
-    "updatedAt": "2026-06-23T07:44:34.277Z"
+    "updatedAt": "2026-06-23T06:26:12.114Z"
   },
   "3263286301385": {
     "barcode": "3263286301385",
@@ -125,9 +119,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": "2026-06-23T07:45:09.447Z",
+    "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301385.webp",
-    "updatedAt": "2026-06-23T07:45:09.454Z"
+    "updatedAt": "2026-06-23T05:54:42.953Z"
   },
   "3263286321284": {
     "barcode": "3263286321284",
@@ -319,9 +313,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": "2026-06-23T07:44:51.838Z",
+    "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301323.webp",
-    "updatedAt": "2026-06-23T07:44:51.845Z"
+    "updatedAt": "2026-06-23T07:28:58.105Z"
   },
   "3500610033346": {
     "barcode": "3500610033346",
@@ -433,9 +427,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": "2026-06-23T07:43:59.260Z",
+    "imageUpdatedAt": null,
     "imagePath": "/product-images/8690584120403.webp",
-    "updatedAt": "2026-06-23T07:43:59.266Z"
+    "updatedAt": "2026-06-23T07:26:55.551Z"
   },
   "8690584155405": {
     "barcode": "8690584155405",
@@ -775,9 +769,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": "2026-06-23T07:43:41.915Z",
+    "imageUpdatedAt": null,
     "imagePath": "/product-images/8690584114402.webp",
-    "updatedAt": "2026-06-23T07:43:41.922Z"
+    "updatedAt": "2026-06-23T07:26:20.671Z"
   },
   "8690584120502": {
     "barcode": "8690584120502",
@@ -1112,11 +1106,5 @@
     "imageUpdatedAt": "2026-06-23T07:43:06.998Z",
     "imagePath": "/product-images/8436598730128.webp",
     "updatedAt": "2026-06-23T07:43:07.003Z"
-  },
-  "8436598730272": {
-    "barcode": "8436598730272",
-    "imageUpdatedAt": "2026-06-23T07:43:24.458Z",
-    "imagePath": "/product-images/8436598730272.webp",
-    "updatedAt": "2026-06-23T07:43:24.464Z"
   }
 }

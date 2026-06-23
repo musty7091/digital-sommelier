@@ -1,5 +1,1594 @@
 [
   {
+    "id": "1782200709521-2b30502b4bf5",
+    "createdAt": "2026-06-23T07:45:09.521Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301385",
+    "message": "3263286301385 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301385",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200691907-09e9f10bee998",
+    "createdAt": "2026-06-23T07:44:51.907Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301323",
+    "message": "3263286301323 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301323",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200674338-194984b423d15",
+    "createdAt": "2026-06-23T07:44:34.338Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301316",
+    "message": "3263286301316 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301316",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200656766-5c33a1c3a6b61",
+    "createdAt": "2026-06-23T07:44:16.766Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "1048",
+    "message": "1048 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "1048",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200639323-1f6bec61f4838",
+    "createdAt": "2026-06-23T07:43:59.323Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584120403",
+    "message": "8690584120403 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584120403",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200621982-a28b485912292",
+    "createdAt": "2026-06-23T07:43:41.982Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584114402",
+    "message": "8690584114402 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584114402",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200604525-8d1af21b7ea9b",
+    "createdAt": "2026-06-23T07:43:24.525Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8436598730272",
+    "message": "8436598730272 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8436598730272",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200587065-0318e9f37cd92",
+    "createdAt": "2026-06-23T07:43:07.065Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8436598730128",
+    "message": "8436598730128 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8436598730128",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200569766-83bd0f6781299",
+    "createdAt": "2026-06-23T07:42:49.766Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8420870300024",
+    "message": "8420870300024 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8420870300024",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200552344-791bf7707b014",
+    "createdAt": "2026-06-23T07:42:32.344Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8033324650158",
+    "message": "8033324650158 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8033324650158",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200534865-496674f98981b",
+    "createdAt": "2026-06-23T07:42:14.865Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8033324650011",
+    "message": "8033324650011 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8033324650011",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200517240-884063a845759",
+    "createdAt": "2026-06-23T07:41:57.240Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8008900004212",
+    "message": "8008900004212 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8008900004212",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200500057-bde2cd7cceff2",
+    "createdAt": "2026-06-23T07:41:40.057Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8005890804761",
+    "message": "8005890804761 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8005890804761",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200482675-e1803a009308c",
+    "createdAt": "2026-06-23T07:41:22.675Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8005890802156",
+    "message": "8005890802156 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8005890802156",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200465319-e2058917c88f9",
+    "createdAt": "2026-06-23T07:41:05.319Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8005011446078",
+    "message": "8005011446078 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8005011446078",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200447898-03cc47adc1d63",
+    "createdAt": "2026-06-23T07:40:47.898Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "7798096630807",
+    "message": "7798096630807 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "7798096630807",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200430498-6a2dbd8558a4",
+    "createdAt": "2026-06-23T07:40:30.498Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "7798096630258",
+    "message": "7798096630258 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "7798096630258",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200413182-bf017bbafec4e",
+    "createdAt": "2026-06-23T07:40:13.182Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "7798096630210",
+    "message": "7798096630210 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "7798096630210",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200395424-1780c057957f2",
+    "createdAt": "2026-06-23T07:39:55.424Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "5601012006384",
+    "message": "5601012006384 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "5601012006384",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200378077-75fee8a047ed4",
+    "createdAt": "2026-06-23T07:39:38.077Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "4860001196609",
+    "message": "4860001196609 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "4860001196609",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200360381-49b4895f004bc",
+    "createdAt": "2026-06-23T07:39:20.381Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "4840013000248",
+    "message": "4840013000248 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "4840013000248",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200342733-6c6985a19405e",
+    "createdAt": "2026-06-23T07:39:02.733Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3760179690002",
+    "message": "3760179690002 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3760179690002",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200325430-8a5d5a188c736",
+    "createdAt": "2026-06-23T07:38:45.430Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179901032",
+    "message": "3612179901032 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179901032",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200308026-36fe833952094",
+    "createdAt": "2026-06-23T07:38:28.026Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179900523",
+    "message": "3612179900523 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179900523",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200290601-b0e5a394ba8c1",
+    "createdAt": "2026-06-23T07:38:10.601Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179802278",
+    "message": "3612179802278 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179802278",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200273223-1ab2710dd6a2f",
+    "createdAt": "2026-06-23T07:37:53.223Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179707702",
+    "message": "3612179707702 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179707702",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200255925-600aa9cf8afee",
+    "createdAt": "2026-06-23T07:37:35.925Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179706552",
+    "message": "3612179706552 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179706552",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200238482-fc53c78a07cee",
+    "createdAt": "2026-06-23T07:37:18.482Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179706484",
+    "message": "3612179706484 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179706484",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200221034-7b9c52ecba9ec",
+    "createdAt": "2026-06-23T07:37:01.034Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612179700314",
+    "message": "3612179700314 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612179700314",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200203486-42cc6ea352b81",
+    "createdAt": "2026-06-23T07:36:43.486Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612170017572",
+    "message": "3612170017572 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612170017572",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200186209-4f0d75dcfa7ab",
+    "createdAt": "2026-06-23T07:36:26.209Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612170000857",
+    "message": "3612170000857 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612170000857",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200168807-5c684ed4814b4",
+    "createdAt": "2026-06-23T07:36:08.807Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3612170000833",
+    "message": "3612170000833 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3612170000833",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200151281-fd1856ff34e",
+    "createdAt": "2026-06-23T07:35:51.281Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3500610033346",
+    "message": "3500610033346 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3500610033346",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200133848-cb30a6a155045",
+    "createdAt": "2026-06-23T07:35:33.848Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3500610014789",
+    "message": "3500610014789 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3500610014789",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200116358-49b2c12c72b28",
+    "createdAt": "2026-06-23T07:35:16.358Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3445720021121",
+    "message": "3445720021121 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3445720021121",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200098823-d228a87932438",
+    "createdAt": "2026-06-23T07:34:58.823Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3334582021991",
+    "message": "3334582021991 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3334582021991",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200081167-0da35fe4b36d7",
+    "createdAt": "2026-06-23T07:34:41.167Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286329006",
+    "message": "3263286329006 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286329006",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200063209-e312a107fca57",
+    "createdAt": "2026-06-23T07:34:23.209Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286328993",
+    "message": "3263286328993 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286328993",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782200045540-1ce83799714dd",
+    "createdAt": "2026-06-23T07:34:05.540Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286321284",
+    "message": "3263286321284 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286321284",
+      "fields": [
+        "barcode",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199758679-7c04f455f7bba",
+    "createdAt": "2026-06-23T07:29:18.679Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "FR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "daily",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:29:18.667Z"
+    }
+  },
+  {
+    "id": "1782199757613-ac540d11fcf2c",
+    "createdAt": "2026-06-23T07:29:17.613Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "daily",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:29:17.603Z"
+    }
+  },
+  {
+    "id": "1782199756154-faab0fc2e789e",
+    "createdAt": "2026-06-23T07:29:16.154Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "daily",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:29:16.147Z"
+    }
+  },
+  {
+    "id": "1782199755253-de0169dad881",
+    "createdAt": "2026-06-23T07:29:15.253Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "budget",
+        "min": 0,
+        "max": 500
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:29:15.245Z"
+    }
+  },
+  {
+    "id": "1782199754574-c5d9af3775c9b",
+    "createdAt": "2026-06-23T07:29:14.574Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:29:14.562Z"
+    }
+  },
+  {
+    "id": "1782199752745-f6b49fef138cb",
+    "createdAt": "2026-06-23T07:29:12.745Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:29:12.727Z"
+    }
+  },
+  {
+    "id": "1782199738266-a8d7fb0ce495",
+    "createdAt": "2026-06-23T07:28:58.266Z",
+    "actor": "Sistem Yöneticisi",
+    "action": "GÜNCELLEME",
+    "entityType": "Yapay Zekâ",
+    "entityId": "",
+    "message": "\"JP CHENET CABERNET SYRAH 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi ve doğrulandı.",
+    "details": {
+      "module": "Yapay Zekâ",
+      "actionType": "GÜNCELLEME",
+      "description": "\"JP CHENET CABERNET SYRAH 75CL\" ürünü için çift dilli yapay zekâ açıklaması lokal ürüne kaydedildi ve doğrulandı.",
+      "user": "Sistem Yöneticisi"
+    }
+  },
+  {
+    "id": "1782199738174-a9eaa20d76bdf",
+    "createdAt": "2026-06-23T07:28:58.174Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301323",
+    "message": "3263286301323 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301323",
+      "fields": [
+        "barcode",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn"
+      ]
+    }
+  },
+  {
+    "id": "1782199677698-874f04f9b2c64",
+    "createdAt": "2026-06-23T07:27:57.698Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "3263286301323",
+    "message": "\"JP CHENET CABERNET SYRAH 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "3263286301323",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "shortDescriptionTr",
+        "shortDescriptionEn",
+        "tasteNotesTr",
+        "tasteNotesEn",
+        "foodPairingTr",
+        "foodPairingEn",
+        "KisaAciklama_TR",
+        "KisaAciklama_EN",
+        "TadimNotlari_TR",
+        "TadimNotlari_EN",
+        "YemekUyumu_TR",
+        "YemekUyumu_EN",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "updatedAt",
+        "updatedBy",
+        "source"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "3263286301323",
+        "barcode": "3263286301323",
+        "product": {
+          "id": "3263286301323",
+          "barcode": "3263286301323",
+          "name": "JP CHENET CABERNET SYRAH 75CL",
+          "brand": "JP",
+          "category": "SARAP",
+          "price": 299.9,
+          "stock": 34,
+          "active": true,
+          "isActive": true,
+          "color": "red",
+          "country": "FR",
+          "region": "Bordeaux",
+          "grape": "Syrah",
+          "body": "medium",
+          "sweetness": "medium",
+          "taste": "medium",
+          "acidity": "medium",
+          "tannin": "medium",
+          "block": "c",
+          "shelf": "2",
+          "usagePurposes": [
+            "food",
+            "daily",
+            "romantic"
+          ],
+          "shortDescription": {
+            "tr": "",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "",
+            "en": ""
+          },
+          "description": "",
+          "descriptionTr": "",
+          "descriptionEn": "",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/3263286301323.webp",
+          "imageUpdatedAt": null,
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-23T07:27:57.489Z",
+          "missingFields": [],
+          "metadataStatus": "complete",
+          "kioskReady": true,
+          "needsReview": false
+        }
+      }
+    }
+  },
+  {
+    "id": "1782199677580-281eaf842c40d",
+    "createdAt": "2026-06-23T07:27:57.580Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301323",
+    "message": "3263286301323 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301323",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782199637763-d388b59dc6411",
+    "createdAt": "2026-06-23T07:27:17.763Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301323",
+    "message": "3263286301323 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301323",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199615612-39804f421fdb1",
+    "createdAt": "2026-06-23T07:26:55.612Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584120403",
+    "message": "8690584120403 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584120403",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199613607-24ebd4e95b81a",
+    "createdAt": "2026-06-23T07:26:53.607Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "4840013000248",
+    "message": "4840013000248 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "4840013000248",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199610301-bc643a6f7fcbe",
+    "createdAt": "2026-06-23T07:26:50.301Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3500610033346",
+    "message": "3500610033346 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3500610033346",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199609003-ec22065e3c5a7",
+    "createdAt": "2026-06-23T07:26:49.003Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3500610014789",
+    "message": "3500610014789 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3500610014789",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199594650-67f99c17a25fb",
+    "createdAt": "2026-06-23T07:26:34.650Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261273105",
+    "message": "8410261273105 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261273105",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199590514-a4c5d6f3b7d33",
+    "createdAt": "2026-06-23T07:26:30.514Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261271101",
+    "message": "8410261271101 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261271101",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199588215-c8ed53012c9ec",
+    "createdAt": "2026-06-23T07:26:28.215Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410702004527",
+    "message": "8410702004527 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410702004527",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199585687-15f302d74eac9",
+    "createdAt": "2026-06-23T07:26:25.687Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8008900004212",
+    "message": "8008900004212 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8008900004212",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199582875-5d883a8cb1436",
+    "createdAt": "2026-06-23T07:26:22.875Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584120502",
+    "message": "8690584120502 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584120502",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199580741-23dc512df62f5",
+    "createdAt": "2026-06-23T07:26:20.741Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584114402",
+    "message": "8690584114402 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584114402",
+      "fields": [
+        "barcode",
+        "name",
+        "brand",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "imageUpdatedAt",
+        "imagePath"
+      ]
+    }
+  },
+  {
+    "id": "1782199512239-380cc7f133e64",
+    "createdAt": "2026-06-23T07:25:12.239Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "FR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": "light",
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:25:12.092Z"
+    }
+  },
+  {
+    "id": "1782199511508-8d2bdbe8b73af",
+    "createdAt": "2026-06-23T07:25:11.508Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "light",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:25:11.494Z"
+    }
+  },
+  {
+    "id": "1782199510807-4dbe8f5326c36",
+    "createdAt": "2026-06-23T07:25:10.808Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": null,
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "rose",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:25:10.800Z"
+    }
+  },
+  {
+    "id": "1782199509834-34cef56d7090c",
+    "createdAt": "2026-06-23T07:25:09.834Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "mid",
+        "min": 500,
+        "max": 1000
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "rose",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:25:09.823Z"
+    }
+  },
+  {
+    "id": "1782199508471-d0e36996029ea",
+    "createdAt": "2026-06-23T07:25:08.471Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "rose",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:25:08.464Z"
+    }
+  },
+  {
+    "id": "1782199506430-52959596e3d3c",
+    "createdAt": "2026-06-23T07:25:06.430Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T07:25:06.404Z"
+    }
+  },
+  {
     "id": "1782197979910-501cbb02bc146",
     "createdAt": "2026-06-23T06:59:39.910Z",
     "actor": "local-admin",

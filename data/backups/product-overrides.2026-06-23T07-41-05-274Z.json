@@ -1,18 +1,25 @@
 {
   "3445720021121": {
     "barcode": "3445720021121",
-    "color": "",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
+    "color": "rose",
+    "country": "FR",
+    "region": "Lambesc",
+    "grape": "Grenache, Syrah, Cinsault",
+    "body": "light",
+    "sweetness": "light",
+    "taste": "light",
+    "acidity": "light",
+    "tannin": "intense",
+    "block": "b",
+    "shelf": "6",
+    "usagePurposes": [
+      "sommelier",
+      "light",
+      "romantic",
+      "daily",
+      "gift",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
       "en": "Combining the elegance of Provence with a balanced medium body and sweetness, this exquisite rosé offers refreshing luxury in every sip."
@@ -28,57 +35,62 @@
     "description": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
     "descriptionTr": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
     "descriptionEn": "Combining the elegance of Provence with a balanced medium body and sweetness, this exquisite rosé offers refreshing luxury in every sip.",
-    "sommelierPick": false,
-    "featured": false,
+    "sommelierPick": true,
+    "featured": true,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T05:36:29.066Z",
-    "imageUpdatedAt": "2026-06-23T05:31:13.381Z",
+    "updatedAt": "2026-06-23T07:35:16.310Z",
+    "imageUpdatedAt": "2026-06-23T07:35:16.304Z",
     "imagePath": "/product-images/3445720021121.webp"
   },
   "3263286301316": {
     "barcode": "3263286301316",
     "name": "JP CHENET SAUVIGNONO 75CL",
     "brand": "JP",
-    "color": "red",
+    "color": "white",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
+    "region": "Bordeaux",
+    "grape": "Cabernet Sauvignon",
+    "body": "light",
+    "sweetness": "medium",
+    "taste": "light",
+    "acidity": "medium",
+    "tannin": "light",
+    "block": "a",
+    "shelf": "6",
+    "usagePurposes": [
+      "daily",
+      "light",
+      "gift",
+      "beginner"
+    ],
     "shortDescription": {
-      "tr": "",
-      "en": ""
+      "tr": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
+      "en": "A beautifully balanced Sauvignon from sunny French vineyards, offering a refreshing fruit profile that delights the palate."
     },
     "tasteNotes": {
-      "tr": "",
-      "en": ""
+      "tr": "Turunçgiller, taze otlar, egzotik meyveler",
+      "en": "Citrus, fresh herbs, exotic fruits"
     },
     "foodPairing": {
-      "tr": "",
-      "en": ""
+      "tr": "Izgara tavuk, taze deniz mahsulleri",
+      "en": "Grilled chicken, fresh seafood"
     },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
+    "description": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
+    "descriptionTr": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
+    "descriptionEn": "A beautifully balanced Sauvignon from sunny French vineyards, offering a refreshing fruit profile that delights the palate.",
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301316.webp",
-    "updatedAt": "2026-06-23T05:54:39.991Z"
+    "updatedAt": "2026-06-23T06:26:12.114Z"
   },
   "3263286301385": {
     "barcode": "3263286301385",
     "name": "JP CHENET CINSAULT GRENACHE ROSE 75CL",
     "brand": "JP",
     "color": "red",
-    "country": "",
+    "country": "FR",
     "region": "",
     "grape": "",
     "body": "",
@@ -109,14 +121,14 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301385.webp",
-    "updatedAt": "2026-06-23T05:52:37.683Z"
+    "updatedAt": "2026-06-23T05:54:42.953Z"
   },
   "3263286321284": {
     "barcode": "3263286321284",
     "name": "JP CHENET MEDIUM SWEET WHITE 75CL",
     "brand": "JP",
     "color": "white",
-    "country": "",
+    "country": "FR",
     "region": "",
     "grape": "",
     "body": "",
@@ -145,127 +157,13 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:34:05.454Z",
     "imagePath": "/product-images/3263286321284.webp",
-    "updatedAt": "2026-06-23T05:52:42.646Z"
+    "updatedAt": "2026-06-23T07:34:05.462Z"
   },
   "3263286328993": {
     "barcode": "3263286328993",
     "name": "JP CHENET MERLOT 75CL",
-    "brand": "JP",
-    "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/3263286328993.webp",
-    "updatedAt": "2026-06-23T05:52:47.029Z"
-  },
-  "3263286329006": {
-    "barcode": "3263286329006",
-    "name": "JP CHENET CHARDONNAY 75CL",
-    "brand": "JP",
-    "color": "white",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/3263286329006.webp",
-    "updatedAt": "2026-06-23T05:52:49.467Z"
-  },
-  "3500610014789": {
-    "barcode": "3500610014789",
-    "name": "JP CHENET MERLOT CABERNET 75CL",
-    "brand": "JP",
-    "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/3500610014789.webp",
-    "updatedAt": "2026-06-23T05:52:54.796Z"
-  },
-  "3263286301323": {
-    "barcode": "3263286301323",
-    "name": "JP CHENET CABERNET SYRAH 75CL",
     "brand": "JP",
     "color": "red",
     "country": "FR",
@@ -297,16 +195,134 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
+    "imageUpdatedAt": "2026-06-23T07:34:23.133Z",
+    "imagePath": "/product-images/3263286328993.webp",
+    "updatedAt": "2026-06-23T07:34:23.141Z"
+  },
+  "3263286329006": {
+    "barcode": "3263286329006",
+    "name": "JP CHENET CHARDONNAY 75CL",
+    "brand": "JP",
+    "color": "white",
+    "country": "FR",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": "2026-06-23T07:34:41.109Z",
+    "imagePath": "/product-images/3263286329006.webp",
+    "updatedAt": "2026-06-23T07:34:41.115Z"
+  },
+  "3500610014789": {
+    "barcode": "3500610014789",
+    "name": "JP CHENET MERLOT CABERNET 75CL",
+    "brand": "JP",
+    "color": "red",
+    "country": "FR",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": "2026-06-23T07:35:33.816Z",
+    "imagePath": "/product-images/3500610014789.webp",
+    "updatedAt": "2026-06-23T07:35:33.824Z"
+  },
+  "3263286301323": {
+    "barcode": "3263286301323",
+    "name": "JP CHENET CABERNET SYRAH 75CL",
+    "brand": "JP",
+    "color": "red",
+    "country": "FR",
+    "region": "Bordeaux",
+    "grape": "Syrah",
+    "body": "medium",
+    "sweetness": "medium",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "medium",
+    "block": "c",
+    "shelf": "2",
+    "usagePurposes": [
+      "food",
+      "daily",
+      "romantic"
+    ],
+    "shortDescription": {
+      "tr": "Fransa'nın güneşli bağlarından gelen bu dengeli harman, ipeksi dokusu ve iştah açıcı meyvemsi karakteriyle her yudumda gerçek bir keyif sunuyor.",
+      "en": "A balanced French blend from sun-drenched vineyards, offering a silky texture and appetizing fruity character for a truly delightful experience."
+    },
+    "tasteNotes": {
+      "tr": "Kırmızı orman meyveleri, hafif baharat, mürdüm eriği",
+      "en": "Red berries, subtle spice, damson plum"
+    },
+    "foodPairing": {
+      "tr": "Izgara kırmızı etler, olgun peynir çeşitleri",
+      "en": "Grilled red meats, mature assorted cheeses"
+    },
+    "description": "Fransa'nın güneşli bağlarından gelen bu dengeli harman, ipeksi dokusu ve iştah açıcı meyvemsi karakteriyle her yudumda gerçek bir keyif sunuyor.",
+    "descriptionTr": "Fransa'nın güneşli bağlarından gelen bu dengeli harman, ipeksi dokusu ve iştah açıcı meyvemsi karakteriyle her yudumda gerçek bir keyif sunuyor.",
+    "descriptionEn": "A balanced French blend from sun-drenched vineyards, offering a silky texture and appetizing fruity character for a truly delightful experience.",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301323.webp",
-    "updatedAt": "2026-06-23T05:54:41.505Z"
+    "updatedAt": "2026-06-23T07:28:58.105Z"
   },
   "3500610033346": {
     "barcode": "3500610033346",
     "name": "JP CHENET MEDIUM SWEET RED 75CL",
     "brand": "JP",
     "color": "red",
-    "country": "",
+    "country": "FR",
     "region": "",
     "grape": "",
     "body": "",
@@ -335,16 +351,16 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:35:51.219Z",
     "imagePath": "/product-images/3500610033346.webp",
-    "updatedAt": "2026-06-23T05:53:10.596Z"
+    "updatedAt": "2026-06-23T07:35:51.225Z"
   },
   "4840013000248": {
     "barcode": "4840013000248",
     "name": "CRICOVA SPUMANT ORIGINAL 75CL",
     "brand": "CRICOVA",
     "color": "sparkling",
-    "country": "",
+    "country": "OTHER",
     "region": "",
     "grape": "",
     "body": "",
@@ -373,16 +389,16 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:39:20.313Z",
     "imagePath": "/product-images/4840013000248.webp",
-    "updatedAt": "2026-06-23T05:53:17.192Z"
+    "updatedAt": "2026-06-23T07:39:20.319Z"
   },
   "8690584120403": {
     "barcode": "8690584120403",
     "name": "KAVAK 75CL",
     "brand": "KAVAK",
     "color": "white",
-    "country": "",
+    "country": "TR",
     "region": "",
     "grape": "",
     "body": "",
@@ -413,7 +429,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8690584120403.webp",
-    "updatedAt": "2026-06-23T05:53:20.183Z"
+    "updatedAt": "2026-06-23T07:26:55.551Z"
   },
   "8690584155405": {
     "barcode": "8690584155405",
@@ -718,5 +734,341 @@
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8410261206004.webp",
     "updatedAt": "2026-06-23T05:53:40.357Z"
+  },
+  "8690584114402": {
+    "barcode": "8690584114402",
+    "name": "CANKAYA 75CL",
+    "brand": "CANKAYA",
+    "color": "white",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/8690584114402.webp",
+    "updatedAt": "2026-06-23T07:26:20.671Z"
+  },
+  "8690584120502": {
+    "barcode": "8690584120502",
+    "name": "KAVAKLIDERE KAVAK 100CL",
+    "brand": "KAVAKLIDERE",
+    "color": "white",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/8690584120502.webp",
+    "updatedAt": "2026-06-23T07:26:22.801Z"
+  },
+  "8008900004212": {
+    "barcode": "8008900004212",
+    "name": "CIELO MERLOT 75CL",
+    "brand": "CIELO",
+    "color": "red",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/8008900004212.webp",
+    "updatedAt": "2026-06-23T07:26:25.626Z"
+  },
+  "8410702004527": {
+    "barcode": "8410702004527",
+    "name": "CASTANEDA BEYAZ SARAP 75 ML",
+    "brand": "CASTANEDA",
+    "color": "white",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/8410702004527.webp",
+    "updatedAt": "2026-06-23T07:26:28.156Z"
+  },
+  "8410261271101": {
+    "barcode": "8410261271101",
+    "name": "DON SIMON KIRMIZI SARAP TETRA 100CL",
+    "brand": "DON",
+    "color": "red",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/8410261271101.webp",
+    "updatedAt": "2026-06-23T07:26:30.430Z"
+  },
+  "8410261273105": {
+    "barcode": "8410261273105",
+    "name": "DON SIMON BEYAZ SARAP TETRA 100CL",
+    "brand": "DON",
+    "color": "white",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
+    "shortDescription": {
+      "tr": "",
+      "en": ""
+    },
+    "tasteNotes": {
+      "tr": "",
+      "en": ""
+    },
+    "foodPairing": {
+      "tr": "",
+      "en": ""
+    },
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "imageUpdatedAt": null,
+    "imagePath": "/product-images/8410261273105.webp",
+    "updatedAt": "2026-06-23T07:26:34.578Z"
+  },
+  "3334582021991": {
+    "barcode": "3334582021991",
+    "imageUpdatedAt": "2026-06-23T07:34:58.752Z",
+    "imagePath": "/product-images/3334582021991.webp",
+    "updatedAt": "2026-06-23T07:34:58.757Z"
+  },
+  "3612170000833": {
+    "barcode": "3612170000833",
+    "imageUpdatedAt": "2026-06-23T07:36:08.735Z",
+    "imagePath": "/product-images/3612170000833.webp",
+    "updatedAt": "2026-06-23T07:36:08.742Z"
+  },
+  "3612170000857": {
+    "barcode": "3612170000857",
+    "imageUpdatedAt": "2026-06-23T07:36:26.153Z",
+    "imagePath": "/product-images/3612170000857.webp",
+    "updatedAt": "2026-06-23T07:36:26.162Z"
+  },
+  "3612170017572": {
+    "barcode": "3612170017572",
+    "imageUpdatedAt": "2026-06-23T07:36:43.418Z",
+    "imagePath": "/product-images/3612170017572.webp",
+    "updatedAt": "2026-06-23T07:36:43.424Z"
+  },
+  "3612179700314": {
+    "barcode": "3612179700314",
+    "imageUpdatedAt": "2026-06-23T07:37:00.961Z",
+    "imagePath": "/product-images/3612179700314.webp",
+    "updatedAt": "2026-06-23T07:37:00.968Z"
+  },
+  "3612179706484": {
+    "barcode": "3612179706484",
+    "imageUpdatedAt": "2026-06-23T07:37:18.452Z",
+    "imagePath": "/product-images/3612179706484.webp",
+    "updatedAt": "2026-06-23T07:37:18.459Z"
+  },
+  "3612179706552": {
+    "barcode": "3612179706552",
+    "imageUpdatedAt": "2026-06-23T07:37:35.861Z",
+    "imagePath": "/product-images/3612179706552.webp",
+    "updatedAt": "2026-06-23T07:37:35.871Z"
+  },
+  "3612179707702": {
+    "barcode": "3612179707702",
+    "imageUpdatedAt": "2026-06-23T07:37:53.162Z",
+    "imagePath": "/product-images/3612179707702.webp",
+    "updatedAt": "2026-06-23T07:37:53.167Z"
+  },
+  "3612179802278": {
+    "barcode": "3612179802278",
+    "imageUpdatedAt": "2026-06-23T07:38:10.537Z",
+    "imagePath": "/product-images/3612179802278.webp",
+    "updatedAt": "2026-06-23T07:38:10.543Z"
+  },
+  "3612179900523": {
+    "barcode": "3612179900523",
+    "imageUpdatedAt": "2026-06-23T07:38:27.956Z",
+    "imagePath": "/product-images/3612179900523.webp",
+    "updatedAt": "2026-06-23T07:38:27.964Z"
+  },
+  "3612179901032": {
+    "barcode": "3612179901032",
+    "imageUpdatedAt": "2026-06-23T07:38:45.358Z",
+    "imagePath": "/product-images/3612179901032.webp",
+    "updatedAt": "2026-06-23T07:38:45.365Z"
+  },
+  "3760179690002": {
+    "barcode": "3760179690002",
+    "imageUpdatedAt": "2026-06-23T07:39:02.670Z",
+    "imagePath": "/product-images/3760179690002.webp",
+    "updatedAt": "2026-06-23T07:39:02.676Z"
+  },
+  "4860001196609": {
+    "barcode": "4860001196609",
+    "imageUpdatedAt": "2026-06-23T07:39:38.008Z",
+    "imagePath": "/product-images/4860001196609.webp",
+    "updatedAt": "2026-06-23T07:39:38.017Z"
+  },
+  "5601012006384": {
+    "barcode": "5601012006384",
+    "imageUpdatedAt": "2026-06-23T07:39:55.353Z",
+    "imagePath": "/product-images/5601012006384.webp",
+    "updatedAt": "2026-06-23T07:39:55.359Z"
+  },
+  "7798096630210": {
+    "barcode": "7798096630210",
+    "imageUpdatedAt": "2026-06-23T07:40:13.107Z",
+    "imagePath": "/product-images/7798096630210.webp",
+    "updatedAt": "2026-06-23T07:40:13.115Z"
+  },
+  "7798096630258": {
+    "barcode": "7798096630258",
+    "imageUpdatedAt": "2026-06-23T07:40:30.431Z",
+    "imagePath": "/product-images/7798096630258.webp",
+    "updatedAt": "2026-06-23T07:40:30.438Z"
+  },
+  "7798096630807": {
+    "barcode": "7798096630807",
+    "imageUpdatedAt": "2026-06-23T07:40:47.828Z",
+    "imagePath": "/product-images/7798096630807.webp",
+    "updatedAt": "2026-06-23T07:40:47.834Z"
+  },
+  "8005011446078": {
+    "barcode": "8005011446078",
+    "imageUpdatedAt": "2026-06-23T07:41:05.264Z",
+    "imagePath": "/product-images/8005011446078.webp",
+    "updatedAt": "2026-06-23T07:41:05.270Z"
   }
 }
