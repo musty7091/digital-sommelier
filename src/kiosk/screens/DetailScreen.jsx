@@ -305,11 +305,11 @@ export default function DetailScreen() {
 
       <div className="flex-1 min-h-0 flex items-center justify-center overflow-hidden pb-2">
         <div className="relative flex w-full h-full max-h-[85vh] max-w-6xl flex-col md:flex-row items-center gap-6 md:gap-10 rounded-3xl border border-gold-500/20 bg-charcoal-800/40 p-4 md:p-8 shadow-2xl overflow-y-auto custom-scrollbar md:overflow-hidden">
-          <div className="flex w-full md:w-2/5 shrink-0 items-center justify-center h-48 md:h-full">
+          <div className="flex w-full md:w-[44%] shrink-0 items-center justify-center h-56 md:h-full overflow-hidden">
             <LocalProductImage
               product={product}
-              imageClassName="h-full w-auto max-h-48 md:max-h-[52vh] object-contain drop-shadow-2xl"
-              fallbackClassName="h-full w-auto max-h-48 md:max-h-[52vh] drop-shadow-2xl"
+              imageClassName="h-full w-full max-h-[40vh] md:max-h-[74vh] object-cover object-center drop-shadow-2xl"
+              fallbackClassName="h-full w-auto max-h-[40vh] md:max-h-[60vh] object-contain drop-shadow-2xl"
             />
           </div>
 

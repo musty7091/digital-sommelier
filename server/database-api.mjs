@@ -22,6 +22,7 @@ const dataDir = path.join(projectRoot, 'data')
 const overridesPath = path.join(dataDir, 'product-overrides.json')
 const kioskSettingsPath = path.join(dataDir, 'kiosk-settings.json')
 const auditLogsPath = path.join(dataDir, 'audit-logs.json')
+const backupsDir = path.join(dataDir, 'backups')
 
 dotenv.config({ path: path.join(__dirname, '.env') })
 
@@ -205,10 +206,66 @@ async function readJsonFile(filePath, fallbackValue) {
 async function writeJsonFile(filePath, data) {
   await fs.mkdir(path.dirname(filePath), { recursive: true })
 
-  const tempPath = `${filePath}.tmp`
+  const json = JSON.stringify(data, null, 2)
+  // Benzersiz temp adı (eşzamanlı yazımda çakışmayı önler)
+  const tempPath = `${filePath}.${process.pid}.${Date.now()}.tmp`
 
-  await fs.writeFile(tempPath, JSON.stringify(data, null, 2), 'utf8')
-  await fs.rename(tempPath, filePath)
+  try {
+    await fs.writeFile(tempPath, json, 'utf8')
+    await fs.rename(tempPath, filePath)
+  } catch {
+    // Windows'ta kilitli/var olan hedefe rename başarısız olabilir -> doğrudan yaz
+    await fs.writeFile(filePath, json, 'utf8')
+    await fs.unlink(tempPath).catch(() => {})
+  }
+}
+
+// Her başarılı override yazımından sonra zaman damgalı yedek alır (son 20 tutulur).
+// Böylece bir şey ana dosyayı silse/ezse bile girilen veriler data/backups/ içinde kalır.
+async function snapshotOverrides() {
+  try {
+    const raw = await fs.readFile(overridesPath, 'utf8')
+    if (!raw.trim()) return
+    const data = JSON.parse(raw)
+    const keys = data && typeof data === 'object' ? Object.keys(data) : []
+    if (keys.length === 0) return // boş dosyayı yedekleme
+
+    await fs.mkdir(backupsDir, { recursive: true })
+    const stamp = new Date().toISOString().replace(/[:.]/g, '-')
+    await fs.writeFile(path.join(backupsDir, `product-overrides.${stamp}.json`), raw, 'utf8')
+
+    const files = (await fs.readdir(backupsDir))
+      .filter((f) => f.startsWith('product-overrides.') && f.endsWith('.json'))
+      .sort()
+    for (const f of files.slice(0, Math.max(0, files.length - 20))) {
+      await fs.unlink(path.join(backupsDir, f)).catch(() => {})
+    }
+  } catch (e) {
+    console.error('[backup] overrides yedeklenemedi:', e.message)
+  }
+}
+
+// Açılışta override durumunu bildirir; boşsa ama yedek varsa uyarır.
+async function reportOverridesStatus() {
+  try {
+    const raw = await fs.readFile(overridesPath, 'utf8').catch(() => '')
+    const data = raw.trim() ? JSON.parse(raw) : {}
+    const n = data && typeof data === 'object' ? Object.keys(data).length : 0
+    let backups = []
+    try {
+      backups = (await fs.readdir(backupsDir)).filter((f) => f.endsWith('.json'))
+    } catch {
+      // yedek klasörü yok
+    }
+    console.log(`[overrides] ${n} ürün metadata yüklendi. Yedek sayısı: ${backups.length} (data/backups/)`)
+    if (n === 0 && backups.length) {
+      console.warn(
+        '[overrides] DİKKAT: product-overrides.json BOŞ ama yedek var! Geri yüklemek için data/backups/ içindeki EN YENİ dosyayı data/product-overrides.json olarak kopyalayıp sunucuyu yeniden başlat.',
+      )
+    }
+  } catch (e) {
+    console.error('[overrides] durum okunamadı:', e.message)
+  }
 }
 
 async function readJsonBody(req) {
@@ -474,6 +531,7 @@ async function handleUpdateProductMetadata(barcode, req, res) {
   overrides[cleanBarcode] = nextMetadata
 
   await writeJsonFile(overridesPath, overrides)
+  await snapshotOverrides()
 
   const rows = await queryRows(cleanBarcode)
   const product = rows.length
@@ -545,6 +603,7 @@ async function handleBulkMetadata(req, res) {
   }
 
   await writeJsonFile(overridesPath, overrides)
+  await snapshotOverrides()
 
   await appendAuditLog({
     action: 'product_metadata_bulk_updated',
@@ -746,6 +805,7 @@ const server = http.createServer(async (req, res) => {
 })
 
 await ensureDataFiles()
+await reportOverridesStatus()
 
 server.listen(PORT, () => {
   console.log(`Ürün DB API çalışıyor: http://localhost:${PORT}  (view: ${VIEW})`)

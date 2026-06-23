@@ -1,25 +1,18 @@
 {
   "3445720021121": {
     "barcode": "3445720021121",
-    "color": "rose",
-    "country": "FR",
-    "region": "Lambesc",
-    "grape": "Grenache, Syrah, Cinsault",
-    "body": "light",
-    "sweetness": "light",
-    "taste": "light",
-    "acidity": "light",
-    "tannin": "intense",
-    "block": "b",
-    "shelf": "6",
-    "usagePurposes": [
-      "sommelier",
-      "light",
-      "romantic",
-      "daily",
-      "gift",
-      "beginner"
-    ],
+    "color": "",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
     "shortDescription": {
       "tr": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
       "en": "Combining the elegance of Provence with a balanced medium body and sweetness, this exquisite rosé offers refreshing luxury in every sip."
@@ -35,55 +28,50 @@
     "description": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
     "descriptionTr": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
     "descriptionEn": "Combining the elegance of Provence with a balanced medium body and sweetness, this exquisite rosé offers refreshing luxury in every sip.",
-    "sommelierPick": true,
-    "featured": true,
+    "sommelierPick": false,
+    "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T06:50:41.829Z",
-    "imageUpdatedAt": "2026-06-23T06:50:41.823Z",
+    "updatedAt": "2026-06-23T05:36:29.066Z",
+    "imageUpdatedAt": "2026-06-23T05:31:13.381Z",
     "imagePath": "/product-images/3445720021121.webp"
   },
   "3263286301316": {
     "barcode": "3263286301316",
     "name": "JP CHENET SAUVIGNONO 75CL",
     "brand": "JP",
-    "color": "white",
+    "color": "red",
     "country": "FR",
-    "region": "Bordeaux",
-    "grape": "Cabernet Sauvignon",
-    "body": "light",
-    "sweetness": "medium",
-    "taste": "light",
-    "acidity": "medium",
-    "tannin": "light",
-    "block": "a",
-    "shelf": "6",
-    "usagePurposes": [
-      "daily",
-      "light",
-      "gift",
-      "beginner"
-    ],
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
     "shortDescription": {
-      "tr": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
-      "en": "A beautifully balanced Sauvignon from sunny French vineyards, offering a refreshing fruit profile that delights the palate."
+      "tr": "",
+      "en": ""
     },
     "tasteNotes": {
-      "tr": "Turunçgiller, taze otlar, egzotik meyveler",
-      "en": "Citrus, fresh herbs, exotic fruits"
+      "tr": "",
+      "en": ""
     },
     "foodPairing": {
-      "tr": "Izgara tavuk, taze deniz mahsulleri",
-      "en": "Grilled chicken, fresh seafood"
+      "tr": "",
+      "en": ""
     },
-    "description": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
-    "descriptionTr": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
-    "descriptionEn": "A beautifully balanced Sauvignon from sunny French vineyards, offering a refreshing fruit profile that delights the palate.",
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301316.webp",
-    "updatedAt": "2026-06-23T06:26:12.114Z"
+    "updatedAt": "2026-06-23T05:54:39.991Z"
   },
   "3263286301385": {
     "barcode": "3263286301385",
@@ -204,7 +192,7 @@
     "name": "JP CHENET CHARDONNAY 75CL",
     "brand": "JP",
     "color": "white",
-    "country": "FR",
+    "country": "",
     "region": "",
     "grape": "",
     "body": "",
@@ -235,7 +223,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286329006.webp",
-    "updatedAt": "2026-06-23T05:54:46.990Z"
+    "updatedAt": "2026-06-23T05:52:49.467Z"
   },
   "3500610014789": {
     "barcode": "3500610014789",

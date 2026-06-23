@@ -6,6 +6,19 @@ import { COUNTRY_LABELS, LEVEL_LABELS, USAGE_PURPOSE_LABELS } from '../../types/
 import StockBadge from './StockBadge'
 import WineBottle from './WineBottle'
 
+// Fiyatı tr-TR ondalık biçiminde gösterir: 799.9 -> "799,90"
+function formatPrice(price) {
+  const numberValue = Number(price)
+  if (!Number.isFinite(numberValue)) {
+    return String(price ?? '0')
+  }
+  return numberValue.toLocaleString('tr-TR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+}
+
+
 const CARD_LABELS = {
   tr: {
     featured: 'Öne çıkan öneri',
@@ -171,7 +184,7 @@ export default function ProductCard({ product, onClick }) {
         onClick={onClick}
         role="button"
         tabIndex={0}
-        className="relative grid h-full w-full cursor-pointer grid-cols-1 gap-5 overflow-hidden rounded-2xl border border-gold-500/30 bg-charcoal-800/60 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] sm:rounded-3xl sm:p-6 md:grid-cols-[minmax(190px,0.85fr)_minmax(0,1.35fr)] md:p-8"
+        className="relative grid h-full w-full cursor-pointer grid-cols-1 gap-5 overflow-hidden rounded-2xl border border-gold-500/30 bg-charcoal-800/60 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] sm:rounded-3xl sm:p-6 md:grid-cols-[minmax(180px,0.62fr)_minmax(0,1.7fr)] md:gap-6 md:p-8"
       >
         {product._pick && (
           <span className="absolute left-4 top-4 z-10 rounded-full bg-gold-500 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-ink-950 shadow-lg sm:left-6 sm:px-4 sm:text-xs">
@@ -179,12 +192,12 @@ export default function ProductCard({ product, onClick }) {
           </span>
         )}
 
-        <div className="relative flex min-h-[220px] items-center justify-center rounded-2xl border border-charcoal-700/60 bg-ink-950/20 p-4 md:min-h-[420px] [@media(max-height:900px)]:md:!min-h-[170px]">
+        <div className="relative flex h-full min-h-[320px] max-h-[640px] items-center justify-center overflow-hidden rounded-2xl border border-charcoal-700/60 bg-ink-950/20">
           <div className="pointer-events-none absolute inset-6 rounded-full bg-gold-500/5 blur-2xl" />
           <ProductImage
             product={product}
-            imageClassName="relative h-56 w-auto max-w-full object-contain drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px]"
-            fallbackClassName="relative h-56 w-auto drop-shadow-2xl sm:h-64 md:h-[360px] xl:h-[420px]"
+            imageClassName="relative h-full w-full object-cover object-center drop-shadow-2xl"
+            fallbackClassName="relative h-full w-auto max-h-full object-contain drop-shadow-2xl p-4"
           />
         </div>
 
@@ -202,7 +215,7 @@ export default function ProductCard({ product, onClick }) {
 
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <span className="text-2xl font-semibold text-gold-400 sm:text-3xl">
-                {product.price} {currency}
+                {formatPrice(product.price)} {currency}
               </span>
               <StockBadge stock={product.stock} />
             </div>
@@ -260,7 +273,7 @@ export default function ProductCard({ product, onClick }) {
           {purposeChips.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2 [@media(max-height:900px)]:hidden">
               {purposeChips.map((chip) => (
-                <span key={chip} className="rounded-full border border-gold-500/20 bg-gold-500/10 px-3 py-1 text-[11px] font-medium text-gold-300">
+                <span key={chip} className="rounded-full border border-gold-500/20 bg-gold-500/10 px-3 py-1 text-[11px] font-medium text-gold-400">
                   {chip}
                 </span>
               ))}
@@ -297,7 +310,7 @@ export default function ProductCard({ product, onClick }) {
           {product.name}
         </h3>
         <span className="mt-1 text-base sm:text-lg font-semibold text-gold-400">
-          {product.price} {currency}
+          {formatPrice(product.price)} {currency}
         </span>
       </div>
 

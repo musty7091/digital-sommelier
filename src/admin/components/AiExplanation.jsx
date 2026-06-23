@@ -425,27 +425,10 @@ Sadece geçerli JSON döndür.
       const metadata = {
         barcode,
 
-        color: selectedProduct.color || '',
-        country: selectedProduct.country || '',
-        region: selectedProduct.region || '',
-        grape: selectedProduct.grape || '',
-
-        block: selectedProduct.block || '',
-        shelf: selectedProduct.shelf || '',
-
-        body: selectedProduct.body || '',
-        sweetness: selectedProduct.sweetness || '',
-        taste: selectedProduct.body || '',
-        acidity: selectedProduct.acidity || '',
-        tannin: selectedProduct.tannin || '',
-
-        usagePurposes: Array.isArray(selectedProduct.usagePurposes)
-          ? selectedProduct.usagePurposes
-          : [],
-
-        sommelierPick: selectedProduct.sommelierPick === true,
-        featured: selectedProduct.featured === true,
-        priorityScore: Number(selectedProduct.priorityScore || 0),
+        // Yapay zekâ ekranı YALNIZCA açıklama alanlarını kaydeder.
+        // Renk/ülke/bölge/üzüm/raf/karakteristik gibi alanlar burada GÖNDERİLMEZ;
+        // gönderilirse boş değerlerle önceki verinin üzerine yazıp siler.
+        // Server, gönderilmeyen alanları mevcut override'dan koruyarak birleştirir.
 
         shortDescription: {
           tr: generatedData.shortDescriptionTr,

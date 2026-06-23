@@ -370,7 +370,7 @@ export default function History() {
         ) : (
           <div className="overflow-auto flex-1 custom-scrollbar">
             <table className="w-full text-left border-collapse">
-              <thead className="sticky top-0 bg-charcoal-900 z-10 shadow-sm">
+              <thead className="sticky top-0 bg-charcoal-800 z-10 shadow-sm">
                 <tr className="text-gold-500 text-xs uppercase tracking-widest border-b border-charcoal-700">
                   <th className="p-4 font-semibold w-44">Tarih / Saat</th>
                   <th className="p-4 font-semibold w-44">İşlem Tipi</th>
@@ -412,7 +412,7 @@ export default function History() {
 
                       <td className="p-4 text-xs font-semibold text-charcoal-400">
                         <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 rounded-full bg-charcoal-900 border border-charcoal-600 flex items-center justify-center text-cream-100">
+                          <div className="w-6 h-6 rounded-full bg-charcoal-800 border border-charcoal-600 flex items-center justify-center text-cream-100">
                             {firstLetter}
                           </div>
 

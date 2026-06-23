@@ -14,7 +14,7 @@ export default function SelectionCard({ label, count, color, countryCode, disabl
       } ${
         disabled
           ? 'cursor-not-allowed border border-charcoal-700 bg-charcoal-800/20 opacity-40'
-          : 'border border-charcoal-700 bg-gradient-to-b from-charcoal-800/80 to-charcoal-900/40 hover:-translate-y-1 hover:border-gold-500/70 hover:from-wine-800/55 hover:shadow-[0_28px_80px_rgba(0,0,0,0.42)]'
+          : 'border border-charcoal-700 bg-gradient-to-b from-charcoal-800/80 to-ink-950/40 hover:-translate-y-1 hover:border-gold-500/70 hover:from-wine-800/55 hover:shadow-[0_28px_80px_rgba(0,0,0,0.42)]'
       }`}
     >
       {typeof count === 'number' && (

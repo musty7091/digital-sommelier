@@ -38,31 +38,26 @@
     "sommelierPick": true,
     "featured": true,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T06:50:41.829Z",
-    "imageUpdatedAt": "2026-06-23T06:50:41.823Z",
+    "updatedAt": "2026-06-23T05:56:11.794Z",
+    "imageUpdatedAt": "2026-06-23T05:31:13.381Z",
     "imagePath": "/product-images/3445720021121.webp"
   },
   "3263286301316": {
     "barcode": "3263286301316",
     "name": "JP CHENET SAUVIGNONO 75CL",
     "brand": "JP",
-    "color": "white",
+    "color": "red",
     "country": "FR",
-    "region": "Bordeaux",
-    "grape": "Cabernet Sauvignon",
-    "body": "light",
-    "sweetness": "medium",
-    "taste": "light",
-    "acidity": "medium",
-    "tannin": "light",
-    "block": "a",
-    "shelf": "6",
-    "usagePurposes": [
-      "daily",
-      "light",
-      "gift",
-      "beginner"
-    ],
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
     "shortDescription": {
       "tr": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
       "en": "A beautifully balanced Sauvignon from sunny French vineyards, offering a refreshing fruit profile that delights the palate."
@@ -83,7 +78,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301316.webp",
-    "updatedAt": "2026-06-23T06:26:12.114Z"
+    "updatedAt": "2026-06-23T06:12:08.655Z"
   },
   "3263286301385": {
     "barcode": "3263286301385",

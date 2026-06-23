@@ -1,246 +1,106 @@
 import { useEffect, useMemo, useState } from 'react'
 import { saveProduct } from '../../firebase/products'
+import {
+  COLORS,
+  COLOR_LABELS,
+  LEVELS,
+  LEVEL_LABELS,
+  COUNTRIES,
+  COUNTRY_LABELS,
+  USAGE_PURPOSES,
+  USAGE_PURPOSE_LABELS,
+} from '../../types/product.schema'
 
-const COLOR_OPTS = [
-  { value: 'red', label: 'Kırmızı' },
-  { value: 'white', label: 'Beyaz' },
-  { value: 'rose', label: 'Rosé' },
-  { value: 'sparkling', label: 'Köpüklü' },
+// Doldurulabilir alanlar. Ülke "value" olarak ISO kodu (IT/ES…) saklar,
+// böylece veri baştan doğru/standart girilir.
+const levelOpts = LEVELS.map((v) => ({ value: v, label: LEVEL_LABELS[v].tr }))
+const FIELDS = [
+  { key: 'color', label: 'Renk', type: 'single', options: COLORS.map((v) => ({ value: v, label: COLOR_LABELS[v].tr })) },
+  { key: 'country', label: 'Ülke', type: 'single', options: COUNTRIES.map((v) => ({ value: v, label: COUNTRY_LABELS[v].tr })) },
+  { key: 'body', label: 'Gövde', type: 'single', options: levelOpts },
+  { key: 'sweetness', label: 'Tatlılık', type: 'single', options: levelOpts },
+  { key: 'acidity', label: 'Asidite', type: 'single', options: levelOpts },
+  { key: 'tannin', label: 'Tanen', type: 'single', options: levelOpts },
+  { key: 'usagePurposes', label: 'Kullanım Amacı', type: 'multi', options: USAGE_PURPOSES.map((v) => ({ value: v, label: USAGE_PURPOSE_LABELS[v].tr })) },
 ]
 
-const LEVEL_OPTS = [
-  { value: 'light', label: 'Hafif' },
-  { value: 'medium', label: 'Orta' },
-  { value: 'intense', label: 'Yoğun' },
-]
-
-// product.schema.js dosyasındaki tüm ülkeler eklendi
-const COUNTRY_OPTS = [
-  { value: 'TR', label: 'Türkiye' },
-  { value: 'CY', label: 'Kıbrıs' },
-  { value: 'IT', label: 'İtalya' },
-  { value: 'FR', label: 'Fransa' },
-  { value: 'CL', label: 'Şili' },
-  { value: 'AR', label: 'Arjantin' },
-  { value: 'ES', label: 'İspanya' },
-  { value: 'AU', label: 'Avustralya' },
-  { value: 'NZ', label: 'Yeni Zelanda' },
-  { value: 'OTHER', label: 'Diğer' },
-]
-
-// product.schema.js dosyasındaki tüm kullanım amaçları eklendi
-const PURPOSE_OPTS = [
-  { value: 'food', label: 'Yemek için' },
-  { value: 'gift', label: 'Hediye için' },
-  { value: 'celebration', label: 'Kutlama için' },
-  { value: 'daily', label: 'Günlük içim' },
-  { value: 'romantic', label: 'Romantik akşam' },
-  { value: 'premium', label: 'Premium seçim' },
-  { value: 'light', label: 'Hafif içim' },
-  { value: 'value', label: 'Fiyat / performans' },
-  { value: 'beginner', label: 'Yeni başlayanlar için' },
-  
-]
-
-const BOOL_OPTS = [
-  { value: true, label: 'Evet' },
-  { value: false, label: 'Hayır' },
-]
-
-// Eksik bilgileri tararken ülkeyi de zorunlu alanlara ekledik
-const REQUIRED = ['color', 'body', 'sweetness', 'country']
-
-function isMissing(p) {
-  if (Array.isArray(p?.missingFields) && p.missingFields.length) {
-    return p.missingFields.some((f) => REQUIRED.includes(f))
+function isMissing(product, field) {
+  if (field.type === 'multi') {
+    return !Array.isArray(product?.[field.key]) || product[field.key].length === 0
   }
-  return REQUIRED.some((f) => !p?.[f])
-}
-
-// Tekli seçim butonu
-function ButtonRow({ label, options, value, onChange }) {
-  return (
-    <div className="mb-5">
-      <div className="text-[11px] uppercase tracking-wider text-gold-400 mb-2">{label}</div>
-      <div className="flex flex-wrap gap-2.5">
-        {options.map((o) => (
-          <button
-            key={String(o.value)}
-            type="button"
-            onClick={() => onChange(o.value)}
-            className={`rounded-xl border px-5 py-3 text-base font-semibold transition ${
-              value === o.value
-                ? 'border-wine-600 bg-wine-800 text-white shadow-[0_8px_24px_rgba(0,0,0,0.35)]'
-                : 'border-charcoal-700 bg-ink-950 text-cream-200 hover:border-gold-500'
-            }`}
-          >
-            {o.label}
-          </button>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-// Çoklu seçim butonu (Kullanım Amacı gibi birden fazla seçilebilen alanlar için)
-function MultiButtonRow({ label, options, values = [], onChange }) {
-  const toggle = (val) => {
-    if (values.includes(val)) {
-      onChange(values.filter((v) => v !== val))
-    } else {
-      onChange([...values, val])
-    }
-  }
-
-  return (
-    <div className="mb-5">
-      <div className="text-[11px] uppercase tracking-wider text-gold-400 mb-2">{label}</div>
-      <div className="flex flex-wrap gap-2.5">
-        {options.map((o) => {
-          const isActive = values.includes(o.value)
-          return (
-            <button
-              key={o.value}
-              type="button"
-              onClick={() => toggle(o.value)}
-              className={`rounded-xl border px-5 py-3 text-base font-semibold transition ${
-                isActive
-                  ? 'border-wine-600 bg-wine-800 text-white shadow-[0_8px_24px_rgba(0,0,0,0.35)]'
-                  : 'border-charcoal-700 bg-ink-950 text-cream-200 hover:border-gold-500'
-              }`}
-            >
-              {o.label}
-            </button>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-// Serbest metin girişi 
-function TextInputRow({ label, value, onChange, placeholder }) {
-  return (
-    <div className="mb-5">
-      <div className="text-[11px] uppercase tracking-wider text-gold-400 mb-2">{label}</div>
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="w-full rounded-xl border border-charcoal-700 bg-ink-950 px-5 py-3 text-cream-100 placeholder-cream-200/30 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500"
-      />
-    </div>
-  )
-}
-
-// Raf ve Blok için özel çiftli giriş alanı
-function BlockShelfRow({ blockValue, onBlockChange, shelfValue, onShelfChange }) {
-  return (
-    <div className="mb-5">
-      <div className="text-[11px] uppercase tracking-wider text-gold-400 mb-2">Raftaki Konumu</div>
-      <div className="flex gap-4">
-        <div className="flex-1">
-          <label className="block text-xs text-cream-200/60 mb-1 ml-1">Blok (Örn: C)</label>
-          <input
-            type="text"
-            value={blockValue}
-            onChange={(e) => onBlockChange(e.target.value.toUpperCase())}
-            placeholder="A, B, C..."
-            maxLength={3}
-            className="w-full rounded-xl border border-charcoal-700 bg-ink-950 px-5 py-3 text-cream-100 placeholder-cream-200/30 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500"
-          />
-        </div>
-        <div className="flex-1">
-          <label className="block text-xs text-cream-200/60 mb-1 ml-1">Raf Sırası (Örn: 8)</label>
-          <input
-            type="number"
-            value={shelfValue}
-            onChange={(e) => onShelfChange(e.target.value)}
-            placeholder="1, 2, 3..."
-            min="0"
-            className="w-full rounded-xl border border-charcoal-700 bg-ink-950 px-5 py-3 text-cream-100 placeholder-cream-200/30 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500"
-          />
-        </div>
-      </div>
-    </div>
-  )
+  return !product?.[field.key]
 }
 
 export default function QuickFill({ products, onClose, onSaved }) {
-  const queue = useMemo(() => (products || []).filter(isMissing), [products])
+  const [field, setField] = useState(null) // seçili alan (null = alan seçim ekranı)
   const [idx, setIdx] = useState(0)
-  
-  // Ürün Bilgi Durumları (State)
-  const [color, setColor] = useState('')
-  const [body, setBody] = useState('')
-  const [sweetness, setSweetness] = useState('')
-  const [country, setCountry] = useState('')
-  const [usagePurposes, setUsagePurposes] = useState([])
-  const [block, setBlock] = useState('')
-  const [shelf, setShelf] = useState('')
-  const [featured, setFeatured] = useState(false)
-  const [sommelierPick, setSommelierPick] = useState(false)
-
+  const [value, setValue] = useState('')
+  const [values, setValues] = useState([])
   const [saving, setSaving] = useState(false)
   const [done, setDone] = useState(0)
 
+  // Her alan için kaç ürün eksik (alan seçim ekranı sayaçları)
+  const counts = useMemo(() => {
+    const c = {}
+    for (const f of FIELDS) c[f.key] = (products || []).filter((p) => isMissing(p, f)).length
+    return c
+  }, [products])
+
+  // Seçili alan için kuyruk (oturum boyunca sabit)
+  const queue = useMemo(
+    () => (field ? (products || []).filter((p) => isMissing(p, field)) : []),
+    [field, products],
+  )
+
   const total = queue.length
   const product = queue[idx] || null
+  const finished = field && !product
 
-  // Ürün değişince mevcut değerleri sisteme yükle
+  // Ürün değişince mevcut değeri ön-seç
   useEffect(() => {
-    if (!product) return
-    setColor(product.color || '')
-    setBody(product.body || '')
-    setSweetness(product.sweetness || product.taste || '')
-    setCountry(product.country || '')
-    
-    // Kullanım amaçları bir dizi olarak gelebilir, düzeltip yükleyelim
-    let purposes = []
-    if (Array.isArray(product.usagePurposes)) {
-      purposes = product.usagePurposes
-    } else if (typeof product.usagePurposes === 'string') {
-      purposes = product.usagePurposes.split(',').map(s => s.trim())
-    }
-    setUsagePurposes(purposes)
-    
-    setBlock(product.block || '')
-    setShelf(product.shelf || product.shelfPosition || '')
-    setFeatured(product.featured || false)
-    setSommelierPick(product.sommelierPick || false)
-  }, [idx, product])
-
-  // Kaydetmek için sadece temel özellikleri zorunlu tuttuk
-  const canSave = color && body && sweetness && country && !saving
-  const finished = !product
-
-  function advance() {
-    if (idx + 1 < total) {
-      setIdx(idx + 1)
+    if (!product || !field) return
+    if (field.type === 'multi') {
+      setValues(Array.isArray(product[field.key]) ? product[field.key] : [])
     } else {
-      setIdx(total) // Sırada ürün bitti
+      setValue(product[field.key] || '')
     }
+  }, [idx, product, field])
+
+  function pickField(f) {
+    setField(f)
+    setIdx(0)
+    setDone(0)
+    setValue('')
+    setValues([])
   }
 
+  function backToFields() {
+    if (done > 0) onSaved?.()
+    setField(null)
+    setIdx(0)
+    setDone(0)
+  }
+
+  function advance() {
+    setIdx((i) => i + 1)
+  }
+
+  function toggleMulti(v) {
+    setValues((arr) => (arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v]))
+  }
+
+  const canSave =
+    !saving && (field?.type === 'multi' ? values.length > 0 : Boolean(value))
+
   async function saveAndNext() {
-    if (!product || !canSave) return
+    if (!product || !field || !canSave) return
     setSaving(true)
     try {
-      await saveProduct({
-        ...product,
-        barcode: product.barcode || product.id,
-        color,
-        body,
-        sweetness,
-        taste: body, // Eski sistemle uyumlu olması için
-        country,
-        usagePurposes,
-        block,
-        shelf,
-        featured,
-        sommelierPick
-      })
+      const patch =
+        field.type === 'multi'
+          ? { usagePurposes: values }
+          : { [field.key]: value }
+      await saveProduct({ ...product, barcode: product.barcode || product.id, ...patch })
       setDone((d) => d + 1)
       advance()
     } catch (e) {
@@ -256,37 +116,70 @@ export default function QuickFill({ products, onClose, onSaved }) {
   }
 
   return (
-    // Z-index artırıldı, arka plan rengi tamamen kapalı yapıldı ve bulanıklık (blur) efekti verildi
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-      {/* Pencere daha fazla bilgi sığdırmak için genişletildi, taşıyorsa içeriden kaydırılacak (overflow-y-auto) */}
-      <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-charcoal-700 bg-ink-950 p-6 shadow-2xl relative scrollbar-thin scrollbar-thumb-charcoal-700 scrollbar-track-transparent">
-        <div className="flex items-center justify-between mb-4 sticky top-0 bg-ink-950 z-10 pb-2">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink-950/85 backdrop-blur-sm p-4">
+      <div className="w-full max-w-xl rounded-2xl border border-charcoal-700 bg-charcoal-800 p-6 shadow-2xl">
+        <div className="flex items-center justify-between mb-4">
           <h3 className="font-serif text-xl text-cream-100">Hızlı Bilgi Doldurma</h3>
           <button type="button" onClick={close} className="text-cream-200/60 hover:text-cream-100 text-2xl leading-none">×</button>
         </div>
 
-        {finished ? (
-          <div className="py-10 text-center">
-            <div className="text-4xl mb-3 text-emerald-400">✓</div>
-            <p className="text-cream-100 text-lg">
-              {total === 0 ? 'Eksik bilgili ürün kalmadı.' : `${done} ürün güncellendi. Sıradaki eksik kalmadı.`}
-            </p>
-            <button type="button" onClick={close} className="mt-5 rounded-lg bg-wine-800 px-5 py-2.5 font-semibold text-white hover:bg-wine-700 transition">
-              Kapat
-            </button>
-          </div>
-        ) : (
+        {/* ALAN SECIM EKRANI */}
+        {!field && (
           <>
-            <div className="mb-4 flex items-center justify-between text-sm">
-              <span className="text-cream-200/60">Kalan eksik: <b className="text-cream-100">{total - done}</b></span>
-              <span className="text-cream-200/60">Bu oturumda: <b className="text-emerald-400">{done}</b></span>
+            <p className="text-sm text-cream-200/70 mb-4">Hangi bilgiyi dolduralım? Seçtiğin alanı, o bilgisi eksik olan ürünlerde tek tek hızlıca girersin.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {FIELDS.map((f) => {
+                const n = counts[f.key] || 0
+                return (
+                  <button
+                    key={f.key}
+                    type="button"
+                    onClick={() => pickField(f)}
+                    disabled={n === 0}
+                    className={`flex flex-col items-start rounded-xl border px-4 py-3 text-left transition ${
+                      n === 0
+                        ? 'border-charcoal-700 bg-ink-950/40 text-cream-200/30 cursor-not-allowed'
+                        : 'border-charcoal-700 bg-ink-950 text-cream-100 hover:border-gold-500 hover:bg-charcoal-700'
+                    }`}
+                  >
+                    <span className="text-base font-semibold">{f.label}</span>
+                    <span className={`text-xs ${n === 0 ? '' : 'text-gold-400'}`}>{n === 0 ? 'eksik yok' : `${n} eksik`}</span>
+                  </button>
+                )
+              })}
             </div>
-            
-            <div className="h-1.5 w-full rounded-full bg-charcoal-800 mb-5 overflow-hidden">
-              <div className="h-full bg-gold-500 transition-all duration-300" style={{ width: `${total ? (done / total) * 100 : 0}%` }} />
+          </>
+        )}
+
+        {/* DOLDURMA EKRANI */}
+        {field && finished && (
+          <div className="py-10 text-center">
+            <div className="text-4xl mb-3">✓</div>
+            <p className="text-cream-100 text-lg">
+              {total === 0 ? `"${field.label}" eksik ürün yok.` : `"${field.label}" için ${done} ürün güncellendi.`}
+            </p>
+            <div className="mt-5 flex items-center justify-center gap-3">
+              <button type="button" onClick={backToFields} className="rounded-lg bg-wine-800 px-5 py-2.5 font-semibold text-white hover:bg-wine-700">Başka alan doldur</button>
+              <button type="button" onClick={close} className="rounded-lg border border-charcoal-600 px-5 py-2.5 text-cream-200 hover:border-gold-500">Kapat</button>
+            </div>
+          </div>
+        )}
+
+        {field && !finished && (
+          <>
+            <div className="mb-3 flex items-center justify-between text-sm">
+              <button type="button" onClick={backToFields} className="text-cream-200/70 hover:text-gold-400">← Alan değiştir</button>
+              <span className="text-cream-200/70">Alan: <b className="text-cream-100">{field.label}</b></span>
+            </div>
+            <div className="mb-3 flex items-center justify-between text-sm">
+              <span className="text-cream-200/60">Kalan: <b className="text-cream-100">{total - done}</b></span>
+              <span className="text-cream-200/60">Bu oturumda: <b className="text-emerald-300">{done}</b></span>
+            </div>
+            <div className="h-1.5 w-full rounded-full bg-ink-950 mb-5 overflow-hidden">
+              <div className="h-full bg-gold-500 transition-all" style={{ width: `${total ? (done / total) * 100 : 0}%` }} />
             </div>
 
-            <div className="rounded-xl border border-charcoal-700 bg-charcoal-800/50 p-4 mb-6">
+            <div className="rounded-xl border border-charcoal-700 bg-ink-950/50 p-4 mb-5">
               <div className="text-lg font-semibold text-cream-100">{product.name || '(isimsiz)'}</div>
               <div className="text-sm text-cream-200/60 mt-1">
                 Barkod: {product.barcode || product.id}
@@ -296,42 +189,38 @@ export default function QuickFill({ products, onClose, onSaved }) {
               </div>
             </div>
 
-            <ButtonRow label="Renk (Zorunlu)" options={COLOR_OPTS} value={color} onChange={setColor} />
-            <ButtonRow label="Gövde (Zorunlu)" options={LEVEL_OPTS} value={body} onChange={setBody} />
-            <ButtonRow label="Tatlılık (Zorunlu)" options={LEVEL_OPTS} value={sweetness} onChange={setSweetness} />
-            <ButtonRow label="Ülke (Zorunlu)" options={COUNTRY_OPTS} value={country} onChange={setCountry} />
-            
-            <MultiButtonRow label="Kullanım Amacı (Birden fazla seçilebilir)" options={PURPOSE_OPTS} values={usagePurposes} onChange={setUsagePurposes} />
-            
-            <BlockShelfRow 
-              blockValue={block} 
-              onBlockChange={setBlock} 
-              shelfValue={shelf} 
-              onShelfChange={setShelf} 
-            />
-            
-            <div className="grid grid-cols-2 gap-4">
-              <ButtonRow label="Öne Çıkan?" options={BOOL_OPTS} value={featured} onChange={setFeatured} />
-              <ButtonRow label="Sömelye Tavsiyesi?" options={BOOL_OPTS} value={sommelierPick} onChange={setSommelierPick} />
+            <div className="text-[11px] uppercase tracking-wider text-gold-400 mb-2">{field.label}</div>
+            <div className="flex flex-wrap gap-2.5 mb-2">
+              {field.options.map((o) => {
+                const active = field.type === 'multi' ? values.includes(o.value) : value === o.value
+                return (
+                  <button
+                    key={o.value}
+                    type="button"
+                    onClick={() => (field.type === 'multi' ? toggleMulti(o.value) : setValue(o.value))}
+                    className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
+                      active
+                        ? 'border-wine-600 bg-wine-800 text-white shadow-[0_8px_24px_rgba(0,0,0,0.35)]'
+                        : 'border-charcoal-700 bg-ink-950 text-cream-200 hover:border-gold-500'
+                    }`}
+                  >
+                    {o.label}
+                  </button>
+                )
+              })}
             </div>
+            {field.type === 'multi' && <p className="text-xs text-cream-200/50 mb-2">Birden fazla seçebilirsin.</p>}
 
-            <div className="flex items-center gap-3 mt-6 pt-4 border-t border-charcoal-700 sticky bottom-0 bg-ink-950 pb-2">
+            <div className="flex items-center gap-3 mt-5">
               <button
                 type="button"
                 onClick={saveAndNext}
                 disabled={!canSave}
-                className="flex-1 rounded-xl bg-wine-800 px-5 py-3 font-semibold text-white hover:bg-wine-700 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                className="flex-1 rounded-xl bg-wine-800 px-5 py-3 font-semibold text-white hover:bg-wine-700 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {saving ? 'Kaydediliyor…' : 'Kaydet ve Sonraki →'}
               </button>
-              <button
-                type="button"
-                onClick={advance}
-                disabled={saving}
-                className="rounded-xl border border-charcoal-700 bg-charcoal-800 px-5 py-3 text-cream-200 hover:border-gold-500 transition"
-              >
-                Atla
-              </button>
+              <button type="button" onClick={advance} disabled={saving} className="rounded-xl border border-charcoal-700 px-5 py-3 text-cream-200 hover:border-gold-500">Atla</button>
             </div>
           </>
         )}

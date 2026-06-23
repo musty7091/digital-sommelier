@@ -436,7 +436,7 @@ export default function Reports() {
                   </span>
                 </div>
 
-                <div className="w-full bg-charcoal-900 rounded-full h-2 shadow-inner overflow-hidden mt-1">
+                <div className="w-full bg-ink-950 rounded-full h-2 shadow-inner overflow-hidden mt-1">
                   <div
                     className="bg-gold-500 h-2 rounded-full transition-all duration-1000"
                     style={{

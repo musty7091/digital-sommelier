@@ -84,7 +84,7 @@ export default function LivePreview({ compact = false }) {
                 key={`${p.barcode}-${i}`}
                 type="button"
                 onClick={() => openDetail(p, 'flow')}
-                className={`group flex flex-none flex-col items-center rounded-2xl px-3 py-1.5 transition hover:bg-charcoal-900/40 active:scale-95 ${
+                className={`group flex flex-none flex-col items-center rounded-2xl px-3 py-1.5 transition hover:bg-ink-950/40 active:scale-95 ${
                   compact ? 'w-20' : 'w-28'
                 }`}
               >

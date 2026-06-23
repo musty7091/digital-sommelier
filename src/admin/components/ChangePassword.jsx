@@ -84,7 +84,7 @@ export default function ChangePassword() {
   return (
     <div className="max-w-3xl mx-auto space-y-6">
       <div className="rounded-2xl border border-charcoal-700 bg-charcoal-800/70 shadow-xl overflow-hidden">
-        <div className="border-b border-charcoal-700 bg-charcoal-900/40 px-6 py-5">
+        <div className="border-b border-charcoal-700 bg-charcoal-800/40 px-6 py-5">
           <h3 className="font-serif text-2xl text-gold-500">
             Admin Şifresi
           </h3>

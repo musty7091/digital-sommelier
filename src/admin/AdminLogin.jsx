@@ -70,7 +70,7 @@ export default function AdminLogin({ onLogin }) {
   return (
     <main className="min-h-[100dvh] w-full bg-ink-950 text-cream-100 flex items-center justify-center px-4">
       <div className="w-full max-w-md rounded-3xl border border-gold-500/20 bg-charcoal-800/70 shadow-2xl overflow-hidden">
-        <div className="px-8 pt-8 pb-6 border-b border-charcoal-700 bg-charcoal-900/40 text-center">
+        <div className="px-8 pt-8 pb-6 border-b border-charcoal-700 bg-charcoal-800/40 text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-gold-500/40 bg-wine-900/40 shadow-lg">
             <svg
               className="h-8 w-8 text-gold-400"

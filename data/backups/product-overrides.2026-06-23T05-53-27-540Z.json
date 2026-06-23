@@ -1,25 +1,18 @@
 {
   "3445720021121": {
     "barcode": "3445720021121",
-    "color": "rose",
-    "country": "FR",
-    "region": "Lambesc",
-    "grape": "Grenache, Syrah, Cinsault",
-    "body": "light",
-    "sweetness": "light",
-    "taste": "light",
-    "acidity": "light",
-    "tannin": "intense",
-    "block": "b",
-    "shelf": "6",
-    "usagePurposes": [
-      "sommelier",
-      "light",
-      "romantic",
-      "daily",
-      "gift",
-      "beginner"
-    ],
+    "color": "",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
     "shortDescription": {
       "tr": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
       "en": "Combining the elegance of Provence with a balanced medium body and sweetness, this exquisite rosé offers refreshing luxury in every sip."
@@ -35,62 +28,57 @@
     "description": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
     "descriptionTr": "Provence'ın zarafetini orta gövdeli ve dengeli bir tatlılıkla birleştiren bu seçkin roze, her yudumda ferahlatıcı bir lüks sunuyor.",
     "descriptionEn": "Combining the elegance of Provence with a balanced medium body and sweetness, this exquisite rosé offers refreshing luxury in every sip.",
-    "sommelierPick": true,
-    "featured": true,
+    "sommelierPick": false,
+    "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T06:50:41.829Z",
-    "imageUpdatedAt": "2026-06-23T06:50:41.823Z",
+    "updatedAt": "2026-06-23T05:36:29.066Z",
+    "imageUpdatedAt": "2026-06-23T05:31:13.381Z",
     "imagePath": "/product-images/3445720021121.webp"
   },
   "3263286301316": {
     "barcode": "3263286301316",
     "name": "JP CHENET SAUVIGNONO 75CL",
     "brand": "JP",
-    "color": "white",
-    "country": "FR",
-    "region": "Bordeaux",
-    "grape": "Cabernet Sauvignon",
-    "body": "light",
-    "sweetness": "medium",
-    "taste": "light",
-    "acidity": "medium",
-    "tannin": "light",
-    "block": "a",
-    "shelf": "6",
-    "usagePurposes": [
-      "daily",
-      "light",
-      "gift",
-      "beginner"
-    ],
+    "color": "red",
+    "country": "",
+    "region": "",
+    "grape": "",
+    "body": "",
+    "sweetness": "",
+    "taste": "",
+    "acidity": "",
+    "tannin": "",
+    "block": "",
+    "shelf": "",
+    "usagePurposes": [],
     "shortDescription": {
-      "tr": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
-      "en": "A beautifully balanced Sauvignon from sunny French vineyards, offering a refreshing fruit profile that delights the palate."
+      "tr": "",
+      "en": ""
     },
     "tasteNotes": {
-      "tr": "Turunçgiller, taze otlar, egzotik meyveler",
-      "en": "Citrus, fresh herbs, exotic fruits"
+      "tr": "",
+      "en": ""
     },
     "foodPairing": {
-      "tr": "Izgara tavuk, taze deniz mahsulleri",
-      "en": "Grilled chicken, fresh seafood"
+      "tr": "",
+      "en": ""
     },
-    "description": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
-    "descriptionTr": "Fransa'nın güneşli bağlarından gelen bu dengeli Sauvignon, ferahlatıcı meyve notalarıyla damakta unutulmaz bir iz bırakıyor.",
-    "descriptionEn": "A beautifully balanced Sauvignon from sunny French vineyards, offering a refreshing fruit profile that delights the palate.",
+    "description": "",
+    "descriptionTr": "",
+    "descriptionEn": "",
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301316.webp",
-    "updatedAt": "2026-06-23T06:26:12.114Z"
+    "updatedAt": "2026-06-23T05:52:35.505Z"
   },
   "3263286301385": {
     "barcode": "3263286301385",
     "name": "JP CHENET CINSAULT GRENACHE ROSE 75CL",
     "brand": "JP",
     "color": "red",
-    "country": "FR",
+    "country": "",
     "region": "",
     "grape": "",
     "body": "",
@@ -121,14 +109,14 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301385.webp",
-    "updatedAt": "2026-06-23T05:54:42.953Z"
+    "updatedAt": "2026-06-23T05:52:37.683Z"
   },
   "3263286321284": {
     "barcode": "3263286321284",
     "name": "JP CHENET MEDIUM SWEET WHITE 75CL",
     "brand": "JP",
     "color": "white",
-    "country": "FR",
+    "country": "",
     "region": "",
     "grape": "",
     "body": "",
@@ -159,14 +147,14 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286321284.webp",
-    "updatedAt": "2026-06-23T05:54:44.315Z"
+    "updatedAt": "2026-06-23T05:52:42.646Z"
   },
   "3263286328993": {
     "barcode": "3263286328993",
     "name": "JP CHENET MERLOT 75CL",
     "brand": "JP",
     "color": "red",
-    "country": "FR",
+    "country": "",
     "region": "",
     "grape": "",
     "body": "",
@@ -197,14 +185,14 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286328993.webp",
-    "updatedAt": "2026-06-23T05:54:45.612Z"
+    "updatedAt": "2026-06-23T05:52:47.029Z"
   },
   "3263286329006": {
     "barcode": "3263286329006",
     "name": "JP CHENET CHARDONNAY 75CL",
     "brand": "JP",
     "color": "white",
-    "country": "FR",
+    "country": "",
     "region": "",
     "grape": "",
     "body": "",
@@ -235,7 +223,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286329006.webp",
-    "updatedAt": "2026-06-23T05:54:46.990Z"
+    "updatedAt": "2026-06-23T05:52:49.467Z"
   },
   "3500610014789": {
     "barcode": "3500610014789",
@@ -280,7 +268,7 @@
     "name": "JP CHENET CABERNET SYRAH 75CL",
     "brand": "JP",
     "color": "red",
-    "country": "FR",
+    "country": "",
     "region": "",
     "grape": "",
     "body": "",
@@ -311,7 +299,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/3263286301323.webp",
-    "updatedAt": "2026-06-23T05:54:41.505Z"
+    "updatedAt": "2026-06-23T05:53:05.846Z"
   },
   "3500610033346": {
     "barcode": "3500610033346",
@@ -540,195 +528,5 @@
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8690584301406.webp",
     "updatedAt": "2026-06-23T05:53:27.531Z"
-  },
-  "8690606134012": {
-    "barcode": "8690606134012",
-    "name": "DOLUCA OKUZGOZU KIRMIZI 75",
-    "brand": "DOLUCA",
-    "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/8690606134012.webp",
-    "updatedAt": "2026-06-23T05:53:29.256Z"
-  },
-  "8697530204866": {
-    "barcode": "8697530204866",
-    "name": "TERRA OKUZGOZU BOGAZKERE KIRMIZI SARAP 75CL",
-    "brand": "TERRA",
-    "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/8697530204866.webp",
-    "updatedAt": "2026-06-23T05:53:34.252Z"
-  },
-  "8690584316400": {
-    "barcode": "8690584316400",
-    "name": "YAKUT SARAP 75CL",
-    "brand": "YAKUT",
-    "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/8690584316400.webp",
-    "updatedAt": "2026-06-23T05:53:36.083Z"
-  },
-  "8410261206011": {
-    "barcode": "8410261206011",
-    "name": "DON SIMON BEYAZ SARAP 75CL",
-    "brand": "DON",
-    "color": "white",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/8410261206011.webp",
-    "updatedAt": "2026-06-23T05:53:38.524Z"
-  },
-  "8410261206004": {
-    "barcode": "8410261206004",
-    "name": "DON SIMON KIRMIZI SARAP 75CL",
-    "brand": "DON",
-    "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
-    "block": "",
-    "shelf": "",
-    "usagePurposes": [],
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "sommelierPick": false,
-    "featured": false,
-    "priorityScore": 0,
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/8410261206004.webp",
-    "updatedAt": "2026-06-23T05:53:40.357Z"
   }
 }

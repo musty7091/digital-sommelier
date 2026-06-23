@@ -5,6 +5,18 @@ import AtmosphereBackground from '../components/AtmosphereBackground'
 import CountryFlag from '../components/CountryFlag'
 import { COUNTRY_LABELS, LEVEL_LABELS } from '../../types/product.schema'
 
+// Fiyatı tr-TR ondalık biçiminde gösterir: 799.9 -> "799,90"
+function formatPrice(price) {
+  const numberValue = Number(price)
+  if (!Number.isFinite(numberValue)) {
+    return String(price ?? '0')
+  }
+  return numberValue.toLocaleString('tr-TR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+}
+
 const SERVE = {
   red: { temp: '16–18°C', glassTr: 'Büyük balon kadeh', glassEn: 'Large bowl glass' },
   white: { temp: '8–10°C', glassTr: 'Beyaz şarap kadehi', glassEn: 'White wine glass' },
@@ -178,7 +190,7 @@ export default function IdleScreen() {
           <p className="mb-4 text-xs uppercase tracking-[0.45em] text-gold-500">{t('featuredEyebrow')}</p>
 
           {wine.sommelierPick && (
-            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-500/50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-gold-300">
+            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-500/50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-gold-400">
               <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="8" r="5" /><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
               </svg>
@@ -242,7 +254,7 @@ export default function IdleScreen() {
           )}
 
           <span className="mt-6 text-4xl font-semibold text-gold-400" style={{ textShadow: '0 2px 24px rgba(0,0,0,0.55)' }}>
-            {wine.price} {currency}
+            {formatPrice(wine.price)} {currency}
           </span>
 
           <span className="mt-5 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.28em] text-cream-200/50">
