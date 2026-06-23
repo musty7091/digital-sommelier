@@ -119,6 +119,9 @@ const COUNTRY_CODE_MAP = {
   za: 'ZA', guneyafrika: 'ZA', southafrica: 'ZA',
   pt: 'PT', portekiz: 'PT', portugal: 'PT',
   de: 'DE', almanya: 'DE', germany: 'DE',
+  ge: 'GE', gurcistan: 'GE', georgia: 'GE',
+  az: 'AZ', azerbaycan: 'AZ', azerbaijan: 'AZ',
+  md: 'MD', moldova: 'MD', moldovya: 'MD',
   gr: 'GR', yunanistan: 'GR', greece: 'GR',
 }
 

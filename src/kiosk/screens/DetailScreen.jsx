@@ -4,6 +4,7 @@ import { useLanguage } from '../../i18n/LanguageContext'
 import { COUNTRY_LABELS, LEVEL_LABELS } from '../../types/product.schema'
 import WineBottle from '../components/WineBottle'
 import BackButton from '../components/BackButton'
+import StoreMap3D from '../components/StoreMap3D'
 import { getLocalProductImagePath, getProductImageAlt } from '../../shared/productImage'
 
 function cleanText(value) {
@@ -241,6 +242,7 @@ function LocalProductImage({ product, imageClassName, fallbackClassName }) {
 export default function DetailScreen() {
   const { detailProduct, closeDetail, currency } = useFlow()
   const { t, lang } = useLanguage()
+  const [showMap, setShowMap] = useState(false)
 
   if (!detailProduct) return null
 
@@ -248,6 +250,7 @@ export default function DetailScreen() {
 
   const country = getCountryLabel(product.country, lang)
   const shelfText = getShelfText(product, lang)
+  const hasLocation = Boolean(product.block && (product.shelf || product.shelf === 0))
   const description = getProductDescription(product, lang)
 
   const tasteNotes = getLocalizedText(product.tasteNotes, lang)
@@ -276,6 +279,14 @@ export default function DetailScreen() {
 
   return (
     <main className="flex h-[100dvh] w-full flex-col overflow-hidden px-4 md:px-8 py-4 md:py-6">
+      {showMap && (
+        <StoreMap3D
+          block={product.block}
+          shelf={product.shelf}
+          productName={product.name}
+          onClose={() => setShowMap(false)}
+        />
+      )}
       <div className="flex flex-none flex-wrap items-center justify-between gap-3 mb-4 md:mb-6">
         <button
           type="button"
@@ -339,24 +350,34 @@ export default function DetailScreen() {
             </div>
 
             {shelfText && (
-              <p className="mt-3 md:mt-4 flex items-center gap-2 text-sm md:text-lg font-semibold text-emerald-400">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="shrink-0"
-                >
-                  <path d="M12 21s-6-5.2-6-10a6 6 0 1 1 12 0c0 4.8-6 10-6 10z" />
-                  <circle cx="12" cy="11" r="2" />
-                </svg>
-
-                {shelfText}
-              </p>
+              <div className="mt-3 md:mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+                <span className="flex items-center gap-2 text-sm md:text-lg font-semibold text-emerald-400">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="shrink-0"
+                  >
+                    <path d="M12 21s-6-5.2-6-10a6 6 0 1 1 12 0c0 4.8-6 10-6 10z" />
+                    <circle cx="12" cy="11" r="2" />
+                  </svg>
+                  {shelfText}
+                </span>
+                {hasLocation && (
+                  <button
+                    type="button"
+                    onClick={() => setShowMap(true)}
+                    className="rounded-full border border-gold-500/60 bg-gold-500/10 px-4 py-1.5 text-sm font-semibold text-gold-400 transition hover:bg-gold-500/20 hover:border-gold-500"
+                  >
+                    {lang === 'en' ? 'Show location' : 'Yerini Göster'}
+                  </button>
+                )}
+              </div>
             )}
 
             {description && (

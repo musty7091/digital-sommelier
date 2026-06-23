@@ -8,6 +8,7 @@ import {
 import { getLocalProductImagePath, getProductImageAlt } from '../../shared/productImage'
 import QuickFill from './QuickFill'
 import BulkAiFill from './BulkAiFill'
+import BulkImagePaste from './BulkImagePaste'
 import {
   prepareProductImage,
   uploadProductImageToLocalApi,
@@ -376,6 +377,7 @@ export default function Products() {
   const [statusFilter, setStatusFilter] = useState('all')
   const [quickFillOpen, setQuickFillOpen] = useState(false)
   const [bulkAiOpen, setBulkAiOpen] = useState(false)
+  const [imgPasteOpen, setImgPasteOpen] = useState(false)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -853,6 +855,13 @@ export default function Products() {
             className="px-6 py-3 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-semibold rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap border border-gold-500/40"
           >
             🤖 AI ile Doldur
+          </button>
+
+          <button
+            onClick={() => setImgPasteOpen(true)}
+            className="px-6 py-3 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-semibold rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap border border-gold-500/40"
+          >
+            📷 Resim Yapıştır
           </button>
 
           <button
@@ -1530,6 +1539,14 @@ export default function Products() {
         <BulkAiFill
           products={products}
           onClose={() => setBulkAiOpen(false)}
+          onSaved={loadProducts}
+        />
+      )}
+
+      {imgPasteOpen && (
+        <BulkImagePaste
+          products={products}
+          onClose={() => setImgPasteOpen(false)}
           onSaved={loadProducts}
         />
       )}

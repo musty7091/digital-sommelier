@@ -1650,7 +1650,7 @@
     "taste": "light",
     "acidity": "light",
     "tannin": "intense",
-    "block": "D",
+    "block": "b",
     "shelf": "6",
     "usagePurposes": [
       "sommelier",
@@ -1678,7 +1678,7 @@
     "sommelierPick": true,
     "featured": true,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T17:24:59.684Z",
+    "updatedAt": "2026-06-23T07:35:16.310Z",
     "imageUpdatedAt": "2026-06-23T07:35:16.304Z",
     "imagePath": "/product-images/3445720021121.webp"
   },
@@ -4430,24 +4430,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T14:21:57.947Z",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": ""
+    "updatedAt": "2026-06-23T09:29:27.716Z"
   },
   "5601012000917": {
     "barcode": "5601012000917",
@@ -4469,24 +4452,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T14:21:53.649Z",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": ""
+    "updatedAt": "2026-06-23T09:29:38.151Z"
   },
   "5601012001310": {
     "barcode": "5601012001310",
@@ -24106,7 +24072,7 @@
     "country": "IT",
     "region": "",
     "grape": "",
-    "body": "light",
+    "body": "",
     "sweetness": "",
     "taste": "",
     "acidity": "",
@@ -24134,7 +24100,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8008900003642.webp",
-    "updatedAt": "2026-06-23T12:34:28.813Z"
+    "updatedAt": "2026-06-23T12:31:52.109Z"
   },
   "8003625094043": {
     "barcode": "8003625094043",
@@ -24144,7 +24110,7 @@
     "country": "",
     "region": "",
     "grape": "",
-    "body": "intense",
+    "body": "",
     "sweetness": "",
     "taste": "",
     "acidity": "",
@@ -24172,6 +24138,6 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8003625094043.webp",
-    "updatedAt": "2026-06-23T12:34:31.107Z"
+    "updatedAt": "2026-06-23T12:06:40.805Z"
   }
 }

@@ -290,6 +290,19 @@ const server = http.createServer(async (req, res) => {
     return handleAdminChangePassword(req, res)
   }
 
+  if (req.method === 'GET' && req.url === '/api/product-images') {
+    try {
+      await fs.mkdir(imagesDir, { recursive: true })
+      const files = await fs.readdir(imagesDir)
+      const barcodes = files
+        .filter((f) => f.toLowerCase().endsWith('.webp'))
+        .map((f) => f.slice(0, -'.webp'.length))
+      return sendJson(res, 200, { ok: true, count: barcodes.length, barcodes })
+    } catch (error) {
+      return sendJson(res, 500, { ok: false, message: error.message || 'Liste alınamadı.' })
+    }
+  }
+
   if (req.method === 'POST' && req.url === '/api/product-image') {
     return saveProductImage(req, res)
   }

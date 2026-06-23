@@ -27,6 +27,7 @@ const COUNTRY_MAP = {
   cl: 'CL', sili: 'CL', chile: 'CL', ar: 'AR', arjantin: 'AR', argentina: 'AR', au: 'AU', avustralya: 'AU', australia: 'AU',
   nz: 'NZ', yenizelanda: 'NZ', newzealand: 'NZ', us: 'US', usa: 'US', abd: 'US', za: 'ZA', guneyafrika: 'ZA', southafrica: 'ZA',
   pt: 'PT', portekiz: 'PT', portugal: 'PT', de: 'DE', almanya: 'DE', germany: 'DE', gr: 'GR', yunanistan: 'GR', greece: 'GR',
+  ge: 'GE', gurcistan: 'GE', georgia: 'GE', az: 'AZ', azerbaycan: 'AZ', azerbaijan: 'AZ', md: 'MD', moldova: 'MD', moldovya: 'MD',
 }
 
 function mapEnum(value, map, allowed) {
@@ -99,7 +100,7 @@ SADECE aşağıdaki JSON şemasını, VERİLEN İZİNLİ DEĞERLERLE doldur. Emi
 
 İzinli değerler:
 - color: red | white | rose | sparkling
-- country: ISO ülke kodu (TR, CY, IT, FR, CL, AR, ES, AU, NZ, US, ZA, PT, DE, GR) veya bilinmiyorsa OTHER
+- country: ISO ülke kodu (TR, CY, IT, FR, CL, AR, ES, AU, NZ, GE, ZA, AZ, MD, US, PT, DE, GR) veya bilinmiyorsa OTHER
 - body, sweetness, acidity, tannin: light | medium | intense
 - usagePurposes: şu anahtarlardan UYGUN OLAN BİRDEN FAZLASI (dizi): food, gift, celebration, daily, romantic, premium, light, value, beginner, sommelier
 - region: bölge adı (serbest metin, örn. "Toscana"); bilinmiyorsa ""
@@ -162,6 +163,8 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
     pausedRef.current = false
     setStatus('running')
     setStats({ done: 0, failed: 0, skipped: 0 })
+    setFatal('')
+    let consecutive429 = 0
 
     for (let i = 0; i < queue.length; i++) {
       if (!runningRef.current) {
@@ -178,32 +181,66 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
 
       setIdx(i)
       const p = queue[i]
-      try {
-        const raw = await askGemini(p, apiKey, model)
-        if (!raw) {
-          addLog({ name: p.name, kind: 'skip', text: 'AI yanıtı çözümlenemedi' })
-          setStats((s) => ({ ...s, skipped: s.skipped + 1 }))
-        } else {
-          const patch = buildPatch(raw, p)
-          if (Object.keys(patch).length === 0) {
-            addLog({ name: p.name, kind: 'skip', text: 'doldurulacak alan bulunamadı' })
-            setStats((s) => ({ ...s, skipped: s.skipped + 1 }))
-          } else {
-            await saveProduct({ barcode: p.barcode || p.id, ...patch })
-            const summary = [patch.color, patch.country, patch.body && `gövde:${patch.body}`].filter(Boolean).join(' · ')
-            addLog({ name: p.name, kind: 'ok', text: summary || 'güncellendi' })
-            setStats((s) => ({ ...s, done: s.done + 1 }))
+
+      // Bu ürün için en çok 3 deneme (429'da sınırlı tekrar)
+      let raw = null
+      let lastErr = null
+      for (let attempt = 0; attempt < 3; attempt++) {
+        if (!runningRef.current) {
+          setStatus('idle')
+          return
+        }
+        try {
+          raw = await askGemini(p, apiKey, model)
+          lastErr = null
+          consecutive429 = 0
+          break
+        } catch (e) {
+          lastErr = e
+          const isRate =
+            e.status === 429 ||
+            /quota|rate|too many|exhaust|resource has been/i.test(e.message || '')
+          if (!isRate) break // hız limiti değilse tekrar deneme
+          consecutive429 += 1
+          // Üst üste çok limit -> büyük ihtimalle günlük kota doldu / model ücretsiz değil -> DUR
+          if (consecutive429 >= 6) {
+            addLog({ name: p.name, kind: 'fail', text: 'kota/hız limiti — durduruldu' })
+            setFatal(
+              'Gemini sürekli kota/hız limiti veriyor. Büyük olasılıkla: günlük ÜCRETSİZ kota doldu, ya da seçili model ücretsiz katmanda kullanılamıyor. ' +
+                'Çözüm: (1) AI Studio\'da faturalandırmayı aç, (2) ya da "Yapay Zekâ Açıklama" ekranından modeli daha standart bir flash modeline çevir, (3) ya da kotanın sıfırlanmasını (Pasifik gece yarısı) bekle. ' +
+                'Sunucu mesajı: ' + (lastErr.message || ''),
+            )
+            runningRef.current = false
+            setStatus('done')
+            onSaved?.()
+            return
           }
+          addLog({ name: p.name, kind: 'wait', text: `kota/hız limiti — 15 sn bekle (${attempt + 1}/3)` })
+          await sleep(15000)
         }
-      } catch (e) {
-        if (e.status === 429 || /quota|rate|too many/i.test(e.message || '')) {
-          addLog({ name: p.name, kind: 'wait', text: 'hız limiti — 20 sn bekleniyor' })
-          await sleep(20000)
-          i -= 1 // aynı ürünü tekrar dene
-          continue
-        }
-        addLog({ name: p.name, kind: 'fail', text: e.message || 'hata' })
+      }
+
+      if (!raw) {
+        addLog({ name: p.name, kind: 'fail', text: (lastErr?.message || 'AI yanıtı alınamadı').slice(0, 90) })
         setStats((s) => ({ ...s, failed: s.failed + 1 }))
+        await sleep(Number(delay) || 3000)
+        continue
+      }
+
+      const patch = buildPatch(raw, p)
+      if (Object.keys(patch).length === 0) {
+        addLog({ name: p.name, kind: 'skip', text: 'doldurulacak alan bulunamadı' })
+        setStats((s) => ({ ...s, skipped: s.skipped + 1 }))
+      } else {
+        try {
+          await saveProduct({ barcode: p.barcode || p.id, ...patch })
+          const summary = [patch.color, patch.country, patch.body && `gövde:${patch.body}`].filter(Boolean).join(' · ')
+          addLog({ name: p.name, kind: 'ok', text: summary || 'güncellendi' })
+          setStats((s) => ({ ...s, done: s.done + 1 }))
+        } catch (e) {
+          addLog({ name: p.name, kind: 'fail', text: 'kaydedilemedi: ' + (e.message || '').slice(0, 70) })
+          setStats((s) => ({ ...s, failed: s.failed + 1 }))
+        }
       }
 
       await sleep(Number(delay) || 3000)

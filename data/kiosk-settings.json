@@ -122,7 +122,7 @@
   "featuredRotationSeconds": 7,
   "resultCount": 5,
   "lowStockThreshold": 10,
-  "hideOutOfStock": false,
+  "hideOutOfStock": true,
   "scanEnabled": true,
   "analyticsEnabled": true,
   "maintenanceMode": false,
@@ -130,6 +130,6 @@
     "tr": "",
     "en": ""
   },
-  "updatedAt": "2026-06-23T08:16:35.921Z",
+  "updatedAt": "2026-06-23T14:54:49.138Z",
   "ads": []
 }

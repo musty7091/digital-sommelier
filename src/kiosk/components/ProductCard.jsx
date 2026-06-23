@@ -5,6 +5,7 @@ import { useFlow } from '../state/FlowContext'
 import { COUNTRY_LABELS, LEVEL_LABELS, USAGE_PURPOSE_LABELS } from '../../types/product.schema'
 import StockBadge from './StockBadge'
 import WineBottle from './WineBottle'
+import StoreMap3D from './StoreMap3D'
 
 // Fiyatı tr-TR ondalık biçiminde gösterir: 799.9 -> "799,90"
 function formatPrice(price) {
@@ -146,6 +147,8 @@ function ProductImage({ product, imageClassName, fallbackClassName }) {
 export default function ProductCard({ product, onClick }) {
   const { t, lang } = useLanguage()
   const { currency } = useFlow()
+  const [showMap, setShowMap] = useState(false)
+  const hasLocation = Boolean(product.block && (product.shelf || product.shelf === 0))
   const labels = CARD_LABELS[lang] || CARD_LABELS.tr
   const shelfShort =
     lang === 'en'
@@ -186,6 +189,15 @@ export default function ProductCard({ product, onClick }) {
         tabIndex={0}
         className="relative grid h-full w-full cursor-pointer grid-cols-1 gap-5 overflow-hidden rounded-2xl border border-gold-500/30 bg-charcoal-800/60 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] sm:rounded-3xl sm:p-6 md:grid-cols-[minmax(180px,0.62fr)_minmax(0,1.7fr)] md:gap-6 md:p-8"
       >
+        {showMap && (
+          <StoreMap3D
+            block={product.block}
+            shelf={product.shelf}
+            productName={product.name}
+            onClose={() => setShowMap(false)}
+          />
+        )}
+
         {product._pick && (
           <span className="absolute left-4 top-4 z-10 rounded-full bg-gold-500 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-ink-950 shadow-lg sm:left-6 sm:px-4 sm:text-xs">
             {t('pickLabel')}
@@ -220,10 +232,24 @@ export default function ProductCard({ product, onClick }) {
               <StockBadge stock={product.stock} />
             </div>
 
-            <p className="mt-3 flex items-center gap-2 text-base font-semibold text-emerald-400 sm:text-lg">
-              <PinIcon />
-              {shelfShort}
-            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <span className="flex items-center gap-2 text-base font-semibold text-emerald-400 sm:text-lg">
+                <PinIcon />
+                {shelfShort}
+              </span>
+              {hasLocation && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setShowMap(true)
+                  }}
+                  className="rounded-full border border-gold-500/60 bg-gold-500/10 px-4 py-1.5 text-sm font-semibold text-gold-400 transition hover:bg-gold-500/20 hover:border-gold-500"
+                >
+                  {lang === 'en' ? 'Show location' : 'Yerini Göster'}
+                </button>
+              )}
+            </div>
           </div>
 
           {description && (

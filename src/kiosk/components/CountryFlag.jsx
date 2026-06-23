@@ -182,6 +182,44 @@ export default function CountryFlag({ code, compact = false }) {
           <polygon points="0,3 12,16 0,29" fill="#000000" />
         </FlagFrame>
       )
+    case 'GE':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="48" height="32" fill="#FFFFFF" />
+          <rect x="21" width="6" height="32" fill="#FF0000" />
+          <rect y="13" width="48" height="6" fill="#FF0000" />
+          <rect x="8" y="5.7" width="5" height="1.6" fill="#FF0000" />
+          <rect x="9.7" y="4" width="1.6" height="5" fill="#FF0000" />
+          <rect x="35" y="5.7" width="5" height="1.6" fill="#FF0000" />
+          <rect x="36.7" y="4" width="1.6" height="5" fill="#FF0000" />
+          <rect x="8" y="24.7" width="5" height="1.6" fill="#FF0000" />
+          <rect x="9.7" y="23" width="1.6" height="5" fill="#FF0000" />
+          <rect x="35" y="24.7" width="5" height="1.6" fill="#FF0000" />
+          <rect x="36.7" y="23" width="1.6" height="5" fill="#FF0000" />
+        </FlagFrame>
+      )
+    case 'AZ':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="48" height="32" fill="#0092BC" />
+          <rect y="10.67" width="48" height="10.66" fill="#EF3340" />
+          <rect y="21.33" width="48" height="10.67" fill="#509E2F" />
+          <circle cx="22" cy="16" r="4.6" fill="#FFFFFF" />
+          <circle cx="23.6" cy="16" r="3.7" fill="#EF3340" />
+          <Star x="29" y="16" size="6" fill="white" />
+        </FlagFrame>
+      )
+    case 'MD':
+      return (
+        <FlagFrame className={sizeClass}>
+          <rect width="16" height="32" x="0" fill="#0046AE" />
+          <rect width="16" height="32" x="16" fill="#FFD200" />
+          <rect width="16" height="32" x="32" fill="#CC092F" />
+          <rect x="23.4" y="9.5" width="1.2" height="3" fill="#A77B06" />
+          <rect x="22.4" y="10.3" width="3.2" height="1.2" fill="#A77B06" />
+          <path d="M24 12 L28 12 L28 17 C28 19 26 20 24 21 C22 20 20 19 20 17 L20 12 Z" fill="#A77B06" stroke="#7A5A04" strokeWidth="0.5" />
+        </FlagFrame>
+      )
     case 'OTHER':
       return (
         <FlagFrame className={sizeClass}>

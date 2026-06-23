@@ -1650,7 +1650,7 @@
     "taste": "light",
     "acidity": "light",
     "tannin": "intense",
-    "block": "D",
+    "block": "b",
     "shelf": "6",
     "usagePurposes": [
       "sommelier",
@@ -1678,7 +1678,7 @@
     "sommelierPick": true,
     "featured": true,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T17:24:59.684Z",
+    "updatedAt": "2026-06-23T07:35:16.310Z",
     "imageUpdatedAt": "2026-06-23T07:35:16.304Z",
     "imagePath": "/product-images/3445720021121.webp"
   },
@@ -4430,24 +4430,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T14:21:57.947Z",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": ""
+    "updatedAt": "2026-06-23T09:29:27.716Z"
   },
   "5601012000917": {
     "barcode": "5601012000917",
@@ -4469,24 +4452,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T14:21:53.649Z",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": ""
+    "updatedAt": "2026-06-23T09:29:38.151Z"
   },
   "5601012001310": {
     "barcode": "5601012001310",
@@ -19828,7 +19794,7 @@
     "grape": "Merlot",
     "body": "medium",
     "sweetness": "light",
-    "taste": "light",
+    "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
     "usagePurposes": [
@@ -19840,29 +19806,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T12:32:55.508Z",
-    "name": "SAVALAN MERLOT RED DRY 75 CL",
-    "brand": "SAVALAN",
-    "country": "AZ",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/4760090800145.webp"
+    "updatedAt": "2026-06-23T11:34:23.973Z"
   },
   "8000160618475": {
     "barcode": "8000160618475",
@@ -20178,29 +20122,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T12:32:56.792Z",
-    "name": "SAVALAN CABARNET MERLOT SEMI SWEET RED WINE 75CL",
-    "brand": "SAVALAN",
-    "country": "AZ",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/4760090800022.webp"
+    "updatedAt": "2026-06-23T11:36:56.013Z"
   },
   "4760090800039": {
     "barcode": "4760090800039",
@@ -20209,7 +20131,7 @@
     "grape": "Merlot",
     "body": "medium",
     "sweetness": "intense",
-    "taste": "intense",
+    "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
     "usagePurposes": [
@@ -20222,29 +20144,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T12:32:58.069Z",
-    "name": "SAVALAN MERLOT SWEET RED 50CL",
-    "brand": "SAVALAN",
-    "country": "AZ",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/4760090800039.webp"
+    "updatedAt": "2026-06-23T11:37:05.935Z"
   },
   "8680167013390": {
     "barcode": "8680167013390",
@@ -23330,7 +23230,7 @@
     "grape": "White Blend",
     "body": "light",
     "sweetness": "intense",
-    "taste": "intense",
+    "taste": "light",
     "acidity": "medium",
     "tannin": "light",
     "usagePurposes": [
@@ -23342,30 +23242,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T12:33:53.505Z",
-    "name": "ED KNOWS SWEET WHITE 75CL",
-    "brand": "ED",
-    "country": "MD",
-    "region": "",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/4840472022706.webp"
+    "updatedAt": "2026-06-23T12:01:00.289Z"
   },
   "4905846134093": {
     "barcode": "4905846134093",
@@ -23561,29 +23438,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T12:34:07.083Z",
-    "name": "SAVALAN SUNSET ROSE WINE 75 CL",
-    "brand": "SAVALAN",
-    "country": "AZ",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/4760090800220.webp"
+    "updatedAt": "2026-06-23T12:02:28.106Z"
   },
   "4760090800695": {
     "barcode": "4760090800695",
@@ -23592,7 +23447,7 @@
     "grape": "Syrah, Alicante Bouschet",
     "body": "medium",
     "sweetness": "light",
-    "taste": "light",
+    "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
     "usagePurposes": [
@@ -23604,29 +23459,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T12:34:09.135Z",
-    "name": "SAVALAN SUNSET RED WINE 75 CL",
-    "brand": "SAVALAN",
-    "country": "AZ",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/4760090800695.webp"
+    "updatedAt": "2026-06-23T12:02:36.801Z"
   },
   "4760090800183": {
     "barcode": "4760090800183",
@@ -23647,29 +23480,7 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T12:34:11.520Z",
-    "name": "SAVALAN SUNSET WHITE WINE 75 CL",
-    "brand": "SAVALAN",
-    "country": "AZ",
-    "block": "",
-    "shelf": "",
-    "shortDescription": {
-      "tr": "",
-      "en": ""
-    },
-    "tasteNotes": {
-      "tr": "",
-      "en": ""
-    },
-    "foodPairing": {
-      "tr": "",
-      "en": ""
-    },
-    "description": "",
-    "descriptionTr": "",
-    "descriptionEn": "",
-    "imageUpdatedAt": null,
-    "imagePath": "/product-images/4760090800183.webp"
+    "updatedAt": "2026-06-23T12:02:46.696Z"
   },
   "8697643644955": {
     "barcode": "8697643644955",
@@ -24106,7 +23917,7 @@
     "country": "IT",
     "region": "",
     "grape": "",
-    "body": "light",
+    "body": "",
     "sweetness": "",
     "taste": "",
     "acidity": "",
@@ -24134,7 +23945,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8008900003642.webp",
-    "updatedAt": "2026-06-23T12:34:28.813Z"
+    "updatedAt": "2026-06-23T12:31:52.109Z"
   },
   "8003625094043": {
     "barcode": "8003625094043",
@@ -24144,7 +23955,7 @@
     "country": "",
     "region": "",
     "grape": "",
-    "body": "intense",
+    "body": "",
     "sweetness": "",
     "taste": "",
     "acidity": "",
@@ -24172,6 +23983,6 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8003625094043.webp",
-    "updatedAt": "2026-06-23T12:34:31.107Z"
+    "updatedAt": "2026-06-23T12:06:40.805Z"
   }
 }

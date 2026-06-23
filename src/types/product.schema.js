@@ -24,7 +24,7 @@ export const LEVEL_LABELS = {
 }
 
 // Ülkeler (kod + etiket)
-export const COUNTRIES = ['TR', 'CY', 'IT', 'FR', 'CL', 'AR', 'ES', 'AU', 'NZ', 'OTHER']
+export const COUNTRIES = ['TR', 'CY', 'IT', 'FR', 'CL', 'AR', 'ES', 'AU', 'NZ', 'GE', 'ZA', 'AZ', 'MD', 'OTHER']
 export const COUNTRY_LABELS = {
   TR: { tr: 'Türkiye', en: 'Turkey' },
   CY: { tr: 'Kıbrıs', en: 'Cyprus' },
@@ -35,6 +35,10 @@ export const COUNTRY_LABELS = {
   ES: { tr: 'İspanya', en: 'Spain' },
   AU: { tr: 'Avustralya', en: 'Australia' },
   NZ: { tr: 'Yeni Zelanda', en: 'New Zealand' },
+  GE: { tr: 'Gürcistan', en: 'Georgia' },
+  ZA: { tr: 'Güney Afrika', en: 'South Africa' },
+  AZ: { tr: 'Azerbaycan', en: 'Azerbaijan' },
+  MD: { tr: 'Moldova', en: 'Moldova' },
   OTHER: { tr: 'Diğer', en: 'Other' },
 }
 
