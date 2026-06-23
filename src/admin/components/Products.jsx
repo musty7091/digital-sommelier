@@ -7,6 +7,7 @@ import {
 } from '../../firebase/products'
 import { getLocalProductImagePath, getProductImageAlt } from '../../shared/productImage'
 import QuickFill from './QuickFill'
+import BulkAiFill from './BulkAiFill'
 import {
   prepareProductImage,
   uploadProductImageToLocalApi,
@@ -374,6 +375,7 @@ export default function Products() {
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
   const [quickFillOpen, setQuickFillOpen] = useState(false)
+  const [bulkAiOpen, setBulkAiOpen] = useState(false)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -844,6 +846,13 @@ export default function Products() {
             className="px-6 py-3 bg-wine-800 hover:bg-wine-700 text-cream-100 font-semibold rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap"
           >
             ⚡ Hızlı Doldur
+          </button>
+
+          <button
+            onClick={() => setBulkAiOpen(true)}
+            className="px-6 py-3 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-semibold rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap border border-gold-500/40"
+          >
+            🤖 AI ile Doldur
           </button>
 
           <button
@@ -1513,6 +1522,14 @@ export default function Products() {
         <QuickFill
           products={products}
           onClose={() => setQuickFillOpen(false)}
+          onSaved={loadProducts}
+        />
+      )}
+
+      {bulkAiOpen && (
+        <BulkAiFill
+          products={products}
+          onClose={() => setBulkAiOpen(false)}
           onSaved={loadProducts}
         />
       )}

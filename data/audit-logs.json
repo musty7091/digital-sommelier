@@ -1,5 +1,1066 @@
 [
   {
+    "id": "1782205623786-6465eb4afbac4",
+    "createdAt": "2026-06-23T09:07:03.786Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584114402",
+    "message": "8690584114402 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584114402",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782205384202-a8521dab3512",
+    "createdAt": "2026-06-23T09:03:04.202Z",
+    "actor": "local-admin",
+    "action": "product_metadata_saved",
+    "entityType": "admin-products",
+    "entityId": "8690584114402",
+    "message": "\"CANKAYA 75CL\" ürünü için sommelier bilgileri kaydedildi.",
+    "details": {
+      "barcode": "8690584114402",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "block",
+        "shelf",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "shortDescriptionTr",
+        "shortDescriptionEn",
+        "tasteNotesTr",
+        "tasteNotesEn",
+        "foodPairingTr",
+        "foodPairingEn",
+        "KisaAciklama_TR",
+        "KisaAciklama_EN",
+        "TadimNotlari_TR",
+        "TadimNotlari_EN",
+        "YemekUyumu_TR",
+        "YemekUyumu_EN",
+        "sommelierPick",
+        "featured",
+        "priorityScore",
+        "updatedAt",
+        "updatedBy",
+        "source"
+      ],
+      "imageUpdated": false,
+      "result": {
+        "ok": true,
+        "id": "8690584114402",
+        "barcode": "8690584114402",
+        "product": {
+          "id": "8690584114402",
+          "barcode": "8690584114402",
+          "name": "CANKAYA 75CL",
+          "brand": "KAVAKLIDERE",
+          "category": "SARAP",
+          "price": 345.99,
+          "stock": 40,
+          "active": true,
+          "isActive": true,
+          "color": "white",
+          "country": "",
+          "region": "",
+          "grape": "",
+          "body": "",
+          "sweetness": "",
+          "taste": "",
+          "acidity": "",
+          "tannin": "",
+          "block": "",
+          "shelf": "",
+          "usagePurposes": [],
+          "shortDescription": {
+            "tr": "",
+            "en": ""
+          },
+          "tasteNotes": {
+            "tr": "",
+            "en": ""
+          },
+          "foodPairing": {
+            "tr": "",
+            "en": ""
+          },
+          "description": "",
+          "descriptionTr": "",
+          "descriptionEn": "",
+          "sommelierPick": false,
+          "featured": false,
+          "priorityScore": 0,
+          "imagePath": "/product-images/8690584114402.webp",
+          "imageUpdatedAt": "2026-06-23T07:43:41.915Z",
+          "metadataSource": "local-json",
+          "metadataUpdatedAt": "2026-06-23T09:03:03.995Z",
+          "missingFields": [
+            "body",
+            "sweetness"
+          ],
+          "metadataStatus": "missing",
+          "kioskReady": false,
+          "needsReview": true
+        }
+      }
+    }
+  },
+  {
+    "id": "1782205384053-694a4061a98f6",
+    "createdAt": "2026-06-23T09:03:04.053Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584114402",
+    "message": "8690584114402 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584114402",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "block",
+        "shelf",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204669766-1482ea37d8594",
+    "createdAt": "2026-06-23T08:51:09.766Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261273105",
+    "message": "8410261273105 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261273105",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204408872-4d1c4129ee068",
+    "createdAt": "2026-06-23T08:46:48.872Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261271101",
+    "message": "8410261271101 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261271101",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204356311-4272801ac304",
+    "createdAt": "2026-06-23T08:45:56.311Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410702004527",
+    "message": "8410702004527 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410702004527",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204312538-9b99ae9085953",
+    "createdAt": "2026-06-23T08:45:12.538Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8008900004212",
+    "message": "8008900004212 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8008900004212",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204172513-d48a8b240e776",
+    "createdAt": "2026-06-23T08:42:52.513Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584120502",
+    "message": "8690584120502 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584120502",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204127973-075186f63845c",
+    "createdAt": "2026-06-23T08:42:07.973Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261206004",
+    "message": "8410261206004 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261206004",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204084158-41dc15270718",
+    "createdAt": "2026-06-23T08:41:24.158Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261206011",
+    "message": "8410261206011 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261206011",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782204068925-3d918f02a0d1",
+    "createdAt": "2026-06-23T08:41:08.925Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584316400",
+    "message": "8690584316400 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584316400",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203960857-efce7f00123bc",
+    "createdAt": "2026-06-23T08:39:20.857Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8697530204866",
+    "message": "8697530204866 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8697530204866",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203876106-530fc6ddc4b66",
+    "createdAt": "2026-06-23T08:37:56.106Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "FR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "daily",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-23T08:37:56.094Z"
+    }
+  },
+  {
+    "id": "1782203874164-3cc893cd1d0fc",
+    "createdAt": "2026-06-23T08:37:54.164Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": "daily",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T08:37:54.153Z"
+    }
+  },
+  {
+    "id": "1782203872864-012510df5c688",
+    "createdAt": "2026-06-23T08:37:52.864Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "daily",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "budget",
+          "min": 0,
+          "max": 500
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T08:37:52.853Z"
+    }
+  },
+  {
+    "id": "1782203871921-db6369d1b435a",
+    "createdAt": "2026-06-23T08:37:51.921Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "budget",
+        "min": 0,
+        "max": 500
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T08:37:51.910Z"
+    }
+  },
+  {
+    "id": "1782203868987-b5e87a3da3c8f",
+    "createdAt": "2026-06-23T08:37:48.987Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T08:37:48.977Z"
+    }
+  },
+  {
+    "id": "1782203867382-865110cc4b63c",
+    "createdAt": "2026-06-23T08:37:47.382Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-23T08:37:47.366Z"
+    }
+  },
+  {
+    "id": "1782203808368-2d68db30414fa",
+    "createdAt": "2026-06-23T08:36:48.368Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690606134012",
+    "message": "8690606134012 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690606134012",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203761606-cd1c0a2d140c8",
+    "createdAt": "2026-06-23T08:36:01.606Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584301406",
+    "message": "8690584301406 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584301406",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203739369-78542c5b11311",
+    "createdAt": "2026-06-23T08:35:39.369Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584133403",
+    "message": "8690584133403 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584133403",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203714559-a3c24de3cf006",
+    "createdAt": "2026-06-23T08:35:14.559Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584155405",
+    "message": "8690584155405 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584155405",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203662269-f61ed3f521ca2",
+    "createdAt": "2026-06-23T08:34:22.269Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8690584120403",
+    "message": "8690584120403 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8690584120403",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203653144-a43b370a22968",
+    "createdAt": "2026-06-23T08:34:13.144Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "4840013000248",
+    "message": "4840013000248 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "4840013000248",
+      "fields": [
+        "barcode",
+        "color",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203640716-a8b507849b613",
+    "createdAt": "2026-06-23T08:34:00.716Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3500610033346",
+    "message": "3500610033346 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3500610033346",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203535534-899f6b71ae134",
+    "createdAt": "2026-06-23T08:32:15.534Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3500610014789",
+    "message": "3500610014789 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3500610014789",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203404249-e367e934d6a5",
+    "createdAt": "2026-06-23T08:30:04.249Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3278486542131",
+    "message": "3278486542131 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3278486542131",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203367687-d22f937f5da7b",
+    "createdAt": "2026-06-23T08:29:27.687Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286329006",
+    "message": "3263286329006 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286329006",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203295801-ab23147f42bf",
+    "createdAt": "2026-06-23T08:28:15.801Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286328993",
+    "message": "3263286328993 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286328993",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203287199-c6a26234db8d5",
+    "createdAt": "2026-06-23T08:28:07.199Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286321284",
+    "message": "3263286321284 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286321284",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782203278252-522063be0557f",
+    "createdAt": "2026-06-23T08:27:58.252Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "3263286301385",
+    "message": "3263286301385 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "3263286301385",
+      "fields": [
+        "barcode",
+        "color",
+        "country",
+        "region",
+        "grape",
+        "body",
+        "sweetness",
+        "taste",
+        "acidity",
+        "tannin",
+        "usagePurposes",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782202595956-8eefa951b80c3",
+    "createdAt": "2026-06-23T08:16:35.957Z",
+    "actor": "local-admin",
+    "action": "kiosk_settings_saved",
+    "entityType": "kiosk-settings",
+    "entityId": "kiosk",
+    "message": "Kiosk ayarları lokal dosyaya kaydedildi.",
+    "details": {
+      "fields": [
+        "language",
+        "currency",
+        "timers",
+        "recommendation",
+        "features",
+        "maintenance",
+        "priceRanges"
+      ]
+    }
+  },
+  {
+    "id": "1782202595930-03cd27a23b913",
+    "createdAt": "2026-06-23T08:16:35.930Z",
+    "actor": "local-admin",
+    "action": "kiosk_settings_updated",
+    "entityType": "kiosk-settings",
+    "entityId": "kiosk",
+    "message": "Kiosk ayarları güncellendi.",
+    "details": {
+      "fields": [
+        "idleTimeoutSeconds",
+        "autoResetSeconds",
+        "showPopularProducts",
+        "showStock",
+        "showPrice",
+        "maxResults",
+        "maxLivePreviewProducts",
+        "language",
+        "isKioskEnabled",
+        "colors",
+        "priceRanges",
+        "usagePurposes",
+        "countries",
+        "defaultLanguage",
+        "languages",
+        "currency",
+        "resetTimeoutSeconds",
+        "idleScreenEnabled",
+        "featuredRotationSeconds",
+        "resultCount",
+        "lowStockThreshold",
+        "hideOutOfStock",
+        "scanEnabled",
+        "analyticsEnabled",
+        "maintenanceMode",
+        "maintenanceMessage",
+        "updatedAt",
+        "ads"
+      ]
+    }
+  },
+  {
+    "id": "1782202590066-25fe9bf3c1708",
+    "createdAt": "2026-06-23T08:16:30.066Z",
+    "actor": "local-admin",
+    "action": "kiosk_settings_saved",
+    "entityType": "kiosk-settings",
+    "entityId": "kiosk",
+    "message": "Kiosk ayarları lokal dosyaya kaydedildi.",
+    "details": {
+      "fields": [
+        "language",
+        "currency",
+        "timers",
+        "recommendation",
+        "features",
+        "maintenance",
+        "priceRanges"
+      ]
+    }
+  },
+  {
+    "id": "1782202590033-f72e1dabef5bd",
+    "createdAt": "2026-06-23T08:16:30.033Z",
+    "actor": "local-admin",
+    "action": "kiosk_settings_updated",
+    "entityType": "kiosk-settings",
+    "entityId": "kiosk",
+    "message": "Kiosk ayarları güncellendi.",
+    "details": {
+      "fields": [
+        "idleTimeoutSeconds",
+        "autoResetSeconds",
+        "showPopularProducts",
+        "showStock",
+        "showPrice",
+        "maxResults",
+        "maxLivePreviewProducts",
+        "language",
+        "isKioskEnabled",
+        "colors",
+        "priceRanges",
+        "usagePurposes",
+        "countries",
+        "defaultLanguage",
+        "languages",
+        "currency",
+        "resetTimeoutSeconds",
+        "idleScreenEnabled",
+        "featuredRotationSeconds",
+        "resultCount",
+        "lowStockThreshold",
+        "hideOutOfStock",
+        "scanEnabled",
+        "analyticsEnabled",
+        "maintenanceMode",
+        "maintenanceMessage",
+        "updatedAt",
+        "ads"
+      ]
+    }
+  },
+  {
     "id": "1782200709521-2b30502b4bf5",
     "createdAt": "2026-06-23T07:45:09.521Z",
     "actor": "local-admin",

@@ -4,7 +4,7 @@
   "showPopularProducts": true,
   "showStock": true,
   "showPrice": true,
-  "maxResults": 12,
+  "maxResults": 5,
   "maxLivePreviewProducts": 30,
   "language": "tr",
   "isKioskEnabled": true,
@@ -120,7 +120,7 @@
   "resetTimeoutSeconds": 60,
   "idleScreenEnabled": true,
   "featuredRotationSeconds": 7,
-  "resultCount": 12,
+  "resultCount": 5,
   "lowStockThreshold": 10,
   "hideOutOfStock": false,
   "scanEnabled": true,
@@ -130,6 +130,6 @@
     "tr": "",
     "en": ""
   },
-  "updatedAt": "2026-06-22T17:01:07.638Z",
+  "updatedAt": "2026-06-23T08:16:35.921Z",
   "ads": []
 }

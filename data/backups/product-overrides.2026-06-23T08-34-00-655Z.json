@@ -1,4 +1,10 @@
 {
+  "1048": {
+    "barcode": "1048",
+    "imageUpdatedAt": "2026-06-23T07:44:16.708Z",
+    "imagePath": "/product-images/1048.webp",
+    "updatedAt": "2026-06-23T07:44:16.716Z"
+  },
   "3445720021121": {
     "barcode": "3445720021121",
     "color": "rose",
@@ -81,26 +87,31 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:44:34.270Z",
     "imagePath": "/product-images/3263286301316.webp",
-    "updatedAt": "2026-06-23T06:26:12.114Z"
+    "updatedAt": "2026-06-23T07:44:34.277Z"
   },
   "3263286301385": {
     "barcode": "3263286301385",
     "name": "JP CHENET CINSAULT GRENACHE ROSE 75CL",
     "brand": "JP",
-    "color": "red",
+    "color": "rose",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Cinsault, Grenache",
+    "body": "light",
+    "sweetness": "light",
+    "taste": "light",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "light",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -119,9 +130,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:45:09.447Z",
     "imagePath": "/product-images/3263286301385.webp",
-    "updatedAt": "2026-06-23T05:54:42.953Z"
+    "updatedAt": "2026-06-23T08:27:58.182Z"
   },
   "3263286321284": {
     "barcode": "3263286321284",
@@ -129,16 +140,22 @@
     "brand": "JP",
     "color": "white",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Terret, Colombard, Sauvignon Blanc",
+    "body": "medium",
+    "sweetness": "medium",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner",
+      "light"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -159,7 +176,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:34:05.454Z",
     "imagePath": "/product-images/3263286321284.webp",
-    "updatedAt": "2026-06-23T07:34:05.462Z"
+    "updatedAt": "2026-06-23T08:28:07.136Z"
   },
   "3263286328993": {
     "barcode": "3263286328993",
@@ -167,16 +184,21 @@
     "brand": "JP",
     "color": "red",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Languedoc-Roussillon",
+    "grape": "Merlot",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "medium",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "beginner",
+      "value"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -197,7 +219,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:34:23.133Z",
     "imagePath": "/product-images/3263286328993.webp",
-    "updatedAt": "2026-06-23T07:34:23.141Z"
+    "updatedAt": "2026-06-23T08:28:15.735Z"
   },
   "3263286329006": {
     "barcode": "3263286329006",
@@ -205,16 +227,21 @@
     "brand": "JP",
     "color": "white",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Chardonnay",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -235,7 +262,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:34:41.109Z",
     "imagePath": "/product-images/3263286329006.webp",
-    "updatedAt": "2026-06-23T07:34:41.115Z"
+    "updatedAt": "2026-06-23T08:29:27.639Z"
   },
   "3500610014789": {
     "barcode": "3500610014789",
@@ -243,16 +270,21 @@
     "brand": "JP",
     "color": "red",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Merlot, Cabernet Sauvignon",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "medium",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -273,7 +305,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:35:33.816Z",
     "imagePath": "/product-images/3500610014789.webp",
-    "updatedAt": "2026-06-23T07:35:33.824Z"
+    "updatedAt": "2026-06-23T08:32:15.473Z"
   },
   "3263286301323": {
     "barcode": "3263286301323",
@@ -313,9 +345,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:44:51.838Z",
     "imagePath": "/product-images/3263286301323.webp",
-    "updatedAt": "2026-06-23T07:28:58.105Z"
+    "updatedAt": "2026-06-23T07:44:51.845Z"
   },
   "3500610033346": {
     "barcode": "3500610033346",
@@ -323,16 +355,21 @@
     "brand": "JP",
     "color": "red",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Languedoc-Roussillon",
+    "grape": "Grenache, Cinsault",
+    "body": "medium",
+    "sweetness": "medium",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "value",
+      "beginner",
+      "light"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -353,7 +390,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:35:51.219Z",
     "imagePath": "/product-images/3500610033346.webp",
-    "updatedAt": "2026-06-23T07:35:51.225Z"
+    "updatedAt": "2026-06-23T08:34:00.648Z"
   },
   "4840013000248": {
     "barcode": "4840013000248",
@@ -427,9 +464,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:43:59.260Z",
     "imagePath": "/product-images/8690584120403.webp",
-    "updatedAt": "2026-06-23T07:26:55.551Z"
+    "updatedAt": "2026-06-23T07:43:59.266Z"
   },
   "8690584155405": {
     "barcode": "8690584155405",
@@ -769,9 +806,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:43:41.915Z",
     "imagePath": "/product-images/8690584114402.webp",
-    "updatedAt": "2026-06-23T07:26:20.671Z"
+    "updatedAt": "2026-06-23T07:43:41.922Z"
   },
   "8690584120502": {
     "barcode": "8690584120502",
@@ -1112,5 +1149,27 @@
     "imageUpdatedAt": "2026-06-23T07:43:24.458Z",
     "imagePath": "/product-images/8436598730272.webp",
     "updatedAt": "2026-06-23T07:43:24.464Z"
+  },
+  "3278486542131": {
+    "barcode": "3278486542131",
+    "color": "red",
+    "country": "TR",
+    "region": "Ege",
+    "grape": "Napoleon Vişnesi",
+    "body": "medium",
+    "sweetness": "intense",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
+    "usagePurposes": [
+      "gift",
+      "beginner",
+      "light",
+      "value"
+    ],
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "updatedAt": "2026-06-23T08:30:04.173Z"
   }
 }

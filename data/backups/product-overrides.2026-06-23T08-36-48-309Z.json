@@ -95,18 +95,23 @@
     "barcode": "3263286301385",
     "name": "JP CHENET CINSAULT GRENACHE ROSE 75CL",
     "brand": "JP",
-    "color": "red",
+    "color": "rose",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Cinsault, Grenache",
+    "body": "light",
+    "sweetness": "light",
+    "taste": "light",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "light",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -125,9 +130,9 @@
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "imageUpdatedAt": null,
+    "imageUpdatedAt": "2026-06-23T07:45:09.447Z",
     "imagePath": "/product-images/3263286301385.webp",
-    "updatedAt": "2026-06-23T05:54:42.953Z"
+    "updatedAt": "2026-06-23T08:27:58.182Z"
   },
   "3263286321284": {
     "barcode": "3263286321284",
@@ -135,16 +140,22 @@
     "brand": "JP",
     "color": "white",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Terret, Colombard, Sauvignon Blanc",
+    "body": "medium",
+    "sweetness": "medium",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner",
+      "light"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -165,7 +176,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:34:05.454Z",
     "imagePath": "/product-images/3263286321284.webp",
-    "updatedAt": "2026-06-23T07:34:05.462Z"
+    "updatedAt": "2026-06-23T08:28:07.136Z"
   },
   "3263286328993": {
     "barcode": "3263286328993",
@@ -173,16 +184,21 @@
     "brand": "JP",
     "color": "red",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Languedoc-Roussillon",
+    "grape": "Merlot",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "medium",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "beginner",
+      "value"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -203,7 +219,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:34:23.133Z",
     "imagePath": "/product-images/3263286328993.webp",
-    "updatedAt": "2026-06-23T07:34:23.141Z"
+    "updatedAt": "2026-06-23T08:28:15.735Z"
   },
   "3263286329006": {
     "barcode": "3263286329006",
@@ -211,16 +227,21 @@
     "brand": "JP",
     "color": "white",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Chardonnay",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -241,7 +262,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:34:41.109Z",
     "imagePath": "/product-images/3263286329006.webp",
-    "updatedAt": "2026-06-23T07:34:41.115Z"
+    "updatedAt": "2026-06-23T08:29:27.639Z"
   },
   "3500610014789": {
     "barcode": "3500610014789",
@@ -249,16 +270,21 @@
     "brand": "JP",
     "color": "red",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Pays d'Oc",
+    "grape": "Merlot, Cabernet Sauvignon",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "medium",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -279,7 +305,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:35:33.816Z",
     "imagePath": "/product-images/3500610014789.webp",
-    "updatedAt": "2026-06-23T07:35:33.824Z"
+    "updatedAt": "2026-06-23T08:32:15.473Z"
   },
   "3263286301323": {
     "barcode": "3263286301323",
@@ -329,16 +355,21 @@
     "brand": "JP",
     "color": "red",
     "country": "FR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Languedoc-Roussillon",
+    "grape": "Grenache, Cinsault",
+    "body": "medium",
+    "sweetness": "medium",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "value",
+      "beginner",
+      "light"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -359,7 +390,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:35:51.219Z",
     "imagePath": "/product-images/3500610033346.webp",
-    "updatedAt": "2026-06-23T07:35:51.225Z"
+    "updatedAt": "2026-06-23T08:34:00.648Z"
   },
   "4840013000248": {
     "barcode": "4840013000248",
@@ -367,16 +398,20 @@
     "brand": "CRICOVA",
     "color": "sparkling",
     "country": "OTHER",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Cricova",
+    "grape": "Chardonnay, Pinot Noir",
+    "body": "medium",
+    "sweetness": "medium",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "celebration",
+      "gift",
+      "value"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -397,7 +432,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:39:20.313Z",
     "imagePath": "/product-images/4840013000248.webp",
-    "updatedAt": "2026-06-23T07:39:20.319Z"
+    "updatedAt": "2026-06-23T08:34:13.093Z"
   },
   "8690584120403": {
     "barcode": "8690584120403",
@@ -405,16 +440,22 @@
     "brand": "KAVAK",
     "color": "white",
     "country": "TR",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "region": "Central Anatolia",
+    "grape": "Narince, Emir, Sultaniye",
+    "body": "light",
+    "sweetness": "light",
+    "taste": "light",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner",
+      "light"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -435,24 +476,30 @@
     "priorityScore": 0,
     "imageUpdatedAt": "2026-06-23T07:43:59.260Z",
     "imagePath": "/product-images/8690584120403.webp",
-    "updatedAt": "2026-06-23T07:43:59.266Z"
+    "updatedAt": "2026-06-23T08:34:22.220Z"
   },
   "8690584155405": {
     "barcode": "8690584155405",
     "name": "ANGORA BEYAZ SARAP 75CL",
     "brand": "ANGORA",
     "color": "white",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "country": "TR",
+    "region": "Ege",
+    "grape": "Sultaniye",
+    "body": "light",
+    "sweetness": "light",
+    "taste": "light",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "light",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -473,24 +520,30 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8690584155405.webp",
-    "updatedAt": "2026-06-23T05:53:21.927Z"
+    "updatedAt": "2026-06-23T08:35:14.497Z"
   },
   "8690584133403": {
     "barcode": "8690584133403",
     "name": "SULTANIYE YARI TATLI SARAP 75CL",
     "brand": "SULTANIYE",
     "color": "white",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "country": "TR",
+    "region": "Ege",
+    "grape": "Sultaniye",
+    "body": "light",
+    "sweetness": "medium",
+    "taste": "light",
+    "acidity": "medium",
+    "tannin": "light",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "light",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -511,24 +564,29 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8690584133403.webp",
-    "updatedAt": "2026-06-23T05:53:25.688Z"
+    "updatedAt": "2026-06-23T08:35:39.329Z"
   },
   "8690584301406": {
     "barcode": "8690584301406",
     "name": "ANGORA KIRMIZI SARAP 75CL",
     "brand": "ANGORA",
     "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "country": "TR",
+    "region": "Aegean",
+    "grape": "Cabernet Sauvignon, Öküzgözü, Alicante, Merlot",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "medium",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -549,24 +607,29 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8690584301406.webp",
-    "updatedAt": "2026-06-23T05:53:27.531Z"
+    "updatedAt": "2026-06-23T08:36:01.549Z"
   },
   "8690606134012": {
     "barcode": "8690606134012",
     "name": "DOLUCA OKUZGOZU KIRMIZI 75",
     "brand": "DOLUCA",
     "color": "red",
-    "country": "",
-    "region": "",
-    "grape": "",
-    "body": "",
-    "sweetness": "",
-    "taste": "",
-    "acidity": "",
-    "tannin": "",
+    "country": "TR",
+    "region": "Doğu Anadolu",
+    "grape": "Öküzgözü",
+    "body": "medium",
+    "sweetness": "light",
+    "taste": "medium",
+    "acidity": "intense",
+    "tannin": "medium",
     "block": "",
     "shelf": "",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "shortDescription": {
       "tr": "",
       "en": ""
@@ -587,7 +650,7 @@
     "priorityScore": 0,
     "imageUpdatedAt": null,
     "imagePath": "/product-images/8690606134012.webp",
-    "updatedAt": "2026-06-23T05:53:29.256Z"
+    "updatedAt": "2026-06-23T08:36:48.301Z"
   },
   "8697530204866": {
     "barcode": "8697530204866",
@@ -1118,5 +1181,27 @@
     "imageUpdatedAt": "2026-06-23T07:43:24.458Z",
     "imagePath": "/product-images/8436598730272.webp",
     "updatedAt": "2026-06-23T07:43:24.464Z"
+  },
+  "3278486542131": {
+    "barcode": "3278486542131",
+    "color": "red",
+    "country": "TR",
+    "region": "Ege",
+    "grape": "Napoleon Vişnesi",
+    "body": "medium",
+    "sweetness": "intense",
+    "taste": "medium",
+    "acidity": "medium",
+    "tannin": "light",
+    "usagePurposes": [
+      "gift",
+      "beginner",
+      "light",
+      "value"
+    ],
+    "sommelierPick": false,
+    "featured": false,
+    "priorityScore": 0,
+    "updatedAt": "2026-06-23T08:30:04.173Z"
   }
 }
