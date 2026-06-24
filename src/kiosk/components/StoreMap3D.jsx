@@ -6,8 +6,8 @@ import { useLanguage } from '../../i18n/LanguageContext'
 // Blok yerleşimi (reyondaki gerçek dizilişe göre buradan ayarlanır)
 const BACK = ['F', 'G', 'H', 'I'] // arka duvar, soldan sağa
 const LEFT = ['A', 'B', 'C', 'D', 'E'] // sol duvar, önden arkaya
-const RIGHT = ['J', 'K', 'L', 'M', 'N', 'O'] // sağ duvar, arkadan öne
-const FRONT = ['P', 'R'] // ön-sağ: O'dan sonra P, ucunda I'ya bakan R
+const RIGHT = ['J', 'K', 'L', 'M', 'N', 'O', 'P'] // sağ duvar, arkadan öne (O'nun devamı P)
+const FRONT = ['R'] // tek başına: I'ya karşıdan bakan R
 const SHELVES = 7
 
 function normalizeBlock(block) {
@@ -172,7 +172,7 @@ export default function StoreMap3D({ block, shelf, productName, onClose }) {
     BACK.forEach((L, i) => addBlock(L, 'back', -6 + i * 4, 0))
     LEFT.forEach((L, i) => addBlock(L, 'left', 0, 5 - i * 2.5))
     RIGHT.forEach((L, i) => addBlock(L, 'right', 0, -5 + i * 2))
-    FRONT.forEach((L, i) => addBlock(L, 'front', 6 - i * 3, 7))
+    FRONT.forEach((L) => addBlock(L, 'front', 6.8, 8.3))
 
     const bprofile = [
       [0.001, 0],
@@ -212,6 +212,9 @@ export default function StoreMap3D({ block, shelf, productName, onClose }) {
       new THREE.TorusGeometry(0.85, 0.09, 8, 24),
       new THREE.MeshStandardMaterial({ color: 0xefc56a, emissive: 0xefa020, emissiveIntensity: 1 }),
     )
+    ring.material.depthTest = false
+    ring.material.transparent = true
+    ring.renderOrder = 999
     ring.visible = false
     scene.add(ring)
 
@@ -224,6 +227,13 @@ export default function StoreMap3D({ block, shelf, productName, onClose }) {
     let toL = look.clone()
     let tt = 1
     const dur = 2.6
+    // Kamera, raf içinden geçmesin diye merkez etrafında dönerek (silindirik) gider
+    const CX = 0
+    const CZ = -1
+    const toCyl = (p) => ({ r: Math.hypot(p.x - CX, p.z - CZ), th: Math.atan2(p.z - CZ, p.x - CX), y: p.y })
+    let cylA = { r: 0, th: 0, y: 0 }
+    let cylB = { r: 0, th: 0, y: 0 }
+    let dth = 0
 
     function flyTo(L, s) {
       const b = boards[`${L}-${s}`]
@@ -236,8 +246,22 @@ export default function StoreMap3D({ block, shelf, productName, onClose }) {
       else ring.rotation.set(0, Math.PI / 2, 0)
       fromP = cam.position.clone()
       fromL = look.clone()
-      toP.set(pos.x + nrm.x * 6.5, pos.y + 1.4, pos.z + nrm.z * 6.5)
+      const dist = 8.5
+      const center = new THREE.Vector3(CX, pos.y, CZ)
+      const toCenter = center.sub(pos)
+      toCenter.y = 0
+      if (toCenter.lengthSq() > 0.0001) toCenter.normalize()
+      toP.set(
+        pos.x + nrm.x * dist + toCenter.x * 1.3,
+        pos.y + 1.8,
+        pos.z + nrm.z * dist + toCenter.z * 1.3,
+      )
       toL.set(pos.x, pos.y, pos.z)
+      cylA = toCyl(fromP)
+      cylB = toCyl(toP)
+      dth = cylB.th - cylA.th
+      while (dth > Math.PI) dth -= 2 * Math.PI
+      while (dth < -Math.PI) dth += 2 * Math.PI
       tt = 0
     }
 
@@ -252,7 +276,11 @@ export default function StoreMap3D({ block, shelf, productName, onClose }) {
       if (tt < 1) {
         tt = Math.min(1, tt + dt / dur)
         const e = tt < 0.5 ? 2 * tt * tt : 1 - Math.pow(-2 * tt + 2, 2) / 2
-        cam.position.lerpVectors(fromP, toP, e)
+        const th = cylA.th + dth * e
+        const lift = Math.sin(Math.PI * e)
+        const r = cylA.r + (cylB.r - cylA.r) * e + lift * 3
+        const yy = cylA.y + (cylB.y - cylA.y) * e + lift * 2
+        cam.position.set(CX + r * Math.cos(th), yy, CZ + r * Math.sin(th))
         look.lerpVectors(fromL, toL, e)
         cam.lookAt(look)
       }

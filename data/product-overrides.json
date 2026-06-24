@@ -1650,8 +1650,8 @@
     "taste": "light",
     "acidity": "light",
     "tannin": "intense",
-    "block": "D",
-    "shelf": "6",
+    "block": "P",
+    "shelf": "3",
     "usagePurposes": [
       "sommelier",
       "light",
@@ -1678,7 +1678,7 @@
     "sommelierPick": true,
     "featured": true,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T17:24:59.684Z",
+    "updatedAt": "2026-06-24T05:35:35.057Z",
     "imageUpdatedAt": "2026-06-23T07:35:16.304Z",
     "imagePath": "/product-images/3445720021121.webp"
   },
