@@ -28,6 +28,24 @@ export default function ScanScreen() {
 
   const bufferRef = useRef('')
   const lastTimeRef = useRef(0)
+
+  // Ürün okutulmadan belirli süre (vars. 30 sn) dokunulmazsa ana ekrana dön
+  useEffect(() => {
+    const ms = Number(settings?.scanTimeoutSeconds ?? 30) * 1000
+    let timer
+    const arm = () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => reset(), ms)
+    }
+    arm()
+    const events = ['pointerdown', 'touchstart', 'keydown']
+    events.forEach((e) => window.addEventListener(e, arm))
+    return () => {
+      clearTimeout(timer)
+      events.forEach((e) => window.removeEventListener(e, arm))
+    }
+  }, [reset, settings])
+
   const lockRef = useRef(false)
 
   const handleScan = useCallback(

@@ -9,6 +9,7 @@ import { getLocalProductImagePath, getProductImageAlt } from '../../shared/produ
 import QuickFill from './QuickFill'
 import BulkAiFill from './BulkAiFill'
 import BulkImagePaste from './BulkImagePaste'
+import ShelfAssign from './ShelfAssign'
 import {
   prepareProductImage,
   uploadProductImageToLocalApi,
@@ -378,6 +379,7 @@ export default function Products() {
   const [quickFillOpen, setQuickFillOpen] = useState(false)
   const [bulkAiOpen, setBulkAiOpen] = useState(false)
   const [imgPasteOpen, setImgPasteOpen] = useState(false)
+  const [shelfOpen, setShelfOpen] = useState(false)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -862,6 +864,13 @@ export default function Products() {
             className="px-6 py-3 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-semibold rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap border border-gold-500/40"
           >
             📷 Resim Yapıştır
+          </button>
+
+          <button
+            onClick={() => setShelfOpen(true)}
+            className="px-6 py-3 bg-charcoal-700 hover:bg-charcoal-600 text-cream-100 font-semibold rounded-md transition-colors shadow-md flex justify-center items-center gap-2 whitespace-nowrap border border-gold-500/40"
+          >
+            📍 Raf Ata
           </button>
 
           <button
@@ -1547,6 +1556,14 @@ export default function Products() {
         <BulkImagePaste
           products={products}
           onClose={() => setImgPasteOpen(false)}
+          onSaved={loadProducts}
+        />
+      )}
+
+      {shelfOpen && (
+        <ShelfAssign
+          products={products}
+          onClose={() => setShelfOpen(false)}
           onSaved={loadProducts}
         />
       )}

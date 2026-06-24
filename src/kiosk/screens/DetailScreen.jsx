@@ -240,7 +240,7 @@ function LocalProductImage({ product, imageClassName, fallbackClassName }) {
 }
 
 export default function DetailScreen() {
-  const { detailProduct, closeDetail, currency } = useFlow()
+  const { detailProduct, closeDetail, currency, reset } = useFlow()
   const { t, lang } = useLanguage()
   const [showMap, setShowMap] = useState(false)
 
@@ -286,6 +286,7 @@ export default function DetailScreen() {
             shelf={product.shelf}
             productName={product.name}
             onClose={() => setShowMap(false)}
+            onIdle={reset}
           />
         </Suspense>
       )}

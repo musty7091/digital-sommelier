@@ -8,6 +8,23 @@ function isMissing(p) {
   return REQUIRED.some((f) => !p?.[f]) || !p?.country
 }
 
+function cleanText(v) {
+  if (v === null || v === undefined) return ''
+  return String(v).trim()
+}
+
+function hasDescription(p) {
+  return Boolean(
+    (p?.shortDescription && (p.shortDescription.tr || p.shortDescription.TR)) ||
+      p?.shortDescriptionTr ||
+      p?.descriptionTr ||
+      (typeof p?.description === 'string' && p.description.trim()),
+  )
+}
+function isMissingDesc(p) {
+  return !hasDescription(p)
+}
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 function fold(v) {
@@ -91,8 +108,8 @@ function extractJson(text) {
   }
 }
 
-async function askGemini(product, apiKey, model) {
-  const prompt = `Sen uzman bir şarap sommelierisin. Aşağıdaki şarap için bilinen ya da en olası özellikleri ver.
+function attrPrompt(product) {
+  return `Sen uzman bir şarap sommelierisin. Aşağıdaki şarap için bilinen ya da en olası özellikleri ver.
 Şarap adı: "${product.name || ''}"
 Marka: "${product.brand || ''}"
 
@@ -107,7 +124,56 @@ SADECE aşağıdaki JSON şemasını, VERİLEN İZİNLİ DEĞERLERLE doldur. Emi
 - grape: üzüm türü (serbest metin, örn. "Sangiovese"); bilinmiyorsa ""
 
 {"color":"","country":"","region":"","grape":"","body":"","sweetness":"","acidity":"","tannin":"","usagePurposes":[]}`
+}
 
+function descPrompt(product) {
+  const attrs = `renk=${product.color || '?'}, ülke=${product.country || '?'}, bölge=${product.region || '?'}, üzüm=${product.grape || '?'}, gövde=${product.body || '?'}, tatlılık=${product.sweetness || '?'}, asidite=${product.acidity || '?'}, tanen=${product.tannin || '?'}`
+  return `Sen uzman bir şarap sommelierisin. Aşağıdaki şarap için kiosk ekranında gösterilecek, İKİ DİLLİ (Türkçe + İngilizce), kısa ve iştah açıcı açıklamalar üret.
+Şarap: "${product.name || ''}" — Marka: "${product.brand || ''}"
+Bilinen özellikler: ${attrs}
+
+Bu özelliklere uygun, doğal ve satış odaklı metinler yaz. SADECE şu JSON'u doldur, ek metin yazma:
+{
+ "shortDescriptionTr": "Müşteriyi cezbeden, en fazla 1-2 kısa cümlelik Türkçe açıklama.",
+ "shortDescriptionEn": "Aynı açıklamanın doğal İngilizce karşılığı.",
+ "tasteNotesTr": "Virgülle ayrılmış en fazla 3 belirgin aroma/tat notu.",
+ "tasteNotesEn": "Aynı notların İngilizcesi.",
+ "foodPairingTr": "Bu şarapla iyi gidecek 2 yemek veya peynir eşleşmesi.",
+ "foodPairingEn": "Aynı eşleşmenin İngilizcesi."
+}`
+}
+
+function buildDescPatch(raw) {
+  const tr = cleanText(raw.shortDescriptionTr)
+  if (!tr) return {}
+  const sEn = cleanText(raw.shortDescriptionEn)
+  const tnTr = cleanText(raw.tasteNotesTr)
+  const tnEn = cleanText(raw.tasteNotesEn)
+  const fpTr = cleanText(raw.foodPairingTr)
+  const fpEn = cleanText(raw.foodPairingEn)
+  return {
+    shortDescription: { tr, en: sEn },
+    tasteNotes: { tr: tnTr, en: tnEn },
+    foodPairing: { tr: fpTr, en: fpEn },
+    description: tr,
+    descriptionTr: tr,
+    descriptionEn: sEn,
+    shortDescriptionTr: tr,
+    shortDescriptionEn: sEn,
+    tasteNotesTr: tnTr,
+    tasteNotesEn: tnEn,
+    foodPairingTr: fpTr,
+    foodPairingEn: fpEn,
+    KisaAciklama_TR: tr,
+    KisaAciklama_EN: sEn,
+    TadimNotlari_TR: tnTr,
+    TadimNotlari_EN: tnEn,
+    YemekUyumu_TR: fpTr,
+    YemekUyumu_EN: fpEn,
+  }
+}
+
+async function callGemini(prompt, apiKey, model) {
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`,
     {
@@ -141,13 +207,17 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
   const [stats, setStats] = useState({ done: 0, failed: 0, skipped: 0 })
   const [log, setLog] = useState([])
   const [fatal, setFatal] = useState('')
+  const [mode, setMode] = useState('attributes') // attributes | descriptions
 
   const runningRef = useRef(false)
   const pausedRef = useRef(false)
 
   const queue = useMemo(
-    () => (products || []).filter((p) => (onlyMissing ? isMissing(p) : true)),
-    [products, onlyMissing],
+    () =>
+      (products || []).filter((p) =>
+        onlyMissing ? (mode === 'descriptions' ? isMissingDesc(p) : isMissing(p)) : true,
+      ),
+    [products, onlyMissing, mode],
   )
   const total = queue.length
 
@@ -192,7 +262,7 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
           return
         }
         try {
-          raw = await askGemini(p, apiKey, model)
+          raw = await callGemini(mode === 'descriptions' ? descPrompt(p) : attrPrompt(p), apiKey, model)
           lastErr = null
           consecutive429 = 0
           break
@@ -228,14 +298,17 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
         continue
       }
 
-      const patch = buildPatch(raw, p)
+      const patch = mode === 'descriptions' ? buildDescPatch(raw) : buildPatch(raw, p)
       if (Object.keys(patch).length === 0) {
-        addLog({ name: p.name, kind: 'skip', text: 'doldurulacak alan bulunamadı' })
+        addLog({ name: p.name, kind: 'skip', text: mode === 'descriptions' ? 'açıklama üretilemedi' : 'doldurulacak alan bulunamadı' })
         setStats((s) => ({ ...s, skipped: s.skipped + 1 }))
       } else {
         try {
           await saveProduct({ barcode: p.barcode || p.id, ...patch })
-          const summary = [patch.color, patch.country, patch.body && `gövde:${patch.body}`].filter(Boolean).join(' · ')
+          const summary =
+            mode === 'descriptions'
+              ? cleanText(patch.shortDescriptionTr).slice(0, 60) + '…'
+              : [patch.color, patch.country, patch.body && `gövde:${patch.body}`].filter(Boolean).join(' · ')
           addLog({ name: p.name, kind: 'ok', text: summary || 'güncellendi' })
           setStats((s) => ({ ...s, done: s.done + 1 }))
         } catch (e) {
@@ -283,12 +356,40 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
         </div>
 
         <p className="text-sm text-cream-200/70 mb-4">
-          Her ürünün adı ve markası Gemini'ye gönderilir; renk, ülke, bölge, üzüm, gövde/tatlılık/asidite/tanen ve kullanım amacı doldurulur.
-          Yalnızca <b>özellik</b> alanları yazılır — yazdığın açıklamalar korunur. <span className="text-gold-400">Sonuçları gözden geçir; tahmin içerebilir.</span>
+          {mode === 'descriptions' ? (
+            <>
+              Her ürün için, dolu özelliklerine dayanarak <b>iki dilli (TR/EN)</b> kısa açıklama, tadım notları ve yemek uyumu üretilir.
+              Yalnızca <b>açıklama</b> alanları yazılır — özellikler korunur. <span className="text-gold-400">Sonuçları gözden geçir.</span>
+            </>
+          ) : (
+            <>
+              Her ürünün adı ve markası Gemini'ye gönderilir; renk, ülke, bölge, üzüm, gövde/tatlılık/asidite/tanen ve kullanım amacı doldurulur.
+              Yalnızca <b>özellik</b> alanları yazılır — yazdığın açıklamalar korunur. <span className="text-gold-400">Sonuçları gözden geçir; tahmin içerebilir.</span>
+            </>
+          )}
         </p>
 
         {status === 'idle' && (
           <div className="space-y-4">
+            <div>
+              <p className="text-xs uppercase tracking-wider text-cream-200/50 mb-2">Ne doldurulsun?</p>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => setMode('attributes')}
+                  className={`flex-1 rounded-lg border px-4 py-2.5 text-sm font-semibold ${mode === 'attributes' ? 'border-wine-700 bg-wine-800 text-white' : 'border-charcoal-600 bg-ink-950 text-cream-200 hover:border-gold-500'}`}
+                >
+                  Özellikler
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMode('descriptions')}
+                  className={`flex-1 rounded-lg border px-4 py-2.5 text-sm font-semibold ${mode === 'descriptions' ? 'border-wine-700 bg-wine-800 text-white' : 'border-charcoal-600 bg-ink-950 text-cream-200 hover:border-gold-500'}`}
+                >
+                  Açıklamalar (TR/EN)
+                </button>
+              </div>
+            </div>
             <div className="flex flex-wrap items-center gap-4">
               <label className="flex items-center gap-2 text-sm text-cream-100">
                 <input type="checkbox" checked={onlyMissing} onChange={(e) => setOnlyMissing(e.target.checked)} />

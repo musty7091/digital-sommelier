@@ -18,11 +18,31 @@ function normalizeShelf(shelf) {
   return Number.isFinite(n) ? Math.max(1, Math.min(SHELVES, n)) : 1
 }
 
-export default function StoreMap3D({ block, shelf, productName, onClose }) {
+export default function StoreMap3D({ block, shelf, productName, onClose, onIdle }) {
   const { lang } = useLanguage()
   const mountRef = useRef(null)
   const targetBlock = normalizeBlock(block)
   const targetShelf = normalizeShelf(shelf)
+
+  // Haritada belirli süre (vars. 30 sn) dokunulmazsa ana ekrana dön
+  const idleRef = useRef(null)
+  idleRef.current = onIdle || onClose
+  useEffect(() => {
+    let timer
+    const arm = () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        if (idleRef.current) idleRef.current()
+      }, 30000)
+    }
+    arm()
+    const events = ['pointerdown', 'touchstart', 'keydown', 'wheel']
+    events.forEach((e) => window.addEventListener(e, arm))
+    return () => {
+      clearTimeout(timer)
+      events.forEach((e) => window.removeEventListener(e, arm))
+    }
+  }, [])
 
   useEffect(() => {
     const el = mountRef.current

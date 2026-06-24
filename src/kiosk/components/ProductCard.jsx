@@ -147,7 +147,7 @@ function ProductImage({ product, imageClassName, fallbackClassName }) {
 
 export default function ProductCard({ product, onClick }) {
   const { t, lang } = useLanguage()
-  const { currency } = useFlow()
+  const { currency, reset } = useFlow()
   const [showMap, setShowMap] = useState(false)
   const hasLocation = Boolean(product.block && (product.shelf || product.shelf === 0))
   const labels = CARD_LABELS[lang] || CARD_LABELS.tr
@@ -197,6 +197,7 @@ export default function ProductCard({ product, onClick }) {
               shelf={product.shelf}
               productName={product.name}
               onClose={() => setShowMap(false)}
+              onIdle={reset}
             />
           </Suspense>
         )}
