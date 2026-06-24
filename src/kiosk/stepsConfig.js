@@ -122,14 +122,14 @@ const FALLBACK_USAGE_PURPOSES = [
     },
   },
   {
-    value: 'dinner',
+    value: 'food',
     label: {
       tr: 'Yemek eşliği',
       en: 'Dinner pairing',
     },
   },
   {
-    value: 'special',
+    value: 'celebration',
     label: {
       tr: 'Özel gün',
       en: 'Special occasion',

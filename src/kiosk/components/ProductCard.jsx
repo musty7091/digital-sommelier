@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { getLocalProductImagePath, getProductImageAlt } from '../../shared/productImage'
 import { useFlow } from '../state/FlowContext'
 import { COUNTRY_LABELS, LEVEL_LABELS, USAGE_PURPOSE_LABELS } from '../../types/product.schema'
 import StockBadge from './StockBadge'
 import WineBottle from './WineBottle'
-import StoreMap3D from './StoreMap3D'
+
+const StoreMap3D = lazy(() => import('./StoreMap3D'))
 
 // Fiyatı tr-TR ondalık biçiminde gösterir: 799.9 -> "799,90"
 function formatPrice(price) {
@@ -190,12 +191,14 @@ export default function ProductCard({ product, onClick }) {
         className="relative grid h-full w-full cursor-pointer grid-cols-1 gap-5 overflow-hidden rounded-2xl border border-gold-500/30 bg-charcoal-800/60 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] sm:rounded-3xl sm:p-6 md:grid-cols-[minmax(180px,0.62fr)_minmax(0,1.7fr)] md:gap-6 md:p-8"
       >
         {showMap && (
-          <StoreMap3D
-            block={product.block}
-            shelf={product.shelf}
-            productName={product.name}
-            onClose={() => setShowMap(false)}
-          />
+          <Suspense fallback={null}>
+            <StoreMap3D
+              block={product.block}
+              shelf={product.shelf}
+              productName={product.name}
+              onClose={() => setShowMap(false)}
+            />
+          </Suspense>
         )}
 
         {product._pick && (

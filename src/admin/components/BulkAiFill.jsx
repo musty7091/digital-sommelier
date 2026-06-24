@@ -140,6 +140,7 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
   const [idx, setIdx] = useState(0)
   const [stats, setStats] = useState({ done: 0, failed: 0, skipped: 0 })
   const [log, setLog] = useState([])
+  const [fatal, setFatal] = useState('')
 
   const runningRef = useRef(false)
   const pausedRef = useRef(false)
@@ -325,6 +326,12 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
             <div className="h-2 w-full rounded-full bg-ink-950 overflow-hidden">
               <div className="h-full bg-gold-500 transition-all" style={{ width: `${pct}%` }} />
             </div>
+
+            {fatal && (
+              <div className="rounded-lg border border-rose-700/60 bg-rose-900/20 p-3 text-sm text-rose-200">
+                {fatal}
+              </div>
+            )}
 
             <div className="h-56 overflow-y-auto rounded-lg border border-charcoal-700 bg-ink-950/50 p-2 text-xs space-y-1">
               {log.map((e, i) => (

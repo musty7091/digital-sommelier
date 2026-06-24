@@ -163,8 +163,16 @@ function normalizeCountry(value) {
   return COUNTRY_CODE_MAP[folded] || folded.toUpperCase()
 }
 
+const PURPOSE_ALIAS = {
+  dinner: 'food',
+  special: 'celebration',
+  pairing: 'food',
+  gala: 'celebration',
+}
+
 function normalizePurpose(value) {
-  return normalizeText(value)
+  const v = normalizeText(value)
+  return PURPOSE_ALIAS[v] || v
 }
 
 function normalizePriceRange(priceRange) {

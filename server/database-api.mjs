@@ -23,6 +23,7 @@ const overridesPath = path.join(dataDir, 'product-overrides.json')
 const kioskSettingsPath = path.join(dataDir, 'kiosk-settings.json')
 const auditLogsPath = path.join(dataDir, 'audit-logs.json')
 const backupsDir = path.join(dataDir, 'backups')
+const rowsCachePath = path.join(dataDir, '.products-cache.json')
 
 dotenv.config({ path: path.join(__dirname, '.env') })
 
@@ -398,6 +399,26 @@ function cleanMetadataPayload(payload = {}) {
   return cleaned
 }
 
+// Toplu Excel aktarımında boş hücrelerin mevcut veriyi EZMEMESİ için
+// boş ('' / null / boş dizi / tümü boş {tr,en}) alanları düşürür.
+function stripEmptyMetadata(obj = {}) {
+  const out = {}
+  for (const [key, value] of Object.entries(obj)) {
+    if (value === undefined || value === null) continue
+    if (typeof value === 'string' && value.trim() === '') continue
+    if (Array.isArray(value) && value.length === 0) continue
+    if (typeof value === 'object' && !Array.isArray(value)) {
+      const vals = Object.values(value)
+      const allEmpty =
+        vals.length > 0 &&
+        vals.every((x) => x === null || x === undefined || (typeof x === 'string' && x.trim() === ''))
+      if (allEmpty) continue
+    }
+    out[key] = value
+  }
+  return out
+}
+
 async function appendAuditLog(entry = {}) {
   const logs = await readJsonFile(auditLogsPath, [])
 
@@ -443,8 +464,36 @@ async function handleHealth(res) {
   })
 }
 
+let lastGoodRows = null
+
+// SQL koparsa: bellekteki, yoksa diskteki son başarılı ürün listesini sun.
+async function queryRowsCached() {
+  try {
+    const rows = await queryRows()
+    lastGoodRows = rows
+    fs.writeFile(rowsCachePath, JSON.stringify(rows), 'utf8').catch(() => {})
+    return { rows, stale: false }
+  } catch (error) {
+    if (Array.isArray(lastGoodRows)) {
+      console.warn('[database-api] SQL erişilemedi; bellekteki son liste sunuluyor:', error.message)
+      return { rows: lastGoodRows, stale: true }
+    }
+    try {
+      const cached = JSON.parse(await fs.readFile(rowsCachePath, 'utf8'))
+      if (Array.isArray(cached)) {
+        lastGoodRows = cached
+        console.warn('[database-api] SQL erişilemedi; disk cache sunuluyor:', error.message)
+        return { rows: cached, stale: true }
+      }
+    } catch {
+      /* cache yok */
+    }
+    throw error
+  }
+}
+
 async function handleProducts(reqUrl, res) {
-  const rows = await queryRows()
+  const { rows, stale } = await queryRowsCached()
   const overrides = loadOverrides(overridesPath)
 
   let products = buildProducts(rows, overrides)
@@ -470,6 +519,7 @@ async function handleProducts(reqUrl, res) {
   return sendJson(res, 200, {
     ok: true,
     count: products.length,
+    stale: stale === true,
     products,
   })
 }
@@ -591,7 +641,7 @@ async function handleBulkMetadata(req, res) {
 
     overrides[barcode] = {
       ...previous,
-      ...cleanMetadataPayload(item),
+      ...stripEmptyMetadata(cleanMetadataPayload(item)),
       barcode,
       updatedAt: nowIso(),
     }

@@ -20,3 +20,8 @@ firebase-debug.log
 .vscode/*
 !.vscode/extensions.json
 public/product-images/
+# Runtime / uretilen veriler (commit edilmemeli)
+data/admin-settings.json
+data/audit-logs.json
+data/backups/
+data/.products-cache.json

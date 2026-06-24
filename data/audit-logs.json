@@ -1,5 +1,202 @@
 [
   {
+    "id": "1782282848594-a4b0b734de011",
+    "createdAt": "2026-06-24T06:34:08.594Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "country",
+      "filterValue": "AR",
+      "phase": "flow",
+      "stepIndex": 4,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": "gift",
+        "taste": "medium",
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:34:08.568Z"
+    }
+  },
+  {
+    "id": "1782282847514-4846740e38898",
+    "createdAt": "2026-06-24T06:34:07.514Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "taste",
+      "filterValue": "medium",
+      "phase": "flow",
+      "stepIndex": 3,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": "gift",
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:34:07.468Z"
+    }
+  },
+  {
+    "id": "1782282847305-7699dcc8bdc83",
+    "createdAt": "2026-06-24T06:34:07.305Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "purpose",
+      "filterValue": "gift",
+      "phase": "flow",
+      "stepIndex": 2,
+      "selections": {
+        "color": "red",
+        "priceRange": {
+          "id": "mid",
+          "min": 500,
+          "max": 1000
+        },
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:34:07.281Z"
+    }
+  },
+  {
+    "id": "1782282846441-39c3cbb028d29",
+    "createdAt": "2026-06-24T06:34:06.441Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "priceRange",
+      "filterValue": {
+        "id": "mid",
+        "min": 500,
+        "max": 1000
+      },
+      "phase": "flow",
+      "stepIndex": 1,
+      "selections": {
+        "color": "red",
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:34:06.376Z"
+    }
+  },
+  {
+    "id": "1782282845528-2b04fa0efc01d",
+    "createdAt": "2026-06-24T06:34:05.528Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "red",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:34:05.504Z"
+    }
+  },
+  {
+    "id": "1782282844426-cad328118712f",
+    "createdAt": "2026-06-24T06:34:04.426Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:34:04.379Z"
+    }
+  },
+  {
+    "id": "1782282772335-e6a9c4fd63a8b",
+    "createdAt": "2026-06-24T06:32:52.335Z",
+    "actor": "local-admin",
+    "action": "product_viewed",
+    "entityType": "kiosk-session",
+    "entityId": "3445720021121",
+    "message": "Kiosk event: product_viewed",
+    "details": {
+      "productId": "3445720021121",
+      "productName": "OPALE PROVENCE ROSE 75CL",
+      "barcode": "3445720021121",
+      "phase": "scan",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:32:52.296Z"
+    }
+  },
+  {
+    "id": "1782282766290-24b904a587fff",
+    "createdAt": "2026-06-24T06:32:46.290Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-24T06:32:46.236Z"
+    }
+  },
+  {
     "id": "1782280506563-87595115b9f4d",
     "createdAt": "2026-06-24T05:55:06.563Z",
     "actor": "local-admin",

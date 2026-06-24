@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { useFlow } from '../state/FlowContext'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { COUNTRY_LABELS, LEVEL_LABELS } from '../../types/product.schema'
 import WineBottle from '../components/WineBottle'
 import BackButton from '../components/BackButton'
-import StoreMap3D from '../components/StoreMap3D'
+const StoreMap3D = lazy(() => import('../components/StoreMap3D'))
 import { getLocalProductImagePath, getProductImageAlt } from '../../shared/productImage'
 
 function cleanText(value) {
@@ -280,12 +280,14 @@ export default function DetailScreen() {
   return (
     <main className="flex h-[100dvh] w-full flex-col overflow-hidden px-4 md:px-8 py-4 md:py-6">
       {showMap && (
-        <StoreMap3D
-          block={product.block}
-          shelf={product.shelf}
-          productName={product.name}
-          onClose={() => setShowMap(false)}
-        />
+        <Suspense fallback={null}>
+          <StoreMap3D
+            block={product.block}
+            shelf={product.shelf}
+            productName={product.name}
+            onClose={() => setShowMap(false)}
+          />
+        </Suspense>
       )}
       <div className="flex flex-none flex-wrap items-center justify-between gap-3 mb-4 md:mb-6">
         <button
