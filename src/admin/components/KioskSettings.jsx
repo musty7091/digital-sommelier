@@ -117,6 +117,7 @@ export default function KioskSettings() {
   const [showStock, setShowStock] = useState(true)
 
   const [scanEnabled, setScanEnabled] = useState(true)
+  const [voiceSearchEnabled, setVoiceSearchEnabled] = useState(true)
   const [analyticsEnabled, setAnalyticsEnabled] = useState(true)
 
   const [maintenanceMode, setMaintenanceMode] = useState(false)
@@ -167,6 +168,7 @@ export default function KioskSettings() {
         setShowStock(settings.showStock !== false)
 
         setScanEnabled(settings.scanEnabled !== false)
+        setVoiceSearchEnabled(settings.voiceSearchEnabled !== false)
         setAnalyticsEnabled(settings.analyticsEnabled !== false)
 
         setMaintenanceMode(settings.maintenanceMode === true)
@@ -335,6 +337,7 @@ export default function KioskSettings() {
         showStock: Boolean(showStock),
 
         scanEnabled: Boolean(scanEnabled),
+        voiceSearchEnabled: Boolean(voiceSearchEnabled),
         analyticsEnabled: Boolean(analyticsEnabled),
 
         maintenanceMode: Boolean(maintenanceMode),
@@ -593,6 +596,13 @@ export default function KioskSettings() {
             onChange={setScanEnabled}
             label="“Ürün Okut” butonu"
             hint="Barkod okuyucusu olmayan kiosklarda kapatabilirsin."
+          />
+
+          <Toggle
+            checked={voiceSearchEnabled}
+            onChange={setVoiceSearchEnabled}
+            label="“Sesli Ara” butonu"
+            hint="Mikrofon/internet olmayan kiosklarda kapatabilirsin."
           />
 
           <Toggle

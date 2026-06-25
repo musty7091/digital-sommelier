@@ -293,9 +293,33 @@ export function filterProducts(products, selections = {}, opts = {}) {
     if (!matchesPurpose(product, selections.purpose)) return false
     if (!matchesTaste(product, selections.taste)) return false
     if (!matchesCountry(product, selections.country)) return false
+    if (!matchesRegion(product, selections.region)) return false
+    if (!matchesGrape(product, selections.grape)) return false
+    if (!matchesLevelField(product.sweetness, selections.sweetness)) return false
+    if (!matchesLevelField(product.acidity, selections.acidity)) return false
+    if (!matchesLevelField(product.tannin, selections.tannin)) return false
 
     return true
   })
+}
+
+function matchesRegion(product, region) {
+  if (!region) return true
+  const target = normalizeText(region)
+  if (!target) return true
+  return normalizeText(product?.region).includes(target)
+}
+
+function matchesGrape(product, grape) {
+  if (!grape) return true
+  const target = normalizeText(grape)
+  if (!target) return true
+  return normalizeText(product?.grape).includes(target)
+}
+
+function matchesLevelField(value, selected) {
+  if (!selected) return true
+  return normalizeLevel(value) === normalizeLevel(selected)
 }
 
 function buildWhy(product, selections = {}, opts = {}) {

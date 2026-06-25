@@ -3859,7 +3859,7 @@
     "barcode": "3612170017572",
     "imageUpdatedAt": "2026-06-23T07:36:43.418Z",
     "imagePath": "/product-images/3612170017572.webp",
-    "updatedAt": "2026-06-24T09:19:55.304Z",
+    "updatedAt": "2026-06-25T09:28:59.600Z",
     "color": "red",
     "country": "FR",
     "region": "Saint-Émilion, Bordeaux",
@@ -3869,7 +3869,12 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "premium",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
@@ -33967,11 +33972,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "premium",
+      "gift",
+      "celebration"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:19:46.433Z",
+    "updatedAt": "2026-06-25T09:28:49.989Z",
     "shortDescription": {
       "tr": "Saint-Émilion'un kalbinden gelen bu Grand Cru, yoğun gövdesi ve güçlü tanenleriyle gerçek bir Bordeaux zarafeti sunuyor.",
       "en": "A true Bordeaux elegance from the heart of Saint-Émilion, this Grand Cru offers an intense body and powerful tannins."
@@ -33999,11 +34009,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:20:04.867Z",
+    "updatedAt": "2026-06-25T09:29:08.370Z",
     "shortDescription": {
       "tr": "Margaux’nun zarafetini güçlü gövdesiyle birleştiren, derin ve kadifemsi dokulu bir Bordeaux klasiği.",
       "en": "A Bordeaux classic blending Margaux's elegance with an intense body and deep, velvety texture."
@@ -34031,11 +34046,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:20:14.535Z",
+    "updatedAt": "2026-06-25T09:29:18.201Z",
     "shortDescription": {
       "tr": "Bordeaux'nun zarafetini yansıtan bu Merlot, ipeksi dokusu ve canlı meyve notalarıyla dengeli bir içim sunar.",
       "en": "Reflecting the elegance of Bordeaux, this Merlot offers a perfectly balanced experience with silky textures and vibrant fruit notes."
@@ -34063,11 +34083,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "premium",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:20:23.366Z",
+    "updatedAt": "2026-06-25T09:29:26.691Z",
     "shortDescription": {
       "tr": "Bordeaux'nun asaletini yansıtan, güçlü gövdeli ve derin karakterli bir Haut-Médoc klasiği.",
       "en": "A classic Haut-Médoc reflecting the nobility of Bordeaux, featuring a powerful body and deep character."
@@ -34095,11 +34120,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "premium",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:20:31.846Z",
+    "updatedAt": "2026-06-25T09:29:36.298Z",
     "shortDescription": {
       "tr": "Bordeaux'nun kalbinden gelen zarif ve dengeli bir klasik; olgun kırmızı meyve notalarıyla pürüzsüz bir içim sunuyor.",
       "en": "An elegant and balanced classic from the heart of Bordeaux, offering a smooth experience with notes of ripe red fruits."
@@ -34127,11 +34157,16 @@
     "taste": "intense",
     "acidity": "intense",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "sommelier",
+      "celebration"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:20:40.772Z",
+    "updatedAt": "2026-06-25T09:29:44.736Z",
     "shortDescription": {
       "tr": "Margaux’nun zarafetini ve organik tarımın doğallığını yansıtan, güçlü yapılı ve sofistike bir başyapıt.",
       "en": "A sophisticated masterpiece reflecting the elegance of Margaux and the purity of biodynamic viticulture with an intense structure."
@@ -34159,11 +34194,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:20:50.594Z",
+    "updatedAt": "2026-06-25T09:29:53.639Z",
     "shortDescription": {
       "tr": "Margaux'nun zarafetini ve gücünü yansıtan bu prestijli şarap, yoğun gövdesi ve sofistike yapısıyla unutulmaz bir Bordeaux deneyimi sunuyor.",
       "en": "Reflecting the elegance and power of Margaux, this prestigious wine offers an unforgettable Bordeaux experience with its intense body and sophisticated structure."
@@ -34191,11 +34231,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "gift",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:21:00.878Z",
+    "updatedAt": "2026-06-25T09:30:02.191Z",
     "shortDescription": {
       "tr": "Margaux bölgesinin zarafetini ve gücünü yansıtan bu prestijli Bordeaux harmanı, yoğun yapısı ve ipeksi bitişiyle büyüleyici bir deneyim sunar.",
       "en": "Reflecting the elegance and power of the Margaux region, this prestigious Bordeaux blend offers a captivating experience with its intense body and silky finish."
@@ -34223,11 +34268,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "sommelier",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:21:11.071Z",
+    "updatedAt": "2026-06-25T09:30:10.210Z",
     "shortDescription": {
       "tr": "Margaux'nun zarafetini ve gücünü yansıtan, yoğun gövdeli ve asil bir Bordeaux klasiği. Olgun siyah meyveler ve güçlü tanen yapısıyla damakta derin bir iz bırakır.",
       "en": "A noble Bordeaux classic reflecting the elegance and power of Margaux. It offers profound depth on the palate with ripe black fruits and a powerful tannic structure."
@@ -34255,11 +34305,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:21:20.165Z",
+    "updatedAt": "2026-06-25T09:30:18.509Z",
     "shortDescription": {
       "tr": "Pauillac'ın gücünü ve zarafetini yansıtan bu organik şarap, yoğun gövdesi ve kadifemsi dokusuyla gerçek bir Bordeaux klasiğidir.",
       "en": "Reflecting the power and elegance of Pauillac, this organic wine is a true Bordeaux classic with its intense body and velvety texture."
@@ -34287,11 +34342,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:21:29.965Z",
+    "updatedAt": "2026-06-25T09:30:28.028Z",
     "shortDescription": {
       "tr": "Pauillac'ın zarafetini yansıtan, ipeksi dokusu ve dengeli yapısıyla büyüleyici bir Bordeaux klasiği.",
       "en": "A charming Bordeaux classic reflecting the elegance of Pauillac with its silky texture and balanced structure."
@@ -34319,11 +34379,16 @@
     "taste": "intense",
     "acidity": "intense",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:21:38.468Z",
+    "updatedAt": "2026-06-25T09:30:36.317Z",
     "shortDescription": {
       "tr": "Pauillac'ın asaletiyle harmanlanan bu prestijli şarap, yoğun meyve katmanları ve kadifemsi yapısıyla unutulmaz bir deneyim sunuyor.",
       "en": "A prestigious blend embodying the nobility of Pauillac, offering an unforgettable experience with intense fruit layers and a velvety structure."
@@ -34351,11 +34416,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:21:48.100Z",
+    "updatedAt": "2026-06-25T09:30:45.071Z",
     "shortDescription": {
       "tr": "Pessac-Léognan'ın zarafetini yansıtan bu şarap, dengeli yapısı ve ipeksi dokusuyla klasik bir Bordeaux deneyimi sunuyor.",
       "en": "Reflecting the elegance of Pessac-Léognan, this wine offers a classic Bordeaux experience with its balanced structure and silky texture."
@@ -34383,11 +34453,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "premium",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:21:56.940Z",
+    "updatedAt": "2026-06-25T09:30:54.656Z",
     "shortDescription": {
       "tr": "Bordeaux'nun kalbinden gelen bu zarif kırmızı, ipeksi dokusu ve dengeli yapısıyla gerçek bir klasik.",
       "en": "An elegant red from the heart of Bordeaux, offering a silky texture and perfectly balanced structure."
@@ -34415,11 +34490,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "celebration",
+      "gift"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:22:06.387Z",
+    "updatedAt": "2026-06-25T09:31:04.979Z",
     "shortDescription": {
       "tr": "Pomerol'ün kalbinden gelen bu görkemli Merlot, yoğun gövdesi ve güçlü tanen yapısıyla damakta derin bir iz bırakıyor.",
       "en": "A majestic Merlot from the heart of Pomerol, offering a deep experience with its intense body and powerful tannic structure."
@@ -34447,11 +34527,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:22:15.176Z",
+    "updatedAt": "2026-06-25T09:31:13.836Z",
     "shortDescription": {
       "tr": "Bordeaux'nun kalbinden gelen bu sofistike Saint-Estèphe, güçlü yapısı ve ipeksi dokusuyla damakta unutulmaz bir iz bırakıyor.",
       "en": "A sophisticated Saint-Estèphe from the heart of Bordeaux, leaving an unforgettable impression with its powerful structure and silky texture."
@@ -34479,11 +34564,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:22:25.174Z",
+    "updatedAt": "2026-06-25T09:31:22.580Z",
     "shortDescription": {
       "tr": "Saint-Estèphe'in güçlü karakterini yansıtan, yoğun gövdeli ve prestijli bir Bordeaux klasiği.",
       "en": "A prestigious Bordeaux classic from Saint-Estèphe, offering a powerful body and sophisticated structure."
@@ -34511,11 +34601,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "gift",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:22:35.455Z",
+    "updatedAt": "2026-06-25T09:31:32.033Z",
     "shortDescription": {
       "tr": "Saint-Julien'in zarafetini ve gücünü yansıtan bu görkemli kupaj, derin yapısı ve yoğun tanenleriyle gerçek bir Bordeaux klasiği sunuyor.",
       "en": "Reflecting the elegance and power of Saint-Julien, this majestic blend offers a true Bordeaux classic with deep structure and intense tannins."
@@ -34543,11 +34638,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "premium",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:22:45.547Z",
+    "updatedAt": "2026-06-25T09:31:41.314Z",
     "shortDescription": {
       "tr": "Saint-Julien'in asaletini taşıyan bu yoğun gövdeli Bordeaux, güçlü tanenleri ve derin meyve notalarıyla damakta seçkin bir denge sunar.",
       "en": "A prestigious Saint-Julien classic with an intense body, offering a sophisticated balance of powerful tannins and deep fruit character."
@@ -34575,11 +34675,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "gift",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:22:54.249Z",
+    "updatedAt": "2026-06-25T09:31:49.394Z",
     "shortDescription": {
       "tr": "Saint-Julien'in zarafetini ve gücünü yansıtan bu prestijli Bordeaux, yoğun gövdesi ve derin aromalarıyla büyüleyici bir deneyim sunuyor.",
       "en": "Reflecting the elegance and power of Saint-Julien, this prestigious Bordeaux offers a captivating experience with its intense body and deep aromas."
@@ -34607,11 +34712,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "food",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:23:03.140Z",
+    "updatedAt": "2026-06-25T09:31:57.728Z",
     "shortDescription": {
       "tr": "Saint-Julien'in zarafetini ve gücünü yansıtan, yoğun gövdeli ve kadifemsi dokulu prestijli bir Bordeaux klasiği.",
       "en": "A prestigious Bordeaux classic from Saint-Julien, reflecting elegance and power with an intense body and velvety texture."
@@ -34639,11 +34749,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:23:11.786Z",
+    "updatedAt": "2026-06-25T09:32:06.737Z",
     "shortDescription": {
       "tr": "Saint-Julien’in asaletini yansıtan bu gövdeli Bordeaux, yoğun tanenleri ve derin yapısıyla gerçek bir klasik.",
       "en": "A powerful Bordeaux reflecting the nobility of Saint-Julien, offering an intense body and sophisticated, structured tannins."
@@ -34671,11 +34786,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "celebration",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:23:21.672Z",
+    "updatedAt": "2026-06-25T09:32:17.289Z",
     "shortDescription": {
       "tr": "Saint-Émilion'un kalbinden gelen bu prestijli organik şarap, yoğun gövdesi ve kusursuz tanen yapısıyla damakta unutulmaz bir zarafet bırakır.",
       "en": "A prestigious organic masterpiece from Saint-Émilion, offering an unforgettable elegance with its intense body and flawless tannic structure."
@@ -34703,11 +34823,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:23:30.332Z",
+    "updatedAt": "2026-06-25T09:32:26.099Z",
     "shortDescription": {
       "tr": "Bordeaux'nun kalbinden, Margaux'nun zarafetini ve gücünü yansıtan, yoğun gövdeli ve görkemli bir klasik.",
       "en": "A majestic classic from the heart of Bordeaux, reflecting the elegance and power of Margaux with an intense body."
@@ -34735,11 +34860,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "food",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:23:38.645Z",
+    "updatedAt": "2026-06-25T09:32:35.024Z",
     "shortDescription": {
       "tr": "Bordeaux’nun tarihi dokusunu yansıtan bu görkemli şarap, yoğun gövdesi ve güçlü tanen yapısıyla damakta unutulmaz bir derinlik sunar.",
       "en": "A majestic Bordeaux classic featuring an intense body and firm tannins, offering remarkable depth and a sophisticated character."
@@ -34767,11 +34897,16 @@
     "taste": "intense",
     "acidity": "intense",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "celebration",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:23:47.558Z",
+    "updatedAt": "2026-06-25T09:32:43.124Z",
     "shortDescription": {
       "tr": "Margaux'nun zarafetini ve gücünü yansıtan, yoğun tanenli ve derin gövdeli bir başyapıt. Bordeaux'nun en prestijli Cabernet-Merlot harmanı.",
       "en": "A masterpiece reflecting the elegance and power of Margaux, featuring intense tannins and a profound body. Bordeaux's most prestigious Cabernet-Merlot blend."
@@ -34799,11 +34934,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:23:56.403Z",
+    "updatedAt": "2026-06-25T09:32:51.572Z",
     "shortDescription": {
       "tr": "Margaux bölgesinin zarafetini ve gücünü yansıtan, yoğun yapılı ve sofistike bir Bordeaux başyapıtı.",
       "en": "A sophisticated Bordeaux masterpiece from Margaux, offering a powerful structure with elegant, intense tannins."
@@ -34831,11 +34971,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "celebration",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:24:05.256Z",
+    "updatedAt": "2026-06-25T09:33:00.867Z",
     "shortDescription": {
       "tr": "Margaux'nun asaletini yansıtan, yoğun gövdeli ve kadifemsi dokulu bir başyapıt. Koyu meyve katmanlarıyla damakta derin bir iz bırakır.",
       "en": "A masterpiece from Margaux, offering an intense body and velvety texture. It leaves a profound impression with layers of dark fruit."
@@ -34863,11 +35008,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:24:16.980Z",
+    "updatedAt": "2026-06-25T09:33:09.754Z",
     "shortDescription": {
       "tr": "Margaux bölgesinin asaletini ve yoğun gövdesini yansıtan, kadifemsi dokulu prestijli bir Bordeaux şaheseri.",
       "en": "A prestigious Bordeaux masterpiece from Margaux, reflecting nobility with an intense body and velvety texture."
@@ -34895,11 +35045,16 @@
     "taste": "intense",
     "acidity": "intense",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:24:26.264Z",
+    "updatedAt": "2026-06-25T09:33:19.395Z",
     "shortDescription": {
       "tr": "Château Margaux'nun zarafetini yansıtan bu ikonik kırmızı, yoğun yapısı ve derin aromalarıyla Bordeaux ihtişamını kadehinize taşıyor.",
       "en": "Reflecting the elegance of Château Margaux, this iconic red brings the grandeur of Bordeaux to your glass with its intense structure and deep aromas."
@@ -34927,11 +35082,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:24:35.788Z",
+    "updatedAt": "2026-06-25T09:33:27.789Z",
     "shortDescription": {
       "tr": "Pauillac’ın asaletini yansıtan bu yoğun gövdeli kırmızı, güçlü tanenleri ve derin yapısıyla gerçek bir Bordeaux klasiği sunuyor.",
       "en": "Reflecting the nobility of Pauillac, this full-bodied red offers a true Bordeaux classic with powerful tannins and a deep structure."
@@ -34959,11 +35119,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "celebration",
+      "premium"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:24:45.202Z",
+    "updatedAt": "2026-06-25T09:33:36.209Z",
     "shortDescription": {
       "tr": "Pauillac'ın prestijli bağlarından gelen, yoğun gövdeli ve derinlikli bir Bordeaux şaheseri.",
       "en": "A prestigious Bordeaux masterpiece from Pauillac, featuring an intense body and remarkable depth."
@@ -34991,11 +35156,16 @@
     "taste": "intense",
     "acidity": "intense",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:24:54.767Z",
+    "updatedAt": "2026-06-25T09:33:44.811Z",
     "shortDescription": {
       "tr": "Pauillac'ın asaletini yansıtan bu görkemli Bordeaux, güçlü gövdesi ve kadifemsi derinliğiyle damakta unutulmaz bir imza bırakıyor.",
       "en": "Reflecting the nobility of Pauillac, this magnificent Bordeaux leaves an unforgettable mark with its powerful body and velvety depth."
@@ -35023,11 +35193,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "premium",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:25:04.509Z",
+    "updatedAt": "2026-06-25T09:33:53.746Z",
     "shortDescription": {
       "tr": "Pauillac'ın kalbinden gelen bu görkemli şarap, Cabernet Sauvignon'un güçlü yapısını Merlot'un zarafetiyle birleştiren tam gövdeli bir Bordeaux klasiğidir.",
       "en": "A majestic Bordeaux classic from the heart of Pauillac, offering a full-bodied experience that perfectly balances the power of Cabernet Sauvignon with the elegance of Merlot."
@@ -35055,11 +35230,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "sommelier",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:25:13.808Z",
+    "updatedAt": "2026-06-25T09:34:01.924Z",
     "shortDescription": {
       "tr": "Pomerol'un kalbinden gelen bu görkemli Merlot, yoğun tanenleri ve derin gövdesiyle damakta unutulmaz bir iz bırakıyor.",
       "en": "A majestic Merlot from the heart of Pomerol, offering intense tannins and a profound body for an unforgettable experience."
@@ -35087,11 +35267,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "sommelier",
+      "celebration"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:25:23.978Z",
+    "updatedAt": "2026-06-25T09:34:10.913Z",
     "shortDescription": {
       "tr": "Pomerol'un kalbinden gelen bu görkemli kırmızı, yoğun gövdesi ve ipeksi gücüyle gerçek bir Bordeaux klasiğidir.",
       "en": "A majestic red from the heart of Pomerol, offering intense body and silky power—a true Bordeaux masterpiece."
@@ -35119,11 +35304,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "gift",
+      "celebration",
+      "premium",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:25:33.131Z",
+    "updatedAt": "2026-06-25T09:34:19.607Z",
     "shortDescription": {
       "tr": "Saint-Julien'in zarafetini ve gücünü yansıtan bu prestijli şarap, derin meyve notaları ve görkemli gövdesiyle büyüleyici bir deneyim sunuyor.",
       "en": "A prestigious wine reflecting the elegance and power of Saint-Julien, offering a captivating experience with deep fruit notes and a majestic body."
@@ -35151,11 +35341,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "gift",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:25:42.329Z",
+    "updatedAt": "2026-06-25T09:34:29.087Z",
     "shortDescription": {
       "tr": "Saint-Julien’in asaletini yansıtan, yoğun gövdeli ve güçlü tanenli, gerçek bir Bordeaux klasiği.",
       "en": "A true Bordeaux classic reflecting the nobility of Saint-Julien, with an intense body and powerful tannins."
@@ -35183,11 +35378,16 @@
     "taste": "intense",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:25:50.446Z",
+    "updatedAt": "2026-06-25T09:34:36.730Z",
     "shortDescription": {
       "tr": "Dünyanın en prestijli tatlı şarabı; bal kıvamında bir doku ile tazeleyici asiditenin kusursuz, efsanevi buluşması.",
       "en": "The world's most prestigious dessert wine; a legendary harmony of honeyed richness and vibrant, refreshing acidity."
@@ -35215,11 +35415,16 @@
     "taste": "intense",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "premium",
+      "sommelier",
+      "gift"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:25:58.974Z",
+    "updatedAt": "2026-06-25T09:34:45.715Z",
     "shortDescription": {
       "tr": "Sauternes'in güneşini kadehinize taşıyan bu efsanevi tatlı şarap, yoğun gövdesi ve canlı asiditesiyle damakta unutulmaz bir iz bırakır.",
       "en": "A legendary sweet wine bringing the Sauternes sun to your glass, leaving an unforgettable mark with its intense body and vibrant acidity."
@@ -35247,11 +35452,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "sommelier",
+      "celebration"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:26:09.828Z",
+    "updatedAt": "2026-06-25T09:34:54.616Z",
     "shortDescription": {
       "tr": "Saint-Émilion'un kalbinden gelen bu görkemli kırmızı, yoğun tanenli yapısı ve güçlü gövdesiyle damakta sofistike bir iz bırakır.",
       "en": "A majestic red from the heart of Saint-Émilion, leaving a sophisticated impression with its intense tannins and powerful body."
@@ -35279,11 +35489,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:26:19.660Z",
+    "updatedAt": "2026-06-25T09:35:04.856Z",
     "shortDescription": {
       "tr": "Saint-Émilion'un kalbinden gelen bu görkemli Merlot, yoğun yapısı ve kadifemsi dokusuyla damakta unutulmaz bir güç sergiliyor.",
       "en": "Coming from the heart of Saint-Émilion, this majestic Merlot displays an unforgettable power on the palate with its intense structure and velvety texture."
@@ -35311,11 +35526,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "food",
+      "gift",
+      "celebration"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:26:28.915Z",
+    "updatedAt": "2026-06-25T09:35:14.225Z",
     "shortDescription": {
       "tr": "Saint-Émilion'un kalbinden gelen bu prestijli Bordeaux, güçlü gövdesi ve olgun yapısıyla damakta ipeksi bir zarafet sunuyor.",
       "en": "A prestigious Bordeaux classic from the heart of Saint-Émilion, offering a powerful body and a refined, elegant finish."
@@ -35343,11 +35563,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "gift",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:26:38.424Z",
+    "updatedAt": "2026-06-25T09:35:23.464Z",
     "shortDescription": {
       "tr": "Pauillac'ın kalbinden gelen bu prestijli organik şarap, güçlü gövdesi ve asil karakteriyle gerçek bir Bordeaux klasiği sunuyor.",
       "en": "A prestigious organic masterpiece from the heart of Pauillac, offering a true Bordeaux classic with its powerful body and noble character."
@@ -35375,11 +35600,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:26:47.019Z",
+    "updatedAt": "2026-06-25T09:35:33.109Z",
     "shortDescription": {
       "tr": "Mendoza’nın güneşli bağlarından gelen, fıçı dokunuşuyla zenginleşmiş, dengeli ve ferahlatıcı bir Chardonnay.",
       "en": "A balanced and refreshing Chardonnay from Mendoza, enriched with a touch of oak and vibrant fruit notes."
@@ -35407,11 +35637,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "light",
+      "daily",
+      "food",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:26:55.535Z",
+    "updatedAt": "2026-06-25T09:35:41.829Z",
     "shortDescription": {
       "tr": "Bordeaux'nun kalbinden gelen bu tazeleyici roze, meyvemsi notaları ve zarif dokusuyla her yudumda yaz ferahlığı sunar.",
       "en": "A refreshing rosé from the heart of Bordeaux, offering crisp berry notes and an elegant finish in every sip."
@@ -35439,11 +35674,16 @@
     "taste": "medium",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "premium",
+      "gift",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:27:04.552Z",
+    "updatedAt": "2026-06-25T09:35:50.292Z",
     "shortDescription": {
       "tr": "Loire Vadisi'nin eşsiz tütsülü ve mineral karakterini yansıtan, yüksek asiditeli ve ferahlatıcı bir başyapıt.",
       "en": "A refreshing masterpiece from the Loire Valley, reflecting a unique smoky and mineral character with vibrant acidity."
@@ -35471,11 +35711,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "value",
+      "food",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:27:14.310Z",
+    "updatedAt": "2026-06-25T09:35:58.235Z",
     "shortDescription": {
       "tr": "Güney Fransa'nın güneşini yansıtan bu olgun Chardonnay, dengeli gövdesi ve zarif meyve notalarıyla ferahlatıcı bir şıklık sunuyor.",
       "en": "Reflecting the sun of Southern France, this mature Chardonnay offers a refreshing elegance with its balanced body and delicate fruit notes."
@@ -35503,11 +35748,16 @@
     "taste": "medium",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "celebration",
+      "food",
+      "light",
+      "gift"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:27:23.796Z",
+    "updatedAt": "2026-06-25T09:36:08.727Z",
     "shortDescription": {
       "tr": "Bourgogne'un kalbinden gelen bu zarif köpüklü şarap, canlı asiditesi ve ince kabarcıklarıyla her anınıza seçkin bir ferahlık katar.",
       "en": "Crafted in the heart of Burgundy, this elegant sparkling wine offers vibrant acidity and fine bubbles for a truly sophisticated experience."
@@ -35535,11 +35785,16 @@
     "taste": "medium",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "celebration",
+      "romantic",
+      "food",
+      "light"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:27:33.164Z",
+    "updatedAt": "2026-06-25T09:36:18.477Z",
     "shortDescription": {
       "tr": "Bordeaux'nun zarafetini taşıyan bu köpüklü şarap, canlı asiditesi ve kalıcı kabarcıklarıyla her anınıza ferahlatıcı bir şıklık katar.",
       "en": "Embodying the elegance of Bordeaux, this sparkling wine adds a refreshing sophistication to any moment with its vibrant acidity and persistent bubbles."
@@ -35588,11 +35843,16 @@
     "taste": "medium",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "light",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:27:42.960Z",
+    "updatedAt": "2026-06-25T09:36:28.578Z",
     "shortDescription": {
       "tr": "Trakya'nın serin rüzgarlarını yansıtan, canlı asiditesi ve ferahlatıcı karakteriyle damakta iz bırakan bir Sauvignon Blanc.",
       "en": "A crisp Sauvignon Blanc reflecting the cool Thracian breeze, leaving a lasting impression with its vibrant acidity."
@@ -35620,11 +35880,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "beginner",
+      "light",
+      "romantic",
+      "daily"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:27:51.842Z",
+    "updatedAt": "2026-06-25T09:36:39.536Z",
     "shortDescription": {
       "tr": "Edirne'nin yerel Papazkarası üzümlerinden gelen yoğun tatlılık ve iştah açıcı meyve notalarıyla dolu, ferahlatıcı bir deneyim.",
       "en": "A refreshing experience full of intense sweetness and appetizing fruit notes from Edirne's local Papazkarası grapes."
@@ -35652,11 +35917,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:28:02.082Z",
+    "updatedAt": "2026-06-25T09:36:48.610Z",
     "shortDescription": {
       "tr": "Avustralya'nın güneşli bağlarından gelen bu dengeli Chardonnay, canlı meyve notalarıyla ferahlatıcı ve yumuşak bir içim sunar.",
       "en": "Hailing from sunny Australian vineyards, this balanced Chardonnay offers a refreshing and smooth experience with vibrant fruit notes."
@@ -35682,11 +35952,15 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "light",
+      "beginner",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:28:11.996Z",
+    "updatedAt": "2026-06-25T09:36:58.384Z",
     "name": "ED KNOWS SWEET WHITE 75CL",
     "brand": "ED",
     "country": "MD",
@@ -35721,11 +35995,15 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "romantic",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:28:21.224Z",
+    "updatedAt": "2026-06-25T09:37:08.478Z",
     "shortDescription": {
       "tr": "Japonya'nın geleneksel Ume meyvelerinden gelen yoğun meyvemsi tat ve ferahlatıcı asiditeyle egzotik bir serüven.",
       "en": "An exotic adventure featuring intense fruity flavors and refreshing acidity from traditional Japanese Ume plums."
@@ -35752,11 +36030,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "value",
+      "daily"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:28:31.202Z",
+    "updatedAt": "2026-06-25T09:37:19.397Z",
     "shortDescription": {
       "tr": "Stefan Voda teruarından gelen, taze meyve notaları ve ipeksi dokusuyla büyüleyen zarif bir Chardonnay.",
       "en": "An elegant Chardonnay from the Stefan Voda terroir, enchanting with fresh fruit notes and a silky texture."
@@ -35783,11 +36066,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "gift",
+      "light",
+      "daily"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:28:40.532Z",
+    "updatedAt": "2026-06-25T09:37:30.043Z",
     "shortDescription": {
       "tr": "Stefan Voda'nın serin gecelerinde hasat edilen bu taze Chardonnay, tropikal meyve notaları ve canlı asiditesiyle ferahlatıcı bir ziyafet sunar.",
       "en": "Harvested during the cool nights of Stefan Voda, this fresh Chardonnay offers a refreshing feast with tropical fruit notes and vibrant acidity."
@@ -35814,11 +36102,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "light",
+      "daily",
+      "food",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:28:49.404Z",
+    "updatedAt": "2026-06-25T09:37:39.297Z",
     "shortDescription": {
       "tr": "Moldovya’nın zarif doğasını yansıtan, tazeleyici ve hafif bir beyaz şarap. Canlı asiditesi ve ipeksi dokusuyla serinletici bir deneyim sunar.",
       "en": "A refreshing and light white wine reflecting the elegant nature of Moldova. Offers a crisp experience with vibrant acidity and a silky texture."
@@ -35845,11 +36138,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "food",
+      "gift"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:29:00.869Z",
+    "updatedAt": "2026-06-25T09:37:47.657Z",
     "shortDescription": {
       "tr": "Geleneksel yöntemlerle üretilen bu büyüleyici turuncu şarap, Viorica üzümünün egzotik aromalarını yoğun ve karakteristik bir gövdeyle sunuyor.",
       "en": "Crafted with traditional methods, this captivating orange wine offers exotic aromas of the Viorica grape with an intense and characteristic body."
@@ -35876,11 +36174,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "sommelier",
+      "gift",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:29:10.423Z",
+    "updatedAt": "2026-06-25T09:37:57.360Z",
     "shortDescription": {
       "tr": "Saperavi üzümünün vahşi ve güçlü karakterini yansıtan, yoğun gövdeli ve derin bir Moldova şaheseri.",
       "en": "A full-bodied Moldovan masterpiece showcasing the wild and powerful character of Saperavi grapes."
@@ -35907,11 +36210,16 @@
     "taste": "medium",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "celebration",
+      "premium",
+      "sommelier",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:29:19.241Z",
+    "updatedAt": "2026-06-25T09:38:07.122Z",
     "shortDescription": {
       "tr": "Moldova'nın Stefan Voda bölgesinden gelen bu seçkin köpüklü şarap, zarif kabarcıkları ve canlı asiditesiyle her anı bir kutlamaya dönüştürüyor.",
       "en": "This elite sparkling wine from Moldova's Stefan Voda region transforms every moment into a celebration with its elegant bubbles and vibrant acidity."
@@ -35938,11 +36246,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "light",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:29:29.178Z",
+    "updatedAt": "2026-06-25T09:38:15.455Z",
     "shortDescription": {
       "tr": "Gürcistan'ın köklü şarap geleneğinden gelen, taze çiçeksi notalara sahip zarif ve dengeli bir beyaz.",
       "en": "An elegant and balanced white from Georgia's ancient winemaking tradition, featuring fresh floral notes and a crisp finish."
@@ -35969,11 +36282,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "romantic",
+      "light",
+      "beginner",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:29:37.607Z",
+    "updatedAt": "2026-06-25T09:38:24.912Z",
     "name": "SAVALAN SUNSET ROSE WINE 75 CL",
     "brand": "SAVALAN",
     "country": "AZ",
@@ -36007,11 +36325,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "food",
+      "beginner",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:29:47.784Z",
+    "updatedAt": "2026-06-25T09:38:34.127Z",
     "name": "SAVALAN SUNSET RED WINE 75 CL",
     "brand": "SAVALAN",
     "country": "AZ",
@@ -36045,11 +36368,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "beginner",
+      "light",
+      "food",
+      "daily"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:29:58.977Z",
+    "updatedAt": "2026-06-25T09:38:43.190Z",
     "name": "SAVALAN SUNSET WHITE WINE 75 CL",
     "brand": "SAVALAN",
     "country": "AZ",
@@ -36084,11 +36412,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "food",
+      "sommelier"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:30:08.796Z",
+    "updatedAt": "2026-06-25T09:38:51.271Z",
     "shortDescription": {
       "tr": "Bozcaada'nın rüzgarlarıyla olgunlaşan, güçlü gövdeli ve derin karakterli bir şaheser.",
       "en": "A full-bodied masterpiece with a deep character, shaped by the unique winds of Bozcaada."
@@ -36116,11 +36449,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:30:19.012Z",
+    "updatedAt": "2026-06-25T09:39:00.643Z",
     "shortDescription": {
       "tr": "Güney Fransa'nın ipeksi dokusunu yansıtan bu Merlot, dolgun meyve aromalarıyla dengeli ve son derece keyifli bir içim sunar.",
       "en": "Reflecting the silky texture of Southern France, this Merlot offers a balanced and delightful experience with rich fruit aromas."
@@ -36148,11 +36486,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "beginner",
+      "light",
+      "value",
+      "daily"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:30:28.468Z",
+    "updatedAt": "2026-06-25T09:39:09.666Z",
     "shortDescription": {
       "tr": "Valencia'nın güneşini yansıtan bu Moscato, yoğun tatlılığı ve ferahlatıcı çiçeksi notalarıyla iştah kabartıcı bir meyve şöleni sunuyor.",
       "en": "Reflecting the Valencia sun, this Moscato offers an appetizing fruit feast with its intense sweetness and refreshing floral notes."
@@ -36180,11 +36523,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:30:37.134Z",
+    "updatedAt": "2026-06-25T09:39:19.179Z",
     "shortDescription": {
       "tr": "İtalya'nın kalbinden gelen bu zarif Sangiovese, canlı kırmızı meyve notaları ve dengeli dokusuyla iştah kabartan bir klasik.",
       "en": "A classic Italian Sangiovese from Rubicone, offering vibrant red fruit notes and a perfectly balanced, elegant finish."
@@ -36212,11 +36560,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "food",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:30:46.885Z",
+    "updatedAt": "2026-06-25T09:39:28.269Z",
     "shortDescription": {
       "tr": "İspanya'nın kalbinden gelen bu organik Tempranillo, taze kırmızı meyve aromaları ve dengeli yapısıyla pürüzsüz bir içim keyfi sunar.",
       "en": "Coming from the heart of Spain, this organic Tempranillo offers a smooth drinking experience with fresh red fruit aromas and a balanced structure."
@@ -36244,11 +36597,15 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "beginner",
+      "light",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:30:57.294Z",
+    "updatedAt": "2026-06-25T09:39:38.054Z",
     "shortDescription": {
       "tr": "Castilla'nın güneşini kadehlerinize taşıyan bu tatlı ve ipeksi kırmızı, meyvemsi karakteriyle her yudumda keyif veriyor.",
       "en": "A lusciously sweet and silky red from the heart of Castilla, offering a delightful fruit-forward experience in every sip."
@@ -36276,11 +36633,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "beginner",
+      "light",
+      "daily",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:31:07.135Z",
+    "updatedAt": "2026-06-25T09:39:46.873Z",
     "shortDescription": {
       "tr": "Rheinhessen'in güneşli bağlarından gelen bu yoğun tatlı ve ferahlatıcı beyaz şarap, her yudumda adeta bir meyve şöleni sunuyor.",
       "en": "An intensely sweet and refreshing white wine from the sunny vineyards of Rheinhessen, offering a true fruit festival in every sip."
@@ -36308,11 +36670,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:31:16.775Z",
+    "updatedAt": "2026-06-25T09:39:55.664Z",
     "shortDescription": {
       "tr": "Napa Vadisi'nin bu efsanevi şarabı, zengin ve kadifemsi dokusuyla damakta tam gövdeli, görkemli bir derinlik sunar.",
       "en": "This legendary Napa Valley wine offers a rich and velvety texture with a full-bodied, majestic depth on the palate."
@@ -36340,11 +36707,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "premium",
+      "gift",
+      "celebration",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:31:26.086Z",
+    "updatedAt": "2026-06-25T09:40:09.144Z",
     "shortDescription": {
       "tr": "Napa Vadisi'nin efsanevi gücünü ve kadifemsi dokusunu her yudumda hissettiren, dolgun ve görkemli bir klasik.",
       "en": "A legendary Napa Valley classic, delivering powerful richness and a velvety texture in every sip."
@@ -36372,11 +36744,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "celebration",
+      "light",
+      "beginner",
+      "daily"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:31:35.248Z",
+    "updatedAt": "2026-06-25T09:40:18.089Z",
     "shortDescription": {
       "tr": "Veneto’nun taze çiçek ve meyve notalarıyla dolu, canlı ve ferahlatıcı İtalyan klasiği. Her kadehte zarif kabarcıklar ve yumuşak bir içim sunar.",
       "en": "A lively and refreshing Italian classic from Veneto, bursting with fresh floral and fruity notes. Offers elegant bubbles and a smooth finish in every glass."
@@ -36404,11 +36781,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:31:44.152Z",
+    "updatedAt": "2026-06-25T09:40:27.122Z",
     "shortDescription": {
       "tr": "Garda Gölü kıyılarından gelen bu Merlot, yumuşak içimi ve dengeli yapısıyla İtalyan zarafetini kadehinize taşıyor.",
       "en": "Hailing from the shores of Lake Garda, this Merlot brings Italian elegance to your glass with its smooth finish and balanced structure."
@@ -36436,11 +36818,16 @@
     "taste": "intense",
     "acidity": "medium",
     "tannin": "intense",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:31:53.652Z",
+    "updatedAt": "2026-06-25T09:40:36.760Z",
     "shortDescription": {
       "tr": "Şili'nin kalbinden gelen bu gövdeli ve karakteristik kırmızı, yoğun tanenli yapısıyla damağınızda unutulmaz bir iz bırakır.",
       "en": "A bold and characteristic red from the heart of Chile, leaving an unforgettable impression with its intense tannins."
@@ -36468,11 +36855,16 @@
     "taste": "light",
     "acidity": "intense",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "light",
+      "value",
+      "food"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:32:03.112Z",
+    "updatedAt": "2026-06-25T09:40:44.952Z",
     "shortDescription": {
       "tr": "Şili'nin kalbinden gelen bu efsanevi beyaz, yüksek asiditesi ve ferahlatıcı hafif gövdesiyle damakta eşsiz bir tazelik sunar.",
       "en": "A legendary white from the heart of Chile, offering unique freshness on the palate with its vibrant acidity and refreshing light body."
@@ -36500,11 +36892,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "light",
+      "beginner",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:32:11.626Z",
+    "updatedAt": "2026-06-25T09:40:53.286Z",
     "shortDescription": {
       "tr": "Garda Gölü'nün esintisini kadehinize taşıyan bu Pinot Grigio, hafif gövdesi ve canlı asiditesiyle son derece ferahlatıcı.",
       "en": "Bringing the breeze of Lake Garda to your glass, this Pinot Grigio is incredibly refreshing with its light body and vibrant acidity."
@@ -36532,11 +36929,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "light",
+      "daily",
+      "beginner",
+      "value"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:32:20.881Z",
+    "updatedAt": "2026-06-25T09:41:01.954Z",
     "shortDescription": {
       "tr": "İspanya'nın güneşli Castilla bağlarından gelen, taze meyve notalarıyla ferahlatıcı ve hafif içimli bir yaz rüyası.",
       "en": "A refreshing and light-bodied summer dream from Spain's sunny Castilla vineyards, bursting with fresh fruit notes."
@@ -36564,11 +36966,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "value",
+      "food",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:32:30.994Z",
+    "updatedAt": "2026-06-25T09:41:10.094Z",
     "shortDescription": {
       "tr": "İspanya'nın Castilla bölgesinden gelen bu dengeli Tempranillo, meyvemsi karakteri ve yumuşak içimiyle her yudumda güneşin sıcaklığını hissettirir.",
       "en": "A balanced Tempranillo from the heart of Castilla, offering a smooth finish and a fruity character that captures the Spanish sun in every sip."
@@ -36596,11 +37003,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "daily",
+      "light",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:32:41.164Z",
+    "updatedAt": "2026-06-25T09:41:18.442Z",
     "shortDescription": {
       "tr": "İspanya’nın güneşli Castilla bağlarından gelen bu hafif ve ferahlatıcı beyaz şarap, her yudumda taze bir canlılık sunar.",
       "en": "A light and refreshing white wine from the sunny vineyards of Castilla, Spain, offering crisp vitality in every sip."
@@ -36628,11 +37040,16 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "light",
+      "daily",
+      "value",
+      "beginner"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:32:50.663Z",
+    "updatedAt": "2026-06-25T09:41:27.555Z",
     "shortDescription": {
       "tr": "Gelibolu Yarımadası'nın özgün Karasakız üzümlerinden gelen, tazeleyici ve yumuşak içimli bir kırmızı.",
       "en": "A refreshing and smooth red wine crafted from the unique Karasakız grapes of the Gallipoli Peninsula."
@@ -36660,11 +37077,16 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [],
+    "usagePurposes": [
+      "food",
+      "premium",
+      "sommelier",
+      "gift"
+    ],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-24T09:33:00.685Z",
+    "updatedAt": "2026-06-25T09:41:36.166Z",
     "shortDescription": {
       "tr": "Gelibolu'nun yerli Karasakız üzümünden üretilen, meşe fıçılarda dinlendirilmiş zarif ve dengeli bir kırmızı.",
       "en": "An elegant and balanced red wine crafted from native Karasakız grapes and aged in oak barrels."

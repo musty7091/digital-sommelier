@@ -229,6 +229,17 @@ export function FlowProvider({ children }) {
     setPhase('results')
   }
 
+  // Sesli arama: ayrıştırılmış seçimleri uygula ve doğrudan sonuç ekranına geç
+  const applyVoiceSelections = (partial = {}) => {
+    const next = { ...emptySelections, ...partial }
+    logEvent('voice_search', { selections: next })
+    setSelections(next)
+    setResults(recommend(products, next, recOpts()))
+    setDetailProduct(null)
+    setDetailOrigin('results')
+    setPhase('results')
+  }
+
   const openDetail = (product, origin = 'results') => {
     if (!product) return
 
@@ -276,6 +287,7 @@ export function FlowProvider({ children }) {
     finishNow,
     goBackStep,
     quickRecommend,
+    applyVoiceSelections,
     openDetail,
     closeDetail,
     wakeFromIdle,
