@@ -240,7 +240,7 @@ function LocalProductImage({ product, imageClassName, fallbackClassName }) {
 }
 
 export default function DetailScreen() {
-  const { detailProduct, closeDetail, currency, reset } = useFlow()
+  const { detailProduct, closeDetail, currency, reset, settings } = useFlow()
   const { t, lang } = useLanguage()
   const [showMap, setShowMap] = useState(false)
 
@@ -341,15 +341,16 @@ export default function DetailScreen() {
                 {formatPrice(product.price)} {currency}
               </span>
 
-              {stock > 0 ? (
-                <span className="rounded-full border border-gold-500/50 bg-gold-900/20 px-2 py-1 text-[10px] md:text-xs font-medium text-gold-400">
-                  {lang === 'en' ? 'In Stock' : 'Stokta Var'}
-                </span>
-              ) : (
-                <span className="rounded-full border border-red-500/50 bg-red-900/20 px-2 py-1 text-[10px] md:text-xs font-medium text-red-400">
-                  {lang === 'en' ? 'Out of Stock' : 'Tükendi'}
-                </span>
-              )}
+              {settings?.showStock !== false &&
+                (stock > 0 ? (
+                  <span className="rounded-full border border-gold-500/50 bg-gold-900/20 px-2 py-1 text-[10px] md:text-xs font-medium text-gold-400">
+                    {lang === 'en' ? 'In Stock' : 'Stokta Var'}
+                  </span>
+                ) : (
+                  <span className="rounded-full border border-red-500/50 bg-red-900/20 px-2 py-1 text-[10px] md:text-xs font-medium text-red-400">
+                    {lang === 'en' ? 'Out of Stock' : 'Tükendi'}
+                  </span>
+                ))}
             </div>
 
             {shelfText && (

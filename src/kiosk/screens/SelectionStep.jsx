@@ -6,13 +6,14 @@ import LivePreview from '../components/LivePreview'
 import BackButton from '../components/BackButton'
 
 export default function SelectionStep() {
-  const { products, steps, stepIndex, selections, chooseOption, goBackStep, finishNow } = useFlow()
+  const { products, steps, stepIndex, selections, chooseOption, goBackStep, finishNow, settings } = useFlow()
   const { t, tl, lang } = useLanguage()
   const step = steps[stepIndex]
 
   if (!step) return null
 
-  const currentCount = filterProducts(products, selections).length
+  const stockOpts = { hideOutOfStock: settings?.hideOutOfStock !== false }
+  const currentCount = filterProducts(products, selections, stockOpts).length
   const showExtras = stepIndex >= 1 // tercih şeridi + buton 2. adımdan itibaren
 
   const n = step.options.length
@@ -65,7 +66,7 @@ export default function SelectionStep() {
             }}
           >
             {step.options.map((opt, i) => {
-              const count = filterProducts(products, { ...selections, [step.key]: opt.value }).length
+              const count = filterProducts(products, { ...selections, [step.key]: opt.value }, stockOpts).length
               const isAny = opt.value === null
               return (
                 <SelectionCard

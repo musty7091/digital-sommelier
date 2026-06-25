@@ -41,13 +41,13 @@ function PreviewProductImage({ product, compact }) {
 }
 
 export default function LivePreview({ compact = false }) {
-  const { products, selections, openDetail } = useFlow()
+  const { products, selections, openDetail, settings } = useFlow()
   const { t } = useLanguage()
 
   if (!products.length) return null
 
   // Seçimlere uyan ürünler — "en çok tercih edilenler" önce
-  const matches = filterProducts(products, selections)
+  const matches = filterProducts(products, selections, { hideOutOfStock: settings?.hideOutOfStock !== false })
     .slice()
     .sort((a, b) => getPreferenceCount(b) - getPreferenceCount(a))
 

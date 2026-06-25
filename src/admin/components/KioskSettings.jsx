@@ -114,6 +114,7 @@ export default function KioskSettings() {
   const [resultCount, setResultCount] = useState(5)
   const [lowStockThreshold, setLowStockThreshold] = useState(10)
   const [hideOutOfStock, setHideOutOfStock] = useState(true)
+  const [showStock, setShowStock] = useState(true)
 
   const [scanEnabled, setScanEnabled] = useState(true)
   const [analyticsEnabled, setAnalyticsEnabled] = useState(true)
@@ -163,6 +164,7 @@ export default function KioskSettings() {
         setResultCount(settings.resultCount ?? settings.maxResults ?? 5)
         setLowStockThreshold(settings.lowStockThreshold ?? 10)
         setHideOutOfStock(settings.hideOutOfStock !== false)
+        setShowStock(settings.showStock !== false)
 
         setScanEnabled(settings.scanEnabled !== false)
         setAnalyticsEnabled(settings.analyticsEnabled !== false)
@@ -330,6 +332,7 @@ export default function KioskSettings() {
         maxResults: Math.min(12, Math.max(1, cleanNumber(resultCount, 5))),
         lowStockThreshold: Math.max(0, cleanNumber(lowStockThreshold, 0)),
         hideOutOfStock: Boolean(hideOutOfStock),
+        showStock: Boolean(showStock),
 
         scanEnabled: Boolean(scanEnabled),
         analyticsEnabled: Boolean(analyticsEnabled),
@@ -567,12 +570,18 @@ export default function KioskSettings() {
           </div>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 space-y-3">
           <Toggle
             checked={hideOutOfStock}
             onChange={setHideOutOfStock}
             label="Stokta olmayan ürünleri gizle"
             hint="Açıkken stoğu biten şaraplar önerilerde ve sonuçlarda görünmez."
+          />
+          <Toggle
+            checked={showStock}
+            onChange={setShowStock}
+            label="Üründe stok durumunu göster"
+            hint="Kapalıyken kartlarda ve detayda “Stokta Var / az kaldı / tükendi” rozetleri gizlenir."
           />
         </div>
       </Section>

@@ -147,7 +147,7 @@ function ProductImage({ product, imageClassName, fallbackClassName }) {
 
 export default function ProductCard({ product, onClick }) {
   const { t, lang } = useLanguage()
-  const { currency, reset } = useFlow()
+  const { currency, reset, settings } = useFlow()
   const [showMap, setShowMap] = useState(false)
   const hasLocation = Boolean(product.block && (product.shelf || product.shelf === 0))
   const labels = CARD_LABELS[lang] || CARD_LABELS.tr
@@ -233,7 +233,7 @@ export default function ProductCard({ product, onClick }) {
               <span className="text-2xl font-semibold text-gold-400 sm:text-3xl">
                 {formatPrice(product.price)} {currency}
               </span>
-              <StockBadge stock={product.stock} />
+              {settings?.showStock !== false && <StockBadge stock={product.stock} />}
             </div>
 
             <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -345,7 +345,7 @@ export default function ProductCard({ product, onClick }) {
       </div>
 
       <div className="mt-2 w-full flex flex-col items-center gap-1">
-        <StockBadge stock={product.stock} />
+        {settings?.showStock !== false && <StockBadge stock={product.stock} />}
         <p className="text-[10px] sm:text-xs font-medium text-emerald-400/80 truncate w-full px-1" title={shelfShort}>
           {shelfShort}
         </p>

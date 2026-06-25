@@ -257,10 +257,8 @@ function matchesPrice(product, selectedPriceRange) {
 function matchesPurpose(product, selectedPurpose) {
   if (!selectedPurpose) return true
 
-  const selected = normalizePurpose(selectedPurpose)
   const purposes = normalizePurposeList(product?.usagePurposes)
-
-  return purposes.includes(selected)
+  return purposes.includes(normalizePurpose(selectedPurpose))
 }
 
 function matchesTaste(product, selectedTaste) {

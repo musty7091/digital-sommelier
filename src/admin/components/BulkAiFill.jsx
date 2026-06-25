@@ -1,11 +1,15 @@
 import { useMemo, useRef, useState } from 'react'
 import { saveProduct } from '../../firebase/products'
-import { COLORS, LEVELS, COUNTRIES, USAGE_PURPOSES } from '../../types/product.schema'
+import { COLORS, LEVELS, COUNTRIES, USAGE_PURPOSES, USAGE_PURPOSE_LABELS } from '../../types/product.schema'
 
 const REQUIRED = ['color', 'body', 'sweetness']
 
 function isMissing(p) {
-  return REQUIRED.some((f) => !p?.[f]) || !p?.country
+  return (
+    REQUIRED.some((f) => !p?.[f]) ||
+    !p?.country ||
+    !(Array.isArray(p?.usagePurposes) && p.usagePurposes.length)
+  )
 }
 
 function cleanText(v) {
@@ -23,6 +27,13 @@ function hasDescription(p) {
 }
 function isMissingDesc(p) {
   return !hasDescription(p)
+}
+
+function hasPurposes(p) {
+  return Array.isArray(p?.usagePurposes) && p.usagePurposes.length > 0
+}
+function isMissingPurpose(p) {
+  return !hasPurposes(p)
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -77,12 +88,12 @@ function buildPatch(raw, product) {
     : []
 
   // Yalnızca DOLU ve ürün için EKSİK olan alanları yaz (mevcut iyi veriyi ezme)
-  if (color) patch.color = color
-  if (country) patch.country = country
-  if (body) { patch.body = body; patch.taste = body }
-  if (sweetness) patch.sweetness = sweetness
-  if (acidity) patch.acidity = acidity
-  if (tannin) patch.tannin = tannin
+  if (color && !product.color) patch.color = color
+  if (country && !product.country) patch.country = country
+  if (body && !product.body) { patch.body = body; patch.taste = body }
+  if (sweetness && !product.sweetness) patch.sweetness = sweetness
+  if (acidity && !product.acidity) patch.acidity = acidity
+  if (tannin && !product.tannin) patch.tannin = tannin
   if (region && !product.region) patch.region = region
   if (grape && !product.grape) patch.grape = grape
   if (purposes.length && (!Array.isArray(product.usagePurposes) || !product.usagePurposes.length)) {
@@ -173,6 +184,36 @@ function buildDescPatch(raw) {
   }
 }
 
+function purposePrompt(product) {
+  const attrs = `renk=${product.color || '?'}, ülke=${product.country || '?'}, bölge=${product.region || '?'}, üzüm=${product.grape || '?'}, gövde=${product.body || '?'}, tatlılık=${product.sweetness || '?'}, asidite=${product.acidity || '?'}, tanen=${product.tannin || '?'}`
+  return `Sen uzman bir şarap sommelierisin. Aşağıdaki şarap için EN UYGUN kullanım amaçlarını seç.
+Şarap: "${product.name || ''}" — Marka: "${product.brand || ''}"
+Bilinen özellikler: ${attrs}
+
+Şu anahtarlardan UYGUN OLANLARI (2-4 tane, en isabetlileri) bir DİZİ olarak ver:
+- food: yemek eşliği / yemekle
+- daily: günlük, sıradan tüketim
+- gift: hediyelik
+- celebration: kutlama / özel gün
+- romantic: romantik
+- premium: premium / üst segment
+- light: hafif içim
+- value: uygun fiyat / iyi değer
+- beginner: yeni başlayanlar için
+- sommelier: sommelier seçimi / iddialı
+
+SADECE şu JSON'u döndür, ek metin yazma:
+{"usagePurposes":[]}`
+}
+
+function buildPurposePatch(raw) {
+  const purposes = Array.isArray(raw.usagePurposes)
+    ? [...new Set(raw.usagePurposes.map((p) => fold(p).replace(/[^a-z]/g, '')).filter((p) => USAGE_PURPOSES.includes(p)))]
+    : []
+  if (!purposes.length) return {}
+  return { usagePurposes: purposes }
+}
+
 async function callGemini(prompt, apiKey, model) {
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`,
@@ -207,7 +248,7 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
   const [stats, setStats] = useState({ done: 0, failed: 0, skipped: 0 })
   const [log, setLog] = useState([])
   const [fatal, setFatal] = useState('')
-  const [mode, setMode] = useState('attributes') // attributes | descriptions
+  const [mode, setMode] = useState('attributes') // attributes | descriptions | purposes
 
   const runningRef = useRef(false)
   const pausedRef = useRef(false)
@@ -215,7 +256,13 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
   const queue = useMemo(
     () =>
       (products || []).filter((p) =>
-        onlyMissing ? (mode === 'descriptions' ? isMissingDesc(p) : isMissing(p)) : true,
+        onlyMissing
+          ? mode === 'descriptions'
+            ? isMissingDesc(p)
+            : mode === 'purposes'
+              ? isMissingPurpose(p)
+              : isMissing(p)
+          : true,
       ),
     [products, onlyMissing, mode],
   )
@@ -262,7 +309,11 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
           return
         }
         try {
-          raw = await callGemini(mode === 'descriptions' ? descPrompt(p) : attrPrompt(p), apiKey, model)
+          raw = await callGemini(
+            mode === 'descriptions' ? descPrompt(p) : mode === 'purposes' ? purposePrompt(p) : attrPrompt(p),
+            apiKey,
+            model,
+          )
           lastErr = null
           consecutive429 = 0
           break
@@ -298,9 +349,23 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
         continue
       }
 
-      const patch = mode === 'descriptions' ? buildDescPatch(raw) : buildPatch(raw, p)
+      const patch =
+        mode === 'descriptions'
+          ? buildDescPatch(raw)
+          : mode === 'purposes'
+            ? buildPurposePatch(raw)
+            : buildPatch(raw, p)
       if (Object.keys(patch).length === 0) {
-        addLog({ name: p.name, kind: 'skip', text: mode === 'descriptions' ? 'açıklama üretilemedi' : 'doldurulacak alan bulunamadı' })
+        addLog({
+          name: p.name,
+          kind: 'skip',
+          text:
+            mode === 'descriptions'
+              ? 'açıklama üretilemedi'
+              : mode === 'purposes'
+                ? 'amaç belirlenemedi'
+                : 'doldurulacak alan bulunamadı',
+        })
         setStats((s) => ({ ...s, skipped: s.skipped + 1 }))
       } else {
         try {
@@ -308,7 +373,9 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
           const summary =
             mode === 'descriptions'
               ? cleanText(patch.shortDescriptionTr).slice(0, 60) + '…'
-              : [patch.color, patch.country, patch.body && `gövde:${patch.body}`].filter(Boolean).join(' · ')
+              : mode === 'purposes'
+                ? (patch.usagePurposes || []).map((x) => USAGE_PURPOSE_LABELS[x]?.tr || x).join(', ')
+                : [patch.color, patch.country, patch.body && `gövde:${patch.body}`].filter(Boolean).join(' · ')
           addLog({ name: p.name, kind: 'ok', text: summary || 'güncellendi' })
           setStats((s) => ({ ...s, done: s.done + 1 }))
         } catch (e) {
@@ -361,6 +428,11 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
               Her ürün için, dolu özelliklerine dayanarak <b>iki dilli (TR/EN)</b> kısa açıklama, tadım notları ve yemek uyumu üretilir.
               Yalnızca <b>açıklama</b> alanları yazılır — özellikler korunur. <span className="text-gold-400">Sonuçları gözden geçir.</span>
             </>
+          ) : mode === 'purposes' ? (
+            <>
+              Her ürünün adı ve özelliklerine göre AI, en uygun <b>kullanım amaçlarını</b> (günlük, yemek, hediye, özel gün…) seçer.
+              Yalnızca <b>kullanım amacı</b> alanı yazılır — diğer veriler korunur. <span className="text-gold-400">“Sadece eksikler”i kapatırsan mevcut amaçların üzerine yazar.</span>
+            </>
           ) : (
             <>
               Her ürünün adı ve markası Gemini'ye gönderilir; renk, ülke, bölge, üzüm, gövde/tatlılık/asidite/tanen ve kullanım amacı doldurulur.
@@ -387,6 +459,13 @@ export default function BulkAiFill({ products, onClose, onSaved }) {
                   className={`flex-1 rounded-lg border px-4 py-2.5 text-sm font-semibold ${mode === 'descriptions' ? 'border-wine-700 bg-wine-800 text-white' : 'border-charcoal-600 bg-ink-950 text-cream-200 hover:border-gold-500'}`}
                 >
                   Açıklamalar (TR/EN)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMode('purposes')}
+                  className={`flex-1 rounded-lg border px-4 py-2.5 text-sm font-semibold ${mode === 'purposes' ? 'border-wine-700 bg-wine-800 text-white' : 'border-charcoal-600 bg-ink-950 text-cream-200 hover:border-gold-500'}`}
+                >
+                  Kullanım Amaçları
                 </button>
               </div>
             </div>

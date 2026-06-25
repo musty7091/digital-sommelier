@@ -169,7 +169,7 @@ export default function IdleScreen() {
         playsInline
         preload="auto"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-        style={{ filter: 'blur(14px) brightness(0.5)', transform: 'scale(1.12)' }}
+        style={{ filter: 'blur(6px) brightness(0.55)', transform: 'scale(1.08)' }}
       />
       <div
         className="pointer-events-none absolute inset-0"
