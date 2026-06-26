@@ -5306,17 +5306,26 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [
-      "daily",
-      "celebration",
-      "value",
-      "beginner",
-      "light"
-    ],
+    "usagePurposes": [],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T09:24:18.505Z"
+    "updatedAt": "2026-06-26T08:18:05.751Z",
+    "shortDescription": {
+      "tr": "İspanya'nın güneşini sofranıza taşıyan, meyve notalarıyla zenginleşmiş ferahlatıcı ve tatlı bir klasik.",
+      "en": "A refreshing and sweet Spanish classic bursting with vibrant fruit notes, perfect for any social gathering."
+    },
+    "tasteNotes": {
+      "tr": "Taze narenciye, olgun kırmızı meyveler, hafif tarçın",
+      "en": "Fresh citrus, ripe red berries, hint of cinnamon"
+    },
+    "foodPairing": {
+      "tr": "Baharatlı tapaslar, taze meyve tabakları",
+      "en": "Spicy tapas, fresh fruit platters"
+    },
+    "description": "İspanya'nın güneşini sofranıza taşıyan, meyve notalarıyla zenginleşmiş ferahlatıcı ve tatlı bir klasik.",
+    "descriptionTr": "İspanya'nın güneşini sofranıza taşıyan, meyve notalarıyla zenginleşmiş ferahlatıcı ve tatlı bir klasik.",
+    "descriptionEn": "A refreshing and sweet Spanish classic bursting with vibrant fruit notes, perfect for any social gathering."
   },
   "8008900005431": {
     "barcode": "8008900005431",
@@ -12786,18 +12795,26 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [
-      "food",
-      "celebration",
-      "daily",
-      "light",
-      "value",
-      "beginner"
-    ],
+    "usagePurposes": [],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T10:02:31.684Z"
+    "updatedAt": "2026-06-26T08:18:15.215Z",
+    "shortDescription": {
+      "tr": "İspanya’nın güneşli bağlarından gelen, tatlı ve ferahlatıcı bir beyaz sangria keyfi. Bol buz ve taze meyve dilimleriyle servis için ideal.",
+      "en": "A sweet and refreshing white sangria bursting with Spanish sunshine. Perfect when served chilled with ice and fresh fruit slices."
+    },
+    "tasteNotes": {
+      "tr": "Narenciye, Tropikal Meyveler, Bal",
+      "en": "Citrus, Tropical Fruits, Honey"
+    },
+    "foodPairing": {
+      "tr": "Hafif atıştırmalıklar, Taze meyve tabakları",
+      "en": "Light snacks, Fresh fruit platters"
+    },
+    "description": "İspanya’nın güneşli bağlarından gelen, tatlı ve ferahlatıcı bir beyaz sangria keyfi. Bol buz ve taze meyve dilimleriyle servis için ideal.",
+    "descriptionTr": "İspanya’nın güneşli bağlarından gelen, tatlı ve ferahlatıcı bir beyaz sangria keyfi. Bol buz ve taze meyve dilimleriyle servis için ideal.",
+    "descriptionEn": "A sweet and refreshing white sangria bursting with Spanish sunshine. Perfect when served chilled with ice and fresh fruit slices."
   },
   "7804320985633": {
     "barcode": "7804320985633",
@@ -13437,17 +13454,26 @@
     "taste": "light",
     "acidity": "medium",
     "tannin": "light",
-    "usagePurposes": [
-      "celebration",
-      "daily",
-      "light",
-      "value",
-      "beginner"
-    ],
+    "usagePurposes": [],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T10:05:32.634Z"
+    "updatedAt": "2026-06-26T08:18:23.476Z",
+    "shortDescription": {
+      "tr": "İspanyol güneşinin ferahlığı! Kırmızı meyve notalarıyla zengin, tatlı ve iştah açıcı bir rose sangria deneyimi.",
+      "en": "A taste of Spanish sunshine! A refreshing and intensely sweet rose sangria bursting with vibrant red fruit notes."
+    },
+    "tasteNotes": {
+      "tr": "Çilek, Ahududu, Turunçgil kabuğu",
+      "en": "Strawberry, Raspberry, Citrus zest"
+    },
+    "foodPairing": {
+      "tr": "Taze meyve tabakları, hafif atıştırmalıklar",
+      "en": "Fresh fruit platters, light snacks"
+    },
+    "description": "İspanyol güneşinin ferahlığı! Kırmızı meyve notalarıyla zengin, tatlı ve iştah açıcı bir rose sangria deneyimi.",
+    "descriptionTr": "İspanyol güneşinin ferahlığı! Kırmızı meyve notalarıyla zengin, tatlı ve iştah açıcı bir rose sangria deneyimi.",
+    "descriptionEn": "A taste of Spanish sunshine! A refreshing and intensely sweet rose sangria bursting with vibrant red fruit notes."
   },
   "3298020827142": {
     "barcode": "3298020827142",
@@ -18369,16 +18395,26 @@
     "taste": "medium",
     "acidity": "medium",
     "tannin": "medium",
-    "usagePurposes": [
-      "food",
-      "daily",
-      "value",
-      "beginner"
-    ],
+    "usagePurposes": [],
     "sommelierPick": false,
     "featured": false,
     "priorityScore": 0,
-    "updatedAt": "2026-06-23T10:33:10.644Z"
+    "updatedAt": "2026-06-26T08:18:31.652Z",
+    "shortDescription": {
+      "tr": "Kapadokya'nın volkanik topraklarından gelen, Öküzgözü'nün meyvemsi zarafeti ile Boğazkere'nin güçlü karakterinin mükemmel uyumu.",
+      "en": "A perfect harmony from Cappadocia's volcanic soils, blending the fruity elegance of Öküzgözü with the bold character of Boğazkere."
+    },
+    "tasteNotes": {
+      "tr": "Kırmızı meyveler, hafif baharat, dengeli tanen",
+      "en": "Red berries, light spice, balanced tannins"
+    },
+    "foodPairing": {
+      "tr": "Izgara kırmızı etler, olgun sert peynirler",
+      "en": "Grilled red meats, aged hard cheeses"
+    },
+    "description": "Kapadokya'nın volkanik topraklarından gelen, Öküzgözü'nün meyvemsi zarafeti ile Boğazkere'nin güçlü karakterinin mükemmel uyumu.",
+    "descriptionTr": "Kapadokya'nın volkanik topraklarından gelen, Öküzgözü'nün meyvemsi zarafeti ile Boğazkere'nin güçlü karakterinin mükemmel uyumu.",
+    "descriptionEn": "A perfect harmony from Cappadocia's volcanic soils, blending the fruity elegance of Öküzgözü with the bold character of Boğazkere."
   },
   "839543000341": {
     "barcode": "839543000341",

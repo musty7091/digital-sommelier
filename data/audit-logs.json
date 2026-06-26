@@ -1,5 +1,105 @@
 [
   {
+    "id": "1782461911820-c8c41b3a5ed72",
+    "createdAt": "2026-06-26T08:18:31.820Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8681030125660",
+    "message": "8681030125660 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8681030125660",
+      "fields": [
+        "barcode",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782461903666-e8fec2e938203",
+    "createdAt": "2026-06-26T08:18:23.666Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261151328",
+    "message": "8410261151328 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261151328",
+      "fields": [
+        "barcode",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782461895405-bd15988da8122",
+    "createdAt": "2026-06-26T08:18:15.405Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261151311",
+    "message": "8410261151311 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261151311",
+      "fields": [
+        "barcode",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
+    "id": "1782461885873-21770462dc2c9",
+    "createdAt": "2026-06-26T08:18:05.873Z",
+    "actor": "local-admin",
+    "action": "product_metadata_updated",
+    "entityType": "product",
+    "entityId": "8410261151625",
+    "message": "8410261151625 barkodlu ürün metadata güncellendi.",
+    "details": {
+      "barcode": "8410261151625",
+      "fields": [
+        "barcode",
+        "usagePurposes",
+        "shortDescription",
+        "tasteNotes",
+        "foodPairing",
+        "description",
+        "descriptionTr",
+        "descriptionEn",
+        "sommelierPick",
+        "featured",
+        "priorityScore"
+      ]
+    }
+  },
+  {
     "id": "1782461600740-dab6e8161ab18",
     "createdAt": "2026-06-26T08:13:20.741Z",
     "actor": "local-admin",
@@ -44294,106 +44394,6 @@
     "message": "8690584120502 barkodlu ürün metadata güncellendi.",
     "details": {
       "barcode": "8690584120502",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283900966-4a459924bdc0e",
-    "createdAt": "2026-06-24T06:51:40.966Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "8690584316400",
-    "message": "8690584316400 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "8690584316400",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283892029-5bb7b1abce7d9",
-    "createdAt": "2026-06-24T06:51:32.029Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "8697530204866",
-    "message": "8697530204866 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "8697530204866",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283883156-83aca4e254787",
-    "createdAt": "2026-06-24T06:51:23.156Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "8690606134012",
-    "message": "8690606134012 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "8690606134012",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283874873-0dfc6c8de21f5",
-    "createdAt": "2026-06-24T06:51:14.873Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "8690584301406",
-    "message": "8690584301406 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "8690584301406",
       "fields": [
         "barcode",
         "usagePurposes",
