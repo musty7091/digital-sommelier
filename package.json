@@ -10,11 +10,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
-    "seed": "node seed.js"
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\""
   },
   "dependencies": {
-    "firebase": "^10.13.0",
     "mssql": "^11.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
