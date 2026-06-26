@@ -1,5 +1,156 @@
 [
   {
+    "id": "1782461600740-dab6e8161ab18",
+    "createdAt": "2026-06-26T08:13:20.741Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-26T08:13:20.703Z"
+    }
+  },
+  {
+    "id": "1782461597609-caaff200c4b16",
+    "createdAt": "2026-06-26T08:13:17.609Z",
+    "actor": "local-admin",
+    "action": "scan_started",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: scan_started",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-26T08:13:17.574Z"
+    }
+  },
+  {
+    "id": "1782461324137-1b142a3ecf94d",
+    "createdAt": "2026-06-26T08:08:44.137Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "rose",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-26T08:08:44.110Z"
+    }
+  },
+  {
+    "id": "1782461323340-d1d9e5eb37f5c",
+    "createdAt": "2026-06-26T08:08:43.340Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-26T08:08:43.171Z"
+    }
+  },
+  {
+    "id": "1782457721414-d5aa07b404313",
+    "createdAt": "2026-06-26T07:08:41.414Z",
+    "actor": "local-admin",
+    "action": "filter_selected",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: filter_selected",
+    "details": {
+      "filterKey": "color",
+      "filterValue": "sparkling",
+      "phase": "flow",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-26T07:08:41.394Z"
+    }
+  },
+  {
+    "id": "1782457720759-f1e80aafd5c2c",
+    "createdAt": "2026-06-26T07:08:40.759Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-26T07:08:40.703Z"
+    }
+  },
+  {
+    "id": "1782451829372-fe40126b5ee72",
+    "createdAt": "2026-06-26T05:30:29.372Z",
+    "actor": "local-admin",
+    "action": "flow_start",
+    "entityType": "kiosk-session",
+    "entityId": "",
+    "message": "Kiosk event: flow_start",
+    "details": {
+      "phase": "welcome",
+      "stepIndex": 0,
+      "selections": {
+        "color": null,
+        "priceRange": null,
+        "purpose": null,
+        "taste": null,
+        "country": null
+      },
+      "timestamp": "2026-06-26T05:30:29.336Z"
+    }
+  },
+  {
     "id": "1782391165298-a14b73ea42aea",
     "createdAt": "2026-06-25T12:39:25.299Z",
     "actor": "local-admin",
@@ -44256,180 +44407,6 @@
         "featured",
         "priorityScore"
       ]
-    }
-  },
-  {
-    "id": "1782283866003-ff7a8d128e93a",
-    "createdAt": "2026-06-24T06:51:06.003Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "8690584133403",
-    "message": "8690584133403 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "8690584133403",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283857410-b477cb8d293cd",
-    "createdAt": "2026-06-24T06:50:57.410Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "8690584155405",
-    "message": "8690584155405 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "8690584155405",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283848922-c24a347c3b3ce",
-    "createdAt": "2026-06-24T06:50:48.922Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "8690584120403",
-    "message": "8690584120403 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "8690584120403",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283839549-b0a958db15fe2",
-    "createdAt": "2026-06-24T06:50:39.549Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "4840013000248",
-    "message": "4840013000248 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "4840013000248",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283831156-4cfe8cd14c922",
-    "createdAt": "2026-06-24T06:50:31.156Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "3500610033346",
-    "message": "3500610033346 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "3500610033346",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283822225-91dd45983faaf",
-    "createdAt": "2026-06-24T06:50:22.225Z",
-    "actor": "local-admin",
-    "action": "product_metadata_updated",
-    "entityType": "product",
-    "entityId": "3500610014789",
-    "message": "3500610014789 barkodlu ürün metadata güncellendi.",
-    "details": {
-      "barcode": "3500610014789",
-      "fields": [
-        "barcode",
-        "usagePurposes",
-        "shortDescription",
-        "tasteNotes",
-        "foodPairing",
-        "description",
-        "descriptionTr",
-        "descriptionEn",
-        "sommelierPick",
-        "featured",
-        "priorityScore"
-      ]
-    }
-  },
-  {
-    "id": "1782283714573-b58592529c88e",
-    "createdAt": "2026-06-24T06:48:34.573Z",
-    "actor": "local-admin",
-    "action": "product_viewed",
-    "entityType": "kiosk-session",
-    "entityId": "3263286321284",
-    "message": "Kiosk event: product_viewed",
-    "details": {
-      "productId": "3263286321284",
-      "productName": "JP CHENET MEDIUM SWEET WHITE 75CL",
-      "barcode": "3263286321284",
-      "phase": "flow",
-      "stepIndex": 1,
-      "selections": {
-        "color": "white",
-        "priceRange": null,
-        "purpose": null,
-        "taste": null,
-        "country": null
-      },
-      "timestamp": "2026-06-24T06:48:34.544Z"
     }
   }
 ]

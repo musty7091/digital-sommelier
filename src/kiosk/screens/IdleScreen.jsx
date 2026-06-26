@@ -179,13 +179,7 @@ export default function IdleScreen() {
       {wine ? (
         <div
           key={wine.barcode}
-          role="button"
-          tabIndex={0}
-          onClick={(e) => {
-            e.stopPropagation()
-            openDetail(wine, 'welcome')
-          }}
-          className="ds-fade-up relative z-10 flex max-w-3xl cursor-pointer flex-col items-center rounded-[2rem] px-6 py-5 text-center transition hover:bg-white/[0.03] active:scale-[0.99]"
+          className="ds-fade-up relative z-10 flex max-w-3xl flex-col items-center rounded-[2rem] px-6 py-5 text-center"
         >
           <p className="mb-4 text-xs uppercase tracking-[0.45em] text-gold-500">{t('featuredEyebrow')}</p>
 
@@ -257,10 +251,17 @@ export default function IdleScreen() {
             {formatPrice(wine.price)} {currency}
           </span>
 
-          <span className="mt-5 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.28em] text-cream-200/50">
-            {t('idleTapView')}
-            <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
-          </span>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              openDetail(wine, 'welcome')
+            }}
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-gold-500/60 bg-gold-900/20 px-8 py-3 text-sm uppercase tracking-[0.2em] text-gold-300 transition active:scale-95 hover:bg-gold-900/30"
+          >
+            {lang === 'en' ? 'Details' : 'Detaylar'}
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+          </button>
         </div>
       ) : (
         <h1 className="relative z-10 font-serif text-6xl text-cream-100">{t('title')}</h1>

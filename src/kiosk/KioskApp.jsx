@@ -7,6 +7,7 @@ import DetailScreen from './screens/DetailScreen'
 import IdleScreen from './screens/IdleScreen'
 import ScanScreen from './screens/ScanScreen'
 import MaintenanceScreen from './screens/MaintenanceScreen'
+import WineGlassLoading from './components/WineGlassLoading'
 
 function Centered({ children }) {
   return (
@@ -21,7 +22,7 @@ function KioskScreens() {
   const { t } = useLanguage()
   if (maintenance) return <MaintenanceScreen />
   if (error) return <Centered>{t('errorLoad')}</Centered>
-  if (loading) return <Centered>{t('loading')}</Centered>
+  if (loading) return <WineGlassLoading label={t('loading')} />
   if (phase === 'welcome') return <WelcomeScreen />
   if (phase === 'idle') return <IdleScreen />
   if (phase === 'scan') return <ScanScreen />
